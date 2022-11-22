@@ -38,7 +38,7 @@ export const theme = extendTheme({
 	styles: {
 		global: {
 			body: {
-				bg: 'teal.300',
+				bg: 'gray.200',
 				_dark: {
 					bg: 'gray.800',
 				},

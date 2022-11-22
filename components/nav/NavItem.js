@@ -21,7 +21,7 @@ function NavItem({ title, href, icon }) {
 							transition={{ duration: 0.5, ease: 'easeInOut' }}
 						>
 							<Icon
-								_light={{ color: 'white', _hover: { color: 'white' } }}
+								_light={{ color: 'white', _hover: { color: 'pink.500' } }}
 								as={icon}
 								boxSize='6'
 							/>
@@ -35,9 +35,7 @@ function NavItem({ title, href, icon }) {
 							}}
 							transition={{ duration: 0.3, ease: 'easeInOut' }}
 						>
-							<Text _light={{ color: 'white', _hover: { color: 'white' } }}>
-								{title}
-							</Text>
+							<Text _light={{ color: 'pink.500' }}>{title}</Text>
 						</motion.div>
 					</VStack>
 				</MyLink>

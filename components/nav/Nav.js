@@ -1,5 +1,6 @@
 import { HamburgerIcon } from '@chakra-ui/icons'
 import { Box, HStack, IconButton, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
+import Link from 'next/link'
 import { AiOutlineQuestion } from 'react-icons/ai'
 import { GiMonsterGrasp, GiPaintBrush } from 'react-icons/gi'
 import { HiCode } from 'react-icons/hi'
@@ -33,14 +34,16 @@ const navLinks = [
 export default function Nav() {
 	return (
 		<>
-			<Box
-				top={{ base: 4 }}
-				left={{ sm: 4 }}
-				right={{ base: 4, sm: 'auto' }}
-				position={'fixed'}
-			>
-				<Logo />
-			</Box>
+			<MyLink href={'/'}>
+				<Box
+					top={{ base: 2 }}
+					left={{ sm: 4 }}
+					right={{ base: 2, sm: 'auto' }}
+					position={'fixed'}
+				>
+					<Logo />
+				</Box>
+			</MyLink>
 			{/* phone */}
 			<HStack p={4} display={{ base: 'flex', sm: 'none' }}>
 				<Menu>

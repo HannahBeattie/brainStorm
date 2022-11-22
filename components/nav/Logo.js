@@ -5,53 +5,57 @@ import { FaBrain } from 'react-icons/fa'
 import Appear from '../animate/Appear'
 import Flicker from '../animate/Flicker'
 import { motion } from 'framer-motion'
+import MyLink from '../MyLink'
+import FadeIn from '../animate/FadeIn'
 
 function Logo() {
 	return (
 		<>
 			<Flicker>
-				<VStack spacing={0} px={4} cursor={'pointer'}>
-					<motion.div
-						whileHover={{ scale: [1, 1.03] }}
-						transition={{ ease: 'easeInOut' }}
+				<motion.div whileHover={{ scale: [1, 1.03], opacity: [1, 0.5, 1] }}>
+					<VStack
+						spacing={0}
+						px={4}
+						cursor={'pointer'}
+						color={'#ff69b4'}
+						_dark={{ color: '#ff69b4' }}
+						_hover={{ color: '#ff69b4' }}
 					>
-						<Heading
-							display={{ base: 'none', sm: 'block' }}
-							letterSpacing={'0.08em'}
-							color={'#ff69b4'}
-							fontSize={'3xl'}
-							textTransform={'uppercase'}
-							fontFamily={'Rubik Glitch'}
+						<motion.div
+							animate={{ opacity: [1, 0.5, 1, 0, 1], width: [250, 247] }}
+							transition={{ ease: 'easeInOut' }}
 						>
-							Brain Storm
-						</Heading>
-						<Heading
-							display={{ base: 'none', sm: 'block' }}
-							letterSpacing={'0.08em'}
-							color={'#ff69b4'}
-							fontSize={'3xl'}
-							textTransform={'uppercase'}
-							fontFamily={'Rubik Glitch'}
-							opacity={0.2}
+							<Heading
+								display={{ base: 'none', sm: 'block' }}
+								letterSpacing={'0.08em'}
+								fontSize={'3xl'}
+								textTransform={'uppercase'}
+								fontFamily={'Rubik Glitch'}
+							>
+								Brain Storm
+							</Heading>
+						</motion.div>
+
+						<motion.div
+							initial={{ opacity: 0 }}
+							animate={{ opacity: [0.5, 1, 0, 1], width: [260, 247] }}
 						>
-							Brain Storm
-						</Heading>
-						<Heading
-							display={{ base: 'none', sm: 'block' }}
-							letterSpacing={'0.08em'}
-							color={'#ff69b4'}
-							fontSize={'3xl'}
-							textTransform={'uppercase'}
-							fontFamily={'Rubik Glitch'}
-							opacity={0.2}
-						>
-							Brain Storm
-						</Heading>
-					</motion.div>
-				</VStack>
+							<Heading
+								display={{ base: 'none', sm: 'block' }}
+								letterSpacing={'0.08em'}
+								fontSize={'3xl'}
+								textTransform={'uppercase'}
+								fontFamily={'Rubik Glitch'}
+								opacity={0.2}
+							>
+								Brain Storm
+							</Heading>
+						</motion.div>
+					</VStack>
+				</motion.div>
 			</Flicker>
 
-			<VStack display={{ base: 'block', sm: 'none' }} spacing={0} textAlign={'center'}>
+			<VStack display={{ base: 'block', sm: 'none' }} spacing={0} textAlign={'right'}>
 				<Flicker>
 					<Heading
 						letterSpacing={'0.08em'}
@@ -88,7 +92,7 @@ function Logo() {
 						fontFamily={'Rubik Glitch'}
 					>
 						Storm
-					</Heading>{' '}
+					</Heading>
 				</Flicker>
 			</VStack>
 		</>
