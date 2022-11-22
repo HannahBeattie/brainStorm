@@ -1,0 +1,90 @@
+import { HamburgerIcon } from '@chakra-ui/icons'
+import { Box, HStack, IconButton, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
+import { AiOutlineQuestion } from 'react-icons/ai'
+import { GiMonsterGrasp, GiPaintBrush } from 'react-icons/gi'
+import { HiCode } from 'react-icons/hi'
+import MyLink from '../MyLink'
+import Logo from './Logo'
+import NavItem from './NavItem'
+
+const navLinks = [
+	{
+		title: 'About',
+		icon: AiOutlineQuestion,
+		href: '/about',
+	},
+	{
+		title: 'Web Development',
+		href: '/web',
+		icon: HiCode,
+	},
+	{
+		title: 'Painting',
+		href: '/painting',
+		icon: GiPaintBrush,
+	},
+	{
+		title: 'Character Design',
+		href: '/characters',
+		icon: GiMonsterGrasp,
+	},
+]
+
+export default function Nav() {
+	return (
+		<>
+			<Box
+				top={{ base: 4 }}
+				left={{ sm: 4 }}
+				right={{ base: 4, sm: 'auto' }}
+				position={'fixed'}
+			>
+				<Logo />
+			</Box>
+			{/* phone */}
+			<HStack p={4} display={{ base: 'flex', sm: 'none' }}>
+				<Menu>
+					<MenuButton
+						as={IconButton}
+						aria-label='Options'
+						icon={<HamburgerIcon />}
+						color={'#ff69b4'}
+						variant='outline'
+						borderRadius={'md'}
+						borderWidth={'1px'}
+						borderColor={'gray.100'}
+						fontSize={'xl'}
+					/>
+
+					<MenuList>
+						{navLinks.map(({ href, title }, idx) => (
+							<MenuItem key={`navitem-${idx}`}>
+								<MyLink href={href}>{title}</MyLink>
+							</MenuItem>
+						))}
+					</MenuList>
+				</Menu>
+			</HStack>
+
+			{/* desktop */}
+			<HStack
+				display={{ base: 'none', sm: 'flex' }}
+				py={4}
+				px={8}
+				spacing={10}
+				justifyContent='right'
+				fontFamily={'Roboto'}
+				fontWeight={500}
+				letterSpacing={'0.1em'}
+				fontSize={'sm'}
+				_dark={{ color: 'pink.500' }}
+			>
+				{navLinks.map(({ href, title, icon }, idx) => (
+					<HStack key={`navitem-${idx}`}>
+						<NavItem href={href} title={title} icon={icon} idx={idx} />
+					</HStack>
+				))}
+			</HStack>
+		</>
+	)
+}
