@@ -48,7 +48,7 @@ function about() {
 			<Heading
 				fontWeight={'extrabold'}
 				textAlign={'center'}
-				pt={100}
+				pt={{ sm: 100, base: 4 }}
 				fontSize={'8xl'}
 				letterSpacing={'0.5em'}
 			>
@@ -128,7 +128,7 @@ function about() {
 					advertising one product at a time.
 				</Text>{' '}
 			</Intro>
-			<VStack>
+			<VStack pb={{ base: 10, sm: 8 }}>
 				<Heading letterSpacing={'0.5em'} className={'scatter'}>
 					|||||
 				</Heading>
