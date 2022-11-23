@@ -55,7 +55,7 @@ function about() {
 				H___o World
 			</Heading>
 			<Center>
-				<Heading letterSpacing={'0.5em'} className={'scatter'}>
+				<Heading cursor={'pointer'} letterSpacing={'0.5em'} className={'scatter'}>
 					|||||
 				</Heading>
 			</Center>
@@ -71,7 +71,7 @@ function about() {
 			</VStack>
 
 			<Flicker>
-				<Center>
+				<Center cursor={'pointer'}>
 					<Heading letterSpacing={'0.5em'} className={'scatter'}>
 						||
 					</Heading>
@@ -84,9 +84,10 @@ function about() {
 						w={'90%'}
 						h={'90%'}
 						src={'/brainStorm/ntv.png'}
+						p={'-1'}
 					/>
 				</Flex>
-				<Center>
+				<Center cursor={'pointer'}>
 					<Heading letterSpacing={'0.5em'} className={'scatter'}>
 						||
 					</Heading>
@@ -129,7 +130,7 @@ function about() {
 				</Text>{' '}
 			</Intro>
 			<VStack pb={{ base: 10, sm: 8 }}>
-				<Heading letterSpacing={'0.5em'} className={'scatter'}>
+				<Heading cursor={'pointer'} letterSpacing={'0.5em'} className={'scatter'}>
 					|||||
 				</Heading>
 				<FaPlug className={'rotate'} />

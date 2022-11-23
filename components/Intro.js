@@ -3,7 +3,6 @@ import { Box, Container, Divider, Heading, VStack } from '@chakra-ui/react'
 export default function Intro({ title, children }) {
 	return (
 		<>
-			<Divider mt={{ md: '100' }} />
 			<VStack
 				id={'services'}
 				flex={'1'}
@@ -39,9 +38,7 @@ export default function Intro({ title, children }) {
 							borderRadius={'2xl'}
 							boxShadow={'lg'}
 						>
-							<Divider />
 							{children}
-							<Divider />
 						</VStack>
 					</Container>
 				</Box>
