@@ -39,7 +39,7 @@ export default function Nav() {
 					top={{ base: 2 }}
 					left={{ sm: 4 }}
 					right={{ base: 2, sm: 'auto' }}
-					position={'fixed'}
+					position={'absolute'}
 				>
 					<Logo />
 				</Box>

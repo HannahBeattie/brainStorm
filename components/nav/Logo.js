@@ -17,7 +17,7 @@ function Logo() {
 						spacing={0}
 						px={4}
 						cursor={'pointer'}
-						color={'#ff69b4'}
+						color={'gray.800'}
 						_dark={{ color: '#ff69b4' }}
 						_hover={{ color: '#ff69b4' }}
 					>
