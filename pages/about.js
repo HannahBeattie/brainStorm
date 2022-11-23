@@ -37,20 +37,31 @@ export function Blob() {
 function about() {
 	const textProps = {
 		fontFamily: 'Roboto',
-		fontSize: '3xl',
+		fontSize: { base: 'lg', md: '3xl' },
 		color: 'gray.100',
 		fontWeight: 'light',
 	}
 
 	return (
 		<VStack justifyContent={'center'} alignItems={'stretch'}>
-			<Center justifyContent={'center'} verticalAlign={'center'} py={100} px={200}>
-				<Heading fontSize={{ sm: '8xl', base: '5xl' }} fontFamily={'Rubik Glitch'}>
+			<VStack
+				justifyContent={'center'}
+				verticalAlign={'center'}
+				py={{ sm: 100, base: 50 }}
+				px={{ sm: 200, base: 10 }}
+				alignItems={'stretch'}
+			>
+				<Heading
+					justifySelf={'center'}
+					textAlign={{ base: 'center', sm: 'left' }}
+					fontSize={{ sm: '8xl', base: '7xl' }}
+					fontFamily={'Rubik Glitch'}
+				>
 					Kia Ora Taiao : Hello World!
 				</Heading>
-			</Center>
+			</VStack>
 			<VStack bg={'gray.900'} boxShadow={'dark'} spacing={4}>
-				<Container py={100}>
+				<Container py={{ md: 100, base: '8' }} px={{ md: 'unset', base: '10' }}>
 					<Text {...textProps}> I am Hannah,</Text>
 					<Text {...textProps}>
 						An artist & web developer from New Zealand, land of the hobbits.

@@ -51,11 +51,11 @@ export default function Nav() {
 						as={IconButton}
 						aria-label='Options'
 						icon={<HamburgerIcon />}
-						color={'#ff69b4'}
+						color={'white'}
+						_dark={{ color: '#ff69b4', bg: '' }}
 						variant='outline'
 						borderRadius={'md'}
 						borderWidth={'1px'}
-						borderColor={'gray.100'}
 						fontSize={'xl'}
 					/>
 

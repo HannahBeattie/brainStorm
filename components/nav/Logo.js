@@ -59,35 +59,19 @@ function Logo() {
 				<Flicker>
 					<Heading
 						letterSpacing={'0.08em'}
-						color={'#ff69b4'}
-						fontSize={'2xl'}
-						textTransform={'uppercase'}
-						fontFamily={'Rubik Glitch'}
-					>
-						Brain
-					</Heading>
-					<Heading
-						textTransform={'uppercase'}
-						color={'#ff69b4'}
-						fontSize={'2xl'}
-						fontFamily={'Rubik Glitch'}
-					>
-						Storm
-					</Heading>
-					<Heading
-						letterSpacing={'0.08em'}
-						color={'#ff69b4'}
+						color={'white'}
+						_dark={{ color: '#ff69b4' }}
 						fontSize={'xl'}
 						textTransform={'uppercase'}
 						fontFamily={'Rubik Glitch'}
-						opacity={0.2}
 					>
 						Brain
 					</Heading>
 					<Heading
 						textTransform={'uppercase'}
-						opacity={0.1}
-						color={'#ff69b4'}
+						color={'white'}
+						_dark={{ color: '#ff69b4' }}
+						_hover={{ color: '#ff69b4' }}
 						fontSize={'xl'}
 						fontFamily={'Rubik Glitch'}
 					>
