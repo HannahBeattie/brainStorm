@@ -12,14 +12,15 @@ import {
 import MyLink from '../MyLink'
 
 export default function Feature({ alt, heading, text, details, label, href, buttonText, src }) {
-	const bg = useColorModeValue('white', 'white')
-	const textCol = useColorModeValue('gray.700', 'black')
+	const bg = useColorModeValue('gray.900', 'white')
+	const textCol = useColorModeValue('white', 'black')
 	const buttonProps = {
-		bg: 'gray.900',
+		bg: useColorModeValue('whiteAlpha.200', 'gray.900'),
 		color: 'gray.200',
-		_hover: { bg: 'cyan.900' },
+		_hover: { bg: 'pink.00' },
 		py: '4',
 	}
+	const headingCol = useColorModeValue('pink.500', 'white')
 
 	return (
 		<Center>
@@ -33,11 +34,11 @@ export default function Feature({ alt, heading, text, details, label, href, butt
 				overflow={'hidden'}
 			>
 				<Box mt={-6} mb={6} mx={-6} pos={'relative'}>
-					<Image pt={2} px={4} src={src} alt={alt} layout={'fill'} />
+					<Image src={src} alt={alt} layout={'fill'} />
 				</Box>
 				<Stack spacing={'4'} cursor={'pointer'}>
 					<Text
-						color={'teal.400'}
+						color={'grayAlpha.500'}
 						textTransform={'uppercase'}
 						fontWeight={800}
 						fontSize={'sm'}
@@ -46,11 +47,11 @@ export default function Feature({ alt, heading, text, details, label, href, butt
 						{label}
 					</Text>
 
-					<Heading color={textCol} fontSize={'2xl'} fontFamily={'body'}>
+					<Heading color={headingCol} fontSize={'2xl'} fontFamily={'body'}>
 						{heading}
 					</Heading>
 
-					<Box p={3} color={'black'}>
+					<Box p={3} color={textCol} bg={'grayAlpha.100'} borderRadius={'lg'}>
 						{details}
 					</Box>
 
