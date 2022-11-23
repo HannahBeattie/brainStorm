@@ -21,6 +21,7 @@ import React from 'react'
 import Appear from '~/components/animate/Appear'
 import Flicker from '~/components/animate/Flicker'
 import Intro from '~/components/Intro'
+import { FaPlug } from 'react-icons/fa'
 
 export function Blob() {
 	return (
@@ -43,44 +44,39 @@ function about() {
 	}
 
 	return (
-		<VStack justifyContent={'center'} alignItems={'stretch'}>
-			<VStack
-				justifyContent={'center'}
-				verticalAlign={'center'}
-				py={{ sm: 100, base: 50 }}
-				px={{ sm: 200, base: 10 }}
-				alignItems={'stretch'}
+		<VStack alignItems={'stretch'} flex={'1'}>
+			<Heading
+				fontWeight={'extrabold'}
+				textAlign={'center'}
+				pt={100}
+				fontSize={'8xl'}
+				letterSpacing={'0.5em'}
 			>
-				<Heading
-					justifySelf={'center'}
-					textAlign={{ base: 'center', sm: 'left' }}
-					fontSize={{ sm: '8xl', base: '7xl' }}
-					fontFamily={'Rubik Glitch'}
-				>
-					Kia Ora Taiao : Hello World!
+				H___o World
+			</Heading>
+			<Center>
+				<Heading letterSpacing={'0.5em'} className={'scatter'}>
+					|||||
 				</Heading>
-			</VStack>
-			<VStack bg={'gray.900'} boxShadow={'dark'} spacing={4}>
+			</Center>
+			<VStack bg={'gray.900'} boxShadow={'xl'} spacing={4}>
 				<Container py={{ md: 100, base: '8' }} px={{ md: 'unset', base: '10' }}>
 					<Text {...textProps}> I am Hannah,</Text>
-					<Text {...textProps}>
-						An artist & web developer from New Zealand, land of the hobbits.
-					</Text>
+					<Text {...textProps}>An artist & web developer from New Zealand.</Text>
 					<Text {...textProps}>
 						I am interested in creating interesting, playful and meaingful experiances
 						through a combination of art, digital tech and story-telling.
 					</Text>
 				</Container>
 			</VStack>
+
 			<Flicker>
-				<Flex
-					py={100}
-					flex={1}
-					justify={'center'}
-					align={'center'}
-					position={'relative'}
-					w={'full'}
-				>
+				<Center>
+					<Heading letterSpacing={'0.5em'} className={'scatter'}>
+						||
+					</Heading>
+				</Center>
+				<Flex flex={1} justify={'center'} align={'center'} position={'relative'} w={'full'}>
 					<Image
 						alt={'Hero Image'}
 						fit={'cover'}
@@ -90,6 +86,11 @@ function about() {
 						src={'/brainStorm/ntv.png'}
 					/>
 				</Flex>
+				<Center>
+					<Heading letterSpacing={'0.5em'} className={'scatter'}>
+						||
+					</Heading>
+				</Center>
 			</Flicker>
 
 			<Intro title='me me me'>
@@ -127,6 +128,12 @@ function about() {
 					advertising one product at a time.
 				</Text>{' '}
 			</Intro>
+			<VStack>
+				<Heading letterSpacing={'0.5em'} className={'scatter'}>
+					|||||
+				</Heading>
+				<FaPlug className={'rotate'} />
+			</VStack>
 		</VStack>
 	)
 }

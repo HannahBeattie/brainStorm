@@ -3,3 +3,18 @@
 	writing-mode: vertical-rl;
 	text-orientation: mixed;
 }
+.scatter {
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+}
+
+.rotate {
+	display: inline;
+	font-size: 50px;
+	font-style: bold;
+	-moz-transform: scale(-1, -1);
+	-webkit-transform: scale(-1, -1);
+	-o-transform: scale(-1, -1);
+	-ms-transform: scale(-1, -1);
+	transform: scale(-1, -1);
+}
