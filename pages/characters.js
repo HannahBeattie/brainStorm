@@ -1,4 +1,4 @@
-import { Grid, GridItem, Image, VStack } from '@chakra-ui/react'
+import { Grid, GridItem, Heading, Image, Text, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
 import FadeIn from '~/components/animate/FadeIn'
 import getGridProps from '~/components/base/getGridProps'
@@ -20,6 +20,9 @@ export default function Gallery() {
 				pt={{ base: 4, md: 8 }}
 				spacing={4}
 			>
+				<Heading>Monsters</Heading>
+				<Text>Someday these characters will be part of a playable world.</Text>
+
 				<Grid
 					gap={{ md: 5, base: '4' }}
 					maxW='6xl'

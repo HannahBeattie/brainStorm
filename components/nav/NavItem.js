@@ -21,7 +21,7 @@ function NavItem({ title, href, icon }) {
 							transition={{ duration: 0.5, ease: 'easeInOut' }}
 						>
 							<Icon
-								_light={{ color: 'white', _hover: { color: 'pink.500' } }}
+								_light={{ color: 'pink.500', _hover: { color: 'pink.500' } }}
 								as={icon}
 								boxSize='6'
 							/>

@@ -15,10 +15,9 @@ function MyApp({ Component, pageProps }) {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<VStack as='main' alignItems='stretch' flex={1} spacing='0'>
+			<VStack as='main' spacing='0' flex={'1'} justify={'stretch'}>
 				<Nav />
 				<LightMode />
-
 				<Component {...pageProps} />
 			</VStack>
 		</ChakraProvider>

@@ -1,11 +1,11 @@
-import { Heading, HStack } from '@chakra-ui/react'
+import { Flex, Heading, HStack } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import FadeIn from '../animate/FadeIn'
 
 function Tag() {
 	return (
-		<FadeIn>
-			<HStack>
+		<Flex>
+			<FadeIn>
 				<Heading
 					fontSize={{ sm: '3xl', base: '2xl' }}
 					color={'white'}
@@ -32,8 +32,8 @@ function Tag() {
 				>
 					Design
 				</Heading>
-			</HStack>
-		</FadeIn>
+			</FadeIn>
+		</Flex>
 	)
 }
 

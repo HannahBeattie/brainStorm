@@ -1,4 +1,4 @@
-import { Box, ColorModeScript } from '@chakra-ui/react'
+import { Box, ColorModeScript, VStack } from '@chakra-ui/react'
 import { Html, Head, Main, NextScript } from 'next/document'
 import FadeIn from '~/components/animate/FadeIn'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -13,11 +13,11 @@ export default function Document() {
 				<link rel='shortcut icon' href='/static/halo.png' />
 			</Head>
 
-			<Box as='body' w='100vw' overflowX='hidden' flexDir='column'>
+			<VStack as='body' w='100vw' overflowX='hidden'>
 				<ColorModeScript initialColorMode={theme.config.initialColorMode} />
 				<Main />
 				<NextScript />
-			</Box>
+			</VStack>
 		</Html>
 	)
 }

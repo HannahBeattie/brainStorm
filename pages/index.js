@@ -1,4 +1,4 @@
-import { Text, VStack } from '@chakra-ui/react'
+import { HStack, Text, VStack } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 import LandIm from '~/components/home/LandIm'
@@ -13,14 +13,11 @@ export default function Home() {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<VStack
-				justifyContent={'center'}
-				h={'87vh'}
-				overflow={'hidden'}
-				spacing={{ base: 12, sm: 8 }}
-			>
-				<LandIm />
-				<Tag />
+			<VStack spacing={{ base: 12, sm: 8 }}>
+				<HStack>
+					<LandIm />
+					<Tag />
+				</HStack>
 			</VStack>
 		</div>
 	)

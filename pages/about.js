@@ -41,31 +41,33 @@ function about() {
 		fontSize: { base: 'lg', md: '3xl' },
 		color: 'gray.100',
 		fontWeight: 'light',
+		letterSpacing: '0.1em',
 	}
 
 	return (
 		<VStack alignItems={'stretch'} flex={'1'}>
-			<Heading
-				fontWeight={'extrabold'}
-				textAlign={'center'}
-				pt={{ sm: 100, base: 4 }}
-				fontSize={'8xl'}
-				letterSpacing={'0.5em'}
-			>
-				H___o World
-			</Heading>
-			<Center>
+			<VStack minH={'90vh'} pt={{ sm: 32, base: 8 }} px={{ sm: 16 }}>
+				<Heading
+					fontWeight={'extrabold'}
+					textAlign={'center'}
+					fontSize={'8xl'}
+					letterSpacing={'0.5em'}
+				>
+					H___o World
+				</Heading>
 				<Heading cursor={'pointer'} letterSpacing={'0.5em'} className={'scatter'}>
 					|||||
 				</Heading>
-			</Center>
+			</VStack>
 			<VStack bg={'gray.900'} boxShadow={'xl'} spacing={4}>
 				<Container py={{ md: 100, base: '8' }} px={{ md: 'unset', base: '10' }}>
 					<Text {...textProps}> I am Hannah,</Text>
-					<Text {...textProps}>An artist & web developer from New Zealand.</Text>
+					<Text {...textProps}>
+						An artist & web developer from New Zealand, land of the hobits.
+					</Text>
 					<Text {...textProps}>
 						I am interested in creating interesting, playful and meaingful experiances
-						through a combination of art, digital tech and story-telling.
+						by combining digital tech, art, and story-telling.
 					</Text>
 				</Container>
 			</VStack>
@@ -81,8 +83,8 @@ function about() {
 						alt={'Hero Image'}
 						fit={'cover'}
 						align={'center'}
-						w={'90%'}
-						h={'90%'}
+						w={'80%'}
+						h={'80%'}
 						src={'/brainStorm/ntv.png'}
 						p={'-1'}
 					/>

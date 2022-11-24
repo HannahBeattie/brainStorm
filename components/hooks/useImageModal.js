@@ -16,7 +16,6 @@ import {
 } from '@chakra-ui/react'
 import { useCallback, useEffect, useState } from 'react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
-import { MdFullscreen, MdFullscreenExit } from 'react-icons/md'
 import { useMediaQuery } from './useMediaQuery'
 
 export function useImageModal({ items, alt }) {
@@ -42,14 +41,6 @@ export function ImageModal(props) {
 	const { items, alt, isOpen, onClose, selected, setSelected } = props
 	const selectedItem = items[selected]
 	const isPageWide = useMediaQuery('(min-width: 768px)')
-	const [modalSize, setModalSize] = useState('full')
-	const clickedIcon = modalSize === 'lg' ? <MdFullscreen /> : <MdFullscreenExit />
-
-	const toggleModalSize = useCallback(
-		() => setModalSize(modalSize === 'lg' ? 'full' : 'lg'),
-		[modalSize]
-	)
-
 	const setNext = useCallback(() => {
 		const sel = (selected + 1) % items.length
 		setSelected(sel)
@@ -75,7 +66,7 @@ export function ImageModal(props) {
 	}
 
 	return (
-		<Modal onClose={onClose} isOpen={isOpen && !!selectedItem} isCentered size={modalSize}>
+		<Modal onClose={onClose} isOpen={isOpen && !!selectedItem} isCentered size={'lg'}>
 			<ModalOverlay bg='blackAlpha.800' backdropFilter='blur(5px) grayscale(100%)' />
 
 			<ModalContent
@@ -86,21 +77,6 @@ export function ImageModal(props) {
 				flexDirection='column'
 				maxH='100vh'
 			>
-				<ModalHeader>
-					<IconButton
-						aria-label='next button'
-						fontSize={'2xl'}
-						bg={''}
-						color={modalSize === 'lg' ? 'whiteAlpha.700' : 'whiteAlpha.600'}
-						_hover={{ bg: '' }}
-						_active={{ bg: '' }}
-						onClick={toggleModalSize}
-						mt={'-1rem'}
-						ml={'-1rem'}
-						icon={clickedIcon}
-					/>
-				</ModalHeader>
-
 				<ModalCloseButton />
 				<ModalBody
 					display='flex'
