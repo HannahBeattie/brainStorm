@@ -34,7 +34,7 @@ export default function Projects() {
 			href: 'https://x-it.vercel.app',
 			details: (
 				<>
-					<Text f>
+					<Text>
 						X-it is a lightweight plug-in that allows users to vote ‘out’ of upcoming
 						calendar events, anonymously.
 					</Text>
