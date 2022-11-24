@@ -1,111 +1,54 @@
-import {
-	Box,
-	HStack,
-	Image,
-	Modal,
-	ModalBody,
-	ModalCloseButton,
-	ModalContent,
-	ModalOverlay,
-	Text,
-	useDisclosure,
-	VStack,
-} from '@chakra-ui/react'
-import Head from 'next/head'
-import React, { useState } from 'react'
+import { Grid, GridItem, Image, VStack } from '@chakra-ui/react'
+import { useState } from 'react'
+import FadeIn from '~/components/animate/FadeIn'
+import getGridProps from '~/components/base/getGridProps'
+import { ImageModal, useImageModal } from '~/components/hooks/UseImageModal'
 
-function characters() {
+export default function Gallery() {
 	const monstPath = '/monsters'
 	const monstCount = 15
-	const monstUrls = []
+	const items = []
 	for (let ii = 0; ii < monstCount; ii++) {
-		monstUrls.push(`${monstPath}/${ii}.${ii === 9 ? 'png' : 'jpeg'}`)
+		items.push(`${monstPath}/${ii}.${ii === 9 ? 'png' : 'jpeg'}`)
 	}
-	const btnRef = React.useRef()
-	const { isOpen, onOpen, onClose } = useDisclosure()
-	const [selected, setSelected] = useState(monstUrls[0])
+	const { openImageNum, imageModalProps } = useImageModal({ items })
 	return (
-		<>
-			<Head>
-				<title>Character Design</title>
-			</Head>
-
-			<HStack
-				display={{ base: 'none', md: 'flex' }}
-				maxW='100vw'
-				w='100vw'
-				overflowX='auto'
-				alignItems='center'
-				flex='1'
-				spacing='8'
-				p='8'
-			>
-				<Box minW={'20rem'}>
-					<Text>
-						Someday these critters will be playable and exist in their very own
-						video-game world. Until that day, enjoy my working progresses. These
-						characters exit in a world inhabited by insectoid creatures, who use trash
-						to rebuild an environment long since decimated by the great bug wars...
-						Check back for more.
-					</Text>
-				</Box>
-				{monstUrls.map((url, idx) => (
-					<Box
-						key={`monst-${idx}`}
-						minW={'20rem'}
-						onClick={() => {
-							setSelected(url)
-							onOpen()
-						}}
-						cursor='pointer'
-					>
-						<Image src={url} alt={`monster image number ${idx}`} />
-					</Box>
-				))}
-			</HStack>
-			<>
-				<Modal isOpen={isOpen} onClose={onClose}>
-					<ModalOverlay />
-					<ModalContent p='0'>
-						<ModalCloseButton color={'white'} />
-						<ModalBody p='0'>
-							<Box minW={'20rem'} onClick={onOpen}>
-								<Image src={selected} alt={`an image of a monster`} />
-							</Box>
-						</ModalBody>
-					</ModalContent>
-				</Modal>
-			</>
-
+		<FadeIn>
 			<VStack
-				display={{ base: 'flex', md: 'none' }}
-				alignItems='stretch'
-				flex='1'
-				spacing='8'
-				pb='8'
+				alignItems='center'
+				px={{ base: 4, md: 10 }}
+				pt={{ base: 4, md: 8 }}
+				spacing={4}
 			>
-				<Box paddingBottom={3} paddingTop={2} p={5}>
-					<Text>
-						Someday these critters will be playable and exist in their very own
-						video-game world. Until that day, enjoy my working progresses.
-						<br />
-						<br></br>
-						These characters exit in a world inhabited by insectoid creatures, who use
-						trash to rebuild an environment long since decimated by the great bug
-						wars...
-						<br />
-						<br></br>
-						Check back for more.
-					</Text>
-				</Box>
-				{monstUrls.map((url, idx) => (
-					<Box key={`monst-${idx}`}>
-						<Image src={url} alt={`monster image number ${idx}`} />
-					</Box>
-				))}
+				<Grid
+					gap={{ md: 5, base: '4' }}
+					maxW='6xl'
+					py={{ md: '6', base: '0' }}
+					templateColumns={{ md: 'repeat(3, 1fr)' }}
+					templateRows={{
+						md: `repeat(${Math.floor((monstCount * 2) / 3)}, 300px)`,
+					}}
+				>
+					{items.map((url, idx) => (
+						<GridItem key={url} {...getGridProps(idx)}>
+							<Image
+								borderRadius={'md'}
+								w='100%'
+								cursor={{ md: 'pointer' }}
+								boxShadow={'dark'}
+								h='100%'
+								flex='1'
+								alt={'3d character drawing'}
+								src={url}
+								fit='cover'
+								onClick={() => openImageNum(idx)}
+							/>
+						</GridItem>
+					))}
+				</Grid>
+
+				<ImageModal {...imageModalProps} />
 			</VStack>
-		</>
+		</FadeIn>
 	)
 }
-
-export default characters
