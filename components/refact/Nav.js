@@ -19,7 +19,7 @@ import { GiMonsterGrasp, GiPaintBrush, GiComputing, GiPlainCircle } from 'react-
 import { HiCode } from 'react-icons/hi'
 import MyLink from '../MyLink'
 
-import NavItem from '../refact/NavItem'
+import NavItem from './NavItem'
 
 const navLinks = [
 	{

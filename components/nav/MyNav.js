@@ -1,6 +1,6 @@
 import { HStack, Icon, Spacer, Text } from '@chakra-ui/react'
 import React from 'react'
-import { SiCircle } from 'react-icons/si'
+import { BsEmojiSmileUpsideDown } from 'react-icons/bs'
 import MyLink from '../MyLink'
 
 function MyNav() {
@@ -10,26 +10,47 @@ function MyNav() {
 		_dark: { color: 'gray.100' },
 	}
 	const hProps = {
-		px: '4',
+		px: { sm: 4, base: 2 },
 		py: '2',
-		w: '100%',
+		w: '100vw',
 		color: 'gray.400',
-		spacing: '8',
+		spacing: { sm: 8, base: 2 },
 		textTransform: 'uppercase',
-		fontSize: 'sm',
+		fontSize: { base: 'xs' },
 	}
+
+	const navLinks = [
+		{
+			title: 'About',
+
+			href: '/about',
+		},
+		{
+			title: 'Web Development',
+			href: '/web',
+		},
+		{
+			title: 'Painting',
+			href: '/painting',
+		},
+		{
+			title: 'Character Design',
+			href: '/characters',
+		},
+	]
+
 	return (
 		<HStack {...hProps}>
 			<MyLink href={'/'}>
-				<Icon as={SiCircle} {...iconProps} />
+				<Icon as={BsEmojiSmileUpsideDown} {...iconProps} />
 			</MyLink>
 			<Spacer />
-			<Text>about</Text>
-			<Text>dev stuff</Text>
-			<MyLink href={'/characters'}>
-				<Text>character design</Text>
-			</MyLink>
-			<Text>paintings</Text>
+
+			{navLinks.map(({ href, title }, idx) => (
+				<MyLink key={`navitem-${idx}`} href={href} display={{ base: 'none', sm: 'block' }}>
+					<Text fontFamily={'Gloria Hallelujah'}>{title}</Text>
+				</MyLink>
+			))}
 		</HStack>
 	)
 }
