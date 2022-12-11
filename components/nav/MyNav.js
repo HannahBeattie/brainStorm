@@ -6,7 +6,7 @@ import MyLink from '../MyLink'
 function MyNav() {
 	const iconProps = {
 		fontSize: '3xl',
-		color: 'gray.300',
+		color: 'gray.400',
 		_dark: { color: 'gray.100' },
 	}
 	const hProps = {
