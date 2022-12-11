@@ -1,8 +1,12 @@
 import { HamburgerIcon } from '@chakra-ui/icons'
 import {
 	Box,
+	Center,
+	Heading,
 	HStack,
+	Icon,
 	IconButton,
+	Image,
 	Menu,
 	MenuButton,
 	MenuItem,
@@ -11,10 +15,10 @@ import {
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import { AiOutlineQuestion } from 'react-icons/ai'
-import { GiMonsterGrasp, GiPaintBrush } from 'react-icons/gi'
+import { GiMonsterGrasp, GiPaintBrush, GiComputing, GiPlainCircle } from 'react-icons/gi'
 import { HiCode } from 'react-icons/hi'
 import MyLink from '../MyLink'
-import Logo from './Logo'
+
 import NavItem from './NavItem'
 
 const navLinks = [
@@ -43,66 +47,50 @@ const navLinks = [
 export default function Nav() {
 	return (
 		<>
-			<HStack>
-				<MyLink href={'/'}>
-					<Box
-						top={{ base: 2 }}
-						left={{ sm: 4 }}
-						right={{ base: 2, sm: 'auto' }}
-						position={'fixed'}
-					>
-						<Logo />
-					</Box>
-				</MyLink>
-				{/* phone */}
-				<HStack
-					p={4}
-					display={{ base: 'flex', sm: 'none' }}
-					flex={'1'}
-					justifyContent={'stretch'}
-				>
-					<Menu>
-						<MenuButton
-							as={IconButton}
-							aria-label='Options'
-							icon={<HamburgerIcon />}
-							color={'white'}
-							_dark={{ color: '#ff69b4', bg: '' }}
-							variant='outline'
-							borderRadius={'md'}
-							borderWidth={'1px'}
-							fontSize={'xl'}
-						/>
+			<HStack w={'100vw'} justify={'center'} py={{ base: 2 }} px={{ base: 4 }}>
+				<Menu>
+					<MenuButton
+						right={'2'}
+						position={'absolute'}
+						display={{ base: 'block', sm: 'none' }}
+						as={IconButton}
+						aria-label='Options'
+						icon={<HamburgerIcon />}
+						color={'white'}
+						_dark={{ color: '#ff69b4', bg: '' }}
+						variant='outline'
+						borderRadius={'md'}
+						borderWidth={'1px'}
+						fontSize={'xl'}
+					/>
 
-						<MenuList>
-							{navLinks.map(({ href, title }, idx) => (
-								<MenuItem key={`navitem-${idx}`}>
-									<MyLink href={href}>{title}</MyLink>
-								</MenuItem>
-							))}
-						</MenuList>
-					</Menu>
-				</HStack>
+					<MenuList>
+						{navLinks.map(({ href, title }, idx) => (
+							<MenuItem key={`navitem-${idx}`}>
+								<MyLink href={href}>{title}</MyLink>
+							</MenuItem>
+						))}
+					</MenuList>
+				</Menu>
+
 				{/* desktop */}
 				<Spacer />
-				<HStack
-					display={{ base: 'none', sm: 'flex' }}
-					py={4}
-					px={8}
-					spacing={10}
-					justifyContent='right'
-					fontFamily={'Roboto'}
-					fontWeight={500}
-					letterSpacing={'0.1em'}
-					fontSize={'sm'}
-					_dark={{ color: 'pink.500' }}
-				>
-					{navLinks.map(({ href, title, icon }, idx) => (
-						<HStack key={`navitem-${idx}`}>
-							<NavItem href={href} title={title} icon={icon} idx={idx} />
-						</HStack>
-					))}
-				</HStack>
+				{navLinks.map(({ href, title, icon }, idx) => (
+					<HStack
+						key={`navitem-${idx}`}
+						display={{ base: 'none', sm: 'flex' }}
+						px={4}
+						spacing={10}
+						fontFamily={'Poppins'}
+						fontWeight={500}
+						letterSpacing={'0.1em'}
+						fontSize={'sm'}
+						color={'gray.900'}
+						_dark={{ color: 'gray.500' }}
+					>
+						<NavItem href={href} title={title} icon={icon} idx={idx} />
+					</HStack>
+				))}
 			</HStack>
 		</>
 	)

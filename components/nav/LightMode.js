@@ -15,8 +15,8 @@ function LightMode() {
 				<Text
 					py={4}
 					onClick={toggleColorMode}
-					_light={{ color: 'gray.700', _hover: { color: 'pink.500' } }}
-					_dark={{ color: 'pink.500' }}
+					_light={{ color: 'gray.700', _hover: { color: 'gray.500' } }}
+					_dark={{ color: 'gray.100' }}
 				>
 					{mode}
 				</Text>

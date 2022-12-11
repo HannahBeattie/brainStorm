@@ -1,10 +1,10 @@
 import { ChakraProvider, VStack } from '@chakra-ui/react'
 import Head from 'next/head'
 import LightMode from '~/components/nav/LightMode'
+import MyNav from '~/components/nav/MyNav'
 import Nav from '~/components/nav/Nav'
 import { theme } from '~/styles/theme'
 import '../styles/globals.css'
-import '/styles/Home.module.css'
 
 function MyApp({ Component, pageProps }) {
 	return (
@@ -15,8 +15,8 @@ function MyApp({ Component, pageProps }) {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<VStack as='main' spacing='0' flex={'1'} justify={'stretch'}>
-				<Nav />
+			<VStack as='main' spacing='0' flex={'1'} justify={'stretch'} minH={'100vh'} w={'100vw'}>
+				<MyNav />
 				<LightMode />
 				<Component {...pageProps} />
 			</VStack>

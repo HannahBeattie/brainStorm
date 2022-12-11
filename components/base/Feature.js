@@ -4,6 +4,7 @@ import {
 	Center,
 	Heading,
 	Image,
+	Spacer,
 	Stack,
 	Text,
 	useColorModeValue,
@@ -13,7 +14,7 @@ import {
 import MyLink from '../MyLink'
 
 export default function Feature({ alt, heading, text, details, label, href, buttonText, src }) {
-	const bg = useColorModeValue('gray.900', 'white')
+	const bg = useColorModeValue('gray.400', 'white')
 	const textCol = useColorModeValue('white', 'black')
 	const buttonProps = {
 		bg: useColorModeValue('whiteAlpha.200', 'gray.900'),
@@ -25,19 +26,17 @@ export default function Feature({ alt, heading, text, details, label, href, butt
 
 	return (
 		<VStack
-			// maxW={{ md: '400px' }}
 			w='full'
 			h='full'
 			bg={bg}
 			boxShadow={'2xl'}
 			rounded={'md'}
-			p={6}
 			overflow={'hidden'}
+			p={'4'}
 		>
-			<Box mt={-6} mb={6} mx={-6} pos={'relative'}>
-				<Image src={src} alt={alt} layout={'fill'} />
-			</Box>
-			<Stack spacing={'4'} cursor={'pointer'} flex={'1'}>
+			<Image boxShadow={'sm'} src={src} alt={alt} layout={'fill'} />
+
+			<Stack spacing={'4'} cursor={'pointer'} flex={'1'} p={4}>
 				<Text
 					color={'grayAlpha.500'}
 					textTransform={'uppercase'}
@@ -47,16 +46,17 @@ export default function Feature({ alt, heading, text, details, label, href, butt
 				>
 					{label}
 				</Text>
-
+				<Spacer />
 				<Heading color={headingCol} fontSize={'2xl'} fontFamily={'body'}>
 					{heading}
 				</Heading>
 
-				<Box p={3} color={textCol} bg={'grayAlpha.100'} borderRadius={'lg'}>
+				<Box color={textCol} borderRadius={'lg'}>
 					{details}
 				</Box>
 
 				<Text color={'gray.500'}>{text}</Text>
+				<Spacer />
 				{buttonText && (
 					<MyLink href={href}>
 						<Button flex={'1'} layout={'flex'} {...buttonProps}>

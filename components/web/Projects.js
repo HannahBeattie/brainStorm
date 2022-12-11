@@ -118,7 +118,11 @@ export default function Projects() {
 				px={{ sm: 8 }}
 				columnGap={{ sm: '4' }}
 				rowGap={{ sm: '4' }}
-				templateColumns={{ sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' }}
+				templateColumns={{
+					sm: 'repeat(2, 1fr)',
+					md: 'repeat(2, 1fr)',
+					xl: 'repeat(3, 1fr)',
+				}}
 			>
 				{cards}
 			</Grid>

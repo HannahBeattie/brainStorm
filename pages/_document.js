@@ -13,7 +13,15 @@ export default function Document() {
 				<link rel='shortcut icon' href='/static/halo.png' />
 			</Head>
 
-			<VStack as='body' w='100vw' overflowX='hidden'>
+			<VStack
+				flex={'1'}
+				alignItems={'stretch'}
+				as='body'
+				w='100vw'
+				overflowX='hidden'
+				spacing='0'
+				p={'0'}
+			>
 				<ColorModeScript initialColorMode={theme.config.initialColorMode} />
 				<Main />
 				<NextScript />

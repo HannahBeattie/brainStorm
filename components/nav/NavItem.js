@@ -15,15 +15,16 @@ function NavItem({ title, href, icon }) {
 					onMouseEnter={() => setHovered(true)}
 					onMouseLeave={() => setHovered(false)}
 				>
-					<VStack px={2}>
+					<VStack px={2} spacing={0}>
 						<motion.div
 							whileHover={{ scale: 1.4, top: -9, rotate: 360 }}
 							transition={{ duration: 0.5, ease: 'easeInOut' }}
 						>
 							<Icon
-								_light={{ color: 'pink.500', _hover: { color: 'pink.500' } }}
+								_light={{ color: 'gray.700', _hover: { color: 'gray.700' } }}
 								as={icon}
 								boxSize='6'
+								borderRadius={'3xl'}
 							/>
 						</motion.div>
 						<motion.div
@@ -35,7 +36,7 @@ function NavItem({ title, href, icon }) {
 							}}
 							transition={{ duration: 0.3, ease: 'easeInOut' }}
 						>
-							<Text _light={{ color: 'pink.500' }}>{title}</Text>
+							<Text _light={{ color: 'gray.900' }}>{title}</Text>
 						</motion.div>
 					</VStack>
 				</MyLink>

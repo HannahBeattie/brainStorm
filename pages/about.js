@@ -22,6 +22,7 @@ import Appear from '~/components/animate/Appear'
 import Flicker from '~/components/animate/Flicker'
 import Intro from '~/components/Intro'
 import { FaPlug } from 'react-icons/fa'
+import { motion } from 'framer-motion'
 
 export function Blob() {
 	return (
@@ -45,32 +46,35 @@ function about() {
 	}
 
 	return (
-		<VStack alignItems={'stretch'} flex={'1'}>
-			<VStack minH={'90vh'} pt={{ sm: 32, base: 8 }} px={{ sm: 16 }}>
-				<Heading
-					fontWeight={'extrabold'}
-					textAlign={'center'}
-					fontSize={'8xl'}
-					letterSpacing={'0.5em'}
-				>
-					H___o World
-				</Heading>
-				<Heading cursor={'pointer'} letterSpacing={'0.5em'} className={'scatter'}>
-					|||||
-				</Heading>
-			</VStack>
-			<VStack bg={'gray.900'} boxShadow={'xl'} spacing={4}>
-				<Container py={{ md: 100, base: '8' }} px={{ md: 'unset', base: '10' }}>
-					<Text {...textProps}> I am Hannah,</Text>
-					<Text {...textProps}>
-						An artist & web developer from New Zealand, land of the hobits.
-					</Text>
-					<Text {...textProps}>
-						I am interested in creating interesting, playful and meaingful experiances
-						by combining digital tech, art, and story-telling.
-					</Text>
-				</Container>
-			</VStack>
+		<VStack py={{ sm: 16 }}>
+			<Heading
+				fontWeight={'extrabold'}
+				textAlign={'center'}
+				fontSize={'8xl'}
+				letterSpacing={'0.5em'}
+			>
+				H___O
+			</Heading>
+			<Heading
+				fontWeight={'extrabold'}
+				textAlign={'center'}
+				fontSize={'8xl'}
+				letterSpacing={'0.5em'}
+			>
+				WORLD
+			</Heading>
+			<Heading cursor={'pointer'} letterSpacing={'0.5em'} className={'scatter'}>
+				|||||
+			</Heading>
+
+			<Text> I am Hannah,</Text>
+			<Text>
+				An artist, octopus enthusiast & web developer from New Zealand, land of the hobits.
+			</Text>
+			<Text>
+				I am interested in creating interesting, playful and meaingful experiances by
+				combining digital tech, art, and story-telling.
+			</Text>
 
 			<Flicker>
 				<Center cursor={'pointer'}>
@@ -78,17 +82,45 @@ function about() {
 						||
 					</Heading>
 				</Center>
-				<Flex flex={1} justify={'center'} align={'center'} position={'relative'} w={'full'}>
-					<Image
-						alt={'Hero Image'}
-						fit={'cover'}
-						align={'center'}
-						w={'80%'}
-						h={'80%'}
-						src={'/brainStorm/ntv.png'}
-						p={'-1'}
-					/>
-				</Flex>
+
+				<Flicker>
+					<motion.div
+						initial={{ rotate: [0, 90, 0], opacity: [0, 0.3, 0.5, 0.9, 1] }}
+						animate={{ opacity: 1 }}
+						whileTap={{ scale: 1.05, rotate: [0, 5, -5, 5, 0] }}
+						whileHover={{ opacity: [0.9, 1] }}
+						transition={{ duration: 1 }}
+					>
+						<motion.div
+							whileInView={{
+								opacity: [1, 0.99, 1],
+								scale: [1, 1.05, 1],
+								left: [0, 0.1, 1, 0.2, 1, 0],
+								right: [0, 0.2, 1, 0.3, 1, 0],
+							}}
+							transition={{ ease: 'easeInOut', repeat: 'Infinity', duration: 10 }}
+						>
+							<Flex
+								flex={1}
+								justify={'center'}
+								align={'center'}
+								position={'relative'}
+								w={'full'}
+							>
+								<Image
+									alt={'Hero Image'}
+									fit={'cover'}
+									align={'center'}
+									w={'60%'}
+									h={'60%'}
+									src={'/brainStorm/ntv.png'}
+									p={'-1'}
+								/>
+							</Flex>
+						</motion.div>
+					</motion.div>
+				</Flicker>
+
 				<Center cursor={'pointer'}>
 					<Heading letterSpacing={'0.5em'} className={'scatter'}>
 						||
@@ -131,12 +163,11 @@ function about() {
 					advertising one product at a time.
 				</Text>{' '}
 			</Intro>
-			<VStack pb={{ base: 10, sm: 8 }}>
-				<Heading cursor={'pointer'} letterSpacing={'0.5em'} className={'scatter'}>
-					|||||
-				</Heading>
-				<FaPlug className={'rotate'} />
-			</VStack>
+
+			<Heading cursor={'pointer'} letterSpacing={'0.5em'} className={'scatter'}>
+				|||||
+			</Heading>
+			<FaPlug className={'rotate'} />
 		</VStack>
 	)
 }

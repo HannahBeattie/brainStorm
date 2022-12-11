@@ -3,7 +3,7 @@ import { extendTheme } from '@chakra-ui/react'
 export const theme = extendTheme({
 	fonts: {
 		body: 'Roboto, sans-serif',
-		heading: 'Roboto, sans-serif',
+		heading: 'Poppins',
 	},
 	colors: {
 		grayAlpha: {
@@ -27,6 +27,7 @@ export const theme = extendTheme({
 			variants: {
 				invert: {
 					color: 'gray.300',
+
 					_dark: {
 						color: 'black',
 					},
@@ -38,7 +39,7 @@ export const theme = extendTheme({
 	styles: {
 		global: {
 			body: {
-				bg: 'white',
+				bg: 'gray.100',
 				_dark: {
 					bg: 'gray.800',
 				},
