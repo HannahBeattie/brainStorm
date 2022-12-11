@@ -9,8 +9,11 @@ export default function Web() {
 			<Grid
 				pt={{ sm: 16 }}
 				px={{ sm: 8 }}
-				rowGap={{ sm: '8' }}
-				templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
+				rowGap={{ md: '8' }}
+				templateColumns={{
+					base: 'repeat(1, 1fr)',
+					md: 'repeat(3, 1fr)',
+				}}
 				templateRows={{
 					base: `repeat 200px 300px)`,
 					md: `repeat 280px)`,
@@ -18,13 +21,15 @@ export default function Web() {
 			>
 				<SlideX
 					idx={10}
-					buttonText={'trap'}
-					title={'todo! fill'}
+					buttonText={'Demo'}
+					title={'Headless CMI Demo'}
 					sub={'2022'}
-					src={'/replace.png'}
+					src={'/portfolio/mrGood.jpeg'}
 					alt={'todo'}
 					href={'/'}
-					text={'this is filler text!'}
+					text={'An example website using Contentful'}
+					link2={'/'}
+					linkTitle={'Link to Github Repo'}
 				/>
 			</Grid>
 			<Projects />

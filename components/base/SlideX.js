@@ -11,7 +11,18 @@ import {
 import { useState } from 'react'
 import MyLink from '../MyLink'
 
-export default function SlideX({ idx, title, sub, src, alt, href, buttonText, text }) {
+export default function SlideX({
+	linkTitle,
+	link2,
+	idx,
+	title,
+	sub,
+	src,
+	alt,
+	href,
+	buttonText,
+	text,
+}) {
 	const isOdd = idx % 2
 	const order = idx * 2
 
@@ -26,7 +37,7 @@ export default function SlideX({ idx, title, sub, src, alt, href, buttonText, te
 		_hover: { bg: 'gray.700', color: 'teal.500', curser: 'pointer' },
 		py: { sm: '4' },
 		curser: 'pointer',
-		minWidth: '180',
+		minWidth: '300',
 	}
 	const textCol = useColorModeValue('white', 'white')
 
@@ -73,22 +84,33 @@ export default function SlideX({ idx, title, sub, src, alt, href, buttonText, te
 				borderRightRadius={{ md: isOdd ? '8' : '0' }}
 				borderLeftRadius={{ md: !isOdd ? '8' : '0' }}
 				px={8}
+				py={{ sm: 4 }}
 			>
-				<MyLink href={href}>
-					<VStack {...textInCard}>
-						<Heading
-							fontSize={'3xl'}
-							fontFamily={'body'}
-							variant='invert'
-							textAlign='center'
-						>
-							{title}
-						</Heading>
-						<Text color={textCol}>{text}</Text>
-						<Text color={'gray.500'}>{sub}</Text>
+				<VStack {...textInCard}>
+					<Heading
+						fontSize={'3xl'}
+						fontFamily={'body'}
+						variant='invert'
+						textAlign='center'
+					>
+						{title}
+					</Heading>
+					<Text color={textCol} textAlign={'center'}>
+						{text}
+					</Text>
+					<Text color={'gray.500'}>{sub}</Text>
+
+					{link2 && (
+						<MyLink href={'link2'}>
+							<Text as={'span'} color='teal'>
+								{linkTitle}
+							</Text>{' '}
+						</MyLink>
+					)}
+					<MyLink href={href}>
 						<Button {...buttonProps}>{buttonText}</Button>
-					</VStack>
-				</MyLink>
+					</MyLink>
+				</VStack>
 			</GridItem>
 		</>
 	)

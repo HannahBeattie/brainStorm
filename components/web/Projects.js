@@ -119,7 +119,7 @@ export default function Projects() {
 				columnGap={{ sm: '4' }}
 				rowGap={{ sm: '4' }}
 				templateColumns={{
-					sm: 'repeat(2, 1fr)',
+					base: 'repeat(1, 1fr)',
 					md: 'repeat(2, 1fr)',
 					xl: 'repeat(3, 1fr)',
 				}}
