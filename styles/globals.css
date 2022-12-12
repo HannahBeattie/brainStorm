@@ -18,3 +18,13 @@
 	-ms-transform: scale(-1, -1);
 	transform: scale(-1, -1);
 }
+
+.active-class-name {
+	font-weight: '900';
+	background-color: 'blue';
+}
+
+.non-active-class-name {
+	font-weight: '100';
+	background-color: 'red';
+}

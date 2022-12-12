@@ -2,8 +2,11 @@ import { HStack, Icon, Spacer, Text } from '@chakra-ui/react'
 import React from 'react'
 import { BsEmojiSmileUpsideDown } from 'react-icons/bs'
 import MyLink from '../MyLink'
+import { useRouter } from 'next/router'
 
 function MyNav() {
+	const router = useRouter()
+	const currentRoute = router.pathname
 	const iconProps = {
 		fontSize: '3xl',
 		color: 'gray.400',
@@ -19,7 +22,7 @@ function MyNav() {
 		fontSize: { base: 'xs' },
 	}
 
-	const navLinks = [
+	const pages = [
 		{
 			title: 'About',
 
@@ -46,11 +49,22 @@ function MyNav() {
 			</MyLink>
 			<Spacer />
 
-			{navLinks.map(({ href, title }, idx) => (
-				<MyLink key={`navitem-${idx}`} href={href} display={{ base: 'none', sm: 'block' }}>
-					<Text fontFamily={'Gloria Hallelujah'}>{title}</Text>
-				</MyLink>
-			))}
+			{pages.map(({ href, title }, idx) => {
+				console.log('<MyNav>', currentRoute, title, href, href === currentRoute)
+				return (
+					<MyLink
+						key={`navitem-${idx}`}
+						href={href}
+						// className={
+						// 	currentRoute === href ? 'active-class-name' : 'non-active-class-name'
+						// }
+						color={href === currentRoute ? 'purple' : 'gray'}
+						isactive={href === currentRoute}
+					>
+						<Text fontFamily={'Gloria Hallelujah'}>{title}</Text>
+					</MyLink>
+				)
+			})}
 		</HStack>
 	)
 }

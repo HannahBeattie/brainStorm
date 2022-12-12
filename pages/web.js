@@ -22,7 +22,7 @@ export default function Web() {
 				<SlideX
 					idx={10}
 					buttonText={'Demo'}
-					title={'Headless CMI Demo'}
+					title={'Headless CMS Demo'}
 					sub={'2022'}
 					src={'/portfolio/mrGood.jpeg'}
 					alt={'todo'}
