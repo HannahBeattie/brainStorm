@@ -9,8 +9,6 @@ function MyNav() {
 	const currentRoute = router.pathname
 	const iconProps = {
 		fontSize: '3xl',
-		color: 'gray.400',
-		_dark: { color: 'gray.100' },
 	}
 	const hProps = {
 		px: { sm: 4, base: 2 },
@@ -33,7 +31,7 @@ function MyNav() {
 			href: '/web',
 		},
 		{
-			title: 'Painting',
+			title: 'art',
 			href: '/painting',
 		},
 		{
@@ -58,7 +56,8 @@ function MyNav() {
 						// className={
 						// 	currentRoute === href ? 'active-class-name' : 'non-active-class-name'
 						// }
-						color={href === currentRoute ? 'purple' : 'gray'}
+						fontWeight={href === currentRoute ? '900' : '300'}
+						color={href === currentRoute ? 'gray.900' : 'gray.400'}
 						isactive={href === currentRoute}
 					>
 						<Text fontFamily={'Gloria Hallelujah'}>{title}</Text>

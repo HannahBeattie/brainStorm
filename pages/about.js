@@ -24,19 +24,7 @@ import Intro from '~/components/Intro'
 import { FaPlug } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
-export function Blob() {
-	return (
-		<Icon width={'100%'} viewBox='0 0 578 440' fill='none' xmlns='http://www.w3.org/2000/svg'>
-			<path
-				fillRule='evenodd'
-				clipRule='evenodd'
-				d='M239.184 439.443c-55.13-5.419-110.241-21.365-151.074-58.767C42.307 338.722-7.478 282.729.938 221.217c8.433-61.644 78.896-91.048 126.871-130.712 34.337-28.388 70.198-51.348 112.004-66.78C282.34 8.024 325.382-3.369 370.518.904c54.019 5.115 112.774 10.886 150.881 49.482 39.916 40.427 49.421 100.753 53.385 157.402 4.13 59.015 11.255 128.44-30.444 170.44-41.383 41.683-111.6 19.106-169.213 30.663-46.68 9.364-88.56 35.21-135.943 30.551z'
-				fill='currentColor'
-			/>
-		</Icon>
-	)
-}
-function about() {
+export default function About() {
 	const textProps = {
 		fontFamily: 'Roboto',
 		fontSize: { base: 'lg', md: '3xl' },
@@ -46,89 +34,13 @@ function about() {
 	}
 
 	return (
-		<VStack py={{ sm: 16 }}>
-			<Heading
-				fontWeight={'extrabold'}
-				textAlign={'center'}
-				fontSize={'8xl'}
-				letterSpacing={'0.5em'}
-			>
-				H___O
-			</Heading>
-			<Heading
-				fontWeight={'extrabold'}
-				textAlign={'center'}
-				fontSize={'8xl'}
-				letterSpacing={'0.5em'}
-			>
-				WORLD
-			</Heading>
-			<Heading cursor={'pointer'} letterSpacing={'0.5em'} className={'scatter'}>
-				|||||
-			</Heading>
-
-			<Text> I am Hannah,</Text>
-			<Text>
-				An artist, octopus enthusiast & web developer from New Zealand, land of the hobits.
-			</Text>
-			<Text>
-				I am interested in creating interesting, playful and meaingful experiances by
-				combining digital tech, art, and story-telling.
-			</Text>
-
-			<Flicker>
-				<Center cursor={'pointer'}>
-					<Heading letterSpacing={'0.5em'} className={'scatter'}>
-						||
-					</Heading>
-				</Center>
-
-				<Flicker>
-					<motion.div
-						initial={{ rotate: [0, 90, 0], opacity: [0, 0.3, 0.5, 0.9, 1] }}
-						animate={{ opacity: 1 }}
-						whileTap={{ scale: 1.05, rotate: [0, 5, -5, 5, 0] }}
-						whileHover={{ opacity: [0.9, 1] }}
-						transition={{ duration: 1 }}
-					>
-						<motion.div
-							whileInView={{
-								opacity: [1, 0.99, 1],
-								scale: [1, 1.05, 1],
-								left: [0, 0.1, 1, 0.2, 1, 0],
-								right: [0, 0.2, 1, 0.3, 1, 0],
-							}}
-							transition={{ ease: 'easeInOut', repeat: 'Infinity', duration: 10 }}
-						>
-							<Flex
-								flex={1}
-								justify={'center'}
-								align={'center'}
-								position={'relative'}
-								w={'full'}
-							>
-								<Image
-									alt={'Hero Image'}
-									fit={'cover'}
-									align={'center'}
-									w={'60%'}
-									h={'60%'}
-									src={'/brainStorm/ntv.png'}
-									p={'-1'}
-								/>
-							</Flex>
-						</motion.div>
-					</motion.div>
-				</Flicker>
-
-				<Center cursor={'pointer'}>
-					<Heading letterSpacing={'0.5em'} className={'scatter'}>
-						||
-					</Heading>
-				</Center>
-			</Flicker>
-
-			<Intro title='me me me'>
+		<VStack>
+			<Intro title='About'>
+				<Text>Hello, I am Hannah. I am an artist & web developer from New Zealand.</Text>
+				<Text>
+					I am interested in creating interesting, playful and meaingful experiances that
+					combine digital tech, art, and story-telling.
+				</Text>
 				<Text>My background is in painting, writing and gig photography.</Text>
 				<Text>
 					I am interested in story telling and disrupting repetitive patterns to engage in
@@ -152,7 +64,6 @@ function about() {
 					Accessable tech allows us to shape the virtual landscape; We can make the types
 					of things we want to see.
 				</Text>
-				<Divider />
 				<Text>
 					I graduated from Dev Academy wellington in April 2022 and since then have been
 					chasing my interests and exploring the interpolation between clean, minimal
@@ -163,13 +74,6 @@ function about() {
 					advertising one product at a time.
 				</Text>{' '}
 			</Intro>
-
-			<Heading cursor={'pointer'} letterSpacing={'0.5em'} className={'scatter'}>
-				|||||
-			</Heading>
-			<FaPlug className={'rotate'} />
 		</VStack>
 	)
 }
-
-export default about
