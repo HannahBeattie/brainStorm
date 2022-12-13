@@ -48,7 +48,7 @@ export default function Nav() {
 	return (
 		<>
 			<HStack w={'100vw'} justify={'center'} py={{ base: 2 }} px={{ base: 4 }}>
-				<Menu>
+				{/* <Menu>
 					<MenuButton
 						right={'2'}
 						position={'absolute'}
@@ -56,29 +56,31 @@ export default function Nav() {
 						as={IconButton}
 						aria-label='Options'
 						icon={<HamburgerIcon />}
-						color={'white'}
-						_dark={{ color: '#ff69b4', bg: '' }}
+						color={'gray.900'}
+						_dark={{ color: 'white', bg: '' }}
 						variant='outline'
 						borderRadius={'md'}
 						borderWidth={'1px'}
-						fontSize={'xl'}
 					/>
 
 					<MenuList>
 						{navLinks.map(({ href, title }, idx) => (
 							<MenuItem key={`navitem-${idx}`}>
-								<MyLink href={href}>{title}</MyLink>
+								<MyLink href={href}>
+									<Text fontSize={'3xl'} as={'div'}>
+										Hello {title}
+									</Text>
+								</MyLink>
 							</MenuItem>
 						))}
 					</MenuList>
-				</Menu>
+				</Menu> */}
 
 				{/* desktop */}
 				<Spacer />
 				{navLinks.map(({ href, title, icon }, idx) => (
 					<HStack
 						key={`navitem-${idx}`}
-						display={{ base: 'none', sm: 'flex' }}
 						px={4}
 						spacing={10}
 						fontFamily={'Poppins'}

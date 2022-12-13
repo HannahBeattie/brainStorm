@@ -1,4 +1,4 @@
-import { Link } from '@chakra-ui/react'
+import { Link, useColorModeValue } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -14,7 +14,11 @@ export default function MyLink({ href, children, ...props }) {
 					textDecoration: 'none',
 				}}
 				fontWeight={isCurrent ? '900' : '300'}
-				color={isCurrent ? 'gray.900' : 'gray.400'}
+				color={
+					isCurrent
+						? useColorModeValue('gray.900', 'white')
+						: useColorModeValue('gray.900', 'gray.100')
+				}
 				{...props}
 			>
 				{children}
