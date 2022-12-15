@@ -23,7 +23,8 @@ export default function Intro({ title, children }) {
 							spacing={4}
 							alignItems='flex-start'
 							fontSize={{ md: 'lg' }}
-							bg={'gray.300'}
+							bg={'white'}
+							_dark={{ bg: 'gray.200' }}
 							color='gray.900'
 							p={'10'}
 							borderRadius={'2xl'}
@@ -31,7 +32,7 @@ export default function Intro({ title, children }) {
 						>
 							<Heading
 								fontSize={{ md: '7xl', base: '5xl' }}
-								fontFamily={'Rubik Glitch'}
+								fontFamily={'Reenie Beanie'}
 								color={'gray.900'}
 							>
 								{title}

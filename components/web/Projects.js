@@ -42,12 +42,17 @@ export default function Projects() {
 					<Text>
 						This project (and accompanying website) constituted my final (solo)
 						submission for
-						<MyLink href='https://devacademy.co.nz/'> Dev Academy Aotearoa.</MyLink>
+						<MyLink color={'white'} href='https://devacademy.co.nz/' fontWeight={'900'}>
+							{' '}
+							Dev Academy Aotearoa.
+						</MyLink>
 					</Text>
 					<br />
 					<Text>
 						X-it will continue to evolve, with the collaborative effort of{' '}
-						<MyLink href='https://mikeylemmon.com/'>Mikey Lemmon.</MyLink>
+						<MyLink color={'white'} href='https://mikeylemmon.com/' fontWeight={'900'}>
+							Mikey Lemmon.
+						</MyLink>
 					</Text>
 				</>
 			),

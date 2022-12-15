@@ -14,15 +14,20 @@ import {
 import MyLink from '../MyLink'
 
 export default function Feature({ alt, heading, text, details, label, href, buttonText, src }) {
-	const bg = useColorModeValue('gray.400', 'white')
-	const textCol = useColorModeValue('white', 'black')
+	const bg = useColorModeValue('gray.600', 'gray.700')
+	const textCol = useColorModeValue('white', 'white')
 	const buttonProps = {
-		bg: useColorModeValue('whiteAlpha.200', 'gray.900'),
-		color: 'gray.200',
-		_hover: { bg: 'pink.00' },
+		_dark: {
+			bg: 'gray.900',
+			color: 'gray.200',
+			_hover: { bg: 'gray.800', color: 'teal.200', curser: 'pointer' },
+		},
+		bg: 'teal.500',
+		color: 'white',
+		_hover: { bg: 'gray.700', color: 'teal.500', curser: 'pointer' },
 		py: '4',
 	}
-	const headingCol = useColorModeValue('pink.500', 'white')
+	const headingCol = useColorModeValue('white', 'white')
 
 	return (
 		<VStack
@@ -38,7 +43,6 @@ export default function Feature({ alt, heading, text, details, label, href, butt
 
 			<Stack spacing={'4'} cursor={'pointer'} flex={'1'} p={4}>
 				<Text
-					color={'grayAlpha.500'}
 					textTransform={'uppercase'}
 					fontWeight={800}
 					fontSize={'sm'}
@@ -55,7 +59,7 @@ export default function Feature({ alt, heading, text, details, label, href, butt
 					{details}
 				</Box>
 
-				<Text color={'gray.500'}>{text}</Text>
+				<Text>{text}</Text>
 				<Spacer />
 				{buttonText && (
 					<MyLink href={href}>

@@ -28,7 +28,7 @@ function MyNav() {
 		w: '100vw',
 		color: 'gray.400',
 		_dark: { color: 'white' },
-		spacing: { sm: 8, base: 2 },
+		spacing: { sm: 4, md: 8, base: 2 },
 		textTransform: 'uppercase',
 		fontSize: { base: 'xs' },
 	}
@@ -102,7 +102,7 @@ function MyNav() {
 						display={{ base: 'none', sm: 'flex' }}
 						key={`navitem-${idx}`}
 						href={href}
-						fontSize={'lg'}
+						fontSize={{ md: 'lg' }}
 						fontWeight={href === currentRoute ? '900' : '500'}
 						color={
 							href === currentRoute

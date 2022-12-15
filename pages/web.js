@@ -7,7 +7,7 @@ export default function Web() {
 	return (
 		<VStack alignItems={'stretch'} spacing={'8'} justify={'center'}>
 			<Heading
-				fontFamily={'Merriweather'}
+				fontFamily={'Reenie Beanie'}
 				textAlign={'center'}
 				pt={{ sm: '16' }}
 				fontSize={{ sm: '6xl' }}
@@ -42,7 +42,7 @@ export default function Web() {
 						The tech landscape provides us with so many exciting tools of connection.
 					</Text>
 					<Text align={'start'} fontFamily={'Poppins'}>
-						I am excited about creating things that feel meaningful, exciting and human.
+						I am excited about creating things that feel meaningful, exciting and
 					</Text>
 				</VStack>
 			</Container>

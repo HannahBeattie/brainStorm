@@ -28,20 +28,19 @@ export default function SlideX({
 
 	const buttonProps = {
 		_dark: {
-			bg: 'pink.500',
+			bg: 'gray.900',
 			color: 'gray.200',
-			_hover: { bg: 'gray.800', color: 'red.500', curser: 'pointer' },
+			_hover: { bg: 'gray.800', color: 'teal.200', curser: 'pointer' },
 		},
-		bg: 'gray.200',
-		color: 'gray.800',
-		_hover: { bg: 'gray.700', color: 'teal.500', curser: 'pointer' },
+		bg: 'teal.500',
+		color: 'white',
+		_hover: { bg: 'gray.800', color: 'teal.500', curser: 'pointer' },
 		py: { sm: '4' },
 		curser: 'pointer',
 		minWidth: '300',
 	}
-	const textCol = useColorModeValue('white', 'white')
-
-	const bg = useColorModeValue('gray.900', 'gray.100')
+	const textCol = useColorModeValue('white', 'gray.200')
+	const bg = useColorModeValue('gray.700', 'gray.700')
 
 	const textInCard = {
 		justifyContent: 'center',
@@ -52,6 +51,8 @@ export default function SlideX({
 		spacing: '8',
 		boxShadow: '2xl',
 		boxShadow: 'dark',
+		color: 'white',
+		_dark: { color: 'white' },
 	}
 	const imProps = {
 		w: '100%',
@@ -92,17 +93,21 @@ export default function SlideX({
 						fontFamily={'body'}
 						variant='invert'
 						textAlign='center'
+						color={'white'}
+						_dark={{ color: 'white' }}
 					>
 						{title}
 					</Heading>
 					<Text color={textCol} textAlign={'center'}>
 						{text}
 					</Text>
-					<Text color={'gray.500'}>{sub}</Text>
+					<Text color={'gray.100'} _dark={{ color: 'gray.200' }}>
+						{sub}
+					</Text>
 
 					{link2 && (
 						<MyLink href={'link2'}>
-							<Text as={'span'} color='teal'>
+							<Text as={'span'} color='teal' fontWeight={'500'}>
 								{linkTitle}
 							</Text>{' '}
 						</MyLink>
