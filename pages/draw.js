@@ -64,10 +64,34 @@ function doodle(p5) {
 	p5.setup = () => {
 		p5.createCanvas(800, 400)
 	}
+
+	//listen when we click the mouse
+	p5.mouseClicked = () => {
+		//weights 0 to 1
+		p5.stroke(p5.random(0.4), p5.random(100), p5.random(80, 100))
+		p5.strokeWeight(p5.random())
+
+		//what if want weights 0 to .4?
+		//strokeWeight( random(.4) );
+	}
+	//listen when we release *any* key
+	p5.keyReleased = () => {
+		//color hue values between 20 and 145
+		//saturation 0 to 100
+		//brightness 80 to 100
+		p5.stroke(p5.random(10, 20), p5.random(100), p5.random(80, 100))
+	}
+
+	//listen for only character keys
+	p5.keyType = () => {
+		//weights 0 to 5
+		p5.stroke(p5.random(0, 100), p5.random(10), p5.random(90, 100))
+		p5.strokeWeight(p5.random(5))
+	}
+
 	p5.draw = () => {
 		p5.line(p5.mouseX, p5.mouseY, p5.pmouseX, p5.pmouseY)
-		p5.stroke('black')
-		p5.strokeWeight('2')
+		p5.stroke(p5.random(0, 100), p5.random(10), p5.random(90, 100))
 	}
 }
 
@@ -81,10 +105,11 @@ export default function Draw() {
 					as={'div'}
 					textAlign={'center'}
 					minH={'55'}
-					pt={{ base: '2' }}
-					fontSize={{ base: 'lg', sm: '3xl' }}
+					pt={{ base: '2', md: '8' }}
+					fontSize={{ base: 'lg', sm: 'xl' }}
 					maxW={{ base: '17em', sm: '30em' }}
 					fontFamily={'Merriweather'}
+					color={'gray.400'}
 				>
 					<TypeAnimation
 						// Same String at the start will only be typed once, initially
