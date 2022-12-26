@@ -1,6 +1,7 @@
-import { background, Center, Heading, HStack, Text, VStack } from '@chakra-ui/react'
+import { background, Center, Heading, HStack, Spacer, Text, VStack } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
+import { GiEclipse } from 'react-icons/gi'
 import { TypeAnimation } from 'react-type-animation'
 
 // don't load p5 on server
@@ -29,7 +30,7 @@ function sketch(p5) {
 
 function circle(p5) {
 	p5.setup = () => {
-		p5.createCanvas(600, 400), p5.background('black')
+		p5.createCanvas(600, 400, p5.WEBGL), p5.background('black')
 	}
 
 	p5.draw = () => {
@@ -67,19 +68,16 @@ function doodle(p5) {
 
 	//listen when we click the mouse
 	p5.mouseClicked = () => {
-		//weights 0 to 1
-		p5.stroke(p5.random(0.4), p5.random(100), p5.random(80, 100))
-		p5.strokeWeight(p5.random())
-
-		//what if want weights 0 to .4?
-		//strokeWeight( random(.4) );
+		// p5.stroke(p5.random(0.4), p5.random(100), p5.random(80, 100))
+		// p5.strokeWeight(p5.random())
+		p5.stroke(p5.random(20, 145), p5.random(10), p5.random(80, 100))
 	}
 	//listen when we release *any* key
 	p5.keyReleased = () => {
 		//color hue values between 20 and 145
 		//saturation 0 to 100
 		//brightness 80 to 100
-		p5.stroke(p5.random(10, 20), p5.random(100), p5.random(80, 100))
+		p5.stroke(p5.random(10, 145), p5.random(100), p5.random(80, 100))
 	}
 
 	//listen for only character keys
@@ -91,7 +89,57 @@ function doodle(p5) {
 
 	p5.draw = () => {
 		p5.line(p5.mouseX, p5.mouseY, p5.pmouseX, p5.pmouseY)
-		p5.stroke(p5.random(0, 100), p5.random(10), p5.random(90, 100))
+	}
+}
+
+let points = []
+
+function mould(p5) {
+	p5.setup = () => {
+		p5.createCanvas(800, 500)
+
+		let density = 50
+		let space = p5.width / density
+
+		for (let x = 0; x < p5.width; x += space) {
+			for (let y = 0; y < p5.height; y += space) {
+				let p = p5.createVector(x, y)
+				points.push(p)
+			}
+		}
+	}
+	p5.draw = () => {
+		p5.noStroke()
+		p5.fill(255)
+		for (var i = 0; i < points.length; i++) {
+			let angle = p5.map(p5.noise(points[i].x, points[i].y), 0, 1, 0, 720)
+			points[i].add(p5.createVector(p5.cos(angle), p5.sin(angle)))
+			p5.ellipse(points[i].x, points[i].y, 1)
+		}
+	}
+}
+function flow(p5) {
+	p5.setup = () => {
+		p5.createCanvas(800, 500)
+
+		let density = 50
+		let space = p5.width / density
+
+		for (let x = 0; x < p5.width; x += space) {
+			for (let y = 0; y < p5.height; y += space) {
+				let p = p5.createVector(x, y)
+				points.push(p)
+			}
+		}
+	}
+	p5.draw = () => {
+		p5.noStroke()
+		p5.fill(255)
+		for (var i = 0; i < points.length; i++) {
+			let angle = p5.map(p5.noise(points[i].x, points[i].y), 0, 1, 0, 720)
+			points[i].add(p5.createVector(p5.cos(angle), p5.sin(angle)))
+			p5.ellipse(points[i].x, points[i].y, 1)
+		}
 	}
 }
 
@@ -99,9 +147,9 @@ export default function Draw() {
 	return (
 		<>
 			<VStack py={'16'} spacing={'0'} overflow={'hidden'}>
-				<ReactP5Wrapper sketch={doodle} />
+				<ReactP5Wrapper sketch={flow} />
 
-				<Text
+				{/* <Text
 					as={'div'}
 					textAlign={'center'}
 					minH={'55'}
@@ -150,7 +198,7 @@ export default function Draw() {
 						repeat={'none'} // Repeat this Animation Sequence infinitely
 						cursor={false}
 					/>
-				</Text>
+				</Text> */}
 			</VStack>
 		</>
 	)
