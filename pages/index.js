@@ -114,7 +114,7 @@ export default function Home() {
 					cursor={false}
 				/>
 			</Text>
-			<motion.div
+			{/* <motion.div
 				initial={{ opacity: '0' }}
 				animate={{ opacity: [0, 0.5, 1] }}
 				transition={{ delay: 43, duration: 3, ease: 'easeInOut' }}
@@ -141,7 +141,7 @@ export default function Home() {
 
 					<Icon as={useColorModeValue(RiEyeCloseLine, GiBleedingEye)} fontSize={'5xl'} />
 				</VStack>
-			</motion.div>
+			</motion.div> */}
 		</VStack>
 	)
 }

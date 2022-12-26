@@ -23,7 +23,7 @@ function flow(p5) {
 	p5.setup = () => {
 		p5.createCanvas(800, 500)
 		p5.angleMode(p5.DEGREES)
-		p5.noiseDetail(p5.random(1, 50))
+		p5.noiseDetail(4)
 		let density = 90
 		let space = p5.width / density
 
@@ -45,6 +45,7 @@ function flow(p5) {
 
 	p5.draw = () => {
 		p5.noStroke()
+
 		for (var i = 0; i < points.length; i++) {
 			let r = p5.map(points[i].x, 0, p5.width, r1, r2)
 			let g = p5.map(points[i].y, 0, p5.width, g1, g2)
