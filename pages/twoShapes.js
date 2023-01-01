@@ -41,6 +41,8 @@ class Shape {
 		p5.beginShape()
 		for (let ii = 0; ii < this.pts.length - 1; ii++) {
 			const ptA = this.pts[ii]
+			// const ptB = this.pts[ii + 1]
+			// p5.line(ptA.x * ss + cx, ptA.y * ss + cy, ptB.x * ss + cx, ptB.y * ss + cy)
 			p5.vertex(ptA.x * ss + cx, ptA.y * ss + cy)
 		}
 		p5.endShape(p5.CLOSE)
@@ -63,11 +65,11 @@ function wiggleRock({ p5, wiggleStrength, t }) {
 
 class Rock {
 	constructor({ p5 }) {
-		this.wiggleStrength = 0.1
+		this.wiggleStrength = 0.3
 		this.p5 = p5
 
-		const edges = 100 // distance from canvas edge
-		const npts = 100
+		const edges = 100
+		const npts = 30
 		this.shape = new Shape({
 			p5,
 			npts,
@@ -75,9 +77,8 @@ class Rock {
 				x: p5.random(edges, p5.width - edges),
 				y: p5.random(edges, p5.height - edges),
 			},
-			scale: p5.random(20, 50),
+			scale: p5.random(20, 100),
 			fn: this.shapeFn,
-			jiggle: true,
 		})
 	}
 
@@ -95,11 +96,9 @@ class SmallRock {
 	constructor({ p5 }) {
 		this.wiggleStrength = 0.6
 		this.p5 = p5
-		// this.fill = p5.random(100, 100)
-		const edges = 100
-		const npts = p5.random(10, 20)
-		this.stroke = p5.random(0.1, 2)
 
+		const edges = 100
+		const npts = 20
 		this.shape = new Shape({
 			p5,
 			npts,
@@ -117,10 +116,8 @@ class SmallRock {
 
 	draw = () => {
 		const p5 = this.p5
-		// p5.fill(this.fill)
-		p5.fill('blue')
-		p5.stroke('green')
-		p5.strokeWeight(this.stroke)
+		p5.fill(150)
+		p5.stroke('#444')
 		this.shape.draw()
 	}
 }
@@ -131,11 +128,25 @@ function sketch(p5) {
 	let stopMe
 	let shapes = []
 
+	function createFibers() {
+		let numFibers = 10000
+		for (let i = 0; i < numFibers; i++) {
+			let x1 = p5.random() * p5.width
+			let y1 = p5.random() * p5.height
+			let theta = p5.random() * 2 * Math.PI
+			let segmentLength = p5.random() * 5 + 2
+			let x2 = p5.cos(theta) * segmentLength + x1
+			let y2 = p5.sin(theta) * segmentLength + y1
+			p5.stroke(90, 100 - p5.random() * 900, 100 - p5.random() * 8, p5.random() * 10 + 20)
+			p5.line(x1, y1, x2, y2)
+		}
+	}
+
 	function background() {
 		p5.background(255, 253, 208, 90)
 		p5.noFill()
-		// createFibers()
-		p5.frameRate(5)
+		createFibers()
+		p5.frameRate(10)
 	}
 
 	function buttons() {
@@ -165,7 +176,7 @@ function sketch(p5) {
 
 	function reset() {
 		p5.clear()
-
+		p5.strokeWeight(0.8)
 		p5.rectMode(p5.CENTER)
 		p5.noFill()
 		p5.rect(400, 250, 700, 400)
@@ -187,6 +198,24 @@ function sketch(p5) {
 		for (let ii = 0; ii < numSmallRocks; ii++) {
 			shapes.push(new SmallRock({ p5 }))
 		}
+
+		// shapes = [
+		// 	new Shape({
+		// 		p5,
+		// 		npts: 64,
+		// 		center: { x: p5.width / 2, y: p5.height / 2 },
+		// 		scale: 20,
+		// 		fn: (t) => ({
+		// 			// circle
+		// 			x: p5.cos(2 * p5.PI * t),
+		// 			y: p5.sin(2 * p5.PI * t),
+		// 		}),
+		// 		// fn: (t) => ({
+		// 		// 	x: 16 * p5.pow(p5.sin(t), 3),
+		// 		// 	y: 13 * p5.cos(t) - 5 * p5.cos(2 * t) - 2 * p5.cos(3 * t) - p5.cos(4 * t),
+		// 		// }),
+		// 	}),
+		// ]
 	}
 
 	p5.draw = () => {
