@@ -19,22 +19,20 @@ function buildCurve(fn, npts) {
 }
 
 class Shape {
-	constructor({ p5, npts, fn, scale, center }) {
+	constructor({ p5, npts, fn, scale, center, jiggle }) {
 		this.p5 = p5
 		this.pts = buildCurve(fn, npts) // [{x, y}, {x, y},...]
 		this.center = center
 		this.scale = scale
+		this.jiggle = jiggle
 	}
 
 	draw = () => {
 		const p5 = this.p5
-		this.center.x += p5.random(-3, 3)
-		this.center.y += p5.random(-3, 3)
-		// p5.push()
-		// p5.erase()
-		// p5.noStroke()
-		p5.fill(100, 50)
-		p5.stroke('#000')
+		if (this.jiggle) {
+			this.center.x += p5.random(-3, 3)
+			this.center.y += p5.random(-3, 3)
+		}
 
 		// draw a line between each of the points
 		const cx = this.center.x
@@ -48,9 +46,79 @@ class Shape {
 			p5.vertex(ptA.x * ss + cx, ptA.y * ss + cy)
 		}
 		p5.endShape(p5.CLOSE)
+	}
+}
 
-		p5.noErase()
-		// p5.pop()
+function wiggleRock({ p5, wiggleStrength, t }) {
+	// wiggly circle
+	let wiggleX = 0
+	let wiggleY = 0
+	if (t !== 0 && t !== 1) {
+		wiggleX = p5.random(0, wiggleStrength)
+		wiggleY = p5.random(0, wiggleStrength)
+	}
+	return {
+		x: p5.cos(2 * p5.PI * t) + wiggleX,
+		y: p5.sin(2 * p5.PI * t) + wiggleY,
+	}
+}
+
+class Rock {
+	constructor({ p5 }) {
+		this.wiggleStrength = 0.3
+		this.p5 = p5
+
+		const edges = 100
+		const npts = 30
+		this.shape = new Shape({
+			p5,
+			npts,
+			center: {
+				x: p5.random(edges, p5.width - edges),
+				y: p5.random(edges, p5.height - edges),
+			},
+			scale: p5.random(20, 100),
+			fn: this.shapeFn,
+		})
+	}
+
+	shapeFn = (t) => wiggleRock({ p5: this.p5, wiggleStrength: this.wiggleStrength, t })
+
+	draw = () => {
+		const p5 = this.p5
+		p5.fill(200)
+		p5.stroke('#000')
+		this.shape.draw()
+	}
+}
+
+class SmallRock {
+	constructor({ p5 }) {
+		this.wiggleStrength = 0.6
+		this.p5 = p5
+
+		const edges = 100
+		const npts = 20
+		this.shape = new Shape({
+			p5,
+			npts,
+			center: {
+				x: p5.random(edges, p5.width - edges),
+				y: p5.random(edges, p5.height - edges),
+			},
+			scale: p5.random(5, 20),
+			fn: this.shapeFn,
+			jiggle: true,
+		})
+	}
+
+	shapeFn = (t) => wiggleRock({ p5: this.p5, wiggleStrength: this.wiggleStrength, t })
+
+	draw = () => {
+		const p5 = this.p5
+		p5.fill(150)
+		p5.stroke('#444')
+		this.shape.draw()
 	}
 }
 
@@ -121,38 +189,14 @@ function sketch(p5) {
 		reset()
 		buttons()
 
-		const numShapes = 20
-		const edges = 100
-		const wiggleStrength = 0.3
-		const npts = 30
+		const numBigRocks = 20
+		const numSmallRocks = 20
 
-		const fn = (t) => {
-			// circle
-			let wiggleX = 0
-			let wiggleY = 0
-			if (t !== 0 && t !== 1) {
-				wiggleX = p5.random(0, wiggleStrength)
-				wiggleY = p5.random(0, wiggleStrength)
-			}
-			return {
-				x: p5.cos(2 * p5.PI * t) + wiggleX,
-				y: p5.sin(2 * p5.PI * t) + wiggleY,
-			}
+		for (let ii = 0; ii < numBigRocks; ii++) {
+			shapes.push(new Rock({ p5 }))
 		}
-
-		for (let ii = 0; ii < numShapes; ii++) {
-			shapes.push(
-				new Shape({
-					p5,
-					npts,
-					center: {
-						x: p5.random(edges, p5.width - edges),
-						y: p5.random(edges, p5.height - edges),
-					},
-					scale: p5.random(20, 100),
-					fn,
-				})
-			)
+		for (let ii = 0; ii < numSmallRocks; ii++) {
+			shapes.push(new SmallRock({ p5 }))
 		}
 
 		// shapes = [
@@ -175,8 +219,8 @@ function sketch(p5) {
 	}
 
 	p5.draw = () => {
-		// p5.clear()
-		// background()
+		p5.clear()
+		background()
 		for (const shape of shapes) {
 			shape.draw()
 		}
