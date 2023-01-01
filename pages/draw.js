@@ -1,5 +1,6 @@
 import { VStack } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
+import { GiBlackHandShield } from 'react-icons/gi'
 
 // FIBER TEXTURE Inspired by lzmunch's Paper texture : https://editor.p5js.org/lzmunch/sketches/Xnp94GpqN
 
@@ -15,6 +16,7 @@ function buildCurve(fn, npts) {
 		var pt = fn(i / (npts - 1))
 		pts.push(pt)
 	}
+
 	return pts
 }
 
@@ -61,11 +63,50 @@ function wiggleRock({ p5, wiggleStrength, t }) {
 	}
 }
 
-class Rock {
-	constructor({ p5 }) {
+function fluff({ p5, wiggleStrength, t }) {
+	// wiggly circle
+	let wiggleX = 0
+	let wiggleY = 0
+	if (t !== 0 && t !== 1) {
+		wiggleX = p5.random(0, wiggleStrength)
+		wiggleY = p5.random(0, wiggleStrength)
+	}
+	return {
+		x: p5.cos(100 * p5.PI * t) + wiggleX,
+		y: p5.sin(100 * p5.PI * t) + wiggleY,
+	}
+}
+
+function wiggleShape({ p5, wiggleStrength, t, ran }) {
+	let wiggleX = 0
+	let wiggleY = 0
+	if (t !== 0 && t !== 1) {
+		wiggleX = p5.random(0, wiggleStrength)
+		wiggleY = p5.random(0, wiggleStrength)
+	}
+	return {
+		x: p5.cos(100 * p5.PI * t * ran) + wiggleX,
+		y: p5.sin(100 * p5.PI * t * ran) + wiggleY,
+	}
+}
+function newNew({ p5, wiggleStrength, t, strings }) {
+	let wiggleX = -10
+	let wiggleY = -10
+	if (t !== 0 && t !== 1) {
+		wiggleX = p5.random(0, wiggleStrength)
+		wiggleY = p5.random(0, wiggleStrength)
+	}
+	return {
+		x: p5.cos(100000 * p5.PI * t * 1000 * strings) + wiggleX,
+		y: p5.sin(100000 * p5.PI * t * 100) + wiggleY,
+	}
+}
+class Weird {
+	constructor({ p5, col, scale }) {
 		this.wiggleStrength = 0.1
 		this.p5 = p5
-
+		this.ran = p5.random(1, 2)
+		this.stroke = col ?? 'red'
 		const edges = 100 // distance from canvas edge
 		const npts = 100
 		this.shape = new Shape({
@@ -75,31 +116,33 @@ class Rock {
 				x: p5.random(edges, p5.width - edges),
 				y: p5.random(edges, p5.height - edges),
 			},
-			scale: p5.random(20, 50),
+			scale: scale ?? p5.random(10, 12),
 			fn: this.shapeFn,
 			jiggle: true,
 		})
 	}
 
-	shapeFn = (t) => wiggleRock({ p5: this.p5, wiggleStrength: this.wiggleStrength, t })
+	shapeFn = (t) =>
+		wiggleShape({ p5: this.p5, ran: this.ran, wiggleStrength: this.wiggleStrength, t })
 
 	draw = () => {
 		const p5 = this.p5
-		p5.fill(200)
-		p5.stroke('#000')
+		p5.angleMode(p5.DEGREES)
 		this.shape.draw()
+		p5.stroke(this.stroke)
 	}
 }
 
-class SmallRock {
-	constructor({ p5 }) {
-		this.wiggleStrength = 0.6
+class New {
+	constructor({ p5, col, scale }) {
 		this.p5 = p5
-		// this.fill = p5.random(100, 100)
-		const edges = 100
-		const npts = p5.random(10, 20)
-		this.stroke = p5.random(0.1, 2)
-
+		this.wiggleStrength = p5.random(1, 0.1)
+		this.fill = ''
+		const edges = 20
+		this.strings = p5.random(1, 0.1)
+		const npts = p5.random(100, 900)
+		this.strokeWeight = p5.random(0.01, 0.01)
+		this.stroke = col ?? 'orange'
 		this.shape = new Shape({
 			p5,
 			npts,
@@ -107,7 +150,87 @@ class SmallRock {
 				x: p5.random(edges, p5.width - edges),
 				y: p5.random(edges, p5.height - edges),
 			},
-			scale: p5.random(5, 20),
+			scale: scale ?? p5.random(10, 20),
+			fn: this.shapeFn,
+			jiggle: true,
+		})
+	}
+
+	shapeFn = (t) =>
+		newNew({
+			strings: this.strings,
+			p5: this.p5,
+			wiggleStrength: this.wiggleStrength,
+			t,
+		})
+
+	draw = () => {
+		const p5 = this.p5
+		strings: this.strings
+		p5.angleMode(p5.DEGREES)
+		p5.noFill()
+		p5.strokeWeight(this.strokeWeight)
+		p5.stroke(this.stroke)
+		this.shape.draw()
+		p5.translate(p5.random(1, 20))
+	}
+}
+
+class OtherWeird {
+	constructor({ p5, col, scale }) {
+		let r = p5.random(100, 200)
+		let g = p5.random(100, 200)
+		let b = p5.random(100, 200)
+		let a = p5.random(80, 200)
+		let sw = p5.random(0.1, 3)
+		this.wiggleStrength = 0.01
+		this.p5 = p5
+		const npts = p5.random(40, 90)
+		this.strokeWeight = sw
+		const edges = 100 // distance from canvas edge
+		this.shape = new Shape({
+			p5,
+			npts,
+			center: {
+				x: p5.random(edges, p5.width - edges),
+				y: p5.random(edges, p5.height - edges),
+			},
+			scale: scale ?? p5.random(10, 12),
+			fn: this.shapeFn,
+			jiggle: 20,
+		})
+	}
+
+	shapeFn = (t) => fluff({ p5: this.p5, wiggleStrength: this.wiggleStrength, t })
+
+	draw = () => {
+		const p5 = this.p5
+		let r = p5.random(100, 200)
+		let g = p5.random(100, 150)
+		let b = p5.random(100, 150)
+		let a = p5.random(80, 90)
+		p5.angleMode(p5.DEGREES)
+		p5.stroke(r, g, b, a)
+		p5.strokeWeight(this.strokeWeight)
+		this.shape.draw()
+	}
+}
+
+class Blah {
+	constructor({ p5, col, scale }) {
+		this.wiggleStrength = 0.1
+		this.p5 = p5
+		const edges = 100
+		const npts = p5.random(20, 40)
+		this.strokeWeight = p5.random(0.2, 5)
+		this.shape = new Shape({
+			p5,
+			npts,
+			center: {
+				x: p5.random(edges, p5.width - edges),
+				y: p5.random(edges, p5.height - edges),
+			},
+			scale: scale ?? p5.random(20, 100),
 			fn: this.shapeFn,
 			jiggle: true,
 		})
@@ -117,42 +240,20 @@ class SmallRock {
 
 	draw = () => {
 		const p5 = this.p5
-		// p5.fill(this.fill)
-		p5.fill('blue')
-		p5.stroke('green')
-		p5.strokeWeight(this.stroke)
+		p5.noFill()
+		p5.strokeWeight(this.strokeWeight)
 		this.shape.draw()
 	}
 }
-
 function sketch(p5) {
 	let resetMe
 	let startMe
 	let stopMe
 	let shapes = []
 
-	function background() {
-		p5.background(255, 253, 208, 90)
-		p5.noFill()
-		// createFibers()
+	function background(r, g, b, l) {
+		p5.background(r, g, b, l)
 		p5.frameRate(5)
-	}
-
-	function buttons() {
-		resetMe = p5.createButton('_reset_ ')
-		resetMe.mousePressed(() => {
-			reset()
-		})
-
-		startMe = p5.createButton('_play_ ')
-		startMe.mousePressed(() => {
-			start()
-		})
-
-		stopMe = p5.createButton('_pause_')
-		stopMe.mousePressed(() => {
-			stop()
-		})
 	}
 
 	function start() {
@@ -165,33 +266,54 @@ function sketch(p5) {
 
 	function reset() {
 		p5.clear()
-
-		p5.rectMode(p5.CENTER)
-		p5.noFill()
-		p5.rect(400, 250, 700, 400)
-		p5.stroke(100)
-		background()
 	}
 
 	p5.setup = () => {
 		p5.createCanvas(800, 500)
-		reset()
-		buttons()
+		const numNew = 20
+		const numBigShape = 10
+		const numSmallShape = 10
 
-		const numBigRocks = 20
-		const numSmallRocks = 20
-
-		for (let ii = 0; ii < numBigRocks; ii++) {
-			shapes.push(new Rock({ p5 }))
+		for (let ii = 0; ii < numSmallShape; ii++) {
+			shapes.push(new OtherWeird({ p5 }))
 		}
-		for (let ii = 0; ii < numSmallRocks; ii++) {
-			shapes.push(new SmallRock({ p5 }))
+		for (let ii = 0; ii < numSmallShape; ii++) {
+			shapes.push(new New({ p5 }))
+		}
+		for (let ii = 0; ii < numNew; ii++) {
+			shapes.push(new New({ p5, col: 'white' }))
+		}
+
+		for (let ii = 0; ii < numNew; ii++) {
+			shapes.push(new New({ p5, col: 'white' }))
+		}
+		for (let ii = 0; ii < numNew; ii++) {
+			shapes.push(new OtherWeird({ p5, col: 'orange' }))
+		}
+		for (let ii = 0; ii < numBigShape; ii++) {
+			shapes.push(new Weird({ p5 }))
+		}
+		for (let ii = 0; ii < numSmallShape; ii++) {
+			shapes.push(new OtherWeird({ p5, scale: 30, col: 'white' }))
+		}
+		for (let ii = 0; ii < numSmallShape; ii++) {
+			shapes.push(new OtherWeird({ p5, scale: 10 }))
+		}
+		for (let ii = 0; ii < numSmallShape; ii++) {
+			shapes.push(new OtherWeird({ p5, scale: 30 }))
+		}
+		for (let ii = 0; ii < numSmallShape; ii++) {
+			shapes.push(new Blah({ p5, scale: 10 }))
+		}
+		for (let ii = 0; ii < numSmallShape; ii++) {
+			shapes.push(new New({ p5, scale: numSmallShape }))
 		}
 	}
 
 	p5.draw = () => {
-		p5.clear()
-		background()
+		reset()
+
+		background(30, 20, 35, 240)
 		for (const shape of shapes) {
 			shape.draw()
 		}
