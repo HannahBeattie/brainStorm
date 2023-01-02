@@ -20,7 +20,7 @@ class ParticleTwo {
 	draw({ noiseScale, col, lineIs }) {
 		const p5 = this.p5
 		p5.strokeWeight(lineIs ?? this.weight)
-		p5.stroke(col ?? 'black')
+		p5.stroke(col ?? 'red')
 		p5.point(this.pos.x, this.pos.y)
 		this.updatePosFlow({ noiseScale })
 		//if vectors trail of the screen, they will appear on screen again
@@ -89,6 +89,7 @@ class Particle {
 		)
 	}
 }
+
 function flowfield(p5) {
 	// functions used in drawing
 	// const pressedSeed = p5.mouseIsPressed ? 1 : 1
@@ -102,7 +103,6 @@ function flowfield(p5) {
 	//setup canvas
 	p5.setup = () => {
 		p5.createCanvas(700, 500)
-		p5.background(100, 10)
 		//loop through particle nums, push them to random points within canvas
 		for (let i = 0; i < partNum; i++) {
 			particles.push(new Particle({ p5 }))
@@ -110,44 +110,70 @@ function flowfield(p5) {
 		for (let i = 0; i < partTwoNum; i++) {
 			particlesTwo.push(new ParticleTwo({ p5 }))
 		}
+		const m = 1000
+		const topR = 100 * p5.noise(p5.frameCount / m)
+		const topG = 10 * p5.noise(240 + p5.frameCount / m)
+		const topB = 900 * p5.noise(240 + p5.frameCount / m)
+		const bottomR = 10 * p5.noise(240 + p5.frameCount / m)
+		const bottomG = 900 * p5.noise(240 + p5.frameCount / m)
+		const bottomB = 800 * p5.noise(400 + p5.frameCount / m)
+
+		const topColor = p5.color(topR, topG, topB)
+		const bottomColor = p5.color(bottomR, bottomG, bottomB)
+
+		for (let y = 0; y < p5.height; y++) {
+			const lineColor = p5.lerpColor(topColor, bottomColor, y / p5.height)
+			p5.stroke(lineColor), p5.line(0, y, p5.width, y)
+		}
 	}
 
 	//draw vectors
 	p5.draw = (update) => {
 		// Jiggle the flow field
 
-		const jiggle = p5.abs(noiseScale) * 1.1
+		const jiggle = p5.abs(noiseScale) * 0.01
 		if (jiggle < 1) {
-			noiseScale += p5.random(0, jiggle * 0.001)
+			noiseScale += p5.random(0, jiggle * 0.003)
 		} else {
 			noiseScale += p5.random(-jiggle, jiggle)
 		}
 
+		let r = p5.random(200, 210)
+		let g = p5.random(200, 240)
+		let b = p5.random(200, 240)
+		let t = p5.random(190, 200)
 		for (let i = 0; i < partNum; i++) {
 			const p = particles[i]
-			p.draw({ noiseScale, col: (240, 10), lineIs: 4 })
-		}
-
-		for (let i = 0; i < partTwoNum; i++) {
-			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: (200, 200, 200, 200), lineIs: 4 })
+			p.draw({ noiseScale, col: (r, g, b, t), lineIs: 1.1 })
 		}
 		for (let i = 0; i < partTwoNum; i++) {
 			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: (200, 90), lineIs: 0.1 })
+			p.draw({ noiseScale, col: 'yellow', lineIs: 2.1 })
 		}
-
+		for (let i = 0; i < partTwoNum; i++) {
+			const p = particlesTwo[i]
+			p.draw({ noiseScale, col: 'orange', lineIs: 2.1 })
+		}
 		for (let i = 0; i < partTwoNum; i++) {
 			const p = particlesTwo[i]
 			p.draw({ noiseScale, col: 'white', lineIs: 1 })
 		}
-		for (let i = partTwoNum; i < partTwoNum; i--) {
+		for (let i = 0; i < partTwoNum; i++) {
 			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: (30, 30, 30, 100) })
+			p.draw({ noiseScale, col: (r, g, b, 100), lineIs: 1 })
+		}
+
+		for (let i = 0; i < partTwoNum; i++) {
+			const p = particlesTwo[i]
+			p.draw({ noiseScale, col: 'orange', lineIs: 1 })
 		}
 		for (let i = partTwoNum; i < partTwoNum; i--) {
 			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: (30, 30, 30, 40), lineIs: 1 })
+			p.draw({ noiseScale, col: 'blue', lineIs: 100 })
+		}
+		for (let i = partTwoNum; i < partTwoNum; i--) {
+			const p = particlesTwo[i]
+			p.draw({ noiseScale, col: 'red', lineIs: 1 })
 		}
 	}
 }
