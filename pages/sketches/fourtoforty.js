@@ -13,7 +13,7 @@ const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mo
 class Tree {
 	constructor({ p5 }) {
 		this.p5 = p5
-		const edges = 0
+		const edges = 40
 		this.center = {
 			x: p5.random(edges, p5.width - edges),
 			y: p5.random(edges, p5.height - edges),
@@ -21,11 +21,11 @@ class Tree {
 	}
 	draw = () => {
 		const p5 = this.p5
-		let scale = p5.random(3, 30)
+		let scale = p5.random(9, 90)
 		let resolution = p5.random(0.001, 0.008)
-		let numPoints = p5.random(100, 400)
-		let radius = p5.random(20, 100)
-		let numRings = p5.random(10, 100)
+		let numPoints = p5.random(9, 900)
+		let radius = p5.random(9, 90)
+		let numRings = p5.random(9, 90)
 		let r
 		let n
 		let a
@@ -76,7 +76,7 @@ function sketch(p5) {
 	p5.setup = () => {
 		p5.createCanvas(800, 500)
 
-		const numTree = p5.random(1, 5)
+		const numTree = p5.random(4, 30)
 		for (let ii = 0; ii < numTree; ii++) {
 			trees.push(new Tree({ p5 }))
 		}
