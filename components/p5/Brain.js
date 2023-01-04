@@ -11,6 +11,8 @@ let points = []
 
 function flow(p5) {
 	let stroke
+	let numFrames = 0
+
 	p5.updateWithProps = (props) => {
 		if (props.w && props.h) {
 			p5.resizeCanvas(props.w, props.h)
@@ -48,7 +50,8 @@ function flow(p5) {
 
 	function reset() {
 		p5.clear()
-
+		numFrames = 0
+		p5.loop()
 		drawThis()
 	}
 
@@ -56,6 +59,9 @@ function flow(p5) {
 		let mult = 0.05
 		p5.noStroke()
 		p5.fill(stroke)
+		if (numFrames++ > 100) {
+			p5.noLoop()
+		}
 
 		for (var i = 0; i < points.length; i++) {
 			let angle = p5.map(p5.noise(points[i].x * mult, points[i].y * mult), 0, 1, 0, 720)

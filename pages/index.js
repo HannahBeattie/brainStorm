@@ -1,6 +1,7 @@
 import { Box, Heading, Text, useColorModeValue, VStack } from '@chakra-ui/react'
-import { motion, useViewportScroll } from 'framer-motion'
+import { motion, useScroll } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import Appear from '~/components/animate/Appear'
 import MyContainer from '~/components/base/MyContainer'
 import ScrollToTop from '~/components/base/ScrollToTop'
 import { useMediaQuery } from '~/components/hooks/useMediaQuery'
@@ -10,24 +11,11 @@ import Tree from '~/components/p5/Tree'
 
 export default function Home() {
 	const isPageWide = useMediaQuery('(min-width: 768px)')
-	const { scrollYProgress } = useViewportScroll()
-
-	/* State for progress */
-	const [yProgress, setYProgress] = useState(false)
-
-	/* trigger when scroll is updated */
-	useEffect(() => {
-		return scrollYProgress.onChange((p) => setYProgress(p))
-	}, [scrollYProgress])
+	const { scrollYProgress } = useScroll()
 
 	return (
-		// <Appear>
-		<>
-			<motion.div
-				className='progress'
-				animate={{ scaleX: yProgress }}
-				transition={{ duration: 0.2 }}
-			/>
+		<Appear>
+			<motion.div className='progress' style={{ scaleX: scrollYProgress }} />
 			{isPageWide && <ScrollToTop />}
 			<ScrollToTop />
 			<VStack pt={{ base: 4, sm: 4, md: 16 }} pb={{ base: 8, sm: 4, md: 8 }}>
@@ -87,6 +75,6 @@ export default function Home() {
 					RADIAL work enspired by AHMAD MOUSSA's Generative Tree Rings.
 				</MyLink>
 			</VStack>
-		</>
+		</Appear>
 	)
 }
