@@ -35,11 +35,15 @@ export const theme = extendTheme({
 			},
 		},
 	},
+	config: {
+		initialColorMode: 'dark',
+		useSystemColorMode: false,
+	},
 
 	styles: {
 		global: {
 			body: {
-				bg: '#F2F2F2',
+				bg: 'grayAlpha.200',
 				_dark: {
 					bg: 'gray.800',
 				},

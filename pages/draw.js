@@ -11,7 +11,10 @@ import {
 
 import { useScroll } from 'framer-motion'
 import Appear from '~/components/animate/Appear'
+import FadeIn from '~/components/animate/FadeIn'
+import Pulse from '~/components/animate/Pulse'
 import MyContainer from '~/components/base/MyContainer'
+import MyLink from '~/components/MyLink'
 import Brain from '~/components/p5/Brain'
 import Tree from '~/components/p5/Tree'
 
@@ -22,7 +25,7 @@ export default function Draw() {
 
 	return (
 		<Appear>
-			<VStack bg='yelow' pt={{ base: 4, sm: 4, md: 16 }} pb={{ base: 4, sm: 4, md: 8 }}>
+			<VStack pt={{ base: 4, sm: 4, md: 16 }} pb={{ base: 4, sm: 4, md: 8 }}>
 				<Heading
 					fontWeight={'800'}
 					fontFamily={'Lora'}
@@ -32,7 +35,11 @@ export default function Draw() {
 					Hello World!
 				</Heading>
 			</VStack>
-			<Box bg={useColorModeValue('gray.100', '')} borderRadius={20} boxShaddow={'lg'}>
+			<Box
+				bgGradient={useColorModeValue('linear(to-b, gray.800, black, gray.800)', '')}
+				// bg={useColorModeValue('purple.900', '')}
+				boxShaddow={'xl'}
+			>
 				<Brain />
 			</Box>
 
@@ -45,7 +52,7 @@ export default function Draw() {
 			<Tree num={1} />
 
 			<MyContainer>
-				<Text>suprising user interactions & holistic, accessable applications.</Text>
+				<Text>...suprising user interactions & holistic, accessable applications.</Text>
 				<Text pt={8}>
 					I would describe my coding style as a mixture between curiosity-based play and
 					clean, minimal functionality.
@@ -56,7 +63,7 @@ export default function Draw() {
 				</Text>
 			</MyContainer>
 
-			<Tree num={1} />
+			<Tree num={2} />
 
 			<MyContainer>
 				<Text>Recently, I have enjoyed creating generative art...</Text>
@@ -65,10 +72,17 @@ export default function Draw() {
 				</Text>
 			</MyContainer>
 
-			<Tree />
+			<Tree num={3} />
 
 			<MyContainer>
-				<Text>If you would like, check out my work here.</Text>
+				<HStack>
+					<Text>If you would like, </Text>
+					<Text>
+						<MyLink href={'/web'} fontStyle={'italic'}>
+							check out my work.
+						</MyLink>
+					</Text>
+				</HStack>
 			</MyContainer>
 
 			<Box h='16' />

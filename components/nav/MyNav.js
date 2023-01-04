@@ -35,17 +35,12 @@ function MyNav() {
 
 	const pages = [
 		{
-			title: 'About',
-
-			href: '/about',
-		},
-		{
 			title: 'Web Development',
 			href: '/web',
 		},
 		{
-			title: 'Art',
-			href: '/painting',
+			title: 'Static Art',
+			href: '/staticArt',
 		},
 		{
 			title: 'Character Design',
@@ -106,11 +101,22 @@ function MyNav() {
 						fontWeight={href === currentRoute ? '900' : '500'}
 						color={
 							href === currentRoute
-								? useColorModeValue('gray.900', 'teal')
-								: useColorModeValue('gray.900', 'gray.100')
+								? useColorModeValue('teal', 'teal.300')
+								: useColorModeValue('gray.900', 'gray.300')
 						}
+						_hover={{
+							color:
+								href === currentRoute
+									? useColorModeValue('teal', 'teal.300')
+									: useColorModeValue('teal', 'gray.100'),
+						}}
 					>
-						<Text as={'div'} fontFamily={'Gloria Hallelujah'}>
+						<Text
+							as={'div'}
+							fontFamily={'poppins'}
+							fontWeight={useColorModeValue('400', '300')}
+							letterSpacing={'0.1em'}
+						>
 							{title}
 						</Text>
 					</MyLink>

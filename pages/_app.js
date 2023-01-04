@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
 
 			<VStack as='main' spacing='0' flex={'1'} justify={'stretch'} minH={'100vh'} w={'100vw'}>
 				<MyNav />
-				<LightMode />
+				{/* <LightMode /> */}
 				<Component {...pageProps} />
 			</VStack>
 		</ChakraProvider>
