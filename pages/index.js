@@ -25,7 +25,7 @@ export default function Home() {
 		<>
 			<motion.div
 				className='progress'
-				animate={{ scaleY: yProgress }}
+				animate={{ scaleX: yProgress }}
 				transition={{ duration: 0.2 }}
 			/>
 			{isPageWide && <ScrollToTop />}

@@ -1,6 +1,7 @@
-import { IconButton } from '@chakra-ui/react'
+import { IconButton, Tooltip } from '@chakra-ui/react'
 import { useEffect, useRef, useState } from 'react'
-import { TbArrowTopCircle } from 'react-icons/tb'
+import { FiNavigation2 } from 'react-icons/fi'
+import { motion } from 'framer-motion'
 
 export default function ScrollToTop() {
 	const scrollRef = useRef(null)
@@ -21,20 +22,24 @@ export default function ScrollToTop() {
 		})
 	}
 	return (
-		<div ref={scrollRef} style={{ overflow: 'scroll' }}>
-			{showTopBtn && (
-				<IconButton
-					as={TbArrowTopCircle}
-					position={'fixed'}
-					left={'2'}
-					bottom={'4'}
-					onClick={goToTop}
-					bg={''}
-					_hover={{ bg: '', color: 'white' }}
-					area-label={'scroll to top'}
-					cursor={'pointer'}
-				/>
-			)}
-		</div>
+		<Tooltip label={'hi'} bg='red'>
+			<div ref={scrollRef} style={{ overflow: 'scroll' }}>
+				{showTopBtn && (
+					<IconButton
+						as={FiNavigation2}
+						position={'fixed'}
+						right={'4'}
+						bottom={'8'}
+						onClick={goToTop}
+						bg={''}
+						color={'gray.600'}
+						_hover={{ bg: '', color: 'gray.300' }}
+						area-label={'scroll to top'}
+						cursor={'pointer'}
+						size={'xs'}
+					/>
+				)}
+			</div>
+		</Tooltip>
 	)
 }
