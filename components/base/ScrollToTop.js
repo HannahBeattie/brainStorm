@@ -27,7 +27,11 @@ export default function ScrollToTop() {
 		<Box position={'relative'}>
 			{showTopBtn && (
 				<Button onClick={goToTop}>
-					<Text fontWeight={'light'} className='icon-style, icon-position'>
+					<Text
+						fontWeight={'light'}
+						className='icon-style, icon-position'
+						fontSize={{ base: 'xs' }}
+					>
 						- up - to - top -
 					</Text>
 				</Button>

@@ -15,6 +15,7 @@ import FadeIn from '~/components/animate/FadeIn'
 import Pulse from '~/components/animate/Pulse'
 import MyContainer from '~/components/base/MyContainer'
 import ScrollToTop from '~/components/base/ScrollToTop'
+import { useMediaQuery } from '~/components/hooks/useMediaQuery'
 import MyLink from '~/components/MyLink'
 import Brain from '~/components/p5/Brain'
 import Tree from '~/components/p5/Tree'
@@ -23,15 +24,18 @@ export default function Home() {
 	// const [ref] = useMeasure()
 	let stroke = useColorModeValue([100, 90, 90], [230, 220, 220])
 	const { scrollYProgress } = useScroll()
+	const isPageWide = useMediaQuery('(min-width: 768px)')
 
 	return (
 		<Appear>
+			{isPageWide && <ScrollToTop />}
 			<ScrollToTop />
-			<VStack pt={{ base: 4, sm: 4, md: 16 }} pb={{ base: 4, sm: 4, md: 8 }}>
+
+			<VStack pt={{ base: 4, sm: 4, md: 16 }} pb={{ base: 8, sm: 4, md: 8 }}>
 				<Heading
 					fontWeight={'800'}
 					fontFamily={'Lora'}
-					fontSize={100}
+					fontSize={{ md: 100, base: 100 }}
 					textAlign={{ base: 'center', sm: 'auto' }}
 				>
 					Hello World!
@@ -39,9 +43,7 @@ export default function Home() {
 			</VStack>
 			<Box
 				bgGradient={useColorModeValue('linear(to-b, gray.800, black, gray.800)', '')}
-				// bg={useColorModeValue('purple.900', '')}
-				boxShaddow={'xl'}
-				pb={30}
+				pb={{ sm: 30 }}
 			>
 				<Brain />
 			</Box>
@@ -78,17 +80,12 @@ export default function Home() {
 			<Tree num={3} />
 
 			<MyContainer>
-				<HStack>
-					<Text>If you would like, </Text>
-					<Text>
-						<MyLink href={'/web'} fontStyle={'italic'}>
-							check out my work.
-						</MyLink>
-					</Text>
-				</HStack>
+				<Text textAlign={'center'}>
+					<MyLink href={'/web'} fontStyle={'italic'}>
+						Check out my work.
+					</MyLink>
+				</Text>
 			</MyContainer>
-
-			<Box h='16' />
 		</Appear>
 	)
 }

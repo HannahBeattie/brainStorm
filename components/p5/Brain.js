@@ -69,7 +69,7 @@ export default function Brain() {
 	let stroke = useColorModeValue([220, 220, 220], [240, 240, 240])
 	const [ref, bounds] = useMeasure()
 	return (
-		<VStack overflow={'hidden'} maxW={{ base: '90vw', sm: '100vw' }} ref={ref}>
+		<VStack overflow={'hidden'} maxW={'100vw'} ref={ref}>
 			<VStack h='500px' alignSelf='stretch' cursor='pointer' overflow={'hidden'}>
 				<ReactP5Wrapper sketch={flow} stroke={stroke} />
 			</VStack>

@@ -123,6 +123,7 @@ export default function Tree({ num }) {
 			h='400px'
 			alignSelf='stretch'
 			cursor='pointer'
+			maxW={'100vw'}
 		>
 			<ReactP5Wrapper
 				sketch={sketch}
