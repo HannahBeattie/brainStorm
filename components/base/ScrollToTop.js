@@ -1,12 +1,9 @@
-import { ArrowDownIcon, ArrowForwardIcon, ArrowLeftIcon, ArrowUpIcon } from '@chakra-ui/icons'
-import { Box, Button, IconButton, Text } from '@chakra-ui/react'
-import { motion } from 'framer-motion'
-import React, { useState, useEffect } from 'react'
-import { CgShapeTriangle } from 'react-icons/cg'
-import { FaAngleUp } from 'react-icons/fa'
-import Pulse from '../animate/Pulse'
+import { IconButton } from '@chakra-ui/react'
+import { useEffect, useRef, useState } from 'react'
+import { TbArrowTopCircle } from 'react-icons/tb'
 
 export default function ScrollToTop() {
+	const scrollRef = useRef(null)
 	const [showTopBtn, setShowTopBtn] = useState(false)
 	useEffect(() => {
 		window.addEventListener('scroll', () => {
@@ -24,18 +21,20 @@ export default function ScrollToTop() {
 		})
 	}
 	return (
-		<Box position={'relative'}>
+		<div ref={scrollRef} style={{ overflow: 'scroll' }}>
 			{showTopBtn && (
-				<Button onClick={goToTop}>
-					<Text
-						fontWeight={'light'}
-						className='icon-style, icon-position'
-						fontSize={{ base: 'xs' }}
-					>
-						- up - to - top -
-					</Text>
-				</Button>
+				<IconButton
+					as={TbArrowTopCircle}
+					position={'fixed'}
+					left={'2'}
+					bottom={'4'}
+					onClick={goToTop}
+					bg={''}
+					_hover={{ bg: '', color: 'white' }}
+					area-label={'scroll to top'}
+					cursor={'pointer'}
+				/>
 			)}
-		</Box>
+		</div>
 	)
 }
