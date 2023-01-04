@@ -79,13 +79,23 @@ export default function Home() {
 
 			<Tree num={3} />
 
-			<MyContainer>
-				<Text textAlign={'center'}>
-					<MyLink href={'/web'} fontStyle={'italic'}>
-						Check out my work.
-					</MyLink>
-				</Text>
-			</MyContainer>
+			<Text textAlign={'center'} py={'4'}>
+				<MyLink href={'/web'} fontStyle={'italic'}>
+					Check out my work.
+				</MyLink>
+			</Text>
+
+			<VStack py={'4'} flex={'1'}>
+				<MyLink
+					href={
+						'https://gorillasun.de/blog/radial-perlin-noise-and-generative-tree-rings'
+					}
+					fontStyle={'italic'}
+					fontSize={'xs'}
+				>
+					RADIAL work enspired by AHMAD MOUSSA's Generative Tree Rings.
+				</MyLink>
+			</VStack>
 		</Appear>
 	)
 }
