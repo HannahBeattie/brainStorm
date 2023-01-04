@@ -1,18 +1,5 @@
-import {
-	background,
-	Box,
-	Heading,
-	HStack,
-	Spacer,
-	Text,
-	useColorModeValue,
-	VStack,
-} from '@chakra-ui/react'
+import { useColorModeValue, VStack } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
-import { FaMarsStroke } from 'react-icons/fa'
-import { GiBlackHandShield } from 'react-icons/gi'
-import { SlLoop } from 'react-icons/sl'
-import useWindowSize from '~/components/hooks/useWindowSize'
 import useMeasure from 'react-use-measure'
 
 const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mod.ReactP5Wrapper), {
@@ -88,10 +75,6 @@ function sketch(p5) {
 		if (props.num) {
 			num = props.num
 		}
-
-		// console.log('p5.height is', p5.height)
-		// console.log('p5.width is', p5.width)
-		// console.log('(updateWithProps) num is', num)
 	}
 
 	function reset() {
@@ -133,7 +116,14 @@ export default function Tree({ num }) {
 	let stroke = useColorModeValue([100, 90, 90], [230, 220, 220])
 
 	return (
-		<VStack spacing={'0'} ref={ref} h='400px' alignSelf='stretch' cursor='pointer'>
+		<VStack
+			overflow={'hidden'}
+			spacing={'0'}
+			ref={ref}
+			h='400px'
+			alignSelf='stretch'
+			cursor='pointer'
+		>
 			<ReactP5Wrapper
 				sketch={sketch}
 				stroke={stroke}

@@ -271,57 +271,6 @@ export default function Draw() {
 		<>
 			<VStack py={'16'} spacing={'0'} overflow={'hidden'}>
 				<ReactP5Wrapper sketch={flow} />
-
-				{/* <Text
-					as={'div'}
-					textAlign={'center'}
-					minH={'55'}
-					pt={{ base: '2', md: '8' }}
-					fontSize={{ base: 'lg', sm: 'xl' }}
-					maxW={{ base: '17em', sm: '30em' }}
-					fontFamily={'Merriweather'}
-					color={'gray.400'}
-				>
-					<TypeAnimation
-						// Same String at the start will only be typed once, initially
-						sequence={[
-							'Hello.',
-							1000,
-							'I am Hannah...',
-							1000,
-							'An animal enthusiast.',
-							1000,
-							'An Artist.',
-							1000,
-							'A Dev.',
-							2000,
-							'I live in New Zealand.',
-							2000,
-							'...Yes, there are hobbits here.',
-							1000,
-							'I enjoy telling stories...',
-							1000,
-							'& using humour,',
-							1000,
-							'creativity,',
-							1000,
-							'& digital technology',
-							1000,
-							'to create meaningful connections.',
-							2000,
-							'The first step is curiosity.',
-						]}
-						speed={40} // Custom Speed from 1-99 - Default Speed: 40
-						style={{
-							textAlign: 'center',
-							fontFamily: 'Lora',
-							fontWeight: '900',
-						}}
-						wrapper='Text' // Animation will be rendered as a <span>
-						repeat={'none'} // Repeat this Animation Sequence infinitely
-						cursor={false}
-					/>
-				</Text> */}
 			</VStack>
 		</>
 	)
