@@ -38,13 +38,18 @@ function MyNav() {
 			title: 'Web Development',
 			href: '/web',
 		},
-		{
-			title: 'Static Art',
-			href: '/staticArt',
-		},
+
 		{
 			title: 'Character Design',
 			href: '/characters',
+		},
+		{
+			title: 'Water Colors',
+			href: '/water',
+		},
+		{
+			title: 'P5.Drawings',
+			href: '/staticArt',
 		},
 	]
 
@@ -97,7 +102,7 @@ function MyNav() {
 						display={{ base: 'none', sm: 'flex' }}
 						key={`navitem-${idx}`}
 						href={href}
-						fontSize={{ md: 'lg' }}
+						fontSize={{ md: 'md' }}
 						fontWeight={href === currentRoute ? '900' : '500'}
 						color={
 							href === currentRoute
