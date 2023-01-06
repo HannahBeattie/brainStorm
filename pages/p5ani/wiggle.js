@@ -8,12 +8,13 @@ import { TypeAnimation } from 'react-type-animation'
 const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mod.ReactP5Wrapper), {
 	ssr: false,
 })
-let points = []
-function mould(p5) {
+
+function squiggle(p5) {
+	let points = []
 	p5.setup = () => {
 		p5.createCanvas(800, 500)
-
-		let density = 50
+		let density = 100
+		// 500
 		let space = p5.width / density
 
 		for (let x = 0; x < p5.width; x += space) {
@@ -24,12 +25,16 @@ function mould(p5) {
 		}
 	}
 	p5.draw = () => {
+		let mult = 0.005
 		p5.noStroke()
 		p5.fill(255)
 		for (var i = 0; i < points.length; i++) {
-			let angle = p5.map(p5.noise(points[i].x, points[i].y), 0, 1, 0, 720)
+			let angle = p5.map(p5.noise(points[i].x * mult, points[i].y * mult), 0, 1, 0, 720)
 			points[i].add(p5.createVector(p5.cos(angle), p5.sin(angle)))
 			p5.ellipse(points[i].x, points[i].y, 1)
+		}
+		p5.mousePressed = () => {
+			p5.saveGif('01.gif', 30, { delay: 0, units: 'frames' })
 		}
 	}
 }
@@ -37,8 +42,8 @@ function mould(p5) {
 export default function Draw() {
 	return (
 		<>
-			<VStack py={'16'} spacing={'0'}>
-				<ReactP5Wrapper sketch={mould} />
+			<VStack py={'16'} spacing={'0'} overflow={'hidden'}>
+				<ReactP5Wrapper sketch={squiggle} />
 			</VStack>
 		</>
 	)

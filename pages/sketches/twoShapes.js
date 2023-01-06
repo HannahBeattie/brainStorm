@@ -19,33 +19,37 @@ function buildCurve(fn, npts) {
 }
 
 class Shape {
-	constructor({ p5, npts, fn, scale, center, jiggle }) {
+	constructor({ p5 }) {
 		this.p5 = p5
-		this.pts = buildCurve(fn, npts) // [{x, y}, {x, y},...]
-		this.center = center
-		this.scale = scale
-		this.jiggle = jiggle
+		const edges = 20
+		this.center = {
+			x: p5.random(edges, p5.width - edges),
+			y: p5.random(edges, p5.height - edges),
+		}
+		this.ran = p5.random(10, 50)
 	}
-
 	draw = () => {
 		const p5 = this.p5
-		if (this.jiggle) {
-			this.center.x += p5.random(-3, 3)
-			this.center.y += p5.random(-3, 3)
-		}
 
-		// draw a line between each of the points
-		const cx = this.center.x
-		const cy = this.center.y
-		const ss = this.scale
+		let petalW = p5.random(0.1, 0.3)
+		let height = p5.random(0.1, 20)
+		// Get a random height for the petals that changes over time
+		// from 15 to 50
+		const ran = 10 + 40 * p5.noise(this.ran, p5.frameCount / 10)
+		p5.push()
+		p5.translate(this.center.x, this.center.y)
+
 		p5.beginShape()
-		for (let ii = 0; ii < this.pts.length - 1; ii++) {
-			const ptA = this.pts[ii]
-			// const ptB = this.pts[ii + 1]
-			// p5.line(ptA.x * ss + cx, ptA.y * ss + cy, ptB.x * ss + cx, ptB.y * ss + cy)
-			p5.vertex(ptA.x * ss + cx, ptA.y * ss + cy)
+		for (let i = 0; i < 10; i++) {
+			p5.stroke(200, 200, 0, 90)
+			p5.ellipse(0, height * 0.5, petalW, ran)
+			p5.rotate(p5.PI / 5)
+			p5.stroke(140, 140, 140, 90)
+			p5.fill(100, 10, 0, 90)
+			p5.ellipse(0, 10, 0.1)
 		}
 		p5.endShape(p5.CLOSE)
+		p5.pop()
 	}
 }
 

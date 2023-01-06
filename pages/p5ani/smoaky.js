@@ -266,7 +266,7 @@ export default function Draw() {
 	return (
 		<VStack spacing={'4'} py={16}>
 			<Box p={'4'} bg={'gray.900'} borderRadius={10} boxShadow={'LG'}>
-				<ReactP5Wrapper sketch={flowfield} />
+				<ReactP5Wrapper sketch={flowfield2} />
 			</Box>
 			<Text fontWeight={800}>Flow field 01</Text>
 		</VStack>

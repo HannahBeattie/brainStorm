@@ -79,7 +79,7 @@ class Particle {
 		let n = p5.noise(this.pos.x * noiseScale, this.pos.y * noiseScale)
 		// TAU = 2 * pie ... it will give us a number between 0 and 1
 		let a = p5.TAU * n
-		this.pos.x += p5.cos(a) + p5.cos(a)
+		this.pos.x += p5.cos(a)
 		this.pos.y += p5.sin(a)
 	}
 
@@ -106,12 +106,14 @@ function flowfield2(p5) {
 		p5.clear()
 		noiseScale = Math.pow(p5.random(0.1, 0.5), 3)
 		const m = 4
-		const topR = 200 * p5.noise(700 + p5.frameCount / m)
-		const topG = 10 * p5.noise(-240 + p5.frameCount / m)
-		const topB = 240 * p5.noise(240 + p5.frameCount / m)
-		const bottomR = 140 * p5.noise(200 + p5.frameCount / m)
-		const bottomG = 20 * 9 * p5.noise(240 + p5.frameCount / m)
-		const bottomB = 250 * p5.noise(400 + p5.frameCount / m)
+		const b = p5.random(150, 240)
+		const topR = b * 4 * p5.noise(700 + p5.frameCount / m)
+		const topG = b * 2 * p5.noise(-240 + p5.frameCount / m)
+		const topB = b * p5.noise(240 + p5.frameCount / m)
+		const bottomR = 10 * p5.noise(200 + p5.frameCount / m)
+		const bottomG = b * 9 * p5.noise(240 + p5.frameCount / m)
+		const bottomB = b * p5.noise(400 + p5.frameCount / m)
+
 		const topColor = p5.color(topR, topG, topB)
 		const bottomColor = p5.color(bottomR, bottomG, bottomB)
 
@@ -153,7 +155,7 @@ function flowfield2(p5) {
 
 		for (let i = 0; i < partNum; i++) {
 			const p = particles[i]
-			p.draw({ noiseScale, col: [21, 215, 215, 40], lineIs: 2.1 })
+			p.draw({ noiseScale, col: [21, 215, 10, 40], lineIs: 2.1 })
 		}
 		for (let i = 0; i < partTwoNum; i++) {
 			const p = particlesTwo[i]
@@ -162,29 +164,28 @@ function flowfield2(p5) {
 
 		for (let i = 0; i < partTwoNum; i++) {
 			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [200, 215, 100, 10], lineIs: 0.1 })
+			p.draw({ noiseScale, col: [100, 215, 0], lineIs: 0.1 })
 		}
 		for (let i = 0; i < partTwoNum; i++) {
 			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [100, 100, 100, 20], lineIs: 10 })
+			p.draw({ noiseScale, col: [100, 100, 10, 20], lineIs: ran2 })
 		}
 		for (let i = 0; i < partTwoNum; i++) {
-			10
 			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [215, 215, 25, 10], lineIs: 0.4 })
+			p.draw({ noiseScale, col: [b, 10, b], lineIs: 1.4 })
 		}
 
 		for (let i = 0; i < partTwoNum; i++) {
 			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [215, 100, 100, 9], lineIs: 10 })
+			p.draw({ noiseScale, col: [10, 100, 100, 9], lineIs: 10 })
 		}
 		for (let i = partTwoNum; i < partTwoNum; i--) {
 			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [100, 100, 200, 10], lineIs: 30 })
+			p.draw({ noiseScale, col: [100, 100, 200, 0], lineIs: 30 })
 		}
 		for (let i = partTwoNum; i < partTwoNum; i--) {
 			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [100, 200, 215, 10], lineIs: 20 })
+			p.draw({ noiseScale, col: [100, 200, 0], lineIs: 20 })
 		}
 	}
 }
@@ -216,7 +217,7 @@ function flowfield(p5) {
 	p5.draw = (update) => {
 		// Jiggle the flow field
 
-		const jiggle = p5.abs(noiseScale) * 0.1
+		const jiggle = p5.abs(noiseScale) * 1.1
 		if (jiggle < 1) {
 			noiseScale += p5.random(0, jiggle * 0.001)
 		} else {
@@ -225,48 +226,83 @@ function flowfield(p5) {
 
 		for (let i = 0; i < partNum; i++) {
 			const p = particles[i]
-			p.draw({ noiseScale, col: [10, 215, 0, 140], lineIs: 4 })
+			p.draw({ noiseScale, col: [255, 215, 0], lineIs: 4 })
 		}
 
 		for (let i = 0; i < partTwoNum; i++) {
 			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [215, 215, 0], lineIs: 4 })
+			p.draw({ noiseScale, col: [255, 215, 0], lineIs: 4 })
 		}
 
 		for (let i = 0; i < partTwoNum; i++) {
 			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [255, 215, 200], lineIs: 4 })
+			p.draw({ noiseScale, col: [255, 215, 0], lineIs: 4 })
 		}
 		for (let i = 0; i < partTwoNum; i++) {
 			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [255, 215, 100], lineIs: 8 })
+			p.draw({ noiseScale, col: [255, 215, 0], lineIs: 4 })
 		}
 		for (let i = 0; i < partTwoNum; i++) {
 			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [10, 215, 0], lineIs: 10 })
+			p.draw({ noiseScale, col: [255, 215, 0], lineIs: 0.1 })
 		}
 
 		for (let i = 0; i < partTwoNum; i++) {
 			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [100, 10, 100], lineIs: 10 })
+			p.draw({ noiseScale, col: [0, 100], lineIs: 10 })
 		}
 
 		for (let i = partTwoNum; i < partTwoNum; i--) {
 			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [240, 100, 100], lineIs: 1 })
+			p.draw({ noiseScale, col: [100, 200, 100], lineIs: 10 })
 		}
 		for (let i = partTwoNum; i < partTwoNum; i--) {
 			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [200, 240, 10], lineIs: 10 })
+			p.draw({ noiseScale, col: [100, 240, 100], lineIs: 10 })
 		}
 	}
+
+	// const jiggle = p5.abs(noiseScale) * 1.1
+	// 	if (jiggle < 1) {
+	// 		noiseScale += p5.random(0, jiggle * 0.001)
+	// 	} else {
+	// 		noiseScale += p5.random(-jiggle, jiggle)
+	// 	}
+
+	// 	for (let i = 0; i < partNum; i++) {
+	// 		const p = particles[i]
+	// 		p.draw({ noiseScale, col: (240, 10), lineIs: 4 })
+	// 	}
+
+	// 	for (let i = 0; i < partTwoNum; i++) {
+	// 		const p = particlesTwo[i]
+	// 		p.draw({ noiseScale, col: (200, 200, 200, 200), lineIs: 4 })
+	// 	}
+	// 	for (let i = 0; i < partTwoNum; i++) {
+	// 		const p = particlesTwo[i]
+	// 		p.draw({ noiseScale, col: (200, 90), lineIs: 0.1 })
+	// 	}
+
+	// 	for (let i = 0; i < partTwoNum; i++) {
+	// 		const p = particlesTwo[i]
+	// 		p.draw({ noiseScale, col: 'white', lineIs: 1 })
+	// 	}
+	// 	for (let i = partTwoNum; i < partTwoNum; i--) {
+	// 		const p = particlesTwo[i]
+	// 		p.draw({ noiseScale, col: (30, 30, 30, 100) })
+	// 	}
+	// 	for (let i = partTwoNum; i < partTwoNum; i--) {
+	// 		const p = particlesTwo[i]
+	// 		p.draw({ noiseScale, col: (30, 30, 30, 40), lineIs: 1 })
+	// 	}
+	// }
 }
 
 export default function Draw() {
 	return (
 		<VStack spacing={'4'} py={16}>
 			<Box p={'4'} bg={'gray.900'} borderRadius={10} boxShadow={'LG'}>
-				<ReactP5Wrapper sketch={flowfield} />
+				<ReactP5Wrapper sketch={flowfield2} />
 			</Box>
 			<Text fontWeight={800}>Flow field 01</Text>
 		</VStack>

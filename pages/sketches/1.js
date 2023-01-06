@@ -270,7 +270,7 @@ export default function Draw() {
 	return (
 		<>
 			<VStack py={'16'} spacing={'0'} overflow={'hidden'}>
-				<ReactP5Wrapper sketch={flow} />
+				<ReactP5Wrapper sketch={doodle} />
 			</VStack>
 		</>
 	)

@@ -121,7 +121,7 @@ function fluff(p5) {
 export default function Draw() {
 	return (
 		<VStack spacing={'0'} py={'16'}>
-			<ReactP5Wrapper sketch={flow} />
+			<ReactP5Wrapper sketch={fluff} />
 			{/* <ReactP5Wrapper sketch={fluff} /> */}
 		</VStack>
 	)
