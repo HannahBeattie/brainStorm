@@ -14,9 +14,6 @@ export default function Seccond() {
 		{
 			src: '/static/13.jpeg',
 		},
-		{
-			src: '/static/12.jpeg',
-		},
 	]
 	return (
 		<>
@@ -47,11 +44,6 @@ export default function Seccond() {
 				<Text>
 					The third image is an experement in which I tweaked the number of points I gave
 					each object, because I wanted to try to create stars.
-				</Text>
-				<Text>
-					The last image is what occured when I once again tweaked the number of points I
-					gave the objects. I liked the warped, egg-like look so adjusted the colors to
-					match.
 				</Text>
 			</Container>
 

@@ -36,33 +36,36 @@ export default function WaterCol() {
 		},
 	]
 	return (
-		<VStack>
-			<Heading>Water Colors</Heading>
-			<Container>
-				<Text>One of my hobbies for the last few years has been water color painting.</Text>
-				<Text>
-					I was particularly drawn to watercolors because of the lack of control and
-					experiance I had with them.
-				</Text>
-				<Text>
-					As someone who can tend towards perfectionism, watecolors seemed like a medium
-					that would not allow me the chance to overwork or spend a lot of time creating
-					hyper-detailed creations.
-				</Text>
-				<Text>
-					Watercolors are, by nature, a fast-drying medium with a huge range of chaotic,
-					uncontrolable factors. For instance; Water and pigment mix diffirently according
-					to humidity, the grain of the paper and the motion of the pen.
-				</Text>
-				<Text>
-					Diffirent brands of paints may dry diffirntly and the color of the pigment looks
-					significantly diffirent dry to wet.
-				</Text>
-				<Text>
-					Because of this, I see the process of painting as more to do with noticing what
-					the watercolors are doing and responding to that, rather than trying to
-					'control' them.
-				</Text>
+		<VStack py={8}>
+			<Heading pb={'8'}>Water Colors</Heading>
+			<Container pb={'8'}>
+				<VStack spacing={'4'}>
+					<Text>
+						One of my hobbies for the last few years has been water color painting.
+					</Text>
+					<Text>
+						I was particularly drawn to watercolors because of the lack of control and
+						experiance I had with them.
+					</Text>
+					<Text>
+						As someone who tends towards perfectionism, watecolors are a great way to
+						relinquish control.
+					</Text>
+					<Text>
+						They are are, by nature, a fast-drying medium with a huge range of chaotic,
+						uncontrolable factors. For instance; Water and pigment mix diffirently
+						according to humidity, the grain of the paper and the motion of the pen.
+					</Text>
+					<Text>
+						Diffirent brands of paints may dry diffirntly and the color of the pigment
+						looks significantly diffirent dry to wet.
+					</Text>
+					<Text>
+						Because of this, I see the process of painting as more to do with noticing
+						what the watercolors are doing and responding to that, rather than trying to
+						'control' them.
+					</Text>
+				</VStack>
 			</Container>
 
 			<Grid
@@ -89,6 +92,7 @@ export default function WaterCol() {
 					</GridItem>
 				))}
 			</Grid>
+			<Text>I also enjoy sculpture, poetry, prop making and digital illustration.</Text>
 		</VStack>
 	)
 }
