@@ -1,6 +1,6 @@
-import { background, Box, Text, VStack } from '@chakra-ui/react'
+import { VStack } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
-import { useEffect, useState } from 'react'
+import useMeasure from 'react-use-measure'
 
 // don't load p5 on server
 const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mod.ReactP5Wrapper), {
@@ -91,7 +91,7 @@ class Particle {
 	}
 }
 
-function flowfield2(p5) {
+function grass(p5) {
 	// functions used in drawing
 	// const pressedSeed = p5.mouseIsPressed ? 1 : 1
 	let noiseScale
@@ -105,6 +105,17 @@ function flowfield2(p5) {
 	function reset() {
 		p5.clear()
 		noiseScale = Math.pow(p5.random(0.1, 0.5), 3)
+
+		//loop through particle nums, push them to random points within canvas
+		particles = []
+		particlesTwo = []
+		for (let i = 0; i < partNum; i++) {
+			particles.push(new Particle({ p5 }))
+		}
+		for (let i = 0; i < partTwoNum; i++) {
+			particlesTwo.push(new ParticleTwo({ p5 }))
+		}
+
 		const m = 4
 		const b = p5.random(150, 240)
 		const topR = b * 4 * p5.noise(700 + p5.frameCount / m)
@@ -126,16 +137,16 @@ function flowfield2(p5) {
 
 	//setup canvas
 	p5.setup = () => {
-		p5.createCanvas(700, 500)
-		//loop through particle nums, push them to random points within canvas
-		for (let i = 0; i < partNum; i++) {
-			particles.push(new Particle({ p5 }))
-		}
-		for (let i = 0; i < partTwoNum; i++) {
-			particlesTwo.push(new ParticleTwo({ p5 }))
-		}
+		p5.createCanvas(300, 300)
 		reset()
 		p5.mousePressed = () => {
+			reset()
+		}
+	}
+
+	p5.updateWithProps = (props) => {
+		if (props.w && props.h) {
+			p5.resizeCanvas(props.w, props.h)
 			reset()
 		}
 	}
@@ -190,121 +201,13 @@ function flowfield2(p5) {
 	}
 }
 
-function flowfield(p5) {
-	// functions used in drawing
-	// const pressedSeed = p5.mouseIsPressed ? 1 : 1
-	let noiseScale = Math.pow(p5.random(0.1, 0.5), 3)
-	// p5.noiseSeed(p5.millis(pressedSeed))
-	//define particles
-	let particles = []
-	let particlesTwo = []
-	const partNum = p5.random(800, 900)
-	const partTwoNum = p5.random(200, 300)
-	//setup canvas
-	p5.setup = () => {
-		p5.createCanvas(700, 500)
-		p5.background(100, 10)
-		//loop through particle nums, push them to random points within canvas
-		for (let i = 0; i < partNum; i++) {
-			particles.push(new Particle({ p5 }))
-		}
-		for (let i = 0; i < partTwoNum; i++) {
-			particlesTwo.push(new ParticleTwo({ p5 }))
-		}
-	}
-
-	//draw vectors
-	p5.draw = (update) => {
-		// Jiggle the flow field
-
-		const jiggle = p5.abs(noiseScale) * 1.1
-		if (jiggle < 1) {
-			noiseScale += p5.random(0, jiggle * 0.001)
-		} else {
-			noiseScale += p5.random(-jiggle, jiggle)
-		}
-
-		for (let i = 0; i < partNum; i++) {
-			const p = particles[i]
-			p.draw({ noiseScale, col: [255, 215, 0], lineIs: 4 })
-		}
-
-		for (let i = 0; i < partTwoNum; i++) {
-			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [255, 215, 0], lineIs: 4 })
-		}
-
-		for (let i = 0; i < partTwoNum; i++) {
-			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [255, 215, 0], lineIs: 4 })
-		}
-		for (let i = 0; i < partTwoNum; i++) {
-			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [255, 215, 0], lineIs: 4 })
-		}
-		for (let i = 0; i < partTwoNum; i++) {
-			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [255, 215, 0], lineIs: 0.1 })
-		}
-
-		for (let i = 0; i < partTwoNum; i++) {
-			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [0, 100], lineIs: 10 })
-		}
-
-		for (let i = partTwoNum; i < partTwoNum; i--) {
-			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [100, 200, 100], lineIs: 10 })
-		}
-		for (let i = partTwoNum; i < partTwoNum; i--) {
-			const p = particlesTwo[i]
-			p.draw({ noiseScale, col: [100, 240, 100], lineIs: 10 })
-		}
-	}
-
-	// const jiggle = p5.abs(noiseScale) * 1.1
-	// 	if (jiggle < 1) {
-	// 		noiseScale += p5.random(0, jiggle * 0.001)
-	// 	} else {
-	// 		noiseScale += p5.random(-jiggle, jiggle)
-	// 	}
-
-	// 	for (let i = 0; i < partNum; i++) {
-	// 		const p = particles[i]
-	// 		p.draw({ noiseScale, col: (240, 10), lineIs: 4 })
-	// 	}
-
-	// 	for (let i = 0; i < partTwoNum; i++) {
-	// 		const p = particlesTwo[i]
-	// 		p.draw({ noiseScale, col: (200, 200, 200, 200), lineIs: 4 })
-	// 	}
-	// 	for (let i = 0; i < partTwoNum; i++) {
-	// 		const p = particlesTwo[i]
-	// 		p.draw({ noiseScale, col: (200, 90), lineIs: 0.1 })
-	// 	}
-
-	// 	for (let i = 0; i < partTwoNum; i++) {
-	// 		const p = particlesTwo[i]
-	// 		p.draw({ noiseScale, col: 'white', lineIs: 1 })
-	// 	}
-	// 	for (let i = partTwoNum; i < partTwoNum; i--) {
-	// 		const p = particlesTwo[i]
-	// 		p.draw({ noiseScale, col: (30, 30, 30, 100) })
-	// 	}
-	// 	for (let i = partTwoNum; i < partTwoNum; i--) {
-	// 		const p = particlesTwo[i]
-	// 		p.draw({ noiseScale, col: (30, 30, 30, 40), lineIs: 1 })
-	// 	}
-	// }
-}
-
-export default function Draw() {
+export default function Grass() {
+	const [ref, bounds] = useMeasure()
 	return (
-		<VStack spacing={'4'} py={16}>
-			<Box p={'4'} bg={'gray.900'} borderRadius={10} boxShadow={'LG'}>
-				<ReactP5Wrapper sketch={flowfield2} />
-			</Box>
-			<Text fontWeight={800}>Flow field 01</Text>
+		<VStack px='10' maxW={'100vw'} alignItems='stretch'>
+			<VStack ref={ref} h='500px' cursor='pointer' overflow={'hidden'}>
+				<ReactP5Wrapper sketch={grass} h={bounds.height || 300} w={bounds.width || 500} />
+			</VStack>
 		</VStack>
 	)
 }

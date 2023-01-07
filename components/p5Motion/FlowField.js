@@ -1,6 +1,7 @@
 import { Box, Text, VStack } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
+import useMeasure from 'react-use-measure'
 
 // don't load p5 on server
 const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mod.ReactP5Wrapper), {
@@ -102,7 +103,20 @@ function flowfield2(p5) {
 	const partTwoNum = p5.random(200, 300)
 
 	function reset() {
+		console.log('<FlowField> reset', `w=${p5.width}`, `h=${p5.height}`)
+
 		p5.clear()
+
+		//loop through particle nums, push them to random points within canvas
+		particles = []
+		particlesTwo = []
+		for (let i = 0; i < partNum; i++) {
+			particles.push(new Particle({ p5 }))
+		}
+		for (let i = 0; i < partTwoNum; i++) {
+			particlesTwo.push(new ParticleTwo({ p5 }))
+		}
+
 		noiseScale = Math.pow(p5.random(0.1, 0.5), 3)
 		const m = 1000
 		const topR = 100 * p5.noise(p5.frameCount / m)
@@ -117,20 +131,23 @@ function flowfield2(p5) {
 
 		for (let y = 0; y < p5.height; y++) {
 			const lineColor = p5.lerpColor(topColor, bottomColor, y / p5.height)
-			p5.stroke(lineColor), p5.line(0, y, p5.width, y)
+			p5.stroke(lineColor)
+			p5.line(0, y, p5.width, y)
 		}
+	}
+
+	p5.updateWithProps = (props) => {
+		console.log('<FlowField> updateWithProps:', props)
+		if (props.w && props.h) {
+			p5.resizeCanvas(props.w, props.h)
+		}
+		reset()
 	}
 
 	//setup canvas
 	p5.setup = () => {
+		console.log('<FlowField> setup')
 		p5.createCanvas(700, 500)
-		//loop through particle nums, push them to random points within canvas
-		for (let i = 0; i < partNum; i++) {
-			particles.push(new Particle({ p5 }))
-		}
-		for (let i = 0; i < partTwoNum; i++) {
-			particlesTwo.push(new ParticleTwo({ p5 }))
-		}
 		reset()
 		p5.mousePressed = () => {
 			reset()
@@ -138,7 +155,7 @@ function flowfield2(p5) {
 	}
 
 	//draw vectors
-	p5.draw = (update) => {
+	p5.draw = () => {
 		// Jiggle the flow field
 
 		const jiggle = p5.abs(noiseScale) * 0.01
@@ -188,13 +205,17 @@ function flowfield2(p5) {
 	}
 }
 
-export default function Draw() {
+export default function FlowField() {
+	const [ref, bounds] = useMeasure()
 	return (
-		<VStack spacing={'4'} py={16}>
-			<Box p={'4'} bg={'gray.900'} borderRadius={10} boxShadow={'LG'}>
-				<ReactP5Wrapper sketch={flowfield2} />
-			</Box>
-			<Text fontWeight={800}>Flow field 01</Text>
+		<VStack overflow={'hidden'} maxW={'100vw'} alignItems='stretch' px='10'>
+			<VStack ref={ref} h='500px' cursor='pointer' overflow={'hidden'}>
+				<ReactP5Wrapper
+					sketch={flowfield2}
+					h={bounds.height || 300}
+					w={bounds.width || 500}
+				/>
+			</VStack>
 		</VStack>
 	)
 }

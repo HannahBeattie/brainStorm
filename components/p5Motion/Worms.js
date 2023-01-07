@@ -1,5 +1,6 @@
 import { VStack } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
+import useMeasure from 'react-use-measure'
 
 // don't load p5 on server
 const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mod.ReactP5Wrapper), {
@@ -71,7 +72,7 @@ class Particle {
 	}
 }
 
-function flowfield(p5) {
+function worms(p5) {
 	// functions used in drawing
 
 	let noiseScale = Math.pow(p5.random(0.01, 1), 2)
@@ -93,6 +94,13 @@ function flowfield(p5) {
 		}
 	}
 
+	p5.updateWithProps = (props) => {
+		if (props.w && props.h) {
+			p5.resizeCanvas(props.w, props.h)
+			p5.width = props.w
+			p5.height = props.h
+		}
+	}
 	//draw vectors
 	p5.draw = () => {
 		// Jiggle the flow field
@@ -114,10 +122,13 @@ function flowfield(p5) {
 	}
 }
 
-export default function Draw() {
+export default function Worms() {
+	const [ref, bounds] = useMeasure()
 	return (
-		<VStack spacing={'0'} py={'16'}>
-			<ReactP5Wrapper sketch={flowfield} />
+		<VStack overflow={'hidden'} maxW={'100vw'} ref={ref}>
+			<VStack h='500px' alignSelf='stretch' cursor='pointer' overflow={'hidden'}>
+				<ReactP5Wrapper sketch={worms} />
+			</VStack>
 		</VStack>
 	)
 }
