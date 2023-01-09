@@ -1,7 +1,5 @@
-import { Container, Grid, GridItem, Image, Text, Heading, VStack } from '@chakra-ui/react'
+import { Container, Grid, GridItem, Heading, Image, Text, VStack } from '@chakra-ui/react'
 import getGridProps from '~/components/base/getGridProps'
-import { ImageModal, useImageModal } from '~/components/hooks/UseImageModal'
-import MyLink from '~/components/MyLink'
 
 export default function WaterCol() {
 	let items = [
@@ -36,7 +34,7 @@ export default function WaterCol() {
 		},
 	]
 	return (
-		<VStack py={8}>
+		<VStack py={8} px={'4'}>
 			<Heading pb={'8'}>Water Colors</Heading>
 			<Container pb={'8'}>
 				<VStack spacing={'4'}>
@@ -70,7 +68,7 @@ export default function WaterCol() {
 
 			<Grid
 				gap={{ md: 5, base: '4' }}
-				maxW='6xl'
+				maxW='5xl'
 				py={{ md: '6', base: '0' }}
 				templateColumns={{ md: 'repeat(3, 1fr)' }}
 				templateRows={{

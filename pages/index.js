@@ -1,7 +1,7 @@
-import { Box, Heading, Text, useColorModeValue, VStack } from '@chakra-ui/react'
-import { motion, useScroll } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { Box, Heading, Text, VStack } from '@chakra-ui/react'
+import { useScroll } from 'framer-motion'
 import Appear from '~/components/animate/Appear'
+import Scroll from '~/components/animate/Scroll'
 import MyContainer from '~/components/base/MyContainer'
 import ScrollToTop from '~/components/base/ScrollToTop'
 import { useMediaQuery } from '~/components/hooks/useMediaQuery'
@@ -10,14 +10,10 @@ import Brain from '~/components/p5/Brain'
 import Tree from '~/components/p5/Tree'
 
 export default function Home() {
-	const isPageWide = useMediaQuery('(min-width: 768px)')
-	const { scrollYProgress } = useScroll()
-
 	return (
 		<Appear>
-			<motion.div className='progress' style={{ scaleX: scrollYProgress }} />
-			{isPageWide && <ScrollToTop />}
 			<ScrollToTop />
+			<Scroll />
 			<VStack pt={{ base: 4, sm: 4, md: 16 }} pb={{ base: 8, sm: 4, md: 8 }}>
 				<Heading
 					fontWeight={'800'}
@@ -28,10 +24,7 @@ export default function Home() {
 					Hello World!
 				</Heading>
 			</VStack>
-			<Box
-				bgGradient={useColorModeValue('linear(to-b, gray.800, black, gray.800)', '')}
-				pb={{ sm: 30 }}
-			>
+			<Box pb={{ sm: 30 }}>
 				<Brain />
 			</Box>
 			<MyContainer>

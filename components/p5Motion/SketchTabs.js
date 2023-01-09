@@ -27,6 +27,7 @@ export default function SketchTabs() {
 				flex={'1'}
 				alignSelf='stretch'
 				isFitted
+				colorScheme={'teal'}
 			>
 				<TabList flex={'1'} alignSelf='stretch' alignItems='center' justify={'center'}>
 					{sketches.map((item, idx) => (

@@ -72,7 +72,7 @@ function flow(p5) {
 }
 
 export default function Brain() {
-	let stroke = useColorModeValue([220, 220, 220], [240, 240, 240])
+	let stroke = useColorModeValue([10, 10, 10], [240, 240, 240])
 	const [ref, bounds] = useMeasure()
 	return (
 		<VStack overflow={'hidden'} maxW={'100vw'} ref={ref}>

@@ -5,17 +5,10 @@ import Projects from '~/components/web/Projects'
 
 export default function Web() {
 	return (
-		<VStack alignItems={'stretch'} spacing={'8'} justify={'center'}>
-			<Heading
-				fontFamily={'Reenie Beanie'}
-				textAlign={'center'}
-				pt={{ sm: '16' }}
-				fontSize={{ sm: '6xl' }}
-			>
-				Web Development
-			</Heading>
+		<VStack spacing={'8'} justify={'center'} py={8} spacing={'8'}>
+			<Heading>Web Development</Heading>
 			<Container alignSelf={'center'}>
-				<VStack spacing={'8'}>
+				<VStack spacing={'4'}>
 					<Text align={'start'} fontFamily={'Poppins'}>
 						Since graduating at Dev Acadamy in April 2022, I have been focused on
 						sharpning my skillset and adapting it to new tools, as well as developing a
