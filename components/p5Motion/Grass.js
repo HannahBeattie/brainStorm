@@ -128,13 +128,14 @@ function grass(p5) {
 		}
 	}
 
-	//setup canvas
 	p5.setup = () => {
-		p5.createCanvas(300, 300)
+		let canvas = p5.createCanvas(800, 500)
+		canvas.mousePressed(myFunc)
 		reset()
-		p5.mousePressed = () => {
-			reset()
-		}
+	}
+
+	function myFunc() {
+		reset()
 	}
 
 	p5.updateWithProps = (props) => {

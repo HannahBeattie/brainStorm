@@ -24,14 +24,14 @@ function flow(p5) {
 		}
 	}
 	p5.setup = () => {
-		p5.createCanvas(800, 500)
-
+		let canvas = p5.createCanvas(800, 500)
+		canvas.mousePressed(myFunc)
 		reset()
-		p5.mousePressed = () => {
-			reset()
-		}
 	}
 
+	function myFunc() {
+		reset()
+	}
 	function drawThis() {
 		let ranNoise = p5.random(0.01, 0.5)
 		p5.clear()

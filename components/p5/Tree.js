@@ -96,13 +96,13 @@ function sketch(p5) {
 	}
 
 	p5.setup = () => {
-		// console.log('(setup) width, height is :', width, height)
-		p5.createCanvas(width ?? 300, height ?? 300)
+		let canvas = p5.createCanvas(800, 500)
+		canvas.mousePressed(myFunc)
+		reset()
+	}
 
-		// p5.noLoop()
-		p5.mousePressed = () => {
-			reset()
-		}
+	function myFunc() {
+		reset()
 	}
 
 	p5.draw = () => {

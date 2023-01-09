@@ -40,8 +40,12 @@ function wiggle(p5) {
 	}
 
 	p5.setup = () => {
-		p5.createCanvas(800, 500)
-		p5.mousePressed = reset
+		let canvas = p5.createCanvas(800, 500)
+		canvas.mousePressed(myFunc)
+		reset()
+	}
+
+	function myFunc() {
 		reset()
 	}
 

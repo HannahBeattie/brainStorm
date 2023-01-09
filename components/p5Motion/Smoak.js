@@ -134,14 +134,16 @@ function smoak(p5) {
 		}
 	}
 
-	//setup canvas
 	p5.setup = () => {
-		p5.createCanvas(700, 500)
+		let canvas = p5.createCanvas(800, 500)
+		canvas.mousePressed(myFunc)
 		reset()
-		p5.mousePressed = () => {
-			reset()
-		}
 	}
+
+	function myFunc() {
+		reset()
+	}
+
 	p5.updateWithProps = (props) => {
 		if (props.w && props.h) {
 			p5.resizeCanvas(props.w, props.h)

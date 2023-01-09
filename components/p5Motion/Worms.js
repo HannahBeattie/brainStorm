@@ -92,10 +92,12 @@ function worms(p5) {
 			particles.push(new Particle({ p5 }))
 		}
 	}
-
-	//setup canvas
 	p5.setup = () => {
-		p5.createCanvas(800, 500)
+		let canvas = p5.createCanvas(800, 500)
+		reset()
+	}
+
+	function myFunc() {
 		reset()
 	}
 
