@@ -1,4 +1,5 @@
-import { HStack, Text, VStack } from '@chakra-ui/react'
+import { CloseIcon } from '@chakra-ui/icons'
+import { Button, CloseButton, HStack, Text, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
 import FlowField from '~/components/p5Motion/FlowField'
 import Grass from '~/components/p5Motion/Grass'
@@ -6,6 +7,7 @@ import Perlin from '~/components/p5Motion/Perlin'
 import Smoak from '~/components/p5Motion/Smoak'
 import Wiggle from '~/components/p5Motion/Wiggle'
 import Worms from '~/components/p5Motion/Worms'
+import FadeIn from '../animate/FadeIn'
 
 const sketches = [
 	{ name: 'FlowField', subtitle: 'bloop', Sketch: FlowField },
@@ -15,11 +17,11 @@ const sketches = [
 	{ name: 'Worms', subtitle: 'twoop', Sketch: Worms },
 ]
 
-export default function MyApp() {
+export default function Sketches() {
 	const [sketch, setSketch] = useState(null)
 
 	return (
-		<VStack alignSelf='stretch' alignItems='stretch' py={'8'}>
+		<VStack alignSelf='stretch' alignItems='stretch'>
 			<SelectSketchPanel setSketch={setSketch} />
 			<SketchForSelection sketch={sketch} />
 		</VStack>
@@ -28,24 +30,22 @@ export default function MyApp() {
 
 function SelectSketchPanel({ setSketch }) {
 	return (
-		<HStack
-			flex={'1'}
-			fontWeight={'400'}
-			alignSelf='stretch'
-			alignItems='center'
-			justify={'center'}
-			spacing={'20'}
-		>
+		<HStack flex={'1'} alignSelf='stretch' alignItems='center' justify={'center'}>
 			{sketches.map((item, idx) => (
-				<Text
+				<Button
+					bg='null'
+					fontWeight={'100'}
+					fontSize={'lg'}
+					_hover={{ bg: 'null' }}
+					_active={{ bg: 'null' }}
+					size={'sm'}
 					key={idx}
 					onClick={() => {
 						setSketch(item)
 					}}
-					cursor='pointer'
 				>
 					{item.name}
-				</Text>
+				</Button>
 			))}
 		</HStack>
 	)
@@ -60,7 +60,7 @@ function SketchForSelection({ sketch }) {
 		<VStack alignSelf='stretch' alignItems='stretch'>
 			<Sketch />
 			<Text alignSelf='center' py={4}>
-				{name}.
+				{name}
 			</Text>
 		</VStack>
 	)
