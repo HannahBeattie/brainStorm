@@ -1,11 +1,4 @@
-import { VStack } from '@chakra-ui/react'
-import dynamic from 'next/dynamic'
-import useMeasure from 'react-use-measure'
-
-// don't load p5 on server
-const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mod.ReactP5Wrapper), {
-	ssr: false,
-})
+import SketchWrapper from './SketchWrapper'
 
 class ParticleTwo {
 	constructor({ p5 }) {
@@ -202,12 +195,5 @@ function grass(p5) {
 }
 
 export default function Grass() {
-	const [ref, bounds] = useMeasure()
-	return (
-		<VStack px='10' maxW={'100vw'} alignItems='stretch'>
-			<VStack ref={ref} h='500px' cursor='pointer' overflow={'hidden'}>
-				<ReactP5Wrapper sketch={grass} h={bounds.height || 300} w={bounds.width || 500} />
-			</VStack>
-		</VStack>
-	)
+	return <SketchWrapper sketch={grass} />
 }

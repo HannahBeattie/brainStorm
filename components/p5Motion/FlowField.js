@@ -1,12 +1,4 @@
-import { Box, Text, VStack } from '@chakra-ui/react'
-import dynamic from 'next/dynamic'
-import { useEffect, useState } from 'react'
-import useMeasure from 'react-use-measure'
-
-// don't load p5 on server
-const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mod.ReactP5Wrapper), {
-	ssr: false,
-})
+import SketchWrapper from './SketchWrapper'
 
 class ParticleTwo {
 	constructor({ p5 }) {
@@ -48,6 +40,7 @@ class ParticleTwo {
 		)
 	}
 }
+
 class Particle {
 	constructor({ p5 }) {
 		this.p5 = p5
@@ -103,7 +96,7 @@ function flowfield2(p5) {
 	const partTwoNum = p5.random(200, 300)
 
 	function reset() {
-		console.log('<FlowField> reset', `w=${p5.width}`, `h=${p5.height}`)
+		// console.log('<FlowField> reset', `w=${p5.width}`, `h=${p5.height}`)
 
 		p5.clear()
 
@@ -137,7 +130,6 @@ function flowfield2(p5) {
 	}
 
 	p5.updateWithProps = (props) => {
-		console.log('<FlowField> updateWithProps:', props)
 		if (props.w && props.h) {
 			p5.resizeCanvas(props.w, props.h)
 		}
@@ -146,7 +138,6 @@ function flowfield2(p5) {
 
 	//setup canvas
 	p5.setup = () => {
-		console.log('<FlowField> setup')
 		p5.createCanvas(700, 500)
 		reset()
 		p5.mousePressed = () => {
@@ -206,16 +197,5 @@ function flowfield2(p5) {
 }
 
 export default function FlowField() {
-	const [ref, bounds] = useMeasure()
-	return (
-		<VStack overflow={'hidden'} maxW={'100vw'} alignItems='stretch' px='10'>
-			<VStack ref={ref} h='500px' cursor='pointer' overflow={'hidden'}>
-				<ReactP5Wrapper
-					sketch={flowfield2}
-					h={bounds.height || 300}
-					w={bounds.width || 500}
-				/>
-			</VStack>
-		</VStack>
-	)
+	return <SketchWrapper sketch={flowfield2} />
 }

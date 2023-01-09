@@ -2,6 +2,7 @@ import { background, Box, Text, VStack } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
 import useMeasure from 'react-use-measure'
+import SketchWrapper from './SketchWrapper'
 
 // don't load p5 on server
 const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mod.ReactP5Wrapper), {
@@ -144,6 +145,8 @@ function smoak(p5) {
 			p5.width = props.w
 			p5.height = props.h
 		}
+
+		reset()
 	}
 
 	//draw vectors
@@ -198,12 +201,5 @@ function smoak(p5) {
 }
 
 export default function Smoak() {
-	const [ref, bounds] = useMeasure()
-	return (
-		<VStack overflow={'hidden'} maxW={'100vw'} ref={ref}>
-			<VStack h='500px' alignSelf='stretch' cursor='pointer' overflow={'hidden'}>
-				<ReactP5Wrapper sketch={smoak} />
-			</VStack>
-		</VStack>
-	)
+	return <SketchWrapper sketch={smoak} />
 }

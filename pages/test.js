@@ -2,6 +2,7 @@ import { HStack, Text, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
 import FlowField from '~/components/p5Motion/FlowField'
 import Grass from '~/components/p5Motion/Grass'
+import Perlin from '~/components/p5Motion/Perlin'
 import Smoak from '~/components/p5Motion/Smoak'
 import Wiggle from '~/components/p5Motion/Wiggle'
 import Worms from '~/components/p5Motion/Worms'
@@ -16,17 +17,25 @@ const sketches = [
 
 export default function MyApp() {
 	const [sketch, setSketch] = useState(null)
+
 	return (
-		<>
+		<VStack alignSelf='stretch' alignItems='stretch' py={'8'}>
 			<SelectSketchPanel setSketch={setSketch} />
 			<SketchForSelection sketch={sketch} />
-		</>
+		</VStack>
 	)
 }
 
 function SelectSketchPanel({ setSketch }) {
 	return (
-		<HStack>
+		<HStack
+			flex={'1'}
+			fontWeight={'400'}
+			alignSelf='stretch'
+			alignItems='center'
+			justify={'center'}
+			spacing={'20'}
+		>
 			{sketches.map((item, idx) => (
 				<Text
 					key={idx}
@@ -49,8 +58,10 @@ function SketchForSelection({ sketch }) {
 	}
 	return (
 		<VStack alignSelf='stretch' alignItems='stretch'>
-			<Text alignSelf='center'>You are on {name}.</Text>
 			<Sketch />
+			<Text alignSelf='center' py={4}>
+				{name}.
+			</Text>
 		</VStack>
 	)
 }

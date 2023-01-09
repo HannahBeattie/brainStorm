@@ -1,6 +1,7 @@
 import { VStack } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 import useMeasure from 'react-use-measure'
+import SketchWrapper from './SketchWrapper'
 
 // don't load p5 on server
 const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mod.ReactP5Wrapper), {
@@ -123,12 +124,5 @@ function worms(p5) {
 }
 
 export default function Worms() {
-	const [ref, bounds] = useMeasure()
-	return (
-		<VStack overflow={'hidden'} maxW={'100vw'} ref={ref}>
-			<VStack h='500px' alignSelf='stretch' cursor='pointer' overflow={'hidden'}>
-				<ReactP5Wrapper sketch={worms} />
-			</VStack>
-		</VStack>
-	)
+	return <SketchWrapper sketch={worms} />
 }
