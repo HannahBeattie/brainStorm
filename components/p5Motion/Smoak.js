@@ -122,18 +122,21 @@ function smoak(p5) {
 			p5.strokeWeight(1)
 			p5.stroke(lineColor), p5.line(0, y, p5.width, y)
 		}
-	}
 
-	//setup canvas
-	p5.setup = () => {
-		p5.createCanvas(700, 500)
 		//loop through particle nums, push them to random points within canvas
+		particles = []
+		particlesTwo = []
 		for (let i = 0; i < partNum; i++) {
 			particles.push(new Particle({ p5 }))
 		}
 		for (let i = 0; i < partTwoNum; i++) {
 			particlesTwo.push(new ParticleTwo({ p5 }))
 		}
+	}
+
+	//setup canvas
+	p5.setup = () => {
+		p5.createCanvas(700, 500)
 		reset()
 		p5.mousePressed = () => {
 			reset()

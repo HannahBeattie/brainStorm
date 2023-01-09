@@ -4,7 +4,8 @@ import FadeIn from '~/components/animate/FadeIn'
 import LightMode from '~/components/nav/LightMode'
 import FlowField from '~/components/p5Motion/FlowField'
 import Grass from '~/components/p5Motion/grass'
-import Sketches from '~/components/p5Motion/Sketches'
+import Sketches from '~/components/p5Motion/Sketches2'
+import SketchTabs from '~/components/p5Motion/SketchTabs'
 import Smoak from '~/components/p5Motion/Smoak'
 import Wiggle from '~/components/p5Motion/wiggle'
 import Worms from '~/components/p5Motion/worms'
@@ -20,10 +21,6 @@ export default function Static() {
 			<LightMode />
 
 			<VStack alignItems='center' px={{ base: 4, md: 10 }} spacing={8}>
-				<Heading>Generative art made with p5</Heading>
-				<Text color={'grayAlpha.600'}>Animations</Text>
-				<Sketches />
-				<Text color={'grayAlpha.600'}>Static Images</Text>
 				<First />
 				<Seccond />
 				<Third />

@@ -17,7 +17,7 @@ const sketches = [
 	{ name: 'Worms', subtitle: 'twoop', Sketch: Worms },
 ]
 
-export default function Sketches() {
+export default function Sketches2() {
 	const [sketch, setSketch] = useState(null)
 
 	return (

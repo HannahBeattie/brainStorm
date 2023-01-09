@@ -48,8 +48,8 @@ function MyNav() {
 			href: '/water',
 		},
 		{
-			title: 'P5.Drawings',
-			href: '/staticArt',
+			title: 'P5.Animation',
+			href: '/animation',
 		},
 	]
 

@@ -82,17 +82,21 @@ function worms(p5) {
 		noiseScale = Math.pow(p5.random(0.01, 1), 2)
 	}
 
-	//define particles
 	let particles = []
 	const num = p5.random(900, 1000)
-	//setup canvas
-	p5.setup = () => {
-		p5.createCanvas(800, 500)
-		// define vectors
+
+	function reset() {
 		//loop through particle nums, push them to random points within canvas
+		particles = []
 		for (let i = 0; i < num; i++) {
 			particles.push(new Particle({ p5 }))
 		}
+	}
+
+	//setup canvas
+	p5.setup = () => {
+		p5.createCanvas(800, 500)
+		reset()
 	}
 
 	p5.updateWithProps = (props) => {
@@ -100,8 +104,10 @@ function worms(p5) {
 			p5.resizeCanvas(props.w, props.h)
 			p5.width = props.w
 			p5.height = props.h
+			reset()
 		}
 	}
+
 	//draw vectors
 	p5.draw = () => {
 		// Jiggle the flow field

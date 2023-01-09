@@ -1,4 +1,4 @@
-import { VStack } from '@chakra-ui/react'
+import { useColorModeValue, VStack } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 import useMeasure from 'react-use-measure'
 
@@ -9,12 +9,14 @@ const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mo
 
 export default function SketchWrapper({ sketch }) {
 	const [ref, bounds] = useMeasure()
+	let stroke = useColorModeValue([10, 90, 90], [230, 220, 220])
 	return (
 		<VStack overflow={'hidden'} maxW={'100vw'} alignItems='stretch' px='10'>
 			<VStack ref={ref} h='500px' cursor='pointer' overflow={'hidden'}>
 				{bounds.height > 0 && (
 					<ReactP5Wrapper
 						sketch={sketch}
+						stroke={stroke}
 						h={bounds.height || 300}
 						w={bounds.width || 500}
 					/>
