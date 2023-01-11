@@ -26,7 +26,10 @@ export default function Title() {
 				</Heading>
 				<VStack flex={'1'} p={'1'}>
 					<Spacer p={2} />
-					<Icon fontSize={70} as={useColorModeValue(SiCircle, TbCircleDashed)} />
+					<Icon
+						fontSize={70}
+						as={useColorModeValue(VscCircleLargeFilled, TbCircleDashed)}
+					/>
 					<Spacer />
 				</VStack>
 			</HStack>

@@ -3,13 +3,13 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 
 const variants = {
-	rotateMe: { rotate: 540 },
+	rotateMe: { rotate: 360 },
 	dontRotateMe: { rotate: 0 },
 }
 
-export default function Rotate({ children, transition }) {
+export default function Rotate({ children, transition, props }) {
 	const [rotate, setRotate] = useState(false)
-	console.log('rotate is:', rotate)
+
 	return (
 		<motion.div
 			whileHover={{
@@ -19,6 +19,7 @@ export default function Rotate({ children, transition }) {
 			animate={rotate ? 'rotateMe' : 'dontRotateMe'}
 			variants={variants}
 			transition={{ duration: 0.5, ease: 'easeOut', ...transition }}
+			{...props}
 		>
 			<Box onClick={() => setRotate((rotate) => !rotate)}>{children}</Box>
 		</motion.div>

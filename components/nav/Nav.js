@@ -15,6 +15,7 @@ import { useRouter } from 'next/router'
 import { BsEmojiSmileUpsideDown } from 'react-icons/bs'
 import Rotate from '../base/motion/framerMotion/Rotate'
 import MyLink from '../base/StyledNextLink'
+import DesktopNav from './DesktopNav'
 
 export default function Nav() {
 	const router = useRouter()
@@ -97,37 +98,7 @@ export default function Nav() {
 				</MenuList>
 			</Menu>
 
-			{pages.map(({ href, title }, idx) => {
-				return (
-					<MyLink
-						display={{ base: 'none', sm: 'flex' }}
-						key={`navitem-${idx}`}
-						href={href}
-						fontSize={{ md: 'md' }}
-						fontWeight={href === currentRoute ? '900' : '500'}
-						color={
-							href === currentRoute
-								? useColorModeValue('teal', 'teal.300')
-								: useColorModeValue('gray.900', 'gray.300')
-						}
-						_hover={{
-							color:
-								href === currentRoute
-									? useColorModeValue('teal', 'teal.300')
-									: useColorModeValue('teal', 'gray.100'),
-						}}
-					>
-						<Text
-							as={'div'}
-							fontFamily={'poppins'}
-							fontWeight={useColorModeValue('400', '300')}
-							letterSpacing={'0.1em'}
-						>
-							{title}
-						</Text>
-					</MyLink>
-				)
-			})}
+			<DesktopNav items={pages} />
 		</HStack>
 	)
 }

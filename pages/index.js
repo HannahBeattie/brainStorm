@@ -8,7 +8,7 @@ import Brain from '~/components/p5/hero/Brain'
 
 export default function Home() {
 	return (
-		<VStack flex={'1'} alignSelf='stretch' justify='stretch' px={4} py={'8'} spacing={'8'}>
+		<VStack flex={'1'} alignSelf='stretch' justify='stretch' px={4} py={'4'} spacing={'8'}>
 			<ScrollToTop />
 			<Scroll />
 			<Title />
