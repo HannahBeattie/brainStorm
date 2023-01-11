@@ -3,8 +3,8 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 
 const variants = {
-	rotateMe: { rotate: 360 },
-	dontRotateMe: { rotate: 0 },
+	rotateMe: { rotate: 190 },
+	dontRotateMe: { rotate: 360 },
 }
 
 export default function Rotate({ children, transition, props }) {

@@ -1,6 +1,7 @@
 import { Container, Grid, Heading, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 import Slide from '~/components/base/templates/Slide'
+import Title from '~/components/landingPage/HelloWorld'
 import Projects from '~/components/Portfolio'
 
 export default function Web() {

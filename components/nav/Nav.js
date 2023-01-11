@@ -16,6 +16,7 @@ import { BsEmojiSmileUpsideDown } from 'react-icons/bs'
 import Rotate from '../base/motion/framerMotion/Rotate'
 import MyLink from '../base/StyledNextLink'
 import DesktopNav from './DesktopNav'
+import { VscSymbolInterface } from 'react-icons/vsc'
 
 export default function Nav() {
 	const router = useRouter()
@@ -52,13 +53,22 @@ export default function Nav() {
 			title: 'P5.Animation',
 			href: '/animation',
 		},
+		{
+			title: 'ect.',
+			href: '/more',
+		},
 	]
 
 	return (
 		<HStack {...hProps}>
 			<Rotate>
 				<MyLink href={'/'}>
-					<Icon as={BsEmojiSmileUpsideDown} {...iconProps} />
+					<Icon
+						_hover={{ color: useColorModeValue('teal', 'red') }}
+						color={useColorModeValue('black', 'white')}
+						as={VscSymbolInterface}
+						{...iconProps}
+					/>
 				</MyLink>
 			</Rotate>
 			<Spacer />

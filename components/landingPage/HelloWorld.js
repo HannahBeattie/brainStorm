@@ -10,9 +10,13 @@ import {
 } from '@chakra-ui/react'
 import React from 'react'
 import { SiCircle } from 'react-icons/si'
+import { motion } from 'framer-motion'
 import { TbCircleDashed } from 'react-icons/tb'
+import { BiLoader } from 'react-icons/bi'
+import { SiDiscogs } from 'react-icons/si'
 import { VscCircleLargeFilled, VscCircleLargeOutline } from 'react-icons/vsc'
-export default function Title() {
+import Rotate from '../base/motion/framerMotion/Rotate'
+export default function HelloWorld() {
 	return (
 		<Stack align={'stretch'} direction={{ base: 'column', md: 'row' }} justify={'center'}>
 			<HStack spacing={'0'} justify={'center'} align={'stretch'}>
@@ -26,10 +30,18 @@ export default function Title() {
 				</Heading>
 				<VStack flex={'1'} p={'1'}>
 					<Spacer p={2} />
-					<Icon
-						fontSize={70}
-						as={useColorModeValue(VscCircleLargeFilled, TbCircleDashed)}
-					/>
+					<motion.div
+						animate={{ rotate: 360, duration: 10 }}
+						whileHover={{ rotate: -360, cursor: 'pointer' }}
+						transition={{
+							ease: 'linear',
+							duration: 8,
+							repeat: Infinity,
+							ease: 'easeInOut',
+						}}
+					>
+						<Icon fontSize={70} as={useColorModeValue(BiLoader, SiDiscogs)} />
+					</motion.div>
 					<Spacer />
 				</VStack>
 			</HStack>
