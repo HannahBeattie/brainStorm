@@ -3,17 +3,18 @@ import React from 'react'
 import Appear from '../motion/framerMotion/Appear'
 import FadeIn from '../motion/framerMotion/FadeIn'
 
-export default function NarrowStack({ children, font, textSize, spacing }) {
+export default function NarrowStack({ children, ...props }) {
 	return (
 		<Appear>
-			<Container size={'8xl'} py={16}>
+			<Container size={'8xl'}>
 				<VStack
 					px={{ base: 4 }}
 					alignSelf='stretch'
 					alignItems='stretch'
-					fontFamily={font ?? 'poppins'}
-					fontSize={textSize ?? { sm: 'lg', md: 'xl' }}
-					spacing={spacing ?? 3}
+					fontFamily={'poppins'}
+					fontSize={{ sm: 'lg', md: 'xl' }}
+					spacing={3}
+					{...props}
 				>
 					{children}
 				</VStack>

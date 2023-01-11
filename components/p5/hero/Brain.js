@@ -12,7 +12,7 @@ function flow(p5) {
 	let numFrames = 0
 	let points = []
 	let width = 800
-	let height = 500
+	let height = 800
 	window.p5 = p5
 
 	function reset() {
@@ -36,10 +36,6 @@ function flow(p5) {
 		}
 	}
 
-	function myFunc() {
-		reset()
-	}
-
 	p5.updateWithProps = (props) => {
 		if (props.w && props.h) {
 			p5.resizeCanvas(props.w, props.h)
@@ -56,7 +52,7 @@ function flow(p5) {
 
 	p5.setup = () => {
 		let canvas = p5.createCanvas(width, height)
-		canvas.mousePressed(myFunc)
+		canvas.mousePressed(() => reset())
 		reset()
 	}
 
@@ -80,15 +76,13 @@ export default function Brain() {
 	let stroke = useColorModeValue([0, 0, 0], [240, 240, 240])
 	const [ref, bounds] = useMeasure()
 	return (
-		<VStack overflow={'hidden'} maxW={'100vw'} ref={ref}>
-			<VStack h='500px' alignSelf='stretch' cursor='pointer' overflow={'hidden'}>
-				<ReactP5Wrapper
-					sketch={flow}
-					stroke={stroke}
-					h={bounds.height || 300}
-					w={bounds.width || 500}
-				/>
-			</VStack>
+		<VStack cursor='pointer' ref={ref} flex={'1'} align={'stretch'} w='100%' h={'100%'}>
+			<ReactP5Wrapper
+				sketch={flow}
+				stroke={stroke}
+				h={bounds.height || 300}
+				w={bounds.width || 500}
+			/>
 		</VStack>
 	)
 }

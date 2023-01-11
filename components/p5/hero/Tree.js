@@ -61,7 +61,8 @@ function sketch(p5) {
 	let stroke = [40, 30, 10, 200]
 	let trees = []
 	let num
-	let width, height
+	let width = 800
+	let height = 500
 
 	p5.updateWithProps = (props) => {
 		if (props.stroke) {
@@ -74,6 +75,9 @@ function sketch(p5) {
 		}
 		if (props.num) {
 			num = props.num
+		}
+		if (p5._setupDone) {
+			reset()
 		}
 	}
 
@@ -97,11 +101,7 @@ function sketch(p5) {
 
 	p5.setup = () => {
 		let canvas = p5.createCanvas(800, 500)
-		canvas.mousePressed(myFunc)
-		reset()
-	}
-
-	function myFunc() {
+		canvas.mousePressed(() => reset())
 		reset()
 	}
 
