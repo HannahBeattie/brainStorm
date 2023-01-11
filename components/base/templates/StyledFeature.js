@@ -1,7 +1,6 @@
 import {
 	Box,
 	Button,
-	Center,
 	Heading,
 	Image,
 	Spacer,
@@ -11,9 +10,18 @@ import {
 	VStack,
 } from '@chakra-ui/react'
 
-import MyLink from '../MyLink'
+import MyLink from '../StyledNextLink'
 
-export default function Feature({ alt, heading, text, details, label, href, buttonText, src }) {
+export default function StyledFeature({
+	alt,
+	heading,
+	text,
+	details,
+	label,
+	href,
+	buttonText,
+	src,
+}) {
 	const bg = useColorModeValue('gray.600', 'gray.700')
 	const textCol = useColorModeValue('white', 'white')
 	const buttonProps = {

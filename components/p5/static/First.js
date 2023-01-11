@@ -1,6 +1,6 @@
 import { Container, Grid, GridItem, Heading, Image, Text } from '@chakra-ui/react'
-import getGridProps from '~/components/base/getGridProps'
-import MyLink from '~/components/MyLink'
+import getGridProps from '~/components/hooks/getGridProps'
+import MyLink from '~/components/base/StyledNextLink'
 
 export default function First() {
 	const staticPath = '/static'

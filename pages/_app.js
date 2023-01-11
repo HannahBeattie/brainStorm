@@ -1,12 +1,12 @@
-import { ChakraProvider, VStack } from '@chakra-ui/react'
+import { Box, ChakraProvider, VStack } from '@chakra-ui/react'
 import Head from 'next/head'
-import LightMode from '~/components/nav/LightMode'
-import MyNav from '~/components/nav/MyNav'
-import Nav from '~/components/refact/Nav'
+import { useState } from 'react'
+import Nav from '~/components/nav/Nav'
+import LightMode from '~/components/nav/ToggleMode'
 import { theme } from '~/styles/theme'
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
 	return (
 		<ChakraProvider theme={theme}>
 			<Head>
@@ -16,12 +16,10 @@ function MyApp({ Component, pageProps }) {
 			</Head>
 
 			<VStack as='main' spacing='0' flex={'1'} justify={'stretch'} minH={'100vh'} w={'100vw'}>
-				<MyNav />
+				<Nav />
 				<LightMode />
 				<Component {...pageProps} />
 			</VStack>
 		</ChakraProvider>
 	)
 }
-
-export default MyApp

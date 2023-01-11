@@ -1,11 +1,11 @@
 import { VStack } from '@chakra-ui/react'
 import { motion, useScroll } from 'framer-motion'
-import FadeIn from '~/components/animate/FadeIn'
-import Scroll from '~/components/animate/Scroll'
-import ScrollToTop from '~/components/base/ScrollToTop'
-import First from '~/components/static/First'
-import Seccond from '~/components/static/Seccond'
-import Third from '~/components/static/Third'
+import FadeIn from '~/components/base/motion/framerMotion/FadeIn'
+import Scroll from '~/components/base/motion/framerMotion/ScrollProgress'
+import ScrollToTop from '~/components/base/motion/ScrollToTop'
+import First from '~/components/p5/static/First'
+import Seccond from '~/components/p5/static/Seccond'
+import Third from '~/components/p5/static/Third'
 
 export default function Static() {
 	const { scrollYProgress } = useScroll()

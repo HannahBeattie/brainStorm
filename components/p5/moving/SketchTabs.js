@@ -1,9 +1,9 @@
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
-import FlowField from '~/components/p5Motion/FlowField'
-import Grass from '~/components/p5Motion/Grass'
-import Smoak from '~/components/p5Motion/Smoak'
-import Wiggle from '~/components/p5Motion/Wiggle'
-import Worms from '~/components/p5Motion/Worms'
+import FlowField from '~/components/p5/moving/FlowField'
+import Grass from '~/components/p5/moving/Grass'
+import Smoak from '~/components/p5/moving/Smoak'
+import Wiggle from '~/components/p5/moving/Wiggle'
+import Worms from '~/components/p5/moving/Worms'
 
 export default function SketchTabs() {
 	const sketches = [

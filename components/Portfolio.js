@@ -1,11 +1,11 @@
 import { Grid, GridItem, Text } from '@chakra-ui/react'
-import Feature from '~/components/base/Feature'
-import MyLink from '~/components/MyLink'
+import Feature from '~/components/base/templates/StyledFeature'
+import MyLink from '~/components/base/StyledNextLink'
 
-export default function Projects() {
+export default function Portfolio() {
 	const cardProps = [
 		{
-			src: '/portfolio/momo.jpeg',
+			src: '/apps/momo.jpeg',
 			label: '2022',
 			alt: 'a screen-grab of the studio monkey webpage',
 			heading: 'Studio Monkey',
@@ -26,7 +26,7 @@ export default function Projects() {
 			),
 		},
 		{
-			src: '/portfolio/xit.jpeg',
+			src: '/apps/xit.jpeg',
 			label: '2022',
 			alt: 'a screen-grab of the xit app',
 			heading: 'X-it',
@@ -59,7 +59,7 @@ export default function Projects() {
 		},
 
 		{
-			src: '/portfolio/mrGood.jpeg',
+			src: '/apps/mrGood.jpeg',
 			label: '2022',
 			alt: 'A screen grab of my app, "Mr Verygood", that gives users a virtual pep talk',
 			heading: ' Mr Verygood',
@@ -79,7 +79,7 @@ export default function Projects() {
 			),
 		},
 		{
-			src: '/portfolio/dress.png',
+			src: '/apps/dress.png',
 			label: '2022',
 			alt: 'A screen grab of "dress the slug"',
 			buttonText: 'Dress the slug',
@@ -96,7 +96,7 @@ export default function Projects() {
 			),
 		},
 		{
-			src: '/portfolio/todo.jpeg',
+			src: '/apps/todo.jpeg',
 			label: '2022',
 			alt: 'A basic to-do app"',
 			heading: 'To do',

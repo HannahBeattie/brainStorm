@@ -2,16 +2,14 @@ import { Box, Text, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 
 import { BsFillLightbulbOffFill, BsLightbulbFill } from 'react-icons/bs'
+import Breathe from '../base/motion/framerMotion/Breathe'
 
-function LightMode() {
+export default function ToggleMode() {
 	const { colorMode, toggleColorMode } = useColorMode()
 	const mode = useColorModeValue(<BsFillLightbulbOffFill />, <BsLightbulbFill />)
 	return (
 		<Box position={'fixed'} bottom={0} left={4} cursor={'pointer'} zIndex={2}>
-			<motion.div
-				whileHover={{ scale: 1.4 }}
-				transition={{ duration: 0.3, ease: 'easeInOut' }}
-			>
+			<Breathe>
 				<Text
 					py={4}
 					onClick={toggleColorMode}
@@ -20,9 +18,7 @@ function LightMode() {
 				>
 					{mode}
 				</Text>
-			</motion.div>
+			</Breathe>
 		</Box>
 	)
 }
-
-export default LightMode

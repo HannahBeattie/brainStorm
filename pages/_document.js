@@ -1,6 +1,6 @@
 import { Box, ColorModeScript, VStack } from '@chakra-ui/react'
 import { Html, Head, Main, NextScript } from 'next/document'
-import FadeIn from '~/components/animate/FadeIn'
+import FadeIn from '~/components/base/motion/framerMotion/FadeIn'
 import { AnimatePresence, motion } from 'framer-motion'
 import { theme } from '~/styles/theme'
 

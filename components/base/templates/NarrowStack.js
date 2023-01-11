@@ -1,9 +1,9 @@
 import { Container, VStack } from '@chakra-ui/react'
 import React from 'react'
-import Appear from '../animate/Appear'
-import FadeIn from '../animate/FadeIn'
+import Appear from '../motion/framerMotion/Appear'
+import FadeIn from '../motion/framerMotion/FadeIn'
 
-function MyContainer({ children, font, textSize, spacing }) {
+export default function NarrowStack({ children, font, textSize, spacing }) {
 	return (
 		<Appear>
 			<Container size={'8xl'} py={16}>
@@ -21,5 +21,3 @@ function MyContainer({ children, font, textSize, spacing }) {
 		</Appear>
 	)
 }
-
-export default MyContainer

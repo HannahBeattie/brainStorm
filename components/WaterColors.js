@@ -1,7 +1,7 @@
 import { Container, Grid, GridItem, Heading, Image, Text, VStack } from '@chakra-ui/react'
-import getGridProps from '~/components/base/getGridProps'
+import getGridProps from '~/components/hooks/getGridProps'
 
-export default function WaterCol() {
+export default function WaterColors() {
 	let items = [
 		{
 			src: '/waterCol/1.JPG',

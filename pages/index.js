@@ -1,13 +1,13 @@
 import { Box, Heading, Text, VStack } from '@chakra-ui/react'
 import { useScroll } from 'framer-motion'
-import Appear from '~/components/animate/Appear'
-import Scroll from '~/components/animate/Scroll'
-import MyContainer from '~/components/base/MyContainer'
-import ScrollToTop from '~/components/base/ScrollToTop'
+import Appear from '~/components/base/motion/framerMotion/Appear'
+import Scroll from '~/components/base/motion/framerMotion/ScrollProgress'
+import MyContainer from '~/components/base/templates/NarrowStack'
+import ScrollToTop from '~/components/base/motion/ScrollToTop'
 import { useMediaQuery } from '~/components/hooks/useMediaQuery'
-import MyLink from '~/components/MyLink'
-import Brain from '~/components/p5/Brain'
-import Tree from '~/components/p5/Tree'
+import MyLink from '~/components/base/StyledNextLink'
+import Brain from '~/components/p5/hero/Brain'
+import Tree from '~/components/p5/hero/Tree'
 
 export default function Home() {
 	return (
@@ -53,7 +53,7 @@ export default function Home() {
 			</MyContainer>
 			<Tree num={3} />
 			<Text textAlign={'center'} py={'4'}>
-				<MyLink href={'/web'} fontStyle={'italic'}>
+				<MyLink href={'/apps'} fontStyle={'italic'}>
 					Check out my work.
 				</MyLink>
 			</Text>

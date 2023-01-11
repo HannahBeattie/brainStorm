@@ -1,10 +1,10 @@
 import { Button, HStack, Text, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
-import FlowField from '~/components/p5Motion/FlowField'
-import Grass from '~/components/p5Motion/Grass'
-import Smoak from '~/components/p5Motion/Smoak'
-import Wiggle from '~/components/p5Motion/Wiggle'
-import Worms from '~/components/p5Motion/Worms'
+import FlowField from '~/components/p5/moving/FlowField'
+import Grass from '~/components/p5/moving/Grass'
+import Smoak from '~/components/p5/moving/Smoak'
+import Wiggle from '~/components/p5/moving/Wiggle'
+import Worms from '~/components/p5/moving/Worms'
 
 const sketches = [
 	{ name: 'FlowField', subtitle: 'bloop', Sketch: FlowField },

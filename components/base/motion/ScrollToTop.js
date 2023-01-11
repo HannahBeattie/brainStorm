@@ -2,7 +2,7 @@ import { IconButton, Tooltip, Button } from '@chakra-ui/react'
 import { useEffect, useRef, useState } from 'react'
 import { FiNavigation2 } from 'react-icons/fi'
 import { motion } from 'framer-motion'
-import { useMediaQuery } from '../hooks/useMediaQuery'
+import { useMediaQuery } from '../../hooks/useMediaQuery'
 
 export default function ScrollToTop() {
 	const scrollRef = useRef(null)

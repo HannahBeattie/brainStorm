@@ -9,9 +9,9 @@ import {
 	VStack,
 } from '@chakra-ui/react'
 import { useState } from 'react'
-import MyLink from '../MyLink'
+import MyLink from '../StyledNextLink'
 
-export default function SlideX({
+export default function Slide({
 	linkTitle,
 	link2,
 	idx,

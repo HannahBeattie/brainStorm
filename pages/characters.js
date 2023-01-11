@@ -1,7 +1,7 @@
 import { Grid, GridItem, Heading, Image, Text, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
-import FadeIn from '~/components/animate/FadeIn'
-import getGridProps from '~/components/base/getGridProps'
+import FadeIn from '~/components/base/motion/framerMotion/FadeIn'
+import getGridProps from '~/components/hooks/getGridProps'
 import { ImageModal, useImageModal } from '~/components/hooks/UseImageModal'
 
 export default function Gallery() {

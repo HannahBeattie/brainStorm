@@ -1,11 +1,11 @@
 import { Container, Grid, Heading, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
-import SlideX from '~/components/base/SlideX'
-import Projects from '~/components/web/Projects'
+import Slide from '~/components/base/templates/Slide'
+import Projects from '~/components/Portfolio'
 
 export default function Web() {
 	return (
-		<VStack spacing={'8'} justify={'center'} py={8} spacing={'8'}>
+		<VStack spacing={'8'} justify={'center'} py={8}>
 			<Heading>Web Development</Heading>
 			<Container alignSelf={'center'}>
 				<VStack spacing={'4'}>
@@ -52,12 +52,12 @@ export default function Web() {
 					md: `repeat 280px)`,
 				}}
 			>
-				<SlideX
+				<Slide
 					idx={10}
 					buttonText={'Demo'}
 					title={'Headless CMS Demo'}
 					sub={'2022'}
-					src={'/portfolio/mrGood.jpeg'}
+					src={'/apps/mrGood.jpeg'}
 					alt={'todo'}
 					href={'/'}
 					text={'An example website using Contentful'}
