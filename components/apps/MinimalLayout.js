@@ -6,7 +6,7 @@ function MinimalLayout({ linkText, src, alt, title, children, href }) {
 	return (
 		<VStack flex={'1'} bg={'grayAlpha.100'} w={'100%'}>
 			<Stack p={8} flexDir={{ base: 'column', md: 'row' }}>
-				<Box p={8}>
+				<VStack p={8}>
 					<Image
 						borderRadius={'md'}
 						_hover={{ boxShadow: 'dark-lg' }}
@@ -14,7 +14,7 @@ function MinimalLayout({ linkText, src, alt, title, children, href }) {
 						src={src}
 						alt={alt}
 					/>
-				</Box>
+				</VStack>
 				<Container>
 					<VStack
 						justifyContent={'center'}

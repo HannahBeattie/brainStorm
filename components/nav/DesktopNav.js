@@ -5,15 +5,15 @@ import StyledNextLink from '~/components/base/StyledNextLink'
 
 const wrapProps = {
 	display: { base: 'none', sm: 'flex' },
-	fontSize: 'md',
-	spacing: '8',
+	fontSize: { sm: 'sm', md: 'md' },
+	spacing: { sm: '4', md: '8' },
 }
 
 const tabProps = {
 	position: 'relative',
 	cursor: 'pointer',
 	fontFamily: 'poppins',
-	letterSpacing: '0.1em',
+	letterSpacing: { md: '0.1em' },
 }
 
 export default function DesktopNav({ items }) {
