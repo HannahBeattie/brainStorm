@@ -9,7 +9,7 @@ import {
 	VStack,
 } from '@chakra-ui/react'
 import { useState } from 'react'
-import MyLink from '../StyledNextLink'
+import StyledNextLink from '../StyledNextLink'
 
 export default function Slide({
 	linkTitle,
@@ -28,19 +28,19 @@ export default function Slide({
 
 	const buttonProps = {
 		_dark: {
-			bg: 'gray.900',
+			bg: 'blackAlpha.900',
 			color: 'gray.200',
-			_hover: { bg: 'gray.800', color: 'teal.200', curser: 'pointer' },
+			_hover: { bg: 'blackAlpha.700', color: 'gray.200', curser: 'pointer' },
 		},
-		bg: 'teal.500',
-		color: 'white',
-		_hover: { bg: 'gray.800', color: 'teal.500', curser: 'pointer' },
+		bg: 'gray.900',
+		color: 'gray.200',
+		_hover: { bg: 'gray.800', color: 'white', curser: 'pointer' },
 		py: { sm: '4' },
 		curser: 'pointer',
 		minWidth: '300',
 	}
-	const textCol = useColorModeValue('white', 'gray.200')
-	const bg = useColorModeValue('gray.700', 'gray.700')
+
+	const bg = useColorModeValue('grayAlpha.300', 'blackAlpha.300')
 
 	const textInCard = {
 		justifyContent: 'center',
@@ -51,8 +51,6 @@ export default function Slide({
 		spacing: '8',
 		boxShadow: '2xl',
 		boxShadow: 'dark',
-		color: 'white',
-		_dark: { color: 'white' },
 	}
 	const imProps = {
 		w: '100%',
@@ -65,8 +63,10 @@ export default function Slide({
 	return (
 		<>
 			<GridItem order={{ md: isOdd ? order : order + 1 }} colSpan={2} rowSpan={1}>
-				<MyLink href={href}>
+				<StyledNextLink href={href}>
 					<Image
+						border={'1px'}
+						borderColor={'grayAlpha.200'}
 						borderLeftRadius={{ md: isOdd ? '8' : '0' }}
 						borderRightRadius={{ md: !isOdd ? '8' : '0' }}
 						{...imProps}
@@ -74,9 +74,12 @@ export default function Slide({
 						src={src}
 						alt={alt}
 					/>
-				</MyLink>
+				</StyledNextLink>
 			</GridItem>
 			<GridItem
+				py={{ base: 4, md: 0 }}
+				border={'1px'}
+				borderColor={'grayAlpha.200'}
 				key={`service-${idx}`}
 				order={{ md: isOdd ? order + 1 : order }}
 				colSpan={{ sm: 1 }}
@@ -84,37 +87,26 @@ export default function Slide({
 				bg={bg}
 				borderRightRadius={{ md: isOdd ? '8' : '0' }}
 				borderLeftRadius={{ md: !isOdd ? '8' : '0' }}
-				px={8}
-				py={{ sm: 4 }}
 			>
-				<VStack {...textInCard}>
-					<Heading
-						fontSize={'3xl'}
-						fontFamily={'body'}
-						variant='invert'
-						textAlign='center'
-						color={'white'}
-						_dark={{ color: 'white' }}
-					>
+				<VStack {...textInCard} p={{ md: '4' }}>
+					<Heading textAlign={'center'} color={useColorModeValue('black', 'teal.400')}>
 						{title}
 					</Heading>
-					<Text color={textCol} textAlign={'center'}>
-						{text}
-					</Text>
-					<Text color={'gray.100'} _dark={{ color: 'gray.200' }}>
+					<Text textAlign={'center'}>{text}</Text>
+					<Text color={'gray.800'} _dark={{ color: 'gray.200' }}>
 						{sub}
 					</Text>
 
 					{link2 && (
-						<MyLink href={'link2'}>
+						<StyledNextLink href={'link2'} target={'blank'}>
 							<Text as={'span'} color='teal' fontWeight={'500'}>
 								{linkTitle}
 							</Text>{' '}
-						</MyLink>
+						</StyledNextLink>
 					)}
-					<MyLink href={href}>
+					<StyledNextLink href={href} target={'blank'}>
 						<Button {...buttonProps}>{buttonText}</Button>
-					</MyLink>
+					</StyledNextLink>
 				</VStack>
 			</GridItem>
 		</>
