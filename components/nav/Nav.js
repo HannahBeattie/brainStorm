@@ -17,6 +17,7 @@ import Rotate from '../base/motion/framerMotion/Rotate'
 import MyLink from '../base/StyledNextLink'
 import DesktopNav from './DesktopNav'
 import { VscSymbolInterface } from 'react-icons/vsc'
+import { WipeIn } from '../HOC/WipeIn'
 
 export default function Nav() {
 	const router = useRouter()

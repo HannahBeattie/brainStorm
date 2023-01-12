@@ -62,3 +62,24 @@
 	transform-origin: 0 0;
 	background-color: red;
 }
+
+.slide-in {
+	position: auto;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	background: #0392ff;
+	transform-origin: top;
+}
+
+.slide-out {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	background: #0392ff;
+	/* background: #0781df;
+	transform-origin: right; */
+}

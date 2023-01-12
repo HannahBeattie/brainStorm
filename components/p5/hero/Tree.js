@@ -1,6 +1,8 @@
 import { useColorModeValue, VStack } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 import useMeasure from 'react-use-measure'
+import Appear from '~/components/base/motion/framerMotion/Appear'
+import FadeIn from '~/components/base/motion/framerMotion/FadeIn'
 
 const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mod.ReactP5Wrapper), {
 	ssr: false,
@@ -116,22 +118,24 @@ export default function Tree({ num }) {
 	let stroke = useColorModeValue([100, 90, 90], [230, 220, 220])
 
 	return (
-		<VStack
-			overflow={'hidden'}
-			spacing={'0'}
-			ref={ref}
-			h='400px'
-			alignSelf='stretch'
-			cursor='pointer'
-			maxW={'100vw'}
-		>
-			<ReactP5Wrapper
-				sketch={sketch}
-				stroke={stroke}
-				h={bounds.height || 300}
-				w={bounds.width || 500}
-				num={num}
-			/>
-		</VStack>
+		<Appear>
+			<VStack
+				overflow={'hidden'}
+				spacing={'0'}
+				ref={ref}
+				h='400px'
+				alignSelf='stretch'
+				cursor='pointer'
+				maxW={'100vw'}
+			>
+				<ReactP5Wrapper
+					sketch={sketch}
+					stroke={stroke}
+					h={bounds.height || 300}
+					w={bounds.width || 500}
+					num={num}
+				/>
+			</VStack>
+		</Appear>
 	)
 }

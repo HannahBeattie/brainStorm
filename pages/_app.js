@@ -1,10 +1,14 @@
 import { Box, ChakraProvider, VStack } from '@chakra-ui/react'
 import Head from 'next/head'
+import { Router } from 'next/router'
 import { useState } from 'react'
+import { WipeIn, WipeOut } from '~/components/HOC/WipeIn'
 import Nav from '~/components/nav/Nav'
 import LightMode from '~/components/nav/ToggleMode'
 import { theme } from '~/styles/theme'
 import '../styles/globals.css'
+import { AnimatePresence } from 'framer-motion'
+import Layout from '~/components/HOC/SpringIn'
 
 export default function MyApp({ Component, pageProps }) {
 	return (
@@ -18,7 +22,9 @@ export default function MyApp({ Component, pageProps }) {
 			<VStack as='main' spacing='0' flex={'1'} justify={'stretch'} minH={'100vh'} w={'100vw'}>
 				<Nav />
 				<LightMode />
-				<Component {...pageProps} />
+				<AnimatePresence mode='wait' initial={false}>
+					<Component {...pageProps} key={Router.asPath} />
+				</AnimatePresence>
 			</VStack>
 		</ChakraProvider>
 	)
