@@ -1,14 +1,10 @@
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
-import Appear from '~/components/base/motion/framerMotion/Appear'
-import FadeIn from '~/components/base/motion/framerMotion/FadeIn'
-import Pulse from '~/components/base/motion/framerMotion/Pulse'
+import React from 'react'
 import FlowField from '~/components/p5/moving/FlowField'
 import Grass from '~/components/p5/moving/Grass'
 import Smoak from '~/components/p5/moving/Smoak'
 import Wiggle from '~/components/p5/moving/Wiggle'
 import Worms from '~/components/p5/moving/Worms'
-import { motion } from 'framer-motion'
-import { WipeIn } from '~/components/HOC/WipeIn'
 
 export default function SketchTabs() {
 	const sketches = [
@@ -23,8 +19,8 @@ export default function SketchTabs() {
 	return (
 		<>
 			<Tabs
+				colorScheme={'teaal'}
 				size='md'
-				variant='ghost'
 				justify={'stretch'}
 				flex={'1'}
 				alignSelf='stretch'
@@ -33,6 +29,7 @@ export default function SketchTabs() {
 				<TabList flex={'1'} alignSelf='stretch' alignItems='center' justify={'center'}>
 					{sketches.map((item, idx) => (
 						<Tab
+							_active={{ color: 'blue' }}
 							textTransform={'uppercase'}
 							letterSpacing={'0.1em'}
 							fontSize={'lg'}

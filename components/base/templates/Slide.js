@@ -1,14 +1,8 @@
-import {
-	Box,
-	Button,
-	GridItem,
-	Heading,
-	Image,
-	Text,
-	useColorModeValue,
-	VStack,
-} from '@chakra-ui/react'
+import { Button, GridItem, Heading, Image, Text, useColorModeValue, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
+import SlideIn from '~/components/HOC/SlideIn'
+import Appear from '../motion/framerMotion/Appear'
+import IAmHov from '../motion/IAmHov'
 import StyledNextLink from '../StyledNextLink'
 
 export default function Slide({
@@ -63,7 +57,7 @@ export default function Slide({
 	return (
 		<>
 			<GridItem order={{ md: isOdd ? order : order + 1 }} colSpan={2} rowSpan={1}>
-				<StyledNextLink href={href}>
+				<StyledNextLink href={href} target={'blank'}>
 					<Image
 						border={'1px'}
 						borderColor={'grayAlpha.200'}
@@ -104,6 +98,7 @@ export default function Slide({
 							</Text>{' '}
 						</StyledNextLink>
 					)}
+
 					<StyledNextLink href={href} target={'blank'}>
 						<Button {...buttonProps}>{buttonText}</Button>
 					</StyledNextLink>
