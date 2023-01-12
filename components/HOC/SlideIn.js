@@ -1,20 +1,16 @@
 import { motion, useScroll } from 'framer-motion'
 
-export default function SlideIn({ children, y, x }) {
-	let yval = y ?? 300
-
+export default function SlideIn({ children, xVal }) {
+	let x = xVal ? xVal : 0
 	return (
 		<motion.div
-			initial={{ y: yval, opacity: 0 }}
-			animate={{ y: 0, opacity: 1 }}
-			exit={{ y: 300, opacity: 0 }}
+			initial={{ x: xVal, y: 0, opacity: 0 }}
+			whileInView={{ x: 0, y: 0, opacity: 1 }}
+			exit={{ x: xVal, opacity: 0, y: 0 }}
 			transition={{
+				delayChildren: 1,
 				duration: 1,
 				ease: 'easeInOut',
-			}}
-			style={{
-				width: '100vw',
-				height: '100vh',
 			}}
 		>
 			{children}

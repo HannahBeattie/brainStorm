@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion'
 
-export default function Breathe({ children, transition }) {
+export default function Focus({ children, transition, rotateBy }) {
 	return (
 		<motion.div
 			whileHover={{
-				scale: 1.1,
-				// ease: 'easeInOut',
+				scale: 0.8,
+				rotate: rotateBy ? rotateBy : -5,
+				ease: 'easeInOut',
+				cursor: 'pointer',
 			}}
 			transition={{ ease: 'easeInOut', ...transition }}
 		>

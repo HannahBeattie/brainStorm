@@ -1,8 +1,21 @@
+import { Text, VStack } from '@chakra-ui/react'
 import React from 'react'
-import { WipeIn } from '~/components/HOC/WipeIn'
+import HelloWorld from '~/components/landingPage/HelloWorld'
+import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 
-function more() {
-	return <WipeIn>more</WipeIn>
+export default function More() {
+	return (
+		<VStack
+			className={'gradient'}
+			flex={'1'}
+			alignSelf='stretch'
+			justify='stretch'
+			px={4}
+			py={'4'}
+			spacing={'8'}
+		>
+			<HelloWorld color={'white'}>more</HelloWorld>
+		</VStack>
+	)
 }
-
-export default more

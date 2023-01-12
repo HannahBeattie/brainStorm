@@ -83,3 +83,25 @@
 	/* background: #0781df;
 	transform-origin: right; */
 }
+
+.gradient {
+	background: radial-gradient(farthest-side at bottom left, rgba(255, 0, 255, 0.5), transparent),
+		radial-gradient(farthest-corner at bottom right, rgba(255, 50, 50, 0.5), transparent 400px);
+}
+
+.styledText {
+	font-size: calc(32px + (80 - 32) * ((100vw - 320px) / (1600 - 320)));
+	line-height: calc(32px + (80 - 32) * ((100vw - 320px) / (1600 - 320)));
+
+	font-family: poppins;
+	text-transform: uppercase;
+
+	position: relative;
+	display: inline-block;
+	max-width: 100%;
+
+	word-break: break-word;
+	z-index: 10;
+
+	color: white;
+}
