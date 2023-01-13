@@ -23,6 +23,7 @@ export default function Intro() {
 					<Heading fontFamily={'Alice'}>I am Hannah.</Heading>
 					<Text>An artist, insect enthusiast and Dev from New Zealand.</Text>
 				</MyContainer>
+
 				<Tree num={1} />
 				<MyContainer>
 					<Text>
@@ -34,7 +35,7 @@ export default function Intro() {
 
 				<MyContainer>
 					<Text>
-						...which take into account accessability and the diversity of engagement
+						...that take into account accessability and the diversity of engagement
 						styles...
 					</Text>
 				</MyContainer>
@@ -42,19 +43,6 @@ export default function Intro() {
 				<MyContainer>
 					<Text>...while retaining a sense of play, humour and awareness.</Text>
 				</MyContainer>
-				<Focus>
-					<HStack>
-						<Image
-							filter={'auto'}
-							invert={useColorModeValue(0, 100)}
-							h={100}
-							alt={'snail drawing'}
-							src={'/snail.png'}
-						/>
-						<Spacer />
-						<Box px={30}></Box>
-					</HStack>
-				</Focus>
 
 				<MyContainer>
 					<Text>
