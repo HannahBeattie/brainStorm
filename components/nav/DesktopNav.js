@@ -1,7 +1,8 @@
-import { Box, Button, HStack, LinkBox, Tab, useColorModeValue } from '@chakra-ui/react'
+import { Box, HStack, useColorModeValue } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import React from 'react'
+import { useRouter } from 'next/router'
 import StyledNextLink from '~/components/base/StyledNextLink'
+import HeartBeat from '../base/motion/framerMotion/HeartBeat'
 
 const wrapProps = {
 	display: { base: 'none', sm: 'flex' },
@@ -17,33 +18,35 @@ const tabProps = {
 }
 
 export default function DesktopNav({ items }) {
-	const col = useColorModeValue('black', 'white')
-	const [selected, setSelected] = React.useState('')
+	const router = useRouter()
+	const currentRoute = router.pathname
+	const col = useColorModeValue('teal', 'red')
 
 	return (
 		<HStack {...wrapProps}>
 			{items.map(({ href, title }, idx) => (
-				<Box key={idx} {...tabProps} onClick={() => setSelected(title)} tabIndex={0}>
+				<Box key={idx} {...tabProps} tabIndex={0}>
 					<StyledNextLink
+						fontFamily={'Poppins'}
 						href={href}
 						color={
-							selected === title
-								? useColorModeValue('black', 'white')
-								: useColorModeValue('gray.900', 'white')
+							href === currentRoute
+								? useColorModeValue('teal', 'red')
+								: useColorModeValue('gray.900', 'gray.200')
 						}
-						fontWeight={selected === title ? 400 : 300}
+						fontWeight={href === currentRoute ? 500 : 400}
 					>
 						{title}
 					</StyledNextLink>
 
-					{selected === title ? (
+					{href === currentRoute ? (
 						<motion.div
 							style={{
 								position: 'absolute',
 								bottom: '-1px',
 								left: '0px',
 								right: 0,
-								height: '1.px',
+								height: '2.px',
 								background: col,
 								zIndex: 0,
 							}}

@@ -54,10 +54,10 @@ export default function Nav() {
 			title: 'P5.Animation',
 			href: '/animation',
 		},
-		{
-			title: 'ect.',
-			href: '/more',
-		},
+		// {
+		// 	title: 'ect.',
+		// 	href: '/more',
+		// },
 	]
 
 	return (

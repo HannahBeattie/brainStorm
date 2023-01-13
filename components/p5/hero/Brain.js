@@ -25,7 +25,7 @@ function flow(p5) {
 		p5.clear()
 		p5.angleMode(p5.DEGREES)
 		p5.noiseDetail(ranNoise)
-		let density = p5.random(30, 100)
+		let density = p5.random(30, 90)
 		let space = p5.width / density
 
 		for (let x = 0; x < p5.width; x += space) {
@@ -57,7 +57,7 @@ function flow(p5) {
 	}
 
 	p5.draw = () => {
-		let mult = 0.05
+		let mult = 0.05 * p5.random(1, 0.9)
 		p5.fill(stroke)
 		p5.noStroke()
 		if (numFrames++ > 100) {
@@ -73,6 +73,7 @@ function flow(p5) {
 }
 
 export default function Brain() {
+	// let stroke = useColorModeValue([90, 100, 30], [80, 100, 290])
 	let stroke = useColorModeValue([0, 0, 0], [240, 240, 240])
 	const [ref, bounds] = useMeasure()
 	return (

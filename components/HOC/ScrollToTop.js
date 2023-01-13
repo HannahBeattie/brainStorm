@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react'
 import { FiNavigation2 } from 'react-icons/fi'
 import { motion } from 'framer-motion'
 import { useMediaQuery } from '../hooks/useMediaQuery'
+import { ArrowForwardIcon } from '@chakra-ui/icons'
+import { BsArrowUp, BsArrowUpCircle } from 'react-icons/bs'
 
 export default function ScrollToTop() {
 	const scrollRef = useRef(null)
@@ -30,19 +32,18 @@ export default function ScrollToTop() {
 					{showTopBtn && (
 						<Button
 							position={'fixed'}
-							right={'2'}
-							bottom={'5'}
+							left={-2}
+							bottom={'7'}
 							onClick={goToTop}
 							bg={''}
-							color={'gray.600'}
+							color={'gray.300'}
 							_hover={{ bg: '', color: 'gray.300' }}
 							_active={{ bg: '', color: 'gray.300' }}
 							area-label={'scroll to top'}
 							cursor={'pointer'}
-							size={'sm'}
-							fontWeight={'100'}
+							size={'lg'}
 						>
-							up
+							<BsArrowUpCircle />
 						</Button>
 					)}
 				</div>

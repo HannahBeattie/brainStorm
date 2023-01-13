@@ -8,10 +8,16 @@ export default function ToggleMode() {
 	const { colorMode, toggleColorMode } = useColorMode()
 	const mode = useColorModeValue(<BsFillLightbulbOffFill />, <BsLightbulbFill />)
 	return (
-		<Box position={'fixed'} bottom={0} left={4} cursor={'pointer'} zIndex={2}>
+		<Box
+			position={'fixed'}
+			bottom={{ base: 2, md: 4 }}
+			left={{ base: 2, md: 4 }}
+			cursor={'pointer'}
+			zIndex={2}
+		>
 			<Breathe>
 				<Text
-					py={4}
+					fontSize={{ base: 'xl', md: 'lg' }}
 					onClick={toggleColorMode}
 					_light={{ color: 'gray.700', _hover: { color: 'gray.500' } }}
 					_dark={{ color: 'gray.100' }}

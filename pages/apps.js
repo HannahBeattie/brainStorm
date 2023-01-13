@@ -14,6 +14,7 @@ export default function Web() {
 				<VStack flex={'1'} spacing={'8'} pt={{ md: 8 }}>
 					<VStack>
 						<Heading fontSize={'8xl'}>Hello</Heading>
+
 						<Container>
 							<VStack fontSize={'lg'} fontWeight={'light'}>
 								<Text>Here are a few of my recent projects.</Text>

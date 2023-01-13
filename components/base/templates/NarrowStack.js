@@ -8,11 +8,10 @@ export default function NarrowStack({ children, ...props }) {
 		<Appear>
 			<Container size={'8xl'}>
 				<VStack
-					px={{ base: 4 }}
+					px={{ base: 6, md: 4 }}
 					alignSelf='stretch'
 					alignItems='stretch'
-					fontFamily={'poppins'}
-					fontSize={{ sm: 'lg', md: 'xl' }}
+					fontSize={{ base: 'lg', md: 'xl' }}
 					spacing={3}
 					{...props}
 				>

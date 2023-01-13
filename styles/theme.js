@@ -2,10 +2,15 @@ import { extendTheme } from '@chakra-ui/react'
 
 export const theme = extendTheme({
 	fonts: {
-		body: 'Roboto, sans-serif',
-		heading: 'Poppins',
+		body: 'Arial',
+		heading: 'Alice',
 	},
 	colors: {
+		warmWhite: ' #f5f5f5',
+		softLight: '#fafafa',
+		myGray: '#1F2022',
+		gitDark: 'F2F2F1',
+		extraDark: '#08090c ',
 		grayAlpha: {
 			100: '#8881',
 			200: '#8882',
@@ -43,9 +48,9 @@ export const theme = extendTheme({
 	styles: {
 		global: {
 			body: {
-				bg: 'grayAlpha.200',
+				bg: ' warmWhite',
 				_dark: {
-					bg: 'gray.800',
+					bg: ' gitDark',
 				},
 				// Make mobile tap highlight light-gray instead of blue-ish
 				WebkitTapHighlightColor: 'rgba(128,128,128,0.2)', // '-webkit-tap-highlight-color'
