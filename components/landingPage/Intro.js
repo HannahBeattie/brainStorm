@@ -18,7 +18,7 @@ import Tree from '../p5/hero/Tree'
 export default function Intro() {
 	return (
 		<>
-			<VStack spacing={'16'} pt={{ md: 32, base: '32' }}>
+			<VStack spacing={'16'} pt={{ md: 32, base: '32' }} flex={'1'} alignItems={'stretch'}>
 				<MyContainer fontFamily={'Lora'}>
 					<Heading fontFamily={'Alice'}>I am Hannah.</Heading>
 					<Text>An artist, insect enthusiast and Dev from New Zealand.</Text>
@@ -31,6 +31,7 @@ export default function Intro() {
 					</Text>
 				</MyContainer>
 				<Tree num={2} />
+
 				<MyContainer>
 					<Text>
 						...which take into account accessability and the diversity of engagement
@@ -39,14 +40,7 @@ export default function Intro() {
 				</MyContainer>
 				<Tree num={2} />
 				<MyContainer>
-					<Text>...while retaining a sense of play, humour and awarenes.</Text>
-				</MyContainer>
-				<Tree num={3} />
-				<MyContainer>
-					<Text>
-						Especially around how unexpected interaction can be used to delight and
-						engage users.
-					</Text>
+					<Text>...while retaining a sense of play, humour and awareness.</Text>
 				</MyContainer>
 				<Focus>
 					<HStack>
@@ -54,24 +48,26 @@ export default function Intro() {
 							filter={'auto'}
 							invert={useColorModeValue(0, 100)}
 							h={100}
+							alt={'snail drawing'}
 							src={'/snail.png'}
 						/>
 						<Spacer />
 						<Box px={30}></Box>
 					</HStack>
 				</Focus>
+
 				<MyContainer>
 					<Text>
 						My coding style is a mixture of curiosity driven play and clean, minimal
 						functionality.
 					</Text>{' '}
+					<Text>
+						I enjoy creating suprising moments of user interaction, while nurturing my
+						love of clear, direct communication.
+					</Text>
 				</MyContainer>
 
-				<Tree num={3} />
-				<MyContainer>
-					<Text textAlign={'center'}>I like to understand how things work.</Text>
-				</MyContainer>
-				<Tree num={1} />
+				<Tree num={2} />
 				<MyContainer>
 					<Text>
 						As an interdisiplanary artist, this involves testing and re-testing methods
@@ -80,7 +76,6 @@ export default function Intro() {
 					</Text>
 				</MyContainer>
 				<Tree num={1} />
-
 				<MyContainer>
 					<Text>
 						I have recently, gingerly, dipped my toes, into the realm of generative art
@@ -91,11 +86,34 @@ export default function Intro() {
 					</Text>
 					<Text>So...whatch this space.</Text>
 				</MyContainer>
-				<HeartBeat>
-					<Tree num={100} />
-				</HeartBeat>
+
+				<Box position={'relative'}>
+					<Box
+						display={{ base: 'none', md: 'block' }}
+						maxHeight={'3rem'}
+						position={'absolute'}
+						right={'100'}
+						top={'-20'}
+					>
+						<Image
+							filter={'auto'}
+							h={'100'}
+							invert={useColorModeValue(0, 100)}
+							src={'/arrow.png'}
+						/>
+					</Box>
+
+					<HeartBeat>
+						<Tree num={100} />
+					</HeartBeat>
+				</Box>
 				<MyContainer>
-					<MyLink href={'/apps'} fontWeight={'bold'} fontFamily={'Alice'}>
+					<MyLink
+						href={'/apps'}
+						fontWeight={'bold'}
+						fontFamily={'Alice'}
+						textAlign={'center'}
+					>
 						Look at my work
 					</MyLink>
 				</MyContainer>
