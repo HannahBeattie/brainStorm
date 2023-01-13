@@ -1,17 +1,10 @@
-import { motion } from 'framer-motion'
+import { motion, useMotionValue, useTransform } from 'framer-motion'
 
-export default function Focus({ children, transition, rotateBy, rotateX, initial, moveX }) {
+export default function Focus({ children }) {
 	return (
 		<motion.div
-			animate={{ rotate: initial ? initial : 0, x: moveX ? moveX : 0 }}
-			whileHover={{
-				scale: 0.9,
-				rotate: rotateBy ? rotateBy : -5,
-				x: rotateX ? rotateX : 20,
-				ease: 'easeInOut',
-				cursor: 'pointer',
-			}}
-			transition={{ ease: 'easeInOut', ...transition }}
+			whileHover={{ rotateX: [0, -10, 0, -10, 5, 0, -10], rotate: [3, -3, 3], x: 100 }}
+			transition={{ duration: 3, ease: 'easeInOut', cursor: 'pointer' }}
 		>
 			{children}
 		</motion.div>

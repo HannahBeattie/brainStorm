@@ -1,6 +1,16 @@
-import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
+import {
+	Box,
+	Heading,
+	HStack,
+	Image,
+	Spacer,
+	Text,
+	useColorModeValue,
+	VStack,
+} from '@chakra-ui/react'
 import MyLink from '~/components/base/StyledNextLink'
 import MyContainer from '~/components/base/templates/NarrowStack'
+import Focus from '../base/motion/Focus'
 import Breathe from '../base/motion/framerMotion/Breathe'
 import HeartBeat from '../base/motion/framerMotion/HeartBeat'
 import Tree from '../p5/hero/Tree'
@@ -23,32 +33,53 @@ export default function Intro() {
 				<Tree num={2} />
 				<MyContainer>
 					<Text>
-						...taking into account accessability and diverse engagement styles...
+						...which take into account accessability and the diversity of engagement
+						styles...
 					</Text>
 				</MyContainer>
+				<Tree num={2} />
 				<MyContainer>
-					<Tree num={2} />
-					<Text>
-						...as well as playfulness, humour and the ability to suprise and delight
-						with unexpectedly interactive interfaces.
-					</Text>
+					<Text>...while retaining a sense of play, humour and awarenes.</Text>
 				</MyContainer>
 				<Tree num={3} />
 				<MyContainer>
 					<Text>
-						My coding style is a mixture of curiosity driven play and clean, minimal
-						functionality...
+						Especially around how unexpected interaction can be used to delight and
+						engage users.
 					</Text>
-					<Tree num={3} />
-					<Text>I like to understand how things work.</Text>
-					<Tree num={3} />
+				</MyContainer>
+				<Focus>
+					<HStack>
+						<Image
+							filter={'auto'}
+							invert={useColorModeValue(0, 100)}
+							h={100}
+							src={'/snail.png'}
+						/>
+						<Spacer />
+						<Box px={30}></Box>
+					</HStack>
+				</Focus>
+				<MyContainer>
 					<Text>
-						As an interdisiplanary artist, this tends to involve testing and re-testing
-						methods and observing subsequent patterns and possibilities, so that I can
+						My coding style is a mixture of curiosity driven play and clean, minimal
+						functionality.
+					</Text>{' '}
+				</MyContainer>
+
+				<Tree num={3} />
+				<MyContainer>
+					<Text textAlign={'center'}>I like to understand how things work.</Text>
+				</MyContainer>
+				<Tree num={1} />
+				<MyContainer>
+					<Text>
+						As an interdisiplanary artist, this involves testing and re-testing methods
+						and observing subsequent patterns and possibilities, so that I can
 						constantly add tools to my proverbial tool kit.
 					</Text>
 				</MyContainer>
-				<Tree num={4} />
+				<Tree num={1} />
 
 				<MyContainer>
 					<Text>
