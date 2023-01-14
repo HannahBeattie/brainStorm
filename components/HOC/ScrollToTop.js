@@ -1,10 +1,6 @@
-import { IconButton, Tooltip, Button } from '@chakra-ui/react'
+import { Box, Button } from '@chakra-ui/react'
 import { useEffect, useRef, useState } from 'react'
-import { FiNavigation2 } from 'react-icons/fi'
-import { motion } from 'framer-motion'
-import { useMediaQuery } from '../hooks/useMediaQuery'
-import { ArrowForwardIcon } from '@chakra-ui/icons'
-import { BsArrowUp, BsArrowUpCircle } from 'react-icons/bs'
+import { BsArrowUpCircle } from 'react-icons/bs'
 
 export default function ScrollToTop() {
 	const scrollRef = useRef(null)
@@ -24,30 +20,33 @@ export default function ScrollToTop() {
 			behavior: 'smooth',
 		})
 	}
-	const isPageWide = useMediaQuery('(min-width: 768px)')
+
 	return (
 		<>
-			{isPageWide && (
-				<div ref={scrollRef} style={{ overflow: 'scroll' }}>
-					{showTopBtn && (
-						<Button
-							position={'fixed'}
-							left={-2}
-							bottom={'7'}
-							onClick={goToTop}
-							bg={''}
-							color={'gray.300'}
-							_hover={{ bg: '', color: 'gray.300' }}
-							_active={{ bg: '', color: 'gray.300' }}
-							area-label={'scroll to top'}
-							cursor={'pointer'}
-							size={'lg'}
-						>
-							<BsArrowUpCircle />
-						</Button>
-					)}
-				</div>
-			)}
+			<Box
+				display={{ base: 'none', md: 'auto' }}
+				position={'relative'}
+				ref={scrollRef}
+				style={{ overflow: 'scroll' }}
+			>
+				{showTopBtn && (
+					<Button
+						position={'fixed'}
+						left={-2}
+						bottom={'7'}
+						onClick={goToTop}
+						bg={''}
+						color={'gray.300'}
+						_hover={{ bg: '', color: 'gray.300' }}
+						_active={{ bg: '', color: 'gray.300' }}
+						area-label={'scroll to top'}
+						cursor={'pointer'}
+						size={'lg'}
+					>
+						<BsArrowUpCircle />
+					</Button>
+				)}
+			</Box>
 		</>
 	)
 }

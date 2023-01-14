@@ -16,12 +16,7 @@ export default function Characters() {
 	const { openImageNum, imageModalProps } = useImageModal({ items })
 	return (
 		<FadeIn>
-			<VStack
-				alignItems='center'
-				px={{ base: 4, md: 10 }}
-				pt={{ base: 4, md: 8 }}
-				spacing={4}
-			>
+			<VStack flex={'1'} alignSelf='stretch' justify='center' py={8} spacing={8}>
 				<Heading>Monsters</Heading>
 				<Text>Someday these characters will be part of a playable world.</Text>
 				<Appear>

@@ -17,8 +17,8 @@ export default function Document() {
 				flex={'1'}
 				alignItems={'stretch'}
 				as='body'
-				w='100vw'
-				overflowX='hidden'
+				min='100vw'
+				// overflowX='hidden'
 				spacing='0'
 				p={'0'}
 			>

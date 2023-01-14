@@ -35,13 +35,13 @@ export default function WaterColors() {
 		},
 	]
 	return (
-		<VStack py={8} px={'4'}>
+		<VStack flex={'1'} alignSelf='stretch' justify='center' py={8} spacing={8}>
 			<Appear>
-				<Heading pb={'8'}>Water Colors</Heading>
+				<Heading>Water Colors</Heading>
 			</Appear>
 			<Appear>
-				<Container pb={'8'}>
-					<VStack spacing={'4'}>
+				<Container>
+					<VStack>
 						<Text>
 							One of my hobbies for the last few years has been water color painting.
 						</Text>
@@ -75,7 +75,7 @@ export default function WaterColors() {
 				<Grid
 					gap={{ md: 5, base: '4' }}
 					maxW='5xl'
-					py={{ md: '6', base: '0' }}
+					py={{ md: '4', base: '0' }}
 					templateColumns={{ md: 'repeat(3, 1fr)' }}
 					templateRows={{
 						md: `repeat(${Math.floor((items.length * 2) / 3)}, 300px)`,

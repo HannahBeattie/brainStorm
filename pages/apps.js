@@ -1,17 +1,20 @@
-import { Container, Divider, Grid, Heading, HStack, Image, Text, VStack } from '@chakra-ui/react'
+import { Container, Grid, Heading, Text, VStack } from '@chakra-ui/react'
 import MinimalLayout from '~/components/apps/MinimalLayout'
 import Appear from '~/components/base/motion/framerMotion/Appear'
 import FadeIn from '~/components/base/motion/framerMotion/FadeIn'
-import IAmHov from '~/components/base/motion/IAmHov'
 import Slide from '~/components/base/templates/Slide'
-import SlideIn from '~/components/HOC/SlideIn'
-import { WipeIn } from '~/components/HOC/WipeIn'
 
 export default function Web() {
 	return (
 		<>
 			<FadeIn>
-				<VStack flex={'1'} spacing={'8'} pt={{ md: 8 }}>
+				<VStack
+					alignSelf='stretch'
+					justify='center'
+					flex={'1'}
+					spacing={'8'}
+					pt={{ md: 8 }}
+				>
 					<VStack>
 						<Heading fontSize={'8xl'}>Hello</Heading>
 
@@ -65,6 +68,7 @@ export default function Web() {
 							</Text>
 						</MinimalLayout>
 					</Appear>
+
 					<Appear style={{ width: '100%' }}>
 						<MinimalLayout
 							linkText={'X-it'}
@@ -81,34 +85,33 @@ export default function Web() {
 						</MinimalLayout>
 					</Appear>
 					<Appear>
-						<IAmHov>
-							<Grid
-								_hover={{ boxShaddow: 'dark-xl' }}
-								templateColumns={{
-									base: 'repeat(1, 1fr)',
-									md: 'repeat(3, 1fr)',
-								}}
-								templateRows={{
-									base: `repeat 200px 300px)`,
-									md: `repeat 280px)`,
-								}}
-							>
-								<Slide
-									idx={2}
-									buttonText={'Open'}
-									title={<i>Not-a-real-demo</i>}
-									sub={'With contentful and Next.js'}
-									src={'/apps/dynamic.png'}
-									alt={'todo'}
-									href={'https://not-a-real-website.vercel.app/'}
-									text={'Example website'}
-									link2={
-										'https://github.com/HannahBeattie/not-a-real-website/find/main'
-									}
-									linkTitle={'See source code'}
-								/>
-							</Grid>
-						</IAmHov>
+						<Grid
+							cursor={'pointer'}
+							_hover={{ boxShaddow: 'dark-xl' }}
+							templateColumns={{
+								base: 'repeat(1, 1fr)',
+								md: 'repeat(3, 1fr)',
+							}}
+							templateRows={{
+								base: `repeat 200px 300px)`,
+								md: `repeat 280px)`,
+							}}
+						>
+							<Slide
+								idx={2}
+								buttonText={'Open'}
+								title={<i>Not-a-real-demo</i>}
+								sub={'With contentful and Next.js'}
+								src={'/apps/dynamic.png'}
+								alt={'todo'}
+								href={'https://not-a-real-website.vercel.app/'}
+								text={'Example website'}
+								link2={
+									'https://github.com/HannahBeattie/not-a-real-website/find/main'
+								}
+								linkTitle={'See source code'}
+							/>
+						</Grid>
 					</Appear>
 				</VStack>
 			</FadeIn>

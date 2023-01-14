@@ -10,7 +10,7 @@ export default function ToggleMode() {
 	return (
 		<Box
 			position={'fixed'}
-			bottom={{ base: 2, md: 4 }}
+			bottom={{ base: 3, md: 4 }}
 			left={{ base: 2, md: 4 }}
 			cursor={'pointer'}
 			zIndex={2}
@@ -20,7 +20,7 @@ export default function ToggleMode() {
 					fontSize={{ base: 'xl', md: 'lg' }}
 					onClick={toggleColorMode}
 					_light={{ color: 'gray.700', _hover: { color: 'gray.500' } }}
-					_dark={{ color: 'gray.100' }}
+					_dark={{ color: 'grayAlpha.900' }}
 				>
 					{mode}
 				</Text>

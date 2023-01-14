@@ -13,13 +13,13 @@ import {
 	VStack,
 } from '@chakra-ui/react'
 import Intro from '~/components/apps/Intro'
-import Focus from '~/components/base/motion/Focus'
+import Focus from '~/components/base/motion/framerMotion/Snail'
 import Appear from '~/components/base/motion/framerMotion/Appear'
 import Breathe from '~/components/base/motion/framerMotion/Breathe'
 import FadeIn from '~/components/base/motion/framerMotion/FadeIn'
 import Pulse from '~/components/base/motion/framerMotion/Pulse'
 import StyledNextLink from '~/components/base/StyledNextLink'
-import SmallFocus from '../base/motion/SmallFocus'
+import SmallFocus from '../base/motion/framerMotion/SmallFocus'
 
 function NotAReal() {
 	return (

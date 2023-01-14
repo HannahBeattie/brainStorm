@@ -41,11 +41,6 @@ export default function Nav() {
 			title: 'Apps',
 			href: '/apps',
 		},
-
-		{
-			title: '3d Characters',
-			href: '/characters',
-		},
 		{
 			title: 'Water Colors',
 			href: '/water',
@@ -54,6 +49,12 @@ export default function Nav() {
 			title: 'P5.Animation',
 			href: '/animation',
 		},
+
+		{
+			title: '3d Characters',
+			href: '/characters',
+		},
+
 		{
 			title: 'Contact.',
 			href: '/contact',

@@ -11,8 +11,8 @@ export default function SketchWrapper({ sketch }) {
 	const [ref, bounds] = useMeasure()
 	let stroke = useColorModeValue([1, 1, 1], [240, 240, 240])
 	return (
-		<VStack overflow={'hidden'} maxW={'100vw'} alignItems='stretch' px='10'>
-			<VStack ref={ref} h='500px' cursor='pointer' overflow={'hidden'}>
+		<VStack alignContent={'stretch'} flex={1} w={'100%'}>
+			<VStack ref={ref} minH={'500'} maxW={'100vw'} minW={'90vw'} cursor='pointer'>
 				{bounds.height > 0 && (
 					<ReactP5Wrapper
 						sketch={sketch}

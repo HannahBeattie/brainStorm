@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react'
 import { useScroll, motion } from 'framer-motion'
 import React from 'react'
-import SmallFocus from '../base/motion/SmallFocus'
+import SmallFocus from '../base/motion/framerMotion/SmallFocus'
 import StyledNextLink from '../base/StyledNextLink'
 
 function MinimalLayout({ linkText, src, alt, title, children, href }) {

@@ -13,18 +13,22 @@ function flow(p5) {
 	let points = []
 	let width = 800
 	let height = 800
-	window.p5 = p5
+	let noiseMult = 0
+	let noiseOffset = { x: 0, y: 0 }
+	// window.p5 = p5
 
 	function reset() {
 		p5.clear()
 		numFrames = 0
 		p5.loop()
+		noiseMult = 0.05 * p5.random(0.5, 1)
+		noiseOffset = { x: p5.random(-1000, 1000), y: p5.random(-1000, 1000) }
 
 		points = []
-		let ranNoise = p5.random(0.01, 0.02)
+		// let ranNoise = p5.random(0.01, 0.06)
 		p5.clear()
 		p5.angleMode(p5.DEGREES)
-		p5.noiseDetail(ranNoise)
+		// p5.noiseDetail(ranNoise)
 		let density = p5.random(30, 90)
 		let space = p5.width / density
 
@@ -57,7 +61,6 @@ function flow(p5) {
 	}
 
 	p5.draw = () => {
-		let mult = 0.05 * p5.random(1, 0.9)
 		p5.fill(stroke)
 		p5.noStroke()
 		if (numFrames++ > 100) {
@@ -65,7 +68,9 @@ function flow(p5) {
 		}
 
 		for (var i = 0; i < points.length; i++) {
-			let angle = p5.map(p5.noise(points[i].x * mult, points[i].y * mult), 0, 1, 0, 720)
+			const xx = noiseOffset.x + points[i].x * noiseMult
+			const yy = noiseOffset.y + points[i].y * noiseMult
+			const angle = p5.map(p5.noise(xx, yy), 0, 1, 0, 700)
 			points[i].add(p5.createVector(p5.cos(angle), p5.sin(angle)))
 			p5.ellipse(points[i].x, points[i].y, 1)
 		}
@@ -74,7 +79,7 @@ function flow(p5) {
 
 export default function Brain() {
 	// let stroke = useColorModeValue([90, 100, 30], [80, 100, 290])
-	let stroke = useColorModeValue([0, 0, 0], [240, 240, 240])
+	let stroke = useColorModeValue([80, 90, 10], [240, 240, 240])
 	const [ref, bounds] = useMeasure()
 	return (
 		<VStack cursor='pointer' ref={ref} flex={'1'} align={'stretch'} w='100%' h={'100%'}>

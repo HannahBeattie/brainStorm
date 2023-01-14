@@ -1,6 +1,6 @@
 import React from 'react'
-import { useMediaQuery } from '../../../hooks/useMediaQuery'
 import { motion, useScroll } from 'framer-motion'
+import { useMediaQuery } from '~/components/hooks/useMediaQuery'
 
 export default function ScrollProgress() {
 	const isPageWide = useMediaQuery('(min-width: 768px)')

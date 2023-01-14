@@ -14,7 +14,7 @@ export default function Static() {
 		<FadeIn>
 			<ScrollToTop />
 			<Scroll />
-			<VStack alignItems='center' px={{ base: 4, md: 10 }} spacing={8}>
+			<VStack flex={'1'} alignSelf='stretch' justify='center' py={8} spacing={8}>
 				<First />
 				<Seccond />
 				<Third />
