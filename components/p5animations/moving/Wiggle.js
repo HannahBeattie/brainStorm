@@ -11,10 +11,17 @@ const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mo
 function wiggle(p5) {
 	let stroke = [100, 30, 10, 200]
 	let points = []
+	let noiseMult = 1
+	let noiseOffset = { x: 0, y: 0 }
 
 	function reset() {
 		p5.clear()
 		p5.noFill()
+		noiseMult = p5.random(0.0005, 0.005)
+		noiseOffset = {
+			x: p5.random(-1000, 1000),
+			y: p5.random(-1000, 1000),
+		}
 		let density = 100
 		let space = p5.width / density
 		points = []
@@ -51,9 +58,10 @@ function wiggle(p5) {
 
 	p5.draw = () => {
 		p5.stroke(stroke)
-		let mult = 0.005
 		for (var i = 0; i < points.length; i++) {
-			let angle = p5.map(p5.noise(points[i].x * mult, points[i].y * mult), 0, 1, 0, 720)
+			const xx = points[i].x * noiseMult + noiseOffset.x
+			const yy = points[i].y * noiseMult + noiseOffset.y
+			const angle = p5.map(p5.noise(xx, yy), 0, 1, 0, 720)
 			points[i].add(p5.createVector(p5.cos(angle), p5.sin(angle)))
 			p5.ellipse(points[i].x, points[i].y, 1)
 		}

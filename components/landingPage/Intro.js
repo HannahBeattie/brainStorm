@@ -13,7 +13,7 @@ import MyContainer from '~/components/base/templates/NarrowStack'
 import Focus from '../base/motion/framerMotion/Snail'
 import Breathe from '../base/motion/framerMotion/Breathe'
 import HeartBeat from '../base/motion/framerMotion/HeartBeat'
-import Tree from '../p5/hero/Tree'
+import Tree from '../p5animations/hero/Tree'
 
 export default function Intro() {
 	return (

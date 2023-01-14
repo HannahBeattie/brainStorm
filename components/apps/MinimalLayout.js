@@ -27,7 +27,7 @@ function MinimalLayout({ linkText, src, alt, title, children, href }) {
 					orientation='vertical'
 					flex={'1'}
 					justifySelf={'stretch'}
-					alignItem={'stretch'}
+					alignItems={'stretch'}
 				/>
 				<Stack p={8} flexDir={{ base: 'column', md: 'row' }}>
 					<VStack p={8} pr={8}>
@@ -50,11 +50,12 @@ function MinimalLayout({ linkText, src, alt, title, children, href }) {
 						orientation='vertical'
 						flex={'1'}
 						justifySelf={'stretch'}
-						alignItem={'stretch'}
+						alignItems={'stretch'}
 					/>
 
 					<Container>
 						<VStack
+							px={'8'}
 							justifyContent={'center'}
 							py={10}
 							fontSize={'lg'}

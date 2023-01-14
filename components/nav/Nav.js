@@ -18,6 +18,8 @@ import MyLink from '../base/StyledNextLink'
 import DesktopNav from './DesktopNav'
 import { VscSymbolInterface } from 'react-icons/vsc'
 import { WipeIn } from '../HOC/WipeIn'
+import { Pages } from './Pages'
+const pages = Pages
 
 export default function Nav() {
 	const router = useRouter()
@@ -35,31 +37,6 @@ export default function Nav() {
 		textTransform: 'uppercase',
 		fontSize: { base: 'xs' },
 	}
-
-	const pages = [
-		{
-			title: 'Apps',
-			href: '/apps',
-		},
-		{
-			title: 'Water Colors',
-			href: '/water',
-		},
-		{
-			title: 'P5.Animation',
-			href: '/animation',
-		},
-
-		{
-			title: '3d Characters',
-			href: '/characters',
-		},
-
-		{
-			title: 'Contact.',
-			href: '/contact',
-		},
-	]
 
 	return (
 		<HStack {...hProps}>

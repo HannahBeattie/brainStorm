@@ -86,6 +86,7 @@ export default function Web() {
 					</Appear>
 					<Appear>
 						<Grid
+							px={2}
 							cursor={'pointer'}
 							_hover={{ boxShaddow: 'dark-xl' }}
 							templateColumns={{

@@ -1,8 +1,8 @@
 import { Heading, useColorModeValue, VStack } from '@chakra-ui/react'
 import FadeIn from '~/components/base/motion/framerMotion/FadeIn'
 import MyLink from '~/components/base/StyledNextLink'
-import SketchTabs from '~/components/p5/moving/SketchTabs'
-import World from '~/components/p5/World'
+import SketchTabs from '~/components/p5animations/moving/SketchTabs'
+import World from '~/components/p5animations/World'
 
 export default function Static() {
 	return (

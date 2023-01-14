@@ -4,9 +4,9 @@ import FadeIn from '~/components/base/motion/framerMotion/FadeIn'
 import Scroll from '~/components/base/motion/framerMotion/ScrollProgress'
 import ScrollToTop from '~/components/HOC/ScrollToTop'
 import SlideIn from '~/components/HOC/SlideIn'
-import First from '~/components/p5/static/First'
-import Seccond from '~/components/p5/static/Seccond'
-import Third from '~/components/p5/static/Third'
+import First from '~/components/p5animations/static/First'
+import Seccond from '~/components/p5animations/static/Seccond'
+import Third from '~/components/p5animations/static/Third'
 
 export default function Static() {
 	const { scrollYProgress } = useScroll()

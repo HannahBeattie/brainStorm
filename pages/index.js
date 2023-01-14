@@ -4,7 +4,7 @@ import FadeIn from '~/components/base/motion/framerMotion/FadeIn'
 import Scroll from '~/components/base/motion/framerMotion/ScrollProgress'
 import ScrollToTop from '~/components/HOC/ScrollToTop'
 import Intro from '~/components/landingPage/Intro'
-import Brain from '~/components/p5/hero/Brain'
+import Brain from '~/components/p5animations/hero/Brain'
 import { motion } from 'framer-motion'
 import HeartBeat from '~/components/base/motion/framerMotion/HeartBeat'
 export default function Home() {
