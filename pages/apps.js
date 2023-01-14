@@ -89,7 +89,6 @@ export default function Web() {
 					<Appear>
 						<Grid
 							px={2}
-							cursor={'pointer'}
 							_hover={{ boxShaddow: 'dark-xl' }}
 							templateColumns={{
 								base: 'repeat(1, 1fr)',

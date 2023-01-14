@@ -23,6 +23,7 @@ export default function Characters() {
 				<Text>Someday these characters will be part of a playable world.</Text>
 				<Appear>
 					<Grid
+						cursor={{ md: 'pointer' }}
 						gap={{ md: 5, base: '4' }}
 						maxW='6xl'
 						py={{ md: '6', base: '0' }}
@@ -32,8 +33,9 @@ export default function Characters() {
 						}}
 					>
 						{items.map((url, idx) => (
-							<GridItem key={url} {...getGridProps(idx)}>
+							<GridItem key={url} {...getGridProps(idx)} cursor={{ md: 'pointer' }}>
 								<Image
+									cursor={{ md: 'pointer' }}
 									borderRadius={'md'}
 									w='100%'
 									cursor={{ md: 'pointer' }}
