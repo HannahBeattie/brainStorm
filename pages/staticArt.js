@@ -1,7 +1,9 @@
 import { VStack } from '@chakra-ui/react'
 import { motion, useScroll } from 'framer-motion'
 import FadeIn from '~/components/base/motion/framerMotion/FadeIn'
+import IAmHov from '~/components/base/motion/framerMotion/IAmHov'
 import Scroll from '~/components/base/motion/framerMotion/ScrollProgress'
+import StyledNextLink from '~/components/base/StyledNextLink'
 import ScrollToTop from '~/components/HOC/ScrollToTop'
 import SlideIn from '~/components/HOC/SlideIn'
 import First from '~/components/p5animations/static/First'
@@ -18,6 +20,10 @@ export default function Static() {
 				<First />
 				<Seccond />
 				<Third />
+
+				<StyledNextLink href={'/p5Animations'}>
+					<i>Back to animation page</i>
+				</StyledNextLink>
 			</VStack>
 		</FadeIn>
 	)

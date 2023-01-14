@@ -95,30 +95,30 @@ export default function Intro() {
 						<Tree num={100} />
 					</HeartBeat>
 				</Box>
-				<MyContainer>
-					<MyLink
-						href={'/apps'}
-						fontWeight={'bold'}
-						fontFamily={'Alice'}
-						textAlign={'center'}
-					>
-						Look at my work
-					</MyLink>
-				</MyContainer>
 				<Breathe>
-					<VStack py={4}>
+					<MyContainer>
 						<MyLink
-							href={
-								'https://gorillasun.de/blog/radial-perlin-noise-and-generative-tree-rings'
-							}
-							fontFamily={'Poppins'}
-							fontSize={{ base: 'sm', md: 'sm' }}
-							writingMode={'vertical-lr'}
+							href={'/apps'}
+							fontWeight={'bold'}
+							fontFamily={'Alice'}
+							textAlign={'center'}
 						>
-							Generative circle work enspired by AHMAD MOUSSA's Perlin noise rings
+							Look at my work
 						</MyLink>
-					</VStack>
+					</MyContainer>
 				</Breathe>
+				<VStack py={4}>
+					<MyLink
+						href={
+							'https://gorillasun.de/blog/radial-perlin-noise-and-generative-tree-rings'
+						}
+						fontFamily={'Poppins'}
+						fontSize={{ base: 'sm', md: 'sm' }}
+						writingMode={'vertical-lr'}
+					>
+						Generative circle work enspired by AHMAD MOUSSA's Perlin noise rings
+					</MyLink>
+				</VStack>
 			</VStack>
 		</>
 	)

@@ -13,6 +13,7 @@ import {
 } from '@chakra-ui/react'
 import { useScroll, motion } from 'framer-motion'
 import React from 'react'
+import Breathe from '../base/motion/framerMotion/Breathe'
 import SmallFocus from '../base/motion/framerMotion/SmallFocus'
 import StyledNextLink from '../base/StyledNextLink'
 
@@ -64,9 +65,11 @@ function MinimalLayout({ linkText, src, alt, title, children, href }) {
 						>
 							<Heading textAlign={'center'}>{title}</Heading>
 							<div>{children}</div>
-							<StyledNextLink href={href} target={'blank'}>
-								{linkText}
-							</StyledNextLink>
+							<Breathe>
+								<StyledNextLink href={href} target={'blank'}>
+									{linkText}
+								</StyledNextLink>
+							</Breathe>
 						</VStack>
 					</Container>
 				</Stack>

@@ -11,6 +11,7 @@ import {
 import NextLink from 'next/link'
 import React from 'react'
 import { VscGithub } from 'react-icons/vsc'
+import Breathe from '../base/motion/framerMotion/Breathe'
 import StyledNextLink from '../base/StyledNextLink'
 
 export default function Footer() {
@@ -25,16 +26,18 @@ export default function Footer() {
 			py={{ md: 2, base: 2 }}
 		>
 			<Spacer />
-			<StyledNextLink href={'https://github.com/HannahBeattie'}>
-				<Icon
-					fontSize={'3xl'}
-					color={col}
-					active={{ bg: 'null' }}
-					_hover={{ bg: 'null', color: hoverCol }}
-					bg={'null'}
-					as={VscGithub}
-				/>
-			</StyledNextLink>
+			<Breathe>
+				<StyledNextLink href={'https://github.com/HannahBeattie'}>
+					<Icon
+						fontSize={'3xl'}
+						color={col}
+						active={{ bg: 'null' }}
+						_hover={{ bg: 'null', color: hoverCol }}
+						bg={'null'}
+						as={VscGithub}
+					/>
+				</StyledNextLink>
+			</Breathe>
 		</HStack>
 	)
 }
