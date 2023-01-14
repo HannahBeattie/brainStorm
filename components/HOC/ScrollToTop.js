@@ -23,30 +23,26 @@ export default function ScrollToTop() {
 
 	return (
 		<>
-			<Box
-				display={{ base: 'none', md: 'auto' }}
-				position={'relative'}
-				ref={scrollRef}
-				style={{ overflow: 'scroll' }}
-			>
-				{showTopBtn && (
-					<Button
-						position={'fixed'}
-						left={-2}
-						bottom={'7'}
-						onClick={goToTop}
-						bg={''}
-						color={'gray.300'}
-						_hover={{ bg: '', color: 'gray.300' }}
-						_active={{ bg: '', color: 'gray.300' }}
-						area-label={'scroll to top'}
-						cursor={'pointer'}
-						size={'lg'}
-					>
-						<BsArrowUpCircle />
-					</Button>
-				)}
-			</Box>
+			{showTopBtn && (
+				<Button
+					display={{ base: 'none', md: 'block' }}
+					position={'relative'}
+					ref={scrollRef}
+					style={{ overflow: 'scroll' }}
+					bg={''}
+					position={'fixed'}
+					left={0}
+					bottom={'10'}
+					onClick={goToTop}
+					color={'gray.300'}
+					_hover={{ bg: '', color: 'gray.300' }}
+					_active={{ bg: '', color: 'gray.300' }}
+					area-label={'scroll to top'}
+					cursor={'pointer'}
+				>
+					<BsArrowUpCircle />
+				</Button>
+			)}
 		</>
 	)
 }

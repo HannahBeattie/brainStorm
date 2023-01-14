@@ -6,6 +6,7 @@ import { ImageModal, useImageModal } from '~/components/hooks/UseImageModal'
 import { motion } from 'framer-motion'
 import FadeIn from '~/components/base/motion/framerMotion/FadeIn'
 import SpringIn from '~/components/HOC/SpringIn'
+import ScrollToTop from '~/components/HOC/ScrollToTop'
 export default function Characters() {
 	const monstPath = '/monsters'
 	const monstCount = 15
@@ -16,6 +17,7 @@ export default function Characters() {
 	const { openImageNum, imageModalProps } = useImageModal({ items })
 	return (
 		<FadeIn>
+			<ScrollToTop />
 			<VStack flex={'1'} alignSelf='stretch' justify='center' py={8} spacing={8}>
 				<Heading>Monsters</Heading>
 				<Text>Someday these characters will be part of a playable world.</Text>

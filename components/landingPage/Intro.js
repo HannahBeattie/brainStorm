@@ -1,16 +1,6 @@
-import {
-	Box,
-	Heading,
-	HStack,
-	Image,
-	Spacer,
-	Text,
-	useColorModeValue,
-	VStack,
-} from '@chakra-ui/react'
+import { Box, Heading, Image, Text, useColorModeValue, VStack } from '@chakra-ui/react'
 import MyLink from '~/components/base/StyledNextLink'
 import MyContainer from '~/components/base/templates/NarrowStack'
-import Focus from '../base/motion/framerMotion/Snail'
 import Breathe from '../base/motion/framerMotion/Breathe'
 import HeartBeat from '../base/motion/framerMotion/HeartBeat'
 import Tree from '../p5animations/hero/Tree'

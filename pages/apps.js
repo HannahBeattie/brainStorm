@@ -3,11 +3,13 @@ import MinimalLayout from '~/components/apps/MinimalLayout'
 import Appear from '~/components/base/motion/framerMotion/Appear'
 import FadeIn from '~/components/base/motion/framerMotion/FadeIn'
 import Slide from '~/components/base/templates/Slide'
+import ScrollToTop from '~/components/HOC/ScrollToTop'
 
 export default function Web() {
 	return (
 		<>
 			<FadeIn>
+				<ScrollToTop />
 				<VStack
 					alignSelf='stretch'
 					justify='center'

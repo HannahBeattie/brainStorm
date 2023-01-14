@@ -1,20 +1,7 @@
-import {
-	Box,
-	Container,
-	Divider,
-	HStack,
-	Stack,
-	Text,
-	useBreakpointValue,
-	useMediaQuery,
-	VStack,
-} from '@chakra-ui/react'
+import { Divider, HStack, Stack, Text, useBreakpointValue, VStack } from '@chakra-ui/react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
-import PrevNext from '~/components/nav/PrevNext'
-import FadeIn from './base/motion/framerMotion/FadeIn'
 import StyledNextLink from './base/StyledNextLink'
 import SlideIn from './HOC/SlideIn'
-import { WipeIn } from './HOC/WipeIn'
 import { usePrevNext } from './hooks/usePrevNext'
 import P5Nav from './nav/P5Nav'
 import { AnimationPages } from './nav/Pages'

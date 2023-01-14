@@ -1,7 +1,6 @@
 import { Heading, Image, Text, useColorModeValue, VStack } from '@chakra-ui/react'
 import Breathe from '~/components/base/motion/framerMotion/Breathe'
 import Snail from '~/components/base/motion/framerMotion/Snail'
-import Focus from '~/components/base/motion/framerMotion/Snail'
 import StyledNextLink from '~/components/base/StyledNextLink'
 
 export default function More() {
