@@ -71,7 +71,7 @@ export default function Nav() {
 							<MyLink
 								href={href}
 								fontSize={'lg'}
-								fontFamily={'Poppins'}
+								fontFamily={'SF Pro'}
 								textTransform={'uppercase'}
 								fontWeight={href === currentRoute ? '400' : '300'}
 								color={href === currentRoute ? 'gray.900' : 'gray.500'}

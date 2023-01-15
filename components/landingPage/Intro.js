@@ -124,7 +124,7 @@ export default function Intro() {
 						href={
 							'https://gorillasun.de/blog/radial-perlin-noise-and-generative-tree-rings'
 						}
-						fontFamily={'Poppins'}
+						fontFamily={'SF Pro'}
 						fontSize={{ base: 'sm', md: 'xs' }}
 					>
 						Generative circle work enspired by AHMAD MOUSSA's Perlin noise rings

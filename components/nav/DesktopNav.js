@@ -13,7 +13,7 @@ const wrapProps = {
 const tabProps = {
 	position: 'relative',
 	cursor: 'pointer',
-	fontFamily: 'poppins',
+	fontFamily: 'SF Pro',
 	letterSpacing: { md: '0.1em' },
 }
 
@@ -27,7 +27,7 @@ export default function DesktopNav({ items }) {
 			{items.map(({ href, title }, idx) => (
 				<Box key={idx} {...tabProps} tabIndex={0}>
 					<StyledNextLink
-						fontFamily={'Poppins'}
+						fontFamily={'SF Pro'}
 						href={href}
 						color={
 							href === currentRoute

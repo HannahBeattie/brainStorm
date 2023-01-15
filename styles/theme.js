@@ -2,7 +2,7 @@ import { extendTheme } from '@chakra-ui/react'
 
 export const theme = extendTheme({
 	fonts: {
-		body: 'Arial',
+		body: 'SF Pro',
 		heading: 'Alice',
 	},
 	colors: {

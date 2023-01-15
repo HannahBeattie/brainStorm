@@ -6,7 +6,7 @@ export default function FadeIn({ children, transition }) {
 			initial={{ opacity: '0' }}
 			animate={{ opacity: 1 }}
 			transition={{ duration: 0.3, ease: 'easeOut', ...transition }}
-			style={{ minWidth: '100vw', minHeight: '100vh' }}
+			style={{ minWidth: '100vw' }}
 		>
 			{children}
 		</motion.div>

@@ -21,7 +21,6 @@ export default function MyApp({ Component, pageProps }) {
 				as='main'
 				spacing='0'
 				flex={'1'}
-				// justifySelf={'stretch'}
 				alignItems='stretch'
 				minH={'100vh'}
 				minW={'100vw'}

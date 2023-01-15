@@ -1,24 +1,20 @@
-import { Container, Grid, Heading, Text, VStack } from '@chakra-ui/react'
+import { Grid, Text } from '@chakra-ui/react'
 import MinimalLayout from '~/components/apps/AppFeature'
-import Appear from '~/components/framerMotion/Appear'
-import FadeIn from '~/components/HOC/FadeIn'
+import IntroCard from '~/components/base/templates/IntroCard'
 import Slide from '~/components/base/templates/Slide'
-import ScrollToTop from '~/components/framerMotion/ScrollToTop'
+import Appear from '~/components/framerMotion/Appear'
 import PageWrapper from '~/components/HOC/PageWrapper'
 
 export default function Web() {
 	return (
 		<>
 			<PageWrapper>
-				<VStack>
-					<Heading fontSize={'8xl'}>Hello</Heading>
-
-					<Container>
-						<VStack fontSize={'lg'} fontWeight={'light'}>
-							<Text>Here are a few of my recent projects.</Text>
-						</VStack>
-					</Container>
-				</VStack>
+				<IntroCard heading={'Apps'}>
+					<Text>
+						Here are a few projects I have completed since graduating from Dev Academy
+						Wellington in April of 2022.
+					</Text>
+				</IntroCard>
 				<Appear style={{ width: '100%' }}>
 					<MinimalLayout
 						linkText={'studiomonkey.io'}

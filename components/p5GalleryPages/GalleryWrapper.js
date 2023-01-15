@@ -22,7 +22,7 @@ export default function GalleryWrapper({ children, title, column1, column2, colu
 		fontSize: 'sm',
 		textTransform: 'uppercase',
 		letterSpacing: '0.1em',
-		fontFamily: 'Poppins',
+		fontFamily: 'SF Pro',
 	}
 
 	const containerProps = {
@@ -45,7 +45,7 @@ export default function GalleryWrapper({ children, title, column1, column2, colu
 	}
 	const titleProps = {
 		textAlign: 'center',
-		fontFamily: 'Poppins',
+		fontFamily: 'SF Pro',
 		textTransform: 'uppercase',
 		letterSpacing: '0.8em',
 	}

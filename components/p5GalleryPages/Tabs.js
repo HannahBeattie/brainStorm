@@ -15,7 +15,7 @@ const wrapProps = {
 const tabProps = {
 	position: 'relative',
 	cursor: 'pointer',
-	fontFamily: 'Poppins',
+	fontFamily: 'SF Pro',
 	letterSpacing: { md: '0.1em' },
 	px: 4,
 }

@@ -1,10 +1,9 @@
-import { Container, VStack, Text, Heading } from '@chakra-ui/react'
-import React from 'react'
-import IntroCard from '../base/templates/IntroCard'
+import { Text } from '@chakra-ui/react'
+import IntroSlide from '../base/templates/IntroSlide'
 
 export default function P5Intro() {
 	return (
-		<IntroCard heading={'Generative art'}>
+		<IntroSlide heading={'Generative art'}>
 			<Text>
 				I have recently, gingerly, dipped my toes into the realm of digital and generative
 				art thanks to the p5.js library.
@@ -18,6 +17,6 @@ export default function P5Intro() {
 				abilities; Perhaps trying to mimic my analog, pen-and-ink styles in a generative
 				context.
 			</Text>
-		</IntroCard>
+		</IntroSlide>
 	)
 }
