@@ -17,6 +17,7 @@ export default function Home() {
 					fontFamily={'Alice'}
 					fontSize={{ base: 80, sm: 80, md: 90 }}
 					textAlign={{ base: 'center', sm: 'auto' }}
+					pb={{ md: 4 }}
 				>
 					Hello World
 				</Heading>
