@@ -1,10 +1,10 @@
 import { Box, Heading, Image, Text, useColorModeValue, VStack } from '@chakra-ui/react'
 import MyLink from '~/components/base/StyledNextLink'
-import MyContainer from '~/components/base/templates/NarrowStack'
+import MyContainer from '~/components/base/templates/TextContainer'
 import LinkWrapper from '../base/LinkWrapper'
-import ButtonFocus from '../base/motion/framerMotion/ButtonFocus'
-import HeartBeat from '../base/motion/framerMotion/HeartBeat'
-import Tree from './p5animations/hero/Tree'
+import ButtonFocus from '../framerMotion/ButtonFocus'
+import Pulse from '../framerMotion/Pulse'
+import Tree from '../p5/hero/Tree'
 
 export default function Intro() {
 	return (
@@ -89,20 +89,18 @@ export default function Intro() {
 						/>
 					</Box>
 
-					<HeartBeat>
+					<Pulse>
 						<Tree num={100} />
-					</HeartBeat>
+					</Pulse>
 				</Box>
 
 				<MyContainer>
-					<Text>
+					<Text fontStyle={'italic'}>
 						I am currently interested in learning how to write mobile applications.
 					</Text>
-					<Text as='div'>
-						If you are curious about this or have resources to share, feel free to
-						<LinkWrapper href={'/contact'}>
-							<i>reach out.</i>
-						</LinkWrapper>
+					<Text as='div' fontStyle={'italic'}>
+						If you are curious about this or have resources to share, feel free to{' '}
+						<LinkWrapper href={'/contact'}>reach out.</LinkWrapper>
 					</Text>
 				</MyContainer>
 

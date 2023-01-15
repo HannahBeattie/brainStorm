@@ -1,8 +1,5 @@
 import { Button, GridItem, Heading, Image, Text, useColorModeValue, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
-import SlideIn from '~/components/HOC/SlideIn'
-import Appear from '../motion/framerMotion/Appear'
-import IAmHov from '../motion/framerMotion/IAmHov'
 import StyledNextLink from '../StyledNextLink'
 
 export default function Slide({

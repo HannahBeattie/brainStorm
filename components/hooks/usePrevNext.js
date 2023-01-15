@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 export function usePrevNext(routes) {
 	const router = useRouter()
 	const { pathname, route, asPath } = router
-	// console.log(`router: pathname=${pathname} route=${route} asPath=${asPath}`)
 	if (typeof window !== 'undefined') {
 		window.router = router
 	}

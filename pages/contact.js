@@ -1,11 +1,12 @@
 import { Heading, Box, Image, Text, useColorModeValue, VStack } from '@chakra-ui/react'
-import Breathe from '~/components/base/motion/framerMotion/ButtonFocus'
-import Snail from '~/components/base/motion/framerMotion/Snail'
+import Breathe from '~/components/framerMotion/ButtonFocus'
+import Snail from '~/components/framerMotion/Snail'
 import StyledNextLink from '~/components/base/StyledNextLink'
+import PageWrapper from '~/components/HOC/PageWrapper'
 
 export default function More() {
 	return (
-		<VStack flex='1' alignSelf='stretch' justify='center' py={8} spacing={8}>
+		<PageWrapper>
 			<Heading userSelect={'none'} pointerEvents={'none'}>
 				Contact
 			</Heading>
@@ -35,6 +36,6 @@ export default function More() {
 					</StyledNextLink>
 				</Breathe>
 			</VStack>
-		</VStack>
+		</PageWrapper>
 	)
 }

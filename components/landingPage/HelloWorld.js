@@ -15,7 +15,7 @@ import { TbCircleDashed } from 'react-icons/tb'
 import { BiLoader } from 'react-icons/bi'
 import { SiDiscogs } from 'react-icons/si'
 import { VscCircleLargeFilled, VscCircleLargeOutline } from 'react-icons/vsc'
-import Rotate from '../base/motion/framerMotion/Rotate'
+import Rotate from '../framerMotion/RotateClicked'
 export default function HelloWorld({ ...props }) {
 	return (
 		<Stack align={'stretch'} direction={{ base: 'column', md: 'row' }} justify={'center'}>

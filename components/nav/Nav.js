@@ -8,16 +8,13 @@ import {
 	MenuItem,
 	MenuList,
 	Spacer,
-	Text,
 	useColorModeValue,
 } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
-import { BsEmojiSmileUpsideDown } from 'react-icons/bs'
-import Rotate from '../base/motion/framerMotion/Rotate'
+import { VscSymbolInterface } from 'react-icons/vsc'
+import Rotate from '../framerMotion/RotateClicked'
 import MyLink from '../base/StyledNextLink'
 import DesktopNav from './DesktopNav'
-import { VscSymbolInterface } from 'react-icons/vsc'
-import { WipeIn } from '../HOC/WipeIn'
 import { Pages } from './Pages'
 const pages = Pages
 

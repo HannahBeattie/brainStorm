@@ -24,32 +24,32 @@ export const Pages = [
 	},
 ]
 
-export const AnimationPages = [
+export const p5Tabs = [
 	{
-		title: '0', // 'Reef',
+		title: '0',
 		href: '/p5Index',
 	},
 	{
-		title: '1', // 'Reef',
-		href: '/p5/reef',
+		title: '1',
+		href: '/p5/one',
 	},
 	{
-		title: '2', // 'Electric vine',
-		href: '/p5/electric',
-	},
-
-	{
-		title: '3', // 'Geo Twirl',
-		href: '/p5/geo',
+		title: '2',
+		href: '/p5/two',
 	},
 
 	{
-		title: '4', // 'Silk & Stitch',
-		href: '/p5/silk',
+		title: '3',
+		href: '/p5/three',
 	},
 
 	{
-		title: '5', // 'spark',
-		href: '/p5/spark',
+		title: '4',
+		href: '/p5/four',
+	},
+
+	{
+		title: '5',
+		href: '/p5/five',
 	},
 ]

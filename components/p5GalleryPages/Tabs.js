@@ -2,32 +2,36 @@ import { Box, HStack, useColorModeValue } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import StyledNextLink from '~/components/base/StyledNextLink'
-import Pulse from '../framerMotion/Pulse'
+import { usePrevNext } from '../hooks/usePrevNext'
+import { p5Tabs } from '../nav/Pages'
 
 const wrapProps = {
-	display: { base: 'none', sm: 'flex' },
+	justify: 'center',
 	fontSize: { sm: 'sm', md: 'md' },
 	spacing: { sm: '4', md: '8' },
+	pb: { md: 4 },
 }
 
 const tabProps = {
 	position: 'relative',
 	cursor: 'pointer',
-	fontFamily: 'poppins',
+	fontFamily: 'Poppins',
 	letterSpacing: { md: '0.1em' },
+	px: 4,
 }
 
-export default function DesktopNav({ items }) {
+export default function Tabs() {
+	const items = p5Tabs
 	const router = useRouter()
 	const currentRoute = router.pathname
 	const col = useColorModeValue('teal', 'red')
+	const { prev, next } = usePrevNext(items.map((item) => item.href))
 
 	return (
-		<HStack {...wrapProps}>
+		<HStack {...wrapProps} alignContent={'center'}>
 			{items.map(({ href, title }, idx) => (
 				<Box key={idx} {...tabProps} tabIndex={0}>
 					<StyledNextLink
-						fontFamily={'Poppins'}
 						href={href}
 						color={
 							href === currentRoute

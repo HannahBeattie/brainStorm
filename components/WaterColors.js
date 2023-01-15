@@ -1,6 +1,6 @@
 import { Container, Grid, GridItem, Heading, Image, Text, VStack } from '@chakra-ui/react'
 import getGridProps from '~/components/hooks/getGridProps'
-import Appear from './base/motion/framerMotion/Appear'
+import Appear from './framerMotion/Appear'
 
 export default function WaterColors() {
 	let items = [

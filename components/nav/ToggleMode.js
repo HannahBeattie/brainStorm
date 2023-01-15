@@ -2,7 +2,7 @@ import { Box, Text, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 
 import { BsFillLightbulbOffFill, BsLightbulbFill } from 'react-icons/bs'
-import Breathe from '../base/motion/framerMotion/ButtonFocus'
+import Breathe from '../framerMotion/ButtonFocus'
 
 export default function ToggleMode() {
 	const { colorMode, toggleColorMode } = useColorMode()
