@@ -138,11 +138,7 @@ function flowfield2(p5) {
 
 	p5.setup = () => {
 		let canvas = p5.createCanvas(800, 500)
-		canvas.mousePressed(myFunc)
-		reset()
-	}
-
-	function myFunc() {
+		canvas.mousePressed(() => reset())
 		reset()
 	}
 

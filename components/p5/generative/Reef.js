@@ -97,10 +97,6 @@ function reef(p5) {
 		reset()
 	}
 
-	function myFunc() {
-		reset()
-	}
-
 	p5.updateWithProps = (props) => {
 		if (props.w && props.h) {
 			p5.resizeCanvas(props.w, props.h)

@@ -9,7 +9,8 @@ const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mo
 })
 
 function geo(p5) {
-	let stroke = [100, 30, 10, 200]
+	let ranStroke = p5.random(0.005, 0.09)
+	let stroke = [100, 30, 10, 100]
 	let points = []
 	let noiseMult = 1
 	let noiseOffset = { x: 0, y: 0 }
@@ -22,7 +23,7 @@ function geo(p5) {
 			x: p5.random(-1000, 1000),
 			y: p5.random(-1000, 1000),
 		}
-		let density = 100
+		let density = p5.random(80, 100)
 		let space = p5.width / density
 		points = []
 
@@ -48,16 +49,13 @@ function geo(p5) {
 
 	p5.setup = () => {
 		let canvas = p5.createCanvas(800, 500)
-		canvas.mousePressed(myFunc)
-		reset()
-	}
-
-	function myFunc() {
+		canvas.mousePressed(() => reset())
 		reset()
 	}
 
 	p5.draw = () => {
 		p5.stroke(stroke)
+		p5.strokeWeight(ranStroke)
 		for (var i = 0; i < points.length; i++) {
 			const xx = points[i].x * noiseMult + noiseOffset.x
 			const yy = points[i].y * noiseMult + noiseOffset.y
