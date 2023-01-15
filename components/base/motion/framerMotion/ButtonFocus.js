@@ -5,7 +5,6 @@ export default function ButtonFocus({ children, transition }) {
 		<motion.div
 			whileHover={{
 				scale: 1.1,
-				// ease: 'easeInOut',
 			}}
 			transition={{ ease: 'easeInOut', ...transition }}
 		>

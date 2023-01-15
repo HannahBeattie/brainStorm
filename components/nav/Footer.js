@@ -16,6 +16,7 @@ import StyledNextLink from '../base/StyledNextLink'
 
 export default function Footer() {
 	const col = useColorModeValue('blackAlpha.200', 'whiteAlpha.600')
+	const accent = useColorModeValue('teal', 'grayAlpha.700')
 	const hoverCol = useColorModeValue('blackAlpha.400', 'whiteAlpha.800')
 	return (
 		<HStack
@@ -24,13 +25,15 @@ export default function Footer() {
 			w={'100vw'}
 			px={{ base: 2, md: 4 }}
 			py={{ md: 2, base: 2 }}
+			bg={{ base: 'gray.300', md: 'none' }}
+			_dark={{ bg: { base: 'blackAlpha.300', md: 'none' } }}
 		>
 			<Spacer />
 			<Breathe>
 				<StyledNextLink href={'https://github.com/HannahBeattie'}>
 					<Icon
 						fontSize={'3xl'}
-						color={col}
+						color={{ base: accent, md: col }}
 						active={{ bg: 'null' }}
 						_hover={{ bg: 'null', color: hoverCol }}
 						bg={'null'}

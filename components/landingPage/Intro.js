@@ -76,11 +76,10 @@ export default function Intro() {
 
 				<Box position={'relative'}>
 					<Box
-						// display={{ base: 'none', md: 'block' }}
-						maxHeight={{ base: '2rem', md: '3rem' }}
+						maxHeight={{ base: '5px', md: '2rem' }}
 						position={'absolute'}
-						right={{ base: '20vw', sm: '10vw', md: '100' }}
-						top={'-20'}
+						right={{ base: '13vw', sm: '10vw', md: '100' }}
+						top={{ base: '-20', md: '-20' }}
 					>
 						<Image
 							filter={'auto'}
@@ -109,14 +108,20 @@ export default function Intro() {
 
 				<ButtonFocus>
 					<MyContainer>
-						<MyLink href={'/apps'} textAlign={'center'} fontFamily={'ALICE'}>
+						<MyLink
+							fontSize={{ base: '3xl' }}
+							px={{ base: 10 }}
+							href={'/apps'}
+							textAlign={'center'}
+							fontFamily={'ALICE'}
+						>
 							Check out my work
 						</MyLink>
 					</MyContainer>
 				</ButtonFocus>
 				<VStack>
 					<MyLink
-						maxW={{ base: '24em', md: '34em' }}
+						maxW={{ base: '20em', md: '34em' }}
 						textAlign={'center'}
 						href={
 							'https://gorillasun.de/blog/radial-perlin-noise-and-generative-tree-rings'

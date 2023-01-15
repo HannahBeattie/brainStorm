@@ -10,7 +10,7 @@ export default function ToggleMode() {
 	return (
 		<Box
 			position={'fixed'}
-			bottom={{ base: 3, md: 4 }}
+			bottom={{ base: 4, md: 4 }}
 			left={{ base: 2, md: 4 }}
 			cursor={'pointer'}
 			zIndex={2}
