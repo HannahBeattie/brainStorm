@@ -2,7 +2,7 @@ import React from 'react'
 import Reef from '~/components/p5/generative/Reef'
 import Silk from '~/components/p5/generative/Silk'
 import Spark from '~/components/p5/generative/Spark'
-import { silk } from '~/components/p5GalleryPages/Details'
+import { silk } from '~/components/p5GalleryPages/details'
 import GalleryWrapper from '~/components/p5GalleryPages/GalleryWrapper'
 
 export default function One() {
