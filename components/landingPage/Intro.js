@@ -1,14 +1,15 @@
 import { Box, Heading, Image, Text, useColorModeValue, VStack } from '@chakra-ui/react'
 import MyLink from '~/components/base/StyledNextLink'
 import MyContainer from '~/components/base/templates/NarrowStack'
-import Breathe from '../base/motion/framerMotion/Breathe'
+import LinkWrapper from '../base/LinkWrapper'
+import ButtonFocus from '../base/motion/framerMotion/ButtonFocus'
 import HeartBeat from '../base/motion/framerMotion/HeartBeat'
-import Tree from '../p5animations/hero/Tree'
+import Tree from './p5animations/hero/Tree'
 
 export default function Intro() {
 	return (
 		<>
-			<VStack spacing={'16'} pt={{ md: 32, base: '32' }} flex={'1'} alignItems={'stretch'}>
+			<VStack spacing={'16'} pt={{ md: 32, base: 32 }} flex={'1'} alignItems={'stretch'}>
 				<MyContainer fontFamily={'Lora'}>
 					<Heading fontFamily={'Alice'}>I am Hannah.</Heading>
 					<Text>An artist, insect enthusiast and Dev from New Zealand.</Text>
@@ -17,60 +18,68 @@ export default function Intro() {
 				<Tree num={1} />
 				<MyContainer>
 					<Text>
-						I am interested in story telling and creating holistic, person-first
-						designs...
+						I am interested in storytelling and creating holistic, person-first designs
+						...
 					</Text>
 				</MyContainer>
 				<Tree num={2} />
 
 				<MyContainer>
 					<Text>
-						...that take into account accessability and the diversity of engagement
-						styles...
+						...that take into account the diversity of experience and access styles ...
 					</Text>
 				</MyContainer>
 				<Tree num={2} />
 				<MyContainer>
-					<Text>...while retaining a sense of play, humour and awareness.</Text>
+					<Text>...while retaining a sense of experimentation, joy and humour.</Text>
 				</MyContainer>
-
+				<Tree num={2} />
 				<MyContainer>
 					<Text>
-						My coding style is a mixture of curiosity driven play and clean, minimal
-						functionality.
+						My coding style is a mixture of curiosity-driven play and clean, minimal
+						functionality, with the through line being that it doesn&apos;t matter how
+						flashy something looks if it can&apos;t be accessed.
 					</Text>{' '}
 					<Text>
-						I enjoy creating suprising moments of user interaction, while nurturing my
-						love of clear, direct communication.
+						One of my favourite things about coding is creating surprising and playful
+						moments of user interaction that cut through the quotient of data fatigue we
+						all carry and have come to expect.
 					</Text>
 				</MyContainer>
 
 				<Tree num={2} />
 				<MyContainer>
 					<Text>
-						As an interdisiplanary artist, this involves testing and re-testing methods
-						and observing subsequent patterns and possibilities, so that I can
-						constantly add tools to my proverbial tool kit.
+						My background as an interdisciplinary artist has always involved testing and
+						re-testing methods and tools to observe patterns and possibilities.
+					</Text>
+					<Text>
+						Coding is much the same, only with digital rather than physical applicative
+						methods.
 					</Text>
 				</MyContainer>
 				<Tree num={1} />
 				<MyContainer>
 					<Text>
-						I have recently, gingerly, dipped my toes, into the realm of generative art
-						and animation.
+						I am excited to continue to learn new tools, languages and frameworks with
+						which to refine my practice.
 					</Text>
 					<Text>
-						I beleive my next step will be in the direction of mobile app design.
+						And contribute to a digital landscape that is diverse, deliberate and highly
+						responsive.
 					</Text>
+				</MyContainer>
+
+				<MyContainer>
 					<Text>So...whatch this space.</Text>
 				</MyContainer>
 
 				<Box position={'relative'}>
 					<Box
-						display={{ base: 'none', md: 'block' }}
-						maxHeight={'3rem'}
+						// display={{ base: 'none', md: 'block' }}
+						maxHeight={{ base: '2rem', md: '3rem' }}
 						position={'absolute'}
-						right={'100'}
+						right={{ base: '20vw', sm: '10vw', md: '100' }}
 						top={'-20'}
 					>
 						<Image
@@ -85,26 +94,35 @@ export default function Intro() {
 						<Tree num={100} />
 					</HeartBeat>
 				</Box>
-				<Breathe>
+
+				<MyContainer>
+					<Text>
+						I am currently interested in learning how to write mobile applications.
+					</Text>
+					<Text as='div'>
+						If you are curious about this or have resources to share, feel free to
+						<LinkWrapper href={'/contact'}>
+							<i>reach out.</i>
+						</LinkWrapper>
+					</Text>
+				</MyContainer>
+
+				<ButtonFocus>
 					<MyContainer>
-						<MyLink
-							href={'/apps'}
-							fontWeight={'bold'}
-							fontFamily={'Alice'}
-							textAlign={'center'}
-						>
-							Look at my work
+						<MyLink href={'/apps'} textAlign={'center'} fontFamily={'ALICE'}>
+							Check out my work
 						</MyLink>
 					</MyContainer>
-				</Breathe>
-				<VStack py={4}>
+				</ButtonFocus>
+				<VStack>
 					<MyLink
+						maxW={{ base: '24em', md: '34em' }}
+						textAlign={'center'}
 						href={
 							'https://gorillasun.de/blog/radial-perlin-noise-and-generative-tree-rings'
 						}
 						fontFamily={'Poppins'}
-						fontSize={{ base: 'sm', md: 'sm' }}
-						writingMode={'vertical-lr'}
+						fontSize={{ base: 'sm', md: 'xs' }}
 					>
 						Generative circle work enspired by AHMAD MOUSSA's Perlin noise rings
 					</MyLink>

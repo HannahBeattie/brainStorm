@@ -1,7 +1,7 @@
 import { Divider, Text, VStack } from '@chakra-ui/react'
 import AnimationPage from '~/components/AnimationPage'
 import StyledNextLink from '~/components/base/StyledNextLink'
-import FlowField from '~/components/p5animations/moving/FlowField'
+import FlowField from '~/components/landingPage/p5animations/moving/FlowField'
 
 export default function Silk() {
 	return (

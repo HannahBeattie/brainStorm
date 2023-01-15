@@ -1,6 +1,7 @@
 import { Grid, GridItem, Heading, Image, Spacer, Text, VStack } from '@chakra-ui/react'
-import Breathe from '~/components/base/motion/framerMotion/Breathe'
+import Breathe from '~/components/base/motion/framerMotion/ButtonFocus'
 import StyledNextLink from '~/components/base/StyledNextLink'
+import LinkWrapper from '../base/LinkWrapper'
 
 export default function PhoneLayout({
 	project,
@@ -38,15 +39,7 @@ export default function PhoneLayout({
 								<Heading py={4}>Links</Heading>
 
 								<Breathe>
-									<StyledNextLink
-										fontStyle={'italic'}
-										_hover={{ textDecoration: 'underline' }}
-										fontSize={'xl'}
-										target={'blank'}
-										href={href}
-									>
-										{linkTitle}
-									</StyledNextLink>
+									<LinkWrapper href={href}>{linkTitle}</LinkWrapper>
 								</Breathe>
 							</VStack>
 						)}

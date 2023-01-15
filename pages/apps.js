@@ -101,7 +101,7 @@ export default function Web() {
 						>
 							<Slide
 								idx={2}
-								buttonText={'Open'}
+								buttonText={'Open demo'}
 								title={<i>Not-a-real-demo</i>}
 								sub={'With contentful and Next.js'}
 								src={'/apps/dynamic.png'}

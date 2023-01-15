@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-export default function Breathe({ children, transition }) {
+export default function ButtonFocus({ children, transition }) {
 	return (
 		<motion.div
 			whileHover={{

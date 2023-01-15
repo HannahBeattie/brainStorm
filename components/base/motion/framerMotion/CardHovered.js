@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-export default function SmallFocus({ children, transition, yIs, rotate, yIsNow }) {
+export default function CardHovered({ children, transition, yIs, rotate, yIsNow }) {
 	return (
 		<motion.div
 			animate={{ scale: 1, x: 0, rotate: rotate ? rotate : 0, y: yIs ? yIs : 0 }}

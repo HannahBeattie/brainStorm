@@ -20,14 +20,14 @@ export const Pages = [
 
 	{
 		title: 'p5 animations',
-		href: '/p5Animations',
+		href: '/p5Index',
 	},
 ]
 
 export const AnimationPages = [
 	{
 		title: '0', // 'Reef',
-		href: '/p5Animations',
+		href: '/p5Index',
 	},
 	{
 		title: '1', // 'Reef',

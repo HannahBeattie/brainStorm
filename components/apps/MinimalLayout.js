@@ -1,23 +1,17 @@
 import {
-	Box,
 	Container,
 	Divider,
 	Heading,
-	HStack,
 	Image,
-	Spacer,
 	Stack,
-	useColorMode,
 	useColorModeValue,
 	VStack,
 } from '@chakra-ui/react'
-import { useScroll, motion } from 'framer-motion'
-import React from 'react'
-import Breathe from '../base/motion/framerMotion/Breathe'
-import SmallFocus from '../base/motion/framerMotion/SmallFocus'
+import Breathe from '../base/motion/framerMotion/ButtonFocus'
+import CardHovered from '../base/motion/framerMotion/CardHovered'
 import StyledNextLink from '../base/StyledNextLink'
 
-function MinimalLayout({ linkText, src, alt, title, children, href }) {
+export default function MinimalLayout({ linkText, src, alt, title, children, href }) {
 	return (
 		<>
 			<VStack flex={'1'} bg={useColorModeValue('', 'gitDark ')} w={'100%'}>
@@ -32,7 +26,7 @@ function MinimalLayout({ linkText, src, alt, title, children, href }) {
 				/>
 				<Stack p={8} flexDir={{ base: 'column', md: 'row' }}>
 					<VStack p={8} pr={8}>
-						<SmallFocus>
+						<CardHovered>
 							<StyledNextLink href={href} target={'blank'}>
 								<Image
 									maxH={'500'}
@@ -43,7 +37,7 @@ function MinimalLayout({ linkText, src, alt, title, children, href }) {
 									alt={alt}
 								/>
 							</StyledNextLink>
-						</SmallFocus>
+						</CardHovered>
 					</VStack>
 					<VStack
 						border={'1px'}
@@ -77,5 +71,3 @@ function MinimalLayout({ linkText, src, alt, title, children, href }) {
 		</>
 	)
 }
-
-export default MinimalLayout

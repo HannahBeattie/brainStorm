@@ -15,11 +15,11 @@ import {
 import Intro from '~/components/apps/Intro'
 import Focus from '~/components/base/motion/framerMotion/Snail'
 import Appear from '~/components/base/motion/framerMotion/Appear'
-import Breathe from '~/components/base/motion/framerMotion/Breathe'
+import Breathe from '~/components/base/motion/framerMotion/ButtonFocus'
 import FadeIn from '~/components/base/motion/framerMotion/FadeIn'
 import Pulse from '~/components/base/motion/framerMotion/Pulse'
 import StyledNextLink from '~/components/base/StyledNextLink'
-import SmallFocus from '../base/motion/framerMotion/SmallFocus'
+import SmallFocus from '../base/motion/framerMotion/CardHovered'
 
 function NotAReal() {
 	return (

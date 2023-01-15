@@ -102,3 +102,10 @@
 	-webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
 	margin-bottom: -10vw;
 }
+.circle {
+	clip-path: circle(100%);
+}
+
+.specialCaseNoSelect {
+	-webkit-user-select: none;
+}

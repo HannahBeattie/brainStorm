@@ -1,7 +1,7 @@
 import { Divider, Text, VStack } from '@chakra-ui/react'
 import AnimationPage from '~/components/AnimationPage'
 import StyledNextLink from '~/components/base/StyledNextLink'
-import Wiggle from '~/components/p5animations/moving/Wiggle'
+import Wiggle from '~/components/landingPage/p5animations/moving/Wiggle'
 
 export default function GeoTwirl() {
 	return (

@@ -2,7 +2,7 @@ import { Divider, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 import AnimationPage from '~/components/AnimationPage'
 import StyledNextLink from '~/components/base/StyledNextLink'
-import Worms from '~/components/p5animations/moving/Worms'
+import Worms from '~/components/landingPage/p5animations/moving/Worms'
 
 export default function Reef() {
 	return (

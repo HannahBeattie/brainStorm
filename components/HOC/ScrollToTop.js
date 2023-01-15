@@ -21,27 +21,47 @@ export default function ScrollToTop() {
 		})
 	}
 
+	const buttonProps = {
+		bg: 'null',
+		position: 'fixed',
+		color: 'gray.300',
+		color: 'gray.300',
+		_hover: { bg: '', color: 'gray.300' },
+		_active: { bg: '', color: 'gray.300' },
+
+		cursor: 'pointer',
+	}
 	return (
 		<>
 			{showTopBtn && (
-				<Button
-					display={{ base: 'none', md: 'block' }}
-					position={'relative'}
-					ref={scrollRef}
-					style={{ overflow: 'scroll' }}
-					bg={''}
-					position={'fixed'}
-					left={0}
-					bottom={'10'}
-					onClick={goToTop}
-					color={'gray.300'}
-					_hover={{ bg: '', color: 'gray.300' }}
-					_active={{ bg: '', color: 'gray.300' }}
-					area-label={'scroll to top'}
-					cursor={'pointer'}
-				>
-					<BsArrowUpCircle />
-				</Button>
+				<>
+					<Button
+						{...buttonProps}
+						display={{ base: 'none', md: 'block' }}
+						onClick={goToTop}
+						ref={scrollRef}
+						bottom='8'
+						area-label={'scroll to top'}
+						style={{ overflow: 'scroll' }}
+						left={0}
+					>
+						<BsArrowUpCircle />
+					</Button>
+
+					<Button
+						{...buttonProps}
+						display={{ base: 'block', md: 'none' }}
+						onClick={goToTop}
+						ref={scrollRef}
+						bottom='10vh'
+						area-label={'scroll to top'}
+						style={{ overflow: 'scroll' }}
+						right={0}
+						color='grayAlpha.800'
+					>
+						<BsArrowUpCircle />
+					</Button>
+				</>
 			)}
 		</>
 	)

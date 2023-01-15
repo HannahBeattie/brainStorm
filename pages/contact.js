@@ -1,21 +1,28 @@
-import { Heading, Image, Text, useColorModeValue, VStack } from '@chakra-ui/react'
-import Breathe from '~/components/base/motion/framerMotion/Breathe'
+import { Heading, Box, Image, Text, useColorModeValue, VStack } from '@chakra-ui/react'
+import Breathe from '~/components/base/motion/framerMotion/ButtonFocus'
 import Snail from '~/components/base/motion/framerMotion/Snail'
 import StyledNextLink from '~/components/base/StyledNextLink'
 
 export default function More() {
 	return (
 		<VStack flex='1' alignSelf='stretch' justify='center' py={8} spacing={8}>
-			<Heading>Contact</Heading>
-			<Snail>
-				<Image
-					filter={'auto'}
-					invert={useColorModeValue(0, 100)}
-					h={100}
-					alt={'Snail line drawing'}
-					src={'/snail.png'}
-				/>
-			</Snail>
+			<Heading userSelect={'none'} pointerEvents={'none'}>
+				Contact
+			</Heading>
+			<Box className='specialCaseNoSelect'>
+				<Snail>
+					<Image
+						className='specialCaseNoSelect'
+						userSelect={'none'}
+						pointerEvents={'none'}
+						filter={'auto'}
+						invert={useColorModeValue(0, 100)}
+						h={100}
+						alt={'Snail line drawing'}
+						src={'/snail.png'}
+					/>
+				</Snail>
+			</Box>
 			<VStack spacing={'2'}>
 				<Breathe>
 					<StyledNextLink href='mailto:hannahdbeattie@gmail.com'>

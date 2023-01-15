@@ -4,18 +4,19 @@ import FadeIn from '~/components/base/motion/framerMotion/FadeIn'
 import Scroll from '~/components/base/motion/framerMotion/ScrollProgress'
 import ScrollToTop from '~/components/HOC/ScrollToTop'
 import Intro from '~/components/landingPage/Intro'
-import Brain from '~/components/p5animations/hero/Brain'
+import Brain from '~/components/landingPage/p5animations/hero/Brain'
+
 export default function Home() {
 	return (
 		<FadeIn>
-			<VStack flex={'1'} alignSelf='stretch' justify='stretch' spacing={{ md: 8 }}>
+			<VStack flex={'1'} alignSelf='stretch' justify='stretch' spacing={{ base: 8 }}>
 				<ScrollToTop />
 				<Scroll />
 				<Appear>
 					<Heading
 						fontWeight={'900'}
 						fontFamily={'Alice'}
-						fontSize={{ md: 90, base: 100 }}
+						fontSize={{ base: 80, sm: 80, md: 90 }}
 						textAlign={{ base: 'center', sm: 'auto' }}
 					>
 						Hello World
@@ -23,10 +24,9 @@ export default function Home() {
 				</Appear>
 
 				<VStack
-					height={{ md: '500px', base: '300px' }}
-					width={{ md: '500px', base: '300px' }}
-					borderRadius={'100%'}
-					overflow={'hidden'}
+					my={{ sm: 16 }}
+					height={{ base: '300px', md: '500px' }}
+					width={{ base: '300px', md: '500px' }}
 				>
 					<Brain />
 				</VStack>

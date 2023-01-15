@@ -1,5 +1,5 @@
 import { Grid, GridItem, Heading, Image, Spacer, Text, VStack } from '@chakra-ui/react'
-import Breathe from '~/components/base/motion/framerMotion/Breathe'
+import Breathe from '~/components/base/motion/framerMotion/ButtonFocus'
 import StyledNextLink from '~/components/base/StyledNextLink'
 
 export default function XIt() {

@@ -29,7 +29,7 @@ function flow(p5) {
 		p5.clear()
 		p5.angleMode(p5.DEGREES)
 		// p5.noiseDetail(ranNoise)
-		let density = p5.random(30, 90)
+		let density = p5.random(30, 60)
 		let space = p5.width / density
 
 		for (let x = 0; x < p5.width; x += space) {
@@ -79,10 +79,20 @@ function flow(p5) {
 
 export default function Brain() {
 	// let stroke = useColorModeValue([90, 100, 30], [80, 100, 290])
-	let stroke = useColorModeValue([80, 90, 10], [240, 240, 240])
+	let stroke = useColorModeValue([74, 69, 79], [240, 240, 240])
 	const [ref, bounds] = useMeasure()
 	return (
-		<VStack cursor='pointer' ref={ref} flex={'1'} align={'stretch'} w='100%' h={'100%'}>
+		<VStack
+			cursor='pointer'
+			ref={ref}
+			flex={'1'}
+			align={'stretch'}
+			w='100%'
+			h={'100%'}
+			overflow={'hidden'}
+			borderRadius={'200%'}
+			className={'circle'}
+		>
 			<ReactP5Wrapper
 				sketch={flow}
 				stroke={stroke}

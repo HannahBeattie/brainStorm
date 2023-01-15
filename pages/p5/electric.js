@@ -1,8 +1,8 @@
 import { Divider, Text, VStack } from '@chakra-ui/react'
 import AnimationPage from '~/components/AnimationPage'
 import StyledNextLink from '~/components/base/StyledNextLink'
-import FlowField from '~/components/p5animations/moving/FlowField'
-import Grass from '~/components/p5animations/moving/Grass'
+import FlowField from '~/components/landingPage/p5animations/moving/FlowField'
+import Grass from '~/components/landingPage/p5animations/moving/Grass'
 
 export default function ElectricVine() {
 	return (

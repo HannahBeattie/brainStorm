@@ -6,10 +6,11 @@ export const theme = extendTheme({
 		heading: 'Alice',
 	},
 	colors: {
-		warmWhite: ' #f5f5f5',
+		extraLight: ' #f5f5f5',
+		warmWhite: '#efeeee',
 		softLight: '#fafafa',
 		myGray: '#1F2022',
-		gitDark: 'F2F2F1',
+		gitGray: 'F2F2F1',
 		extraDark: '#08090c ',
 		grayAlpha: {
 			100: '#8881',
@@ -48,9 +49,9 @@ export const theme = extendTheme({
 	styles: {
 		global: {
 			body: {
-				bg: ' warmWhite',
+				bg: ' extraLight',
 				_dark: {
-					bg: ' gitDark',
+					bg: ' gitGray',
 				},
 				// Make mobile tap highlight light-gray instead of blue-ish
 				WebkitTapHighlightColor: 'rgba(128,128,128,0.2)', // '-webkit-tap-highlight-color'

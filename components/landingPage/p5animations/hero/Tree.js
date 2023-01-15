@@ -115,7 +115,7 @@ function sketch(p5) {
 export default function Tree({ num }) {
 	const [ref, bounds] = useMeasure()
 
-	let stroke = useColorModeValue([100, 90, 90], [230, 220, 220])
+	let stroke = useColorModeValue([0, 0, 0], [230, 220, 220])
 
 	return (
 		<Appear>

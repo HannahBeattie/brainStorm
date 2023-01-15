@@ -11,7 +11,7 @@ import {
 import NextLink from 'next/link'
 import React from 'react'
 import { VscGithub } from 'react-icons/vsc'
-import Breathe from '../base/motion/framerMotion/Breathe'
+import Breathe from '../base/motion/framerMotion/ButtonFocus'
 import StyledNextLink from '../base/StyledNextLink'
 
 export default function Footer() {
