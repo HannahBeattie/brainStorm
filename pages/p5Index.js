@@ -27,12 +27,8 @@ export default function P5Index() {
 				<VStack maxW={'260px'}>
 					<Text>More</Text>
 					<Text as={'div'}>
-						Link to source code{' '}
-						<LinkWrapper
-							href={
-								'https://github.com/HannahBeattie/brainStorm/tree/main/components/p5animations'
-							}
-						>
+						See site repo for source code{' '}
+						<LinkWrapper href={'https://github.com/HannahBeattie/brainStorm'}>
 							here
 						</LinkWrapper>
 					</Text>

@@ -11,10 +11,11 @@ export default function SketchWrapper({ sketch }) {
 	const [ref, bounds] = useMeasure()
 	let stroke = useColorModeValue([1, 1, 1], [240, 240, 240])
 	return (
-		<VStack alignContent={'stretch'} flex={1} w={'100%'}>
+		<VStack alignContent={'stretch'} flex={1} w={'100%'} className={'specialCaseNoSelect'}>
 			<VStack ref={ref} minH={'500'} maxW={'100vw'} minW={'90vw'} cursor='pointer'>
 				{bounds.height > 0 && (
 					<ReactP5Wrapper
+						className={'specialCaseNoSelect'}
 						sketch={sketch}
 						stroke={stroke}
 						h={bounds.height || 300}
