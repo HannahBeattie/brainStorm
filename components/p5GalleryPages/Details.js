@@ -1,19 +1,20 @@
-import { Text, VStack } from '@chakra-ui/react'
+import { Text, useColorModeValue, VStack } from '@chakra-ui/react'
 import LinkWrapper from '../base/LinkWrapper'
 
-const textProps = { color: 'grayAlpha.900', fontSize: 'sm' }
+const textProps = { fontSize: 'sm', _light: { color: 'gitGray' }, _dark: { color: 'warmWhite' } }
+const paragrapProps = { ...textProps, fontSize: 'md' }
 
 export const reef = {
 	title: 'Reef',
 	column1: (
 		<VStack>
-			<Text as={'div'} {...textProps}>
+			<Text as={'div'} {...paragrapProps}>
 				One of the may experements that came after creating my first flowfield, inspired by{' '}
 				<LinkWrapper href={'https://www.youtube.com/watch?v=1-QXuR-XX_s'}>
 					Colorful Coding.
 				</LinkWrapper>
 			</Text>
-			<Text {...{ ...textProps }}>
+			<Text {...paragrapProps}>
 				I wanted to add a level of organic-feeling interaction, so I played with mouse
 				events, basing the movement and responses to how I imagined a creature in the ocean
 				may respond.
