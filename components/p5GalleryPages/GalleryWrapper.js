@@ -11,7 +11,7 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import StyledNextLink from '../base/StyledNextLink'
 import { usePrevNext } from '../hooks/usePrevNext'
 import { p5Tabs } from '../nav/Pages'
-import P5Nav from './Tabs'
+import Tabs from './Tabs'
 
 export default function GalleryWrapper({ children, title, column1, column2, column3 }) {
 	const pages = p5Tabs
@@ -51,7 +51,7 @@ export default function GalleryWrapper({ children, title, column1, column2, colu
 	}
 	return (
 		<VStack px={{ md: 8 }} alignItems={'stretch'} py={4} flex={1}>
-			<P5Nav />
+			<Tabs />
 			{children}
 			<Text {...titleProps}>{title}</Text>
 			<Divider display={{ md: 'none' }} {...dividerProps} />

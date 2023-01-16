@@ -25,7 +25,6 @@ export default function Tabs() {
 	const router = useRouter()
 	const currentRoute = router.pathname
 	const col = useColorModeValue('teal', 'red')
-	const { prev, next } = usePrevNext(items.map((item) => item.href))
 
 	return (
 		<HStack {...wrapProps} alignContent={'center'}>
