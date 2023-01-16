@@ -5,7 +5,7 @@ import { BsFillLightbulbOffFill, BsLightbulbFill } from 'react-icons/bs'
 import ButtonFocus from '../framerMotion/ButtonFocus'
 
 export default function ToggleMode() {
-	const { colorMode, toggleColorMode } = useColorMode()
+	const { toggleColorMode } = useColorMode()
 	const mode = useColorModeValue(<BsFillLightbulbOffFill />, <BsLightbulbFill />)
 	return (
 		<Box

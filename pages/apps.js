@@ -1,5 +1,5 @@
-import { Grid, Text } from '@chakra-ui/react'
-import MinimalLayout from '~/components/apps/AppFeature'
+import { Divider, Grid, Text } from '@chakra-ui/react'
+import AppFeature from '~/components/apps/AppFeature'
 import IntroCard from '~/components/base/templates/IntroCard'
 import Slide from '~/components/base/templates/Slide'
 import Appear from '~/components/framerMotion/Appear'
@@ -17,8 +17,9 @@ export default function Web() {
 						Wellington in April of 2022.
 					</Text>
 				</IntroCard>
+				<Divider />
 				<Appear style={{ width: '100%' }}>
-					<MinimalLayout
+					<AppFeature
 						linkText={'studiomonkey.io'}
 						src={'/apps/studioMonkey.png'}
 						alt={'Still of studiomonkey.io'}
@@ -35,10 +36,11 @@ export default function Web() {
 							integration, while I focused on the landing page and sustaining a
 							constant visual and colour story.
 						</Text>
-					</MinimalLayout>
+					</AppFeature>
 				</Appear>
+				<Divider />
 				<Appear style={{ width: '100%' }}>
-					<MinimalLayout
+					<AppFeature
 						linkText={'X-it'}
 						src={'/apps/xitApp.png'}
 						alt={'Still x-it homepage'}
@@ -59,11 +61,11 @@ export default function Web() {
 							X-it will continue to evolve, with the collaborative effort of Mikey
 							Lemmon.
 						</Text>
-					</MinimalLayout>
+					</AppFeature>
 				</Appear>
-
+				<Divider />
 				<Appear style={{ width: '100%' }}>
-					<MinimalLayout
+					<AppFeature
 						linkText={'X-it'}
 						src={'/apps/not.png'}
 						alt={'Still of not-a-real-website'}
@@ -75,11 +77,12 @@ export default function Web() {
 							Contentful, a headless CMS, to demonstrate how these tools may be used
 							for something that is a real website.
 						</Text>
-					</MinimalLayout>
+					</AppFeature>
 				</Appear>
+
 				<Appear>
 					<Grid
-						pb={{ md: 8 }}
+						py={{ md: 2 }}
 						px={{ md: 2 }}
 						_hover={{ boxShaddow: 'dark-xl' }}
 						templateColumns={{

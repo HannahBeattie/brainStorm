@@ -7,26 +7,16 @@ import {
 	useColorModeValue,
 	VStack,
 } from '@chakra-ui/react'
+import StyledNextLink from '../base/StyledNextLink'
 import ButtonFocus from '../framerMotion/ButtonFocus'
 import CardHovered from '../framerMotion/CardHovered'
-import StyledNextLink from '../base/StyledNextLink'
 
-export default function MinimalLayout({ linkText, src, alt, title, children, href }) {
+export default function AppFeature({ linkText, src, alt, title, children, href }) {
 	return (
 		<>
 			<VStack flex={'1'} bg={useColorModeValue('', 'gitDark ')} w={'100%'}>
-				<Divider display={{ base: 'none', md: 'auto' }} />
-				<VStack
-					border={'1px'}
-					color={'grayAlpha.200'}
-					orientation='vertical'
-					flex={'1'}
-					justifySelf={'stretch'}
-					alignItems={'stretch'}
-					display={{ base: 'none', md: 'auto' }}
-				/>
 				<Stack p={8} flexDir={{ base: 'column', md: 'row' }}>
-					<VStack p={8} pr={8}>
+					<VStack p={8} pr={{ md: 8 }}>
 						<CardHovered>
 							<StyledNextLink href={href} target={'blank'}>
 								<Image
@@ -40,6 +30,7 @@ export default function MinimalLayout({ linkText, src, alt, title, children, hre
 							</StyledNextLink>
 						</CardHovered>
 					</VStack>
+
 					<VStack
 						border={'1px'}
 						color={'grayAlpha.200'}
@@ -47,14 +38,14 @@ export default function MinimalLayout({ linkText, src, alt, title, children, hre
 						flex={'1'}
 						justifySelf={'stretch'}
 						alignItems={'stretch'}
-						display={{ base: 'none', md: 'auto' }}
+						display={{ base: 'none', md: 'block' }}
 					/>
 
 					<Container>
 						<VStack
-							px={'8'}
+							px={{ md: 8, base: 4 }}
 							justifyContent={'center'}
-							py={10}
+							py={{ md: 10 }}
 							fontSize={'lg'}
 							fontWeight={'light'}
 							spacing='8'
