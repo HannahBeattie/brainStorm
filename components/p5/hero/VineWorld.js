@@ -77,28 +77,29 @@ function flow(p5) {
 	}
 }
 
-export default function Brain() {
-	// let stroke = useColorModeValue([90, 100, 30], [80, 100, 290])
+export default function VineWorld() {
 	let stroke = useColorModeValue([74, 69, 79], [240, 240, 240])
 	const [ref, bounds] = useMeasure()
 	return (
-		<VStack
-			cursor='pointer'
-			ref={ref}
-			flex={'1'}
-			align={'stretch'}
-			w='100%'
-			h={'100%'}
-			overflow={'hidden'}
-			borderRadius={'200%'}
-			className={'circle'}
-		>
-			<ReactP5Wrapper
-				sketch={flow}
-				stroke={stroke}
-				h={bounds.height || 300}
-				w={bounds.width || 500}
-			/>
+		<VStack height={{ base: '320px', md: '500px' }} width={{ base: '320px', md: '500px' }}>
+			<VStack
+				cursor='pointer'
+				ref={ref}
+				flex={'1'}
+				align={'stretch'}
+				w='100%'
+				h={'100%'}
+				overflow={'hidden'}
+				borderRadius={'200%'}
+				className={'circle'}
+			>
+				<ReactP5Wrapper
+					sketch={flow}
+					stroke={stroke}
+					h={bounds.height || 300}
+					w={bounds.width || 500}
+				/>
+			</VStack>
 		</VStack>
 	)
 }

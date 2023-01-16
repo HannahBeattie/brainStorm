@@ -1,6 +1,5 @@
-import { useScroll } from 'framer-motion'
 import StyledNextLink from '~/components/base/StyledNextLink'
-import Scroll from '~/components/framerMotion/ScrollProgress'
+import ScrollProgress from '~/components/framerMotion/ScrollProgress'
 import ScrollToTop from '~/components/framerMotion/ScrollToTop'
 import PageWrapper from '~/components/HOC/PageWrapper'
 import First from '~/components/p5/static/First'
@@ -8,11 +7,10 @@ import Seccond from '~/components/p5/static/Seccond'
 import Third from '~/components/p5/static/Third'
 
 export default function Static() {
-	const { scrollYProgress } = useScroll()
 	return (
 		<PageWrapper>
 			<ScrollToTop />
-			<Scroll />
+			<ScrollProgress />
 			<First />
 			<Seccond />
 			<Third />
