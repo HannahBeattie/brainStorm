@@ -4,18 +4,17 @@ import React from 'react'
 export default function IntroCard({ heading, children, props }) {
 	const containerProps = {
 		fontSize: 'lg',
+		px: { base: 8 },
 		...props,
 	}
 	const bgProps = {
-		py: 10,
-
-		flex: 1,
+		py: { md: 10, base: 4 },
 	}
 	return (
-		<VStack flex={'1'} {...bgProps}>
+		<VStack {...bgProps}>
 			<Heading
-				fontSize={'3xl'}
-				pb={8}
+				fontSize={{ md: '3xl', base: 'xl' }}
+				pb={{ md: 8, base: 4 }}
 				fontFamily={'SF Pro'}
 				color={'gray.500'}
 				fontWeight={'300'}

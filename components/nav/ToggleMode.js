@@ -2,7 +2,7 @@ import { Box, Text, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 
 import { BsFillLightbulbOffFill, BsLightbulbFill } from 'react-icons/bs'
-import Breathe from '../framerMotion/ButtonFocus'
+import ButtonFocus from '../framerMotion/ButtonFocus'
 
 export default function ToggleMode() {
 	const { colorMode, toggleColorMode } = useColorMode()
@@ -15,16 +15,17 @@ export default function ToggleMode() {
 			cursor={'pointer'}
 			zIndex={2}
 		>
-			<Breathe>
+			<ButtonFocus>
 				<Text
 					fontSize={{ base: 'xl', md: 'lg' }}
 					onClick={toggleColorMode}
-					_light={{ color: 'gray.700', _hover: { color: 'gray.500' } }}
-					_dark={{ color: 'grayAlpha.900' }}
+					_light={{ color: 'grayAlpha.600', _hover: { color: 'warmWhite' } }}
+					_dark={{ color: 'grayAlpha.900', _hover: { color: 'warmWhite' } }}
+					pb={{ base: 0.5, md: 0 }}
 				>
 					{mode}
 				</Text>
-			</Breathe>
+			</ButtonFocus>
 		</Box>
 	)
 }

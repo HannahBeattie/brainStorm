@@ -7,7 +7,7 @@ import {
 	useColorModeValue,
 	VStack,
 } from '@chakra-ui/react'
-import Breathe from '../framerMotion/ButtonFocus'
+import ButtonFocus from '../framerMotion/ButtonFocus'
 import CardHovered from '../framerMotion/CardHovered'
 import StyledNextLink from '../base/StyledNextLink'
 
@@ -15,7 +15,7 @@ export default function MinimalLayout({ linkText, src, alt, title, children, hre
 	return (
 		<>
 			<VStack flex={'1'} bg={useColorModeValue('', 'gitDark ')} w={'100%'}>
-				<Divider />
+				<Divider display={{ base: 'none', md: 'auto' }} />
 				<VStack
 					border={'1px'}
 					color={'grayAlpha.200'}
@@ -23,6 +23,7 @@ export default function MinimalLayout({ linkText, src, alt, title, children, hre
 					flex={'1'}
 					justifySelf={'stretch'}
 					alignItems={'stretch'}
+					display={{ base: 'none', md: 'auto' }}
 				/>
 				<Stack p={8} flexDir={{ base: 'column', md: 'row' }}>
 					<VStack p={8} pr={8}>
@@ -46,6 +47,7 @@ export default function MinimalLayout({ linkText, src, alt, title, children, hre
 						flex={'1'}
 						justifySelf={'stretch'}
 						alignItems={'stretch'}
+						display={{ base: 'none', md: 'auto' }}
 					/>
 
 					<Container>
@@ -59,11 +61,11 @@ export default function MinimalLayout({ linkText, src, alt, title, children, hre
 						>
 							<Heading textAlign={'center'}>{title}</Heading>
 							<div>{children}</div>
-							<Breathe>
+							<ButtonFocus>
 								<StyledNextLink href={href} target={'blank'}>
 									{linkText}
 								</StyledNextLink>
-							</Breathe>
+							</ButtonFocus>
 						</VStack>
 					</Container>
 				</Stack>

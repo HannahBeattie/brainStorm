@@ -32,7 +32,7 @@ export default function MyApp({ Component, pageProps }) {
 					</VStack>
 				</AnimatePresence>
 				<ToggleMode />
-				<Footer />
+				{!Component.noFooter && <Footer />}
 			</VStack>
 		</ChakraProvider>
 	)

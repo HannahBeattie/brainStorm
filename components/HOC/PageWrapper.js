@@ -9,9 +9,9 @@ export default function PageWrapper({ children, props }) {
 				flex={'1'}
 				alignSelf='stretch'
 				justify='center'
+				pt={{ base: 0, md: 4 }}
+				py={{ base: 0, md: 'undefined' }}
 				spacing={0}
-				pt={{ base: 0, md: 8 }}
-				py={{ base: 4, md: 'undefined' }}
 				{...props}
 			>
 				{children}

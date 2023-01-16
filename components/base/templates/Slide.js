@@ -31,7 +31,7 @@ export default function Slide({
 		minWidth: '300',
 	}
 
-	const bg = useColorModeValue('grayAlpha.300', 'gray.800')
+	const bg = useColorModeValue('gray.900', 'gray.800')
 
 	const textInCard = {
 		justifyContent: 'center',
@@ -42,7 +42,7 @@ export default function Slide({
 		spacing: '8',
 		boxShadow: '2xl',
 		boxShadow: 'dark',
-		color: 'grayAlpha.900',
+		color: 'white',
 	}
 	const imProps = {
 		w: '100%',
@@ -77,17 +77,13 @@ export default function Slide({
 				borderLeftRadius={{ md: !isOdd ? '8' : '0' }}
 			>
 				<VStack {...textInCard} p={{ md: '4' }}>
-					<Heading textAlign={'center'} color={useColorModeValue('black', 'white')}>
-						{title}
-					</Heading>
+					<Heading textAlign={'center'}>{title}</Heading>
 					<Text textAlign={'center'}>{text}</Text>
-					<Text color={'gray.800'} _dark={{ color: 'grayAlpha.800' }}>
-						{sub}
-					</Text>
+					<Text>{sub}</Text>
 
 					{link2 && (
 						<StyledNextLink href={'link2'} target={'blank'}>
-							<Text as={'span'} color='teal.600' fontWeight={'500'}>
+							<Text as={'span'} color='teal.400' fontWeight={'500'}>
 								{linkTitle}
 							</Text>{' '}
 						</StyledNextLink>

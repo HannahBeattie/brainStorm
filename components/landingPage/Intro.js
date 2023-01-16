@@ -26,24 +26,28 @@ export default function Intro() {
 
 				<MyContainer>
 					<Text>
-						...that take into account the diversity of experience and access styles ...
+						...that take into account the diversity of experience and access ...
 					</Text>
 				</MyContainer>
 				<Tree num={2} />
 				<MyContainer>
-					<Text>...while retaining a sense of experimentation, joy and humour.</Text>
+					<Text>...while retaining a sense of experimentation, humour and joy...</Text>
 				</MyContainer>
 				<Tree num={2} />
 				<MyContainer>
 					<Text>
 						My coding style is a mixture of curiosity-driven play and clean, minimal
-						functionality, with the through line being that it doesn&apos;t matter how
-						flashy something looks if it can&apos;t be accessed.
+						functionality ---
 					</Text>{' '}
 					<Text>
+						<i>
+							It doesn't matter how fancy and flashy something is if it can't be used.
+						</i>
+					</Text>
+					<Text pt={8}>
 						One of my favourite things about coding is creating surprising and playful
-						moments of user interaction that cut through the quotient of data fatigue we
-						all carry and have come to expect.
+						moments of user interaction that cut through the dull static buzz of data
+						fatigue.
 					</Text>
 				</MyContainer>
 
@@ -54,24 +58,20 @@ export default function Intro() {
 						re-testing methods and tools to observe patterns and possibilities.
 					</Text>
 					<Text>
-						Coding is much the same, only with digital rather than physical applicative
-						methods.
+						Coding is much the same, only with digital rather than physical methods.
 					</Text>
 				</MyContainer>
 				<Tree num={1} />
 				<MyContainer>
 					<Text>
 						I am excited to continue to learn new tools, languages and frameworks with
-						which to refine my practice.
-					</Text>
+						which to refine my practice --
+					</Text>{' '}
 					<Text>
-						And contribute to a digital landscape that is diverse, deliberate and highly
+						Contributing to a digital landscape that is diverse, deliberate and highly
 						responsive.
 					</Text>
-				</MyContainer>
-
-				<MyContainer>
-					<Text>So...whatch this space.</Text>
+					<Text pt={8}>So...whatch this space.</Text>
 				</MyContainer>
 
 				<Box position={'relative'}>
@@ -95,10 +95,10 @@ export default function Intro() {
 				</Box>
 
 				<MyContainer>
-					<Text fontStyle={'italic'}>
+					<Text fontStyle={'italic'} textAlign={{ base: 'center', md: 'auto' }}>
 						I am currently interested in learning how to write mobile applications.
 					</Text>
-					<Text as='div' fontStyle={'italic'}>
+					<Text as='div' fontStyle={'italic'} textAlign={{ base: 'center', md: 'auto' }}>
 						If you are curious about this or have resources to share, feel free to{' '}
 						<LinkWrapper href={'/contact'}>reach out.</LinkWrapper>
 					</Text>
@@ -117,7 +117,8 @@ export default function Intro() {
 						</MyLink>
 					</MyContainer>
 				</ButtonFocus>
-				<VStack>
+
+				<VStack py={4}>
 					<MyLink
 						maxW={{ base: '20em', md: '34em' }}
 						textAlign={'center'}

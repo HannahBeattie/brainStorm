@@ -9,10 +9,11 @@ import { ImageModal, useImageModal } from '~/components/hooks/UseImageModal'
 export default function Characters() {
 	return (
 		<PageWrapper>
-			<ScrollToTop />
-			<IntroCard heading={'3d Character Design'}></IntroCard>
-			<Text>Someday these characters will be part of a playable world.</Text>
+			<IntroCard heading={'3d Character Design'}>
+				Someday these characters will be part of a playable world.
+			</IntroCard>
 			<CharacterModel />
+			<ScrollToTop />
 		</PageWrapper>
 	)
 }

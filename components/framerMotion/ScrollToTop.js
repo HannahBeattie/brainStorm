@@ -24,11 +24,10 @@ export default function ScrollToTop() {
 	const buttonProps = {
 		bg: 'null',
 		position: 'fixed',
-		color: 'gray.300',
-		color: 'gray.300',
-		_hover: { bg: '', color: 'gray.300' },
-		_active: { bg: '', color: 'gray.300' },
+		color: 'grayAlpha.900',
 
+		_hover: { bg: 'null' },
+		_active: { bg: 'null' },
 		cursor: 'pointer',
 	}
 	return (

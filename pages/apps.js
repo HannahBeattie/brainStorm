@@ -3,12 +3,14 @@ import MinimalLayout from '~/components/apps/AppFeature'
 import IntroCard from '~/components/base/templates/IntroCard'
 import Slide from '~/components/base/templates/Slide'
 import Appear from '~/components/framerMotion/Appear'
+import ScrollToTop from '~/components/framerMotion/ScrollToTop'
 import PageWrapper from '~/components/HOC/PageWrapper'
 
 export default function Web() {
 	return (
 		<>
 			<PageWrapper>
+				<ScrollToTop />
 				<IntroCard heading={'Apps'}>
 					<Text>
 						Here are a few projects I have completed since graduating from Dev Academy
@@ -77,6 +79,7 @@ export default function Web() {
 				</Appear>
 				<Appear>
 					<Grid
+						pb={{ md: 8 }}
 						px={{ md: 2 }}
 						_hover={{ boxShaddow: 'dark-xl' }}
 						templateColumns={{
