@@ -81,7 +81,10 @@ export default function VineWorld() {
 	let stroke = useColorModeValue([74, 69, 79], [240, 240, 240])
 	const [ref, bounds] = useMeasure()
 	return (
-		<VStack height={{ base: '320px', md: '500px' }} width={{ base: '320px', md: '500px' }}>
+		<VStack
+			height={{ base: '320px', md: '500px', xl: '600px' }}
+			width={{ base: '320px', md: '500px', xl: '600px' }}
+		>
 			<VStack
 				cursor='pointer'
 				ref={ref}

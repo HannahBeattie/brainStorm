@@ -8,10 +8,10 @@ function HelloWorld() {
 			<Heading
 				fontWeight={'900'}
 				fontFamily={'Alice'}
-				fontSize={{ base: 80, sm: 80, md: 90 }}
+				fontSize={{ base: 80, sm: 80, md: 90, lg: 110 }}
 				textAlign={{ base: 'center', sm: 'auto' }}
-				py={{ base: 4, md: 8 }}
-				pb={{ md: 10, base: 10 }}
+				py={{ base: 4, md: 8, lg: 10 }}
+				pb={{ base: 10, md: 10 }}
 				lineHeight={{ base: '0.9', md: 1 }}
 			>
 				Hello World

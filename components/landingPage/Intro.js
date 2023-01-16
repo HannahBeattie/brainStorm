@@ -8,7 +8,7 @@ import Tree from '../p5/hero/Tree'
 export default function Intro() {
 	return (
 		<>
-			<VStack spacing={'16'} pt={{ md: 32, base: 32 }} flex={'1'} alignItems={'stretch'}>
+			<VStack spacing={'16'} pt={{ md: 40, base: 32 }} flex={'1'} alignItems={'stretch'}>
 				<TextContainer fontFamily={'Lora'}>
 					<Heading fontFamily={'Alice'}>I am Hannah.</Heading>
 					<Text>An artist, insect enthusiast and Dev from New Zealand.</Text>
@@ -21,7 +21,7 @@ export default function Intro() {
 						...
 					</Text>
 				</TextContainer>
-				<Tree num={2} />
+				<Tree num={3} />
 
 				<TextContainer>
 					<Text>
@@ -32,16 +32,14 @@ export default function Intro() {
 				<TextContainer>
 					<Text>...while retaining a sense of experimentation, humour and joy...</Text>
 				</TextContainer>
-				<Tree num={2} />
+				<Tree num={1} />
 				<TextContainer>
 					<Text>
 						My coding style is a mixture of curiosity-driven play and clean, minimal
 						functionality ---
 					</Text>{' '}
-					<Text>
-						<i>
-							It doesn't matter how fancy and flashy something is if it can't be used.
-						</i>
+					<Text pt={8}>
+						<i>It doesn't matter how flashy something is if it can't be used.</i>
 					</Text>
 					<Text pt={8}>
 						One of my favourite things about coding is creating surprising and playful
@@ -56,7 +54,7 @@ export default function Intro() {
 						My background as an interdisciplinary artist has always involved testing and
 						re-testing methods and tools to observe patterns and possibilities.
 					</Text>
-					<Text>
+					<Text pt={8}>
 						Coding is much the same, only with digital rather than physical methods.
 					</Text>
 				</TextContainer>
@@ -93,18 +91,6 @@ export default function Intro() {
 					</Pulse>
 				</Box>
 
-				<TextContainer>
-					<StyledNextLink href={'/contact'}>
-						<Text textAlign={{ base: 'center', md: 'auto' }} fontSize={'md'}>
-							I am currently interested in learning how to write mobile applications.
-							If you are curious about this or have resources to share, feel free to{' '}
-							<i>reach out</i>.
-						</Text>
-					</StyledNextLink>
-
-					<Text fontStyle={'italic'} textAlign={{ base: 'center', md: 'auto' }}></Text>
-				</TextContainer>
-
 				<ButtonFocus>
 					<TextContainer>
 						<StyledNextLink
@@ -119,7 +105,18 @@ export default function Intro() {
 					</TextContainer>
 				</ButtonFocus>
 
-				<VStack py={4}>
+				<VStack py={8} spacing={4}>
+					<StyledNextLink
+						href={'/contact'}
+						maxW={{ base: '20em', md: '34em' }}
+						textAlign={'center'}
+					>
+						<Text textAlign={{ base: 'center', md: 'auto' }} fontSize={'md'}>
+							I am currently interested in learning how to write mobile applications.
+							If you are curious about this or have resources to share, feel free to{' '}
+							<i>reach out</i>.
+						</Text>
+					</StyledNextLink>
 					<StyledNextLink
 						maxW={{ base: '20em', md: '34em' }}
 						textAlign={'center'}
