@@ -82,8 +82,8 @@ export default function VineWorld() {
 	const [ref, bounds] = useMeasure()
 	return (
 		<VStack
-			height={{ base: '320px', md: '500px', xl: '600px' }}
-			width={{ base: '320px', md: '500px', xl: '600px' }}
+			height={{ base: '320px', sm: '450px', md: '500px', xl: '600px' }}
+			width={{ base: '320px', sm: '450px', md: '500px', xl: '600px' }}
 		>
 			<VStack
 				cursor='pointer'
