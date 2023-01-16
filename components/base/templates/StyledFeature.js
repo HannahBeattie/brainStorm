@@ -10,7 +10,7 @@ import {
 	VStack,
 } from '@chakra-ui/react'
 
-import MyLink from '../StyledNextLink'
+import StyledNextLink from '../StyledNextLink'
 
 export default function StyledFeature({
 	alt,
@@ -70,11 +70,11 @@ export default function StyledFeature({
 				<Text>{text}</Text>
 				<Spacer />
 				{buttonText && (
-					<MyLink href={href}>
+					<StyledNextLink href={href}>
 						<Button flex={'1'} layout={'flex'} {...buttonProps}>
 							{buttonText}
 						</Button>
-					</MyLink>
+					</StyledNextLink>
 				)}
 			</Stack>
 		</VStack>

@@ -1,6 +1,6 @@
 import { Container, Grid, GridItem, Heading, Image, Text } from '@chakra-ui/react'
 import getGridProps from '~/components/hooks/getGridProps'
-import MyLink from '~/components/base/StyledNextLink'
+import StyledNextLink from '~/components/base/StyledNextLink'
 
 export default function First() {
 	const staticPath = '/static'
@@ -16,9 +16,13 @@ export default function First() {
 				<Heading>Golden thread</Heading>
 				<Text>
 					Inspired by a flow field tutorial by{' '}
-					<MyLink href='https://bit.ly/3Zihhrd' fontStyle={'italic'} fontWeight={'bold'}>
+					<StyledNextLink
+						href='https://bit.ly/3Zihhrd'
+						fontStyle={'italic'}
+						fontWeight={'bold'}
+					>
 						Colorful coding
-					</MyLink>
+					</StyledNextLink>
 					, I began exploring the ways in which random variables could be used to
 					manipulated the fields into resembling organic forms.
 				</Text>

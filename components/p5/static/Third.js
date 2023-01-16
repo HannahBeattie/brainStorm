@@ -1,7 +1,7 @@
 import { Container, Grid, GridItem, Image, Text, Heading } from '@chakra-ui/react'
 import getGridProps from '~/components/hooks/getGridProps'
 import { ImageModal, useImageModal } from '~/components/hooks/UseImageModal'
-import MyLink from '~/components/base/StyledNextLink'
+import StyledNextLink from '~/components/base/StyledNextLink'
 
 export default function Third() {
 	let items = [

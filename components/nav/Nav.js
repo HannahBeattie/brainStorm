@@ -13,7 +13,7 @@ import {
 import { useRouter } from 'next/router'
 import { VscSymbolInterface } from 'react-icons/vsc'
 import Rotate from '../framerMotion/RotateClicked'
-import MyLink from '../base/StyledNextLink'
+import StyledNextLink from '../base/StyledNextLink'
 import DesktopNav from './DesktopNav'
 import { Pages } from './Pages'
 const pages = Pages
@@ -38,14 +38,14 @@ export default function Nav() {
 	return (
 		<HStack {...hProps}>
 			<Rotate>
-				<MyLink href={'/'}>
+				<StyledNextLink href={'/'}>
 					<Icon
 						_hover={{ color: useColorModeValue('teal', 'red') }}
 						color={useColorModeValue('black', 'white')}
 						as={VscSymbolInterface}
 						{...iconProps}
 					/>
-				</MyLink>
+				</StyledNextLink>
 			</Rotate>
 			<Spacer />
 
@@ -68,7 +68,7 @@ export default function Nav() {
 				<MenuList>
 					{pages.map(({ href, title }, idx) => (
 						<MenuItem key={`navitem-${idx}`}>
-							<MyLink
+							<StyledNextLink
 								href={href}
 								fontSize={'lg'}
 								fontFamily={'SF Pro'}
@@ -78,7 +78,7 @@ export default function Nav() {
 								_dark={{ color: href === currentRoute ? 'teal.100' : 'teal.500' }}
 							>
 								{title}
-							</MyLink>
+							</StyledNextLink>
 						</MenuItem>
 					))}
 				</MenuList>

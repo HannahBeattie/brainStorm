@@ -1,7 +1,6 @@
 import { Box, Heading, Image, Text, useColorModeValue, VStack } from '@chakra-ui/react'
-import MyLink from '~/components/base/StyledNextLink'
-import MyContainer from '~/components/base/templates/TextContainer'
-import LinkWrapper from '../base/LinkWrapper'
+import StyledNextLink from '~/components/base/StyledNextLink'
+import TextContainer from '~/components/base/templates/TextContainer'
 import ButtonFocus from '../framerMotion/ButtonFocus'
 import Pulse from '../framerMotion/Pulse'
 import Tree from '../p5/hero/Tree'
@@ -10,31 +9,31 @@ export default function Intro() {
 	return (
 		<>
 			<VStack spacing={'16'} pt={{ md: 32, base: 32 }} flex={'1'} alignItems={'stretch'}>
-				<MyContainer fontFamily={'Lora'}>
+				<TextContainer fontFamily={'Lora'}>
 					<Heading fontFamily={'Alice'}>I am Hannah.</Heading>
 					<Text>An artist, insect enthusiast and Dev from New Zealand.</Text>
-				</MyContainer>
+				</TextContainer>
 
 				<Tree num={1} />
-				<MyContainer>
+				<TextContainer>
 					<Text>
 						I am interested in storytelling and creating holistic, person-first designs
 						...
 					</Text>
-				</MyContainer>
+				</TextContainer>
 				<Tree num={2} />
 
-				<MyContainer>
+				<TextContainer>
 					<Text>
 						...that take into account the diversity of experience and access ...
 					</Text>
-				</MyContainer>
+				</TextContainer>
 				<Tree num={2} />
-				<MyContainer>
+				<TextContainer>
 					<Text>...while retaining a sense of experimentation, humour and joy...</Text>
-				</MyContainer>
+				</TextContainer>
 				<Tree num={2} />
-				<MyContainer>
+				<TextContainer>
 					<Text>
 						My coding style is a mixture of curiosity-driven play and clean, minimal
 						functionality ---
@@ -49,10 +48,10 @@ export default function Intro() {
 						moments of user interaction that cut through the dull static buzz of data
 						fatigue.
 					</Text>
-				</MyContainer>
+				</TextContainer>
 
 				<Tree num={2} />
-				<MyContainer>
+				<TextContainer>
 					<Text>
 						My background as an interdisciplinary artist has always involved testing and
 						re-testing methods and tools to observe patterns and possibilities.
@@ -60,9 +59,9 @@ export default function Intro() {
 					<Text>
 						Coding is much the same, only with digital rather than physical methods.
 					</Text>
-				</MyContainer>
+				</TextContainer>
 				<Tree num={1} />
-				<MyContainer>
+				<TextContainer>
 					<Text>
 						I am excited to continue to learn new tools, languages and frameworks with
 						which to refine my practice --
@@ -72,7 +71,7 @@ export default function Intro() {
 						responsive.
 					</Text>
 					<Text pt={8}>So...whatch this space.</Text>
-				</MyContainer>
+				</TextContainer>
 
 				<Box position={'relative'}>
 					<Box
@@ -94,19 +93,21 @@ export default function Intro() {
 					</Pulse>
 				</Box>
 
-				<MyContainer>
-					<Text fontStyle={'italic'} textAlign={{ base: 'center', md: 'auto' }}>
-						I am currently interested in learning how to write mobile applications.
-					</Text>
-					<Text as='div' fontStyle={'italic'} textAlign={{ base: 'center', md: 'auto' }}>
-						If you are curious about this or have resources to share, feel free to{' '}
-						<LinkWrapper href={'/contact'}>reach out.</LinkWrapper>
-					</Text>
-				</MyContainer>
+				<TextContainer>
+					<StyledNextLink href={'/contact'}>
+						<Text textAlign={{ base: 'center', md: 'auto' }} fontSize={'md'}>
+							I am currently interested in learning how to write mobile applications.
+							If you are curious about this or have resources to share, feel free to{' '}
+							<i>reach out</i>.
+						</Text>
+					</StyledNextLink>
+
+					<Text fontStyle={'italic'} textAlign={{ base: 'center', md: 'auto' }}></Text>
+				</TextContainer>
 
 				<ButtonFocus>
-					<MyContainer>
-						<MyLink
+					<TextContainer>
+						<StyledNextLink
 							fontSize={{ base: '3xl' }}
 							px={{ base: 10 }}
 							href={'/apps'}
@@ -114,12 +115,12 @@ export default function Intro() {
 							fontFamily={'ALICE'}
 						>
 							Check out my work
-						</MyLink>
-					</MyContainer>
+						</StyledNextLink>
+					</TextContainer>
 				</ButtonFocus>
 
 				<VStack py={4}>
-					<MyLink
+					<StyledNextLink
 						maxW={{ base: '20em', md: '34em' }}
 						textAlign={'center'}
 						href={
@@ -129,7 +130,7 @@ export default function Intro() {
 						fontSize={{ base: 'sm', md: 'xs' }}
 					>
 						Generative circle work enspired by AHMAD MOUSSA's Perlin noise rings
-					</MyLink>
+					</StyledNextLink>
 				</VStack>
 			</VStack>
 		</>

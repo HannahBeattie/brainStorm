@@ -1,7 +1,7 @@
 import { Container, Grid, GridItem, Image, Text, Heading } from '@chakra-ui/react'
 import getGridProps from '~/components/hooks/getGridProps'
 import { ImageModal, useImageModal } from '~/components/hooks/UseImageModal'
-import MyLink from '~/components/base/StyledNextLink'
+import StyledNextLink from '~/components/base/StyledNextLink'
 
 export default function Seccond() {
 	let items = [
@@ -26,13 +26,13 @@ export default function Seccond() {
 				<Text>
 					The first two images are a response to a prompt by the{' '}
 					<i>
-						<MyLink
+						<StyledNextLink
 							href='https://www.youtube.com/watch?v=c3TeLi6Ns1E'
 							fontStyle={'italic'}
 							fontWeight={'bold'}
 						>
 							Coding Train's{' '}
-						</MyLink>
+						</StyledNextLink>
 					</i>
 					Daniel Shiffman to create a basic drawing app.
 				</Text>
