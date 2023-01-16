@@ -10,8 +10,8 @@ function HelloWorld() {
 				fontFamily={'Alice'}
 				fontSize={{ base: 80, sm: 100, md: 90, lg: 110 }}
 				textAlign={{ base: 'center', sm: 'auto' }}
-				py={{ base: 4, sm: 6, md: 8, lg: 10 }}
-				pb={{ base: 10, sm: 12, md: 10 }}
+				py={{ base: 4, sm: 12, md: 8, lg: 10 }}
+				pb={{ base: 10, sm: 12, md: 12 }}
 				lineHeight={{ base: '0.9', md: 1 }}
 			>
 				Hello World

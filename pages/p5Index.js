@@ -6,7 +6,7 @@ import P5Intro from '~/components/p5GalleryPages/P5Intro'
 export default function P5Index() {
 	return (
 		<PageWrapper>
-			<GalleryWrapper>
+			<GalleryWrapper no={true}>
 				<P5Intro />
 			</GalleryWrapper>
 		</PageWrapper>

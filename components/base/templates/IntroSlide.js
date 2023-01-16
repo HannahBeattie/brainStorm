@@ -5,6 +5,7 @@ export default function IntroSlide({ heading, children, props }) {
 	const containerProps = {
 		fontSize: 'lg',
 		...props,
+		pb: { sm: 4 },
 	}
 	const bgProps = {
 		borderRadius: 'md',
@@ -12,8 +13,9 @@ export default function IntroSlide({ heading, children, props }) {
 		color: { md: useColorModeValue('Black', 'gray.100') },
 		bg: { md: useColorModeValue('warmWhite', 'extraDark') },
 		flex: 1,
-		pb: { md: 20, base: 4 },
-		pt: { md: 16, base: 4 },
+		p: 4,
+		minH: { sm: 500 },
+		justify: 'center',
 		spacing: { md: 8, base: 4 },
 	}
 	return (
@@ -26,6 +28,7 @@ export default function IntroSlide({ heading, children, props }) {
 				textTransform={'uppercase'}
 				_dark={{ fontWeight: '400', color: 'gray.200' }}
 				letterSpacing={'0.1em'}
+				pb={{ sm: 4 }}
 			>
 				{heading}
 			</Heading>

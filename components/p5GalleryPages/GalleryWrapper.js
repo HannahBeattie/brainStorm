@@ -7,13 +7,15 @@ import {
 	useColorModeValue,
 	VStack,
 } from '@chakra-ui/react'
+import { Component } from 'react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import StyledNextLink from '../base/StyledNextLink'
+import FadeIn from '../HOC/FadeIn'
 import { usePrevNext } from '../hooks/usePrevNext'
 import { p5Tabs } from '../nav/Pages'
 import Tabs from './Tabs'
 
-export default function GalleryWrapper({ children, title, column1, column2, column3 }) {
+export default function GalleryWrapper({ children, title, column1, column2, column3, no }) {
 	const pages = p5Tabs
 
 	const { prev, next } = usePrevNext(pages.map((page) => page.href))
@@ -50,37 +52,41 @@ export default function GalleryWrapper({ children, title, column1, column2, colu
 		letterSpacing: '0.8em',
 	}
 	return (
-		<VStack px={{ md: 8 }} alignItems={'stretch'} py={4} flex={1}>
-			<Tabs />
-			{children}
-			<Text {...titleProps}>{title}</Text>
-			<Divider display={{ md: 'none' }} {...dividerProps} />
-			<Stack direction={{ base: 'column', md: 'row' }} {...stackProps}>
-				<VStack {...containerProps}>
-					<Text {...headingProps}>about</Text>
-					{column1}
-				</VStack>
-				<Divider {...dividerProps} />
-				<VStack {...containerProps}>
-					<Text {...headingProps}>notes</Text>
-					{column2}
-				</VStack>
-				<Divider {...dividerProps} />
-				<VStack {...containerProps}>
-					<Text {...headingProps}>details</Text>
-					{column3}
-				</VStack>
-			</Stack>
-			<Divider display={{ md: 'none' }} {...dividerProps} />
-			<HStack alignItems={'stretch'} justifyContent={'space-between'}>
-				<StyledNextLink href={prev}>
-					<FaArrowLeft />
-				</StyledNextLink>
+		<FadeIn>
+			<VStack px={{ sm: 4, md: 8 }} alignItems={'stretch'} py={4} flex={1}>
+				<Tabs />
+				{children}
+				<Text {...titleProps}>{title}</Text>
+				{!no && <Divider display={{ md: 'none' }} {...dividerProps} />}
+				{!no && (
+					<Stack direction={{ base: 'column', md: 'row' }} {...stackProps}>
+						<VStack {...containerProps}>
+							<Text {...headingProps}>about</Text>
+							{column1}
+						</VStack>
+						<Divider {...dividerProps} />
+						<VStack {...containerProps}>
+							<Text {...headingProps}>notes</Text>
+							{column2}
+						</VStack>
+						<Divider {...dividerProps} />
+						<VStack {...containerProps}>
+							<Text {...headingProps}>details</Text>
+							{column3}
+						</VStack>
+					</Stack>
+				)}
+				<Divider display={{ md: 'none' }} {...dividerProps} />
+				<HStack alignItems={'stretch'} justifyContent={'space-between'}>
+					<StyledNextLink href={prev}>
+						<FaArrowLeft />
+					</StyledNextLink>
 
-				<StyledNextLink href={next}>
-					<FaArrowRight />
-				</StyledNextLink>
-			</HStack>
-		</VStack>
+					<StyledNextLink href={next}>
+						<FaArrowRight />
+					</StyledNextLink>
+				</HStack>
+			</VStack>
+		</FadeIn>
 	)
 }
