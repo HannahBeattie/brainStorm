@@ -2,7 +2,6 @@ import { Box, HStack, useColorModeValue } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import StyledNextLink from '~/components/base/StyledNextLink'
-import { usePrevNext } from '../hooks/usePrevNext'
 import { p5Tabs } from '../nav/Pages'
 
 const wrapProps = {

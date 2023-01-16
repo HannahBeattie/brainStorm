@@ -2,7 +2,6 @@ import { useColorModeValue, VStack } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 import useMeasure from 'react-use-measure'
 import Appear from '~/components/framerMotion/Appear'
-import FadeIn from '~/components/HOC/FadeIn'
 
 const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mod.ReactP5Wrapper), {
 	ssr: false,

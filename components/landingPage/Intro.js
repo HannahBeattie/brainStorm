@@ -64,13 +64,13 @@ export default function Intro() {
 				<TextContainer>
 					<Text>
 						I am excited to continue to learn new tools, languages and frameworks with
-						which to refine my practice --
+						which to refine my practice and enrich a digital landscape that is diverse,
+						deliberate and highly responsive.
 					</Text>{' '}
-					<Text>
-						Contributing to a digital landscape that is diverse, deliberate and highly
-						responsive.
-					</Text>
-					<Text pt={8}>So...whatch this space.</Text>
+				</TextContainer>
+
+				<TextContainer>
+					<Text>So...whatch this space.</Text>
 				</TextContainer>
 
 				<Box position={'relative'}>
