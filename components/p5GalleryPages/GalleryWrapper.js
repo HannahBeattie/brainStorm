@@ -7,8 +7,9 @@ import {
 	useColorModeValue,
 	VStack,
 } from '@chakra-ui/react'
-import { Component } from 'react'
+import { useRouter } from 'next/router'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
+import { useSwipeable } from 'react-swipeable'
 import StyledNextLink from '../base/StyledNextLink'
 import FadeIn from '../HOC/FadeIn'
 import { usePrevNext } from '../hooks/usePrevNext'
@@ -19,6 +20,13 @@ export default function GalleryWrapper({ children, title, column1, column2, colu
 	const pages = p5Tabs
 
 	const { prev, next } = usePrevNext(pages.map((page) => page.href))
+	const router = useRouter()
+
+	const handlers = useSwipeable({
+		onSwipedRight: () => router.push(prev),
+		onSwipedLeft: () => router.push(next),
+	})
+
 	const headingProps = {
 		color: useColorModeValue('blackAlpha.800', 'grayAlpha.900'),
 		fontSize: 'sm',
@@ -51,9 +59,10 @@ export default function GalleryWrapper({ children, title, column1, column2, colu
 		textTransform: 'uppercase',
 		letterSpacing: '0.8em',
 	}
+
 	return (
 		<FadeIn>
-			<VStack px={{ sm: 4, md: 8 }} alignItems={'stretch'} py={4} flex={1}>
+			<VStack px={{ sm: 4, md: 8 }} alignItems={'stretch'} py={4} flex={1} {...handlers}>
 				<Tabs />
 				{children}
 				<Text {...titleProps}>{title}</Text>

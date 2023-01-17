@@ -1,9 +1,9 @@
 import { HStack, Spacer, Text } from '@chakra-ui/react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
-
 import StyledNextLink from '../base/StyledNextLink'
 import { usePrevNext } from '../hooks/usePrevNext'
 import { AnimationPages } from './Pages'
+
 const pages = AnimationPages
 
 export default function PrevNext({ children, props }) {
