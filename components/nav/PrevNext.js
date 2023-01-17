@@ -17,6 +17,7 @@ export default function PrevNext({ children, props }) {
 	const textArroProps = {
 		color: 'grayAlpha.900',
 	}
+
 	return (
 		<HStack {...stackProps}>
 			<StyledNextLink href={prev}>

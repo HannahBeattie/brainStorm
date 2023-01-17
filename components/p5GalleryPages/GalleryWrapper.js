@@ -8,6 +8,7 @@ import {
 	VStack,
 } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import { useSwipeable } from 'react-swipeable'
 import StyledNextLink from '../base/StyledNextLink'
@@ -16,7 +17,7 @@ import { usePrevNext } from '../hooks/usePrevNext'
 import { p5Tabs } from '../nav/Pages'
 import Tabs from './Tabs'
 
-export default function GalleryWrapper({ children, title, column1, column2, column3, no }) {
+export default function GalleryWrapper({ children, title, column1, column2, column3, no, key }) {
 	const pages = p5Tabs
 
 	const { prev, next } = usePrevNext(pages.map((page) => page.href))
@@ -60,6 +61,14 @@ export default function GalleryWrapper({ children, title, column1, column2, colu
 		letterSpacing: '0.8em',
 	}
 
+	useEffect(() => {
+		const keyPressed = ({ key }) =>
+			key === 'ArrowRight' ? router.push(next) : key === 'ArrowLeft' && router.push(next)
+		window.addEventListener('keydown', keyPressed)
+		// console.log('keyPressed, keyPressed', { key })
+		return () => window.removeEventListener('keydown', keyPressed)
+	}, [])
+	// console.log('keyPressed, keyPressed', { key })
 	return (
 		<FadeIn>
 			<VStack px={{ sm: 4, md: 8 }} alignItems={'stretch'} py={4} flex={1} {...handlers}>
@@ -85,6 +94,7 @@ export default function GalleryWrapper({ children, title, column1, column2, colu
 						</VStack>
 					</Stack>
 				)}
+
 				<Divider display={{ md: 'none' }} {...dividerProps} />
 				<HStack alignItems={'stretch'} justifyContent={'space-between'}>
 					<StyledNextLink href={prev}>
