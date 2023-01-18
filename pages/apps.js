@@ -137,8 +137,8 @@ export default function Web() {
 								adapting components to different screen sizes, without replicating
 								data and making it less maintainable later on.{' '}
 							</Text>
-							<Text fontStyle={'italic'}>
-								See below for links to live demo site and source code.
+							<Text fontWeight={'bold'} fontStyle={'italic'}>
+								Check out demo and source code below.
 							</Text>
 						</VStack>
 					</AppFeature>

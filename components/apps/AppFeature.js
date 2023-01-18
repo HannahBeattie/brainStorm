@@ -1,4 +1,5 @@
 import {
+	Button,
 	Container,
 	Divider,
 	Heading,
@@ -72,17 +73,31 @@ export default function AppFeature({ linkText, src, alt, title, children, href, 
 
 							<div>{children}</div>
 							{linkText && (
-								<ButtonFocus>
-									<StyledNextLink
-										color={'gray.Alpha.700'}
-										_hover={{ color: useColorModeValue('teal', 'white') }}
-										fontWeight={'bold'}
-										href={href}
-										target={'blank'}
-									>
-										{linkText}
-									</StyledNextLink>
-								</ButtonFocus>
+								<StyledNextLink
+									color={'gray.Alpha.700'}
+									// _hover={{ color: useColorModeValue('teal', 'white') }}
+									fontWeight={'bold'}
+									href={href}
+									target={'blank'}
+								>
+									<ButtonFocus>
+										<Button
+											bg={useColorModeValue(
+												'grayAlpha.200',
+												'whiteAlpha.100'
+											)}
+											_hover={{
+												bg: useColorModeValue(
+													'grayAlpha.300',
+													'whiteAlpha.200'
+												),
+											}}
+											color={useColorModeValue('gray.800', 'ActiveCaption')}
+										>
+											{linkText}
+										</Button>
+									</ButtonFocus>
+								</StyledNextLink>
 							)}
 						</VStack>
 					</Container>
