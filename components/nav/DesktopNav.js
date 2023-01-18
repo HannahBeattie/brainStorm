@@ -2,7 +2,6 @@ import { Box, HStack, useColorModeValue } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import StyledNextLink from '~/components/base/StyledNextLink'
-import Pulse from '../framerMotion/Pulse'
 
 const wrapProps = {
 	display: { base: 'none', sm: 'flex' },
@@ -26,18 +25,21 @@ export default function DesktopNav({ items }) {
 		<HStack {...wrapProps}>
 			{items.map(({ href, title }, idx) => (
 				<Box key={idx} {...tabProps} tabIndex={0}>
-					<StyledNextLink
-						fontFamily={'SF Pro'}
-						href={href}
-						color={
-							href === currentRoute
-								? useColorModeValue('teal', 'red')
-								: useColorModeValue('gray.900', 'gray.200')
-						}
-						fontWeight={href === currentRoute ? 500 : 400}
-					>
-						{title}
-					</StyledNextLink>
+					<motion.div whileHover={{ scale: 1.05 }} transition={{ ease: 'easeInOut' }}>
+						<StyledNextLink
+							fontFamily={'SF Pro'}
+							href={href}
+							color={
+								href === currentRoute
+									? useColorModeValue('teal', 'red')
+									: useColorModeValue('gray.600', 'gray.200')
+							}
+							_hover={{ color: useColorModeValue('black', 'white') }}
+							fontWeight={href === currentRoute ? 500 : 400}
+						>
+							{title}
+						</StyledNextLink>
+					</motion.div>
 
 					{href === currentRoute ? (
 						<motion.div

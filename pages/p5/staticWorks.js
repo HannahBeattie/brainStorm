@@ -21,8 +21,9 @@ export default function StaticWorks() {
 					px={{ base: 4 }}
 					fontSize={{ base: 'md', md: 'xl' }}
 					textAlign={'center'}
-					fontWeight={'light'}
-					color={'gray.400'}
+					fontWeight={'400'}
+					_dark={{ color: 'gray.400' }}
+					color={'gray.800'}
 					textTransform={'uppercase'}
 					letterSpacing={{ md: '0.1em' }}
 				>

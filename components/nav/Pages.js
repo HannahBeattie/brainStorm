@@ -1,19 +1,5 @@
 export const Pages = [
 	{
-		title: 'watercolors',
-		href: '/watercolors',
-	},
-	{
-		title: 'contact',
-		href: '/contact',
-	},
-
-	{
-		title: '3d',
-		href: '/characters',
-	},
-
-	{
 		title: 'apps',
 		href: '/apps',
 	},
@@ -21,5 +7,18 @@ export const Pages = [
 	{
 		title: 'p5 animations',
 		href: '/p5Index',
+	},
+	{
+		title: 'watercolors',
+		href: '/watercolors',
+	},
+
+	{
+		title: '3d characters',
+		href: '/characters',
+	},
+	{
+		title: 'contact',
+		href: '/contact',
 	},
 ]
