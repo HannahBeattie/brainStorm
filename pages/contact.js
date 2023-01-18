@@ -7,7 +7,7 @@ import MovingSnail from '~/components/contact/MovingSnail'
 
 export default function Contact() {
 	return (
-		<VStack flex={1} pt={{ base: '20vh', sm: '28vh', md: '25vh' }}>
+		<VStack flex={1} pt={{ base: '20vh', sm: '28vh', md: '25vh', lg: '28vh' }}>
 			<Heading userSelect={'none'} pointerEvents={'none'}>
 				Contact
 			</Heading>
