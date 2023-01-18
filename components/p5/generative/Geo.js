@@ -1,6 +1,4 @@
-import { useColorMode, useColorModeValue, VStack } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
-import useMeasure from 'react-use-measure'
 import SketchWrapper from './SketchWrapper'
 
 // don't load p5 on server

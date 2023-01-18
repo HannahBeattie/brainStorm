@@ -9,7 +9,7 @@ export default function IntroSlide({ heading, children, props }) {
 	}
 	const bgProps = {
 		borderRadius: 'md',
-		boxShaddow: 'dark-xl',
+
 		color: { md: useColorModeValue('Black', 'gray.100') },
 		bg: { md: useColorModeValue('warmWhite', 'extraDark') },
 		flex: 1,

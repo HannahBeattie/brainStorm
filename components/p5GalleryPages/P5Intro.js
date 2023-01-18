@@ -1,4 +1,5 @@
 import { Text } from '@chakra-ui/react'
+import StyledNextLink from '../base/StyledNextLink'
 import IntroSlide from '../base/templates/IntroSlide'
 
 export default function P5Intro() {
@@ -16,6 +17,9 @@ export default function P5Intro() {
 				I am interested in gaining more understanding and control over my pattern-making
 				abilities; Perhaps trying to mimic my analog, pen-and-ink styles in a generative
 				context.
+			</Text>
+			<Text as={'div'}>
+				For more: <StyledNextLink href={'/p5.Static'}>see static text works</StyledNextLink>
 			</Text>
 		</IntroSlide>
 	)

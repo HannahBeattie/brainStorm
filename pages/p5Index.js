@@ -1,4 +1,5 @@
 import { Heading } from '@chakra-ui/react'
+import LinkWrapper from '~/components/base/LinkWrapper'
 import PageWrapper from '~/components/HOC/PageWrapper'
 import GalleryWrapper from '~/components/p5GalleryPages/GalleryWrapper'
 import P5Intro from '~/components/p5GalleryPages/P5Intro'
@@ -8,6 +9,7 @@ export default function P5Index() {
 		<PageWrapper>
 			<GalleryWrapper no={true}>
 				<P5Intro />
+				<LinkWrapper href={'/p5.Static'}>See static text works</LinkWrapper>
 			</GalleryWrapper>
 		</PageWrapper>
 	)
