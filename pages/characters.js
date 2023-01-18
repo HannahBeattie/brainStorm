@@ -10,7 +10,14 @@ export default function Characters() {
 	return (
 		<PageWrapper>
 			<IntroCard heading={'3d Character Design'}>
-				Someday these characters will be part of a playable world.
+				<Text>
+					I have always been fascinated with insects, bugs and tiny creatures since I was
+					a small child.{' '}
+				</Text>{' '}
+				<Text>
+					Someday, I intend to make these characters part of a playable world. In the
+					meantime, I enjoy doodling them on my iPad.
+				</Text>
 			</IntroCard>
 			<CharacterModel />
 			<ScrollToTop />

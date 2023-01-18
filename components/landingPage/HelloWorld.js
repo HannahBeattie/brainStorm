@@ -1,6 +1,7 @@
 import { Heading } from '@chakra-ui/react'
 import React from 'react'
 import Appear from '../framerMotion/Appear'
+import HoverPulse from '../framerMotion/HoverPulse'
 
 function HelloWorld() {
 	return (

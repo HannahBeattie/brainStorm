@@ -19,12 +19,10 @@ export default function P5Index() {
 							textTransform={'uppercase'}
 							letterSpacing={'0.1em'}
 							fontWeight={'600'}
-							color={useColorModeValue('gray.900', 'whiteAlpha.600')}
+							color={useColorModeValue('gray.900', 'whiteAlpha.800')}
 							_hover={{ color: useColorModeValue('teal', 'red') }}
 						>
-							<Divider my={'2'} />
 							I am the link below
-							<Divider my={'2'} />
 						</StyledNextLink>
 					</HoverPulse>
 				</VStack>

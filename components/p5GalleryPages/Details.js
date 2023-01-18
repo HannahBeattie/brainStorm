@@ -1,33 +1,52 @@
 import { Text, useColorModeValue, VStack } from '@chakra-ui/react'
 import LinkWrapper from '../base/LinkWrapper'
+import StyledNextLink from '../base/StyledNextLink'
 
 const textProps = { fontSize: 'sm', _light: { color: 'gitGray' }, _dark: { color: 'warmWhite' } }
-const paragrapProps = { ...textProps, fontSize: 'md' }
+const paragrapProps = { ...textProps, fontSize: 'sm' }
 
 export const reef = {
 	title: 'Reef',
 	column1: (
 		<VStack>
 			<Text as={'div'} {...paragrapProps}>
-				One of the may experements that came after creating my first flowfield, inspired by{' '}
-				<LinkWrapper href={'https://www.youtube.com/watch?v=1-QXuR-XX_s'}>
-					Colorful Coding.
-				</LinkWrapper>
+				REEF is one of many works generated from an initial flow field inspired by Colourful
+				Coding.
 			</Text>
-			<Text {...paragrapProps}>
-				I wanted to add a level of organic-feeling interaction, so I played with mouse
-				events, basing the movement and responses to how I imagined a creature in the ocean
-				may respond.
+			<Text>
+				I wanted to play with organic feeling interaction; I imagined a creature that is
+				curious about the user; Following the mouse lazily and &apos;startling&apos; when
+				clicked.
 			</Text>
 		</VStack>
 	),
-	column2: 'blah',
+	column2: (
+		<VStack>
+			<Text>
+				I purposefully did not include a reset button because of the variety of animation
+				that occurs onscreen when left; From drifting coral to parasitic worms, to hulking,
+				glowing planets.
+			</Text>
+			<Text {...textProps}>Interaction: MouseFollow, MouseClick </Text>
+		</VStack>
+	),
 	column3: (
 		<VStack>
 			<Text {...textProps}>Title: Reef</Text>
 			<Text {...textProps}>Duration: Infinate</Text>
-			<Text {...textProps}>Created using p5</Text>
-			<Text {...textProps}>Best Viewed on Desktop</Text>
+			<Text {...textProps}>Best Viewed On Desktop</Text>
+
+			<Text {...textProps} pt={2}>
+				Initial flow field enspired by:
+			</Text>
+			<StyledNextLink
+				{...textProps}
+				targe={'blank'}
+				fontSize={'md'}
+				href={'https://www.youtube.com/watch?v=1-QXuR-XX_s'}
+			>
+				Colorful Coding: Coding Project #9
+			</StyledNextLink>
 		</VStack>
 	),
 }
