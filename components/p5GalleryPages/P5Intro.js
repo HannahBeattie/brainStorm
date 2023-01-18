@@ -1,27 +1,21 @@
-import { Text } from '@chakra-ui/react'
+import { Spacer, Text, VStack } from '@chakra-ui/react'
 import StyledNextLink from '../base/StyledNextLink'
-import IntroSlide from '../base/templates/IntroSlide'
+import IntroCard from '../base/templates/IntroCard'
+import HoverPulse from '../framerMotion/HoverPulse'
 
 export default function P5Intro() {
 	return (
-		<IntroSlide heading={'Generative art'} num={2}>
+		<IntroCard heading={'Generative art'}>
 			<Text>
-				I have recently, gingerly, dipped my toes into the realm of digital and generative
-				art thanks to the p5.js library.
+				For the last couple of months, I have been gingerly dipping my toes into generative
+				art, with the p5.js library.
 			</Text>
+			<Text>This gallery contains my animated works.</Text>
 			<Text>
-				While it is early days, I have enjoyed creating works that mimic and play with
-				organic shapes, patterns and colours.
+				If you have already seen them and/or are hungry for more, you can find notes about
+				my process and stills of other works by clicking the link below.
 			</Text>
-			<Text>
-				I am interested in gaining more understanding and control over my pattern-making
-				abilities; Perhaps trying to mimic my analog, pen-and-ink styles in a generative
-				context.
-			</Text>
-			<Text as={'div'}>
-				For more:{' '}
-				<StyledNextLink href={'/p5/staticWorks'}>see static text works</StyledNextLink>
-			</Text>
-		</IntroSlide>
+			<Spacer />
+		</IntroCard>
 	)
 }

@@ -1,4 +1,4 @@
-import { Text } from '@chakra-ui/react'
+import { Text, Tooltip } from '@chakra-ui/react'
 import IntroCard from './base/templates/IntroCard'
 import Appear from './framerMotion/Appear'
 
@@ -6,28 +6,45 @@ export default function WCIntro() {
 	return (
 		<Appear width={{ width: '100vw' }}>
 			<IntroCard heading={'WaterColors'}>
-				<Text>One of my hobbies for the last few years has been water color painting.</Text>
 				<Text>
-					I was particularly drawn to watercolors because of the lack of control and
-					experiance I had with them.
+					I began watercolour painting a few years ago, in an attempt to cure my
+					perfectionism.
 				</Text>
 				<Text>
-					As someone who tends towards perfectionism, watecolors are a great way to
-					relinquish control.
+					I was drawn to the medium because of the total lack of control and experience I
+					had with them, as well as the fact that they are not typically associated with
+					&apos;high art&apos; value.
 				</Text>
 				<Text>
-					They are are, by nature, a fast-drying medium with a huge range of chaotic,
-					uncontrolable factors. For instance; Water and pigment mix diffirently according
-					to humidity, the grain of the paper and the motion of the pen.
+					Watercolours are extremely unpredictable. To enjoy using them, there is an
+					element of control you must surrender. Instead of confident, immediate
+					precision, the task becomes noticing how the marks are behaving and changing.
 				</Text>
 				<Text>
-					Diffirent brands of paints may dry diffirntly and the color of the pigment looks
-					significantly diffirent dry to wet.
+					Factors such as humidity, the grain of the paper, whether salt is present, the
+					amount of water and the chemical composition of the brand of paint -{' '}
+					<i>or, more usually, the chemical composition of that particular pigment</i>-
+					all affect the way your marks will behave and the type of treatment you give
+					them.
 				</Text>
 				<Text>
-					Because of this, I see the process of painting as more to do with noticing what
-					the watercolors are doing and responding to that, rather than trying to
-					'control' them.
+					{' '}
+					am rather proud to say that I have, in no way, mastered watercolour painting.
+					Only that it has taught me a great deal about noticing details and{' '}
+					<i>
+						<Tooltip
+							bg={'gray.900'}
+							color={'white'}
+							p={4}
+							borderRadius={'md'}
+							cursor={'pointer'}
+							label={
+								'I apologise sincerely for that terrible pun. It will not happen again.'
+							}
+						>
+							going with the flow * .
+						</Tooltip>
+					</i>
 				</Text>
 			</IntroCard>
 		</Appear>

@@ -25,26 +25,26 @@ export default function Intro() {
 
 				<TextContainer>
 					<Text>
-						...that take into account the diversity of experience and access ...
+						...that take into account the diversity of experience and access styles...
 					</Text>
 				</TextContainer>
 				<Tree num={2} />
 				<TextContainer>
-					<Text>...while retaining a sense of experimentation, humour and joy...</Text>
+					<Text>...while retaining a sense of experimentation, humour and play...</Text>
 				</TextContainer>
 				<Tree num={1} />
 				<TextContainer>
 					<Text>
-						My coding style is a mixture of curiosity-driven play and clean, minimal
-						functionality ---
+						My coding style is a mixture between curiosity-driven experementation and
+						clean, minimal functionality ---
 					</Text>{' '}
 					<Text pt={8}>
 						<i>It doesn't matter how flashy something is if it can't be used.</i>
 					</Text>
 					<Text pt={8}>
-						One of my favourite things about coding is creating surprising and playful
-						moments of user interaction that cut through the dull static buzz of data
-						fatigue.
+						One of my favourite things about coding is the ability to create surprising,
+						personal moments of user interaction that cut through the droll buzz of data
+						fatigue most of us carry.
 					</Text>
 				</TextContainer>
 
@@ -54,15 +54,14 @@ export default function Intro() {
 						My background as an interdisciplinary artist has always involved testing and
 						re-testing methods and tools to observe patterns and possibilities.
 					</Text>
-					<Text pt={8}>
-						Coding is much the same, only with digital rather than physical methods.
-					</Text>
+					<Text pt={8}>Coding is much the same, only less messy.</Text>
 				</TextContainer>
 				<Tree num={1} />
 				<TextContainer>
 					<Text>
 						I am excited to continue to learn new tools, languages and frameworks with
-						which to refine my practice and enrich a digital landscape that is diverse,
+						which to refine my practice and enrich my abilities; Allowing me to
+						contribute to a digital landscape that is kinder, more diverse, more
 						deliberate and highly responsive.
 					</Text>{' '}
 				</TextContainer>

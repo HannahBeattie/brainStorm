@@ -5,12 +5,13 @@ export const Pages = [
 	},
 
 	{
-		title: 'p5 animations',
-		href: '/p5Index',
-	},
-	{
 		title: 'watercolors',
 		href: '/watercolors',
+	},
+
+	{
+		title: 'p5 animations',
+		href: '/p5Index',
 	},
 
 	{
