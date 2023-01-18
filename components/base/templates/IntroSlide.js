@@ -9,19 +9,18 @@ export default function IntroSlide({ heading, children, props }) {
 	}
 	const bgProps = {
 		borderRadius: 'md',
-
 		color: { md: useColorModeValue('Black', 'gray.100') },
 		bg: { md: useColorModeValue('warmWhite', 'extraDark') },
 		flex: 1,
-		p: 4,
+		p: { md: 4, base: 4 },
 		minH: { sm: 500 },
 		justify: 'center',
-		spacing: { md: 8, base: 4 },
+		spacing: { md: 8, base: 2 },
 	}
 	return (
 		<VStack flex={'1'} {...bgProps}>
 			<Heading
-				fontSize={'3xl'}
+				fontSize={{ md: '3xl', base: ' 2xl ' }}
 				fontFamily={'SF Pro'}
 				color={'gray.900'}
 				fontWeight={'400'}
@@ -34,7 +33,7 @@ export default function IntroSlide({ heading, children, props }) {
 			</Heading>
 
 			<Container {...containerProps}>
-				<VStack spacing={4} alignItems={'stretch'} px={{ md: 20, base: 8 }}>
+				<VStack spacing={4} alignItems={'stretch'} px={{ md: 20, base: 4 }}>
 					{children}
 				</VStack>
 			</Container>
