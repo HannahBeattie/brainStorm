@@ -47,7 +47,7 @@ export const goldenThread = {
 }
 
 export const flowFields = {
-	title: 'Testing : Perlin noise Flow',
+	title: 'Perlin Noise Tests',
 	intro: (
 		<VStack>
 			<Text>
@@ -94,7 +94,7 @@ export const flowFields = {
 }
 
 export const objects = {
-	title: 'Testing: Object Class method',
+	title: 'Object Class Tests',
 	intro: (
 		<VStack>
 			<Text>

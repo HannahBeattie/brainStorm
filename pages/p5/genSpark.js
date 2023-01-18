@@ -2,7 +2,7 @@ import Spark from '~/components/p5/generative/Spark'
 import { spark } from '~/components/p5GalleryPages/details'
 import GalleryWrapper from '~/components/p5GalleryPages/GalleryWrapper'
 
-export default function One() {
+export default function GenSpark() {
 	return (
 		<GalleryWrapper
 			title={spark.title}

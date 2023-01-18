@@ -4,7 +4,7 @@ import Reef from '~/components/p5/generative/Reef'
 import { electric } from '~/components/p5GalleryPages/details'
 import GalleryWrapper from '~/components/p5GalleryPages/GalleryWrapper'
 
-export default function Three() {
+export default function GenElec() {
 	return (
 		<GalleryWrapper
 			title={electric.title}

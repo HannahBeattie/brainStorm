@@ -3,7 +3,7 @@ import Geo from '~/components/p5/generative/Geo'
 import { geo } from '~/components/p5GalleryPages/details'
 import GalleryWrapper from '~/components/p5GalleryPages/GalleryWrapper'
 
-export default function Two() {
+export default function GenGeo() {
 	return (
 		<GalleryWrapper
 			title={geo.title}

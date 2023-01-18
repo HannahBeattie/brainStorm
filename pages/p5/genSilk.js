@@ -2,7 +2,7 @@ import Silk from '~/components/p5/generative/Silk'
 import { silk } from '~/components/p5GalleryPages/details'
 import GalleryWrapper from '~/components/p5GalleryPages/GalleryWrapper'
 
-export default function One() {
+export default function GenSilk() {
 	return (
 		<GalleryWrapper
 			title={silk.title}

@@ -11,7 +11,7 @@ export default function PageWrapper({ children, props }) {
 				justify='center'
 				pt={{ base: 0, md: 4 }}
 				py={{ base: 0, md: 'undefined' }}
-				spacing={0}
+				spacing={{ base: 0 }}
 				{...props}
 			>
 				{children}

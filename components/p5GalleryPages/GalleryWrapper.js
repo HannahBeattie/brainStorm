@@ -14,11 +14,12 @@ import { useSwipeable } from 'react-swipeable'
 import StyledNextLink from '../base/StyledNextLink'
 import FadeIn from '../HOC/FadeIn'
 import { usePrevNext } from '../hooks/usePrevNext'
-import { p5Tabs } from '../nav/Pages'
-import Tabs from './Tabs'
+
+import P5Nav from './P5Nav'
+import { P5NavItems } from './psNavItems'
 
 export default function GalleryWrapper({ children, title, column1, column2, column3, no, key }) {
-	const pages = p5Tabs
+	const pages = P5NavItems
 
 	const { prev, next } = usePrevNext(pages.map((page) => page.href))
 	const router = useRouter()
@@ -63,7 +64,7 @@ export default function GalleryWrapper({ children, title, column1, column2, colu
 
 	useEffect(() => {
 		const keyPressed = ({ key }) =>
-			key === 'ArrowRight' ? router.push(next) : key === 'ArrowLeft' && router.push(next)
+			key === 'ArrowRight' ? router.push(next) : key === 'ArrowLeft' && router.push(prev)
 		window.addEventListener('keydown', keyPressed)
 		// console.log('keyPressed, keyPressed', { key })
 		return () => window.removeEventListener('keydown', keyPressed)
@@ -71,8 +72,15 @@ export default function GalleryWrapper({ children, title, column1, column2, colu
 	// console.log('keyPressed, keyPressed', { key })
 	return (
 		<FadeIn>
-			<VStack px={{ sm: 4, md: 8 }} alignItems={'stretch'} py={4} flex={1} {...handlers}>
-				<Tabs />
+			<VStack
+				px={{ sm: 4, md: 8 }}
+				alignItems={'stretch'}
+				pb={{ base: 4 }}
+				py={{ md: 4 }}
+				flex={1}
+				{...handlers}
+			>
+				<P5Nav />
 				{children}
 				<Text {...titleProps}>{title}</Text>
 				{!no && <Divider display={{ md: 'none' }} {...dividerProps} />}

@@ -2,7 +2,7 @@ import { Box, HStack, useColorModeValue } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import StyledNextLink from '~/components/base/StyledNextLink'
-import { p5Tabs } from '../nav/Pages'
+import { P5NavItems } from './psNavItems'
 
 const wrapProps = {
 	justify: 'center',
@@ -17,10 +17,13 @@ const tabProps = {
 	fontFamily: 'SF Pro',
 	letterSpacing: { md: '0.1em' },
 	px: 4,
+	py: { base: 0 },
+	mt: { base: 0 },
 }
 
-export default function Tabs() {
-	const items = p5Tabs
+export default function P5Nav() {
+	const items = P5NavItems
+
 	const router = useRouter()
 	const currentRoute = router.pathname
 	const col = useColorModeValue('teal', 'red')

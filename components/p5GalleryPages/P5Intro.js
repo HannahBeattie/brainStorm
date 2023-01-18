@@ -19,7 +19,8 @@ export default function P5Intro() {
 				context.
 			</Text>
 			<Text as={'div'}>
-				For more: <StyledNextLink href={'/p5.Static'}>see static text works</StyledNextLink>
+				For more:{' '}
+				<StyledNextLink href={'/p5/testWorks'}>see static text works</StyledNextLink>
 			</Text>
 		</IntroSlide>
 	)

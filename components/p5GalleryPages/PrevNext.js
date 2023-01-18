@@ -1,12 +1,11 @@
-import { HStack, Spacer, Text } from '@chakra-ui/react'
+import { HStack, Spacer } from '@chakra-ui/react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import StyledNextLink from '../base/StyledNextLink'
 import { usePrevNext } from '../hooks/usePrevNext'
-import { AnimationPages } from './Pages'
-
-const pages = AnimationPages
+import { P5NavItems } from './psNavItems'
 
 export default function PrevNext({ children, props }) {
+	const pages = P5NavItems
 	const { prev, next } = usePrevNext(pages.map((page) => page.href))
 	const stackProps = {
 		p: '0',

@@ -9,7 +9,6 @@ export default function P5Index() {
 		<PageWrapper>
 			<GalleryWrapper no={true}>
 				<P5Intro />
-				<LinkWrapper href={'/p5.Static'}>See static text works</LinkWrapper>
 			</GalleryWrapper>
 		</PageWrapper>
 	)

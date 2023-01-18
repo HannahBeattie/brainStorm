@@ -8,13 +8,15 @@ export default function IntroCard({ heading, children, props }) {
 		...props,
 	}
 	const bgProps = {
-		py: { md: 10, base: 4 },
+		py: { md: 10, base: 8 },
 	}
 	return (
 		<VStack {...bgProps}>
 			<Heading
 				fontSize={{ md: '3xl', base: 'xl' }}
 				pb={{ md: 8, base: 4 }}
+				px={{ base: 10, md: 0 }}
+				textAlign={{ base: 'center' }}
 				fontFamily={'SF Pro'}
 				color={'gray.500'}
 				fontWeight={'300'}
