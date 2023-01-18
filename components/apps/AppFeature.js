@@ -1,7 +1,6 @@
 import {
 	Button,
 	Container,
-	Divider,
 	Heading,
 	Image,
 	Stack,
@@ -75,7 +74,6 @@ export default function AppFeature({ linkText, src, alt, title, children, href, 
 							{linkText && (
 								<StyledNextLink
 									color={'gray.Alpha.700'}
-									// _hover={{ color: useColorModeValue('teal', 'white') }}
 									fontWeight={'bold'}
 									href={href}
 									target={'blank'}

@@ -14,8 +14,8 @@ export default function Web() {
 				<ScrollToTop />
 				<IntroCard heading={'Apps'}>
 					<Text>
-						Here are a few projects I have completed since graduating from Dev Academy
-						Wellington in April of 2022.
+						These represent a few of the projects I have completed since graduating from
+						Dev Academy Wellington in April of 2022.
 					</Text>
 				</IntroCard>
 				<Divider />
@@ -167,8 +167,8 @@ export default function Web() {
 							alt={'todo'}
 							href={'https://not-a-real-website.vercel.app/'}
 							text={'Example website'}
-							link2={'https://github.com/HannahBeattie/not-a-real-website/find/main'}
-							linkTitle={'See source code'}
+							href2={'https://github.com/HannahBeattie/not-a-real-website'}
+							link2Title={'See source code'}
 						/>
 					</Grid>
 				</Appear>

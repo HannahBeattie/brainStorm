@@ -1,5 +1,6 @@
 import { Button, GridItem, Heading, Image, Text, useColorModeValue, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
+import ButtonFocus from '~/components/framerMotion/ButtonFocus'
 import StyledNextLink from '../StyledNextLink'
 
 export default function Slide({
@@ -10,7 +11,9 @@ export default function Slide({
 	sub,
 	src,
 	alt,
+	href2,
 	href,
+	link2Title,
 	buttonText,
 	text,
 }) {
@@ -81,17 +84,20 @@ export default function Slide({
 					<Text textAlign={'center'}>{text}</Text>
 					<Text>{sub}</Text>
 
-					{link2 && (
-						<StyledNextLink href={'link2'} target={'blank'}>
-							<Text as={'span'} color='teal.400' fontWeight={'500'}>
-								{linkTitle}
-							</Text>{' '}
-						</StyledNextLink>
+					{href2 && (
+						<ButtonFocus>
+							<StyledNextLink href={href2} target={'blank'}>
+								<Text as={'span'} color='teal.400' fontWeight={'500'}>
+									{link2Title}
+								</Text>{' '}
+							</StyledNextLink>
+						</ButtonFocus>
 					)}
-
-					<StyledNextLink href={href} target={'blank'}>
-						<Button {...buttonProps}>{buttonText}</Button>
-					</StyledNextLink>
+					<ButtonFocus>
+						<StyledNextLink href={href} target={'blank'}>
+							<Button {...buttonProps}>{buttonText}</Button>
+						</StyledNextLink>
+					</ButtonFocus>
 				</VStack>
 			</GridItem>
 		</>
