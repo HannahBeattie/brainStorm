@@ -1,4 +1,4 @@
-import { Heading } from '@chakra-ui/react'
+import { Divider, Heading } from '@chakra-ui/react'
 import LinkWrapper from '~/components/base/LinkWrapper'
 import PageWrapper from '~/components/HOC/PageWrapper'
 import GalleryWrapper from '~/components/p5GalleryPages/GalleryWrapper'

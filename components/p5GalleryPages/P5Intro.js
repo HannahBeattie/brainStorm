@@ -4,7 +4,7 @@ import IntroSlide from '../base/templates/IntroSlide'
 
 export default function P5Intro() {
 	return (
-		<IntroSlide heading={'Generative art'}>
+		<IntroSlide heading={'Generative art'} num={2}>
 			<Text>
 				I have recently, gingerly, dipped my toes into the realm of digital and generative
 				art thanks to the p5.js library.
@@ -20,7 +20,7 @@ export default function P5Intro() {
 			</Text>
 			<Text as={'div'}>
 				For more:{' '}
-				<StyledNextLink href={'/p5/testWorks'}>see static text works</StyledNextLink>
+				<StyledNextLink href={'/p5/staticWorks'}>see static text works</StyledNextLink>
 			</Text>
 		</IntroSlide>
 	)

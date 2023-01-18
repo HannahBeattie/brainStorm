@@ -1,6 +1,8 @@
-import { HStack, Spacer, VStack } from '@chakra-ui/react'
+import { Container, Divider, Heading, HStack, Spacer, Text, VStack } from '@chakra-ui/react'
 import LinkWrapper from '~/components/base/LinkWrapper'
 import StyledNextLink from '~/components/base/StyledNextLink'
+import IntroCard from '~/components/base/templates/IntroCard'
+import IntroSlide from '~/components/base/templates/IntroSlide'
 import ButtonFocus from '~/components/framerMotion/ButtonFocus'
 import ScrollProgress from '~/components/framerMotion/ScrollProgress'
 import ScrollToTop from '~/components/framerMotion/ScrollToTop'
@@ -14,7 +16,22 @@ export default function StaticWorks() {
 		<PageWrapper>
 			<ScrollToTop />
 			<ScrollProgress />
-			<GoldenThread />
+			<Container pt={{ base: 4, md: 8 }}>
+				<Text
+					px={{ base: 4 }}
+					fontSize={{ base: 'md', md: 'xl' }}
+					textAlign={'center'}
+					fontWeight={'light'}
+					color={'gray.400'}
+					textTransform={'uppercase'}
+					letterSpacing={{ md: '0.1em' }}
+				>
+					Stills from ongoing p5.js tests
+				</Text>
+				<Divider my={{ base: 2, md: 4 }} display={{ base: 'flex', md: 'none' }} />
+			</Container>
+
+			<GoldenThread pt={4} />
 			<ObjectClass />
 			<Flowfields />
 			<HStack

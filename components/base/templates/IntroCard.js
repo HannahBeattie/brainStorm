@@ -1,14 +1,15 @@
 import { Container, VStack, Text, Heading, useColorModeValue } from '@chakra-ui/react'
 import React from 'react'
 
-export default function IntroCard({ heading, children, props }) {
+export default function IntroCard({ heading, children, props, pt }) {
 	const containerProps = {
 		fontSize: 'lg',
 		px: { base: 8 },
 		...props,
 	}
 	const bgProps = {
-		py: { md: 10, base: 8 },
+		pt: pt ? pt : 0,
+		py: { md: 10, base: 0 },
 	}
 	return (
 		<VStack {...bgProps}>
