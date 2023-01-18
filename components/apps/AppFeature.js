@@ -4,6 +4,7 @@ import {
 	Heading,
 	Image,
 	Stack,
+	Text,
 	useColorModeValue,
 	VStack,
 } from '@chakra-ui/react'
@@ -11,12 +12,17 @@ import StyledNextLink from '../base/StyledNextLink'
 import ButtonFocus from '../framerMotion/ButtonFocus'
 import CardHovered from '../framerMotion/CardHovered'
 
-export default function AppFeature({ linkText, src, alt, title, children, href }) {
+export default function AppFeature({ linkText, src, alt, title, children, href, subtitle }) {
 	return (
 		<>
-			<VStack flex={'1'} bg={useColorModeValue('', 'gitDark ')} w={'100%'}>
+			<VStack flex={'1'} w={'100%'}>
 				<Stack p={8} flexDir={{ base: 'column', md: 'row' }}>
-					<VStack p={8} pr={{ md: 8 }}>
+					<VStack
+						pr={{ md: 10 }}
+						flex={1}
+						alignItems={'stretch'}
+						justifyContent={'center'}
+					>
 						<CardHovered>
 							<StyledNextLink href={href} target={'blank'}>
 								<Image
@@ -33,9 +39,8 @@ export default function AppFeature({ linkText, src, alt, title, children, href }
 
 					<VStack
 						border={'1px'}
-						color={'grayAlpha.200'}
+						borderColor={'grayAlpha.200'}
 						orientation='vertical'
-						flex={'1'}
 						justifySelf={'stretch'}
 						alignItems={'stretch'}
 						display={{ base: 'none', md: 'block' }}
@@ -44,19 +49,41 @@ export default function AppFeature({ linkText, src, alt, title, children, href }
 					<Container>
 						<VStack
 							px={{ md: 8, base: 4 }}
+							flex={1}
 							justifyContent={'center'}
 							py={{ md: 10 }}
-							fontSize={'lg'}
-							fontWeight={'light'}
+							fontSize={'md'}
+							fontWeight={'m'}
 							spacing='8'
 						>
-							<Heading textAlign={'center'}>{title}</Heading>
+							<Heading textAlign={'center'} fontFamily={'body'} fontWeight={'md'}>
+								{title}
+							</Heading>
+							{subtitle && (
+								<Text
+									fontWeight={'bold'}
+									fontSize={'sm'}
+									textTransform={'uppercase'}
+									textAlign={'center'}
+								>
+									{subtitle}
+								</Text>
+							)}
+
 							<div>{children}</div>
-							<ButtonFocus>
-								<StyledNextLink href={href} target={'blank'}>
-									{linkText}
-								</StyledNextLink>
-							</ButtonFocus>
+							{linkText && (
+								<ButtonFocus>
+									<StyledNextLink
+										color={'gray.Alpha.700'}
+										_hover={{ color: useColorModeValue('teal', 'white') }}
+										fontWeight={'bold'}
+										href={href}
+										target={'blank'}
+									>
+										{linkText}
+									</StyledNextLink>
+								</ButtonFocus>
+							)}
 						</VStack>
 					</Container>
 				</Stack>

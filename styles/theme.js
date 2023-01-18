@@ -49,9 +49,9 @@ export const theme = extendTheme({
 	styles: {
 		global: {
 			body: {
-				bg: ' extraLight',
+				bg: ' #F3F3F3',
 				_dark: {
-					bg: ' gitGray',
+					bg: 'gitGray',
 				},
 				// Make mobile tap highlight light-gray instead of blue-ish
 				WebkitTapHighlightColor: 'rgba(128,128,128,0.2)', // '-webkit-tap-highlight-color'

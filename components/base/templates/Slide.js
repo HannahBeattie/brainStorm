@@ -19,19 +19,19 @@ export default function Slide({
 
 	const buttonProps = {
 		_dark: {
-			bg: 'blackAlpha.900',
-			color: 'gray.200',
-			_hover: { bg: 'blackAlpha.700', color: 'gray.200', curser: 'pointer' },
+			bg: 'whiteAlpha.200',
+			color: 'whiteAlpha.900',
+			_hover: { bg: 'whiteAlpha.300', color: 'gray.200', curser: 'pointer' },
 		},
-		bg: 'gray.900',
+		bg: 'whiteAlpha.200',
 		color: 'gray.200',
-		_hover: { bg: 'gray.800', color: 'white', curser: 'pointer' },
+		_hover: { bg: 'whiteAlpha.300', color: 'white', curser: 'pointer' },
 		py: { sm: '4' },
 		curser: 'pointer',
 		minWidth: '300',
 	}
 
-	const bg = useColorModeValue('gray.900', 'gray.800')
+	const bg = useColorModeValue('extraDark', 'extraDark')
 
 	const textInCard = {
 		justifyContent: 'center',
