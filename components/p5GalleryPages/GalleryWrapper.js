@@ -1,6 +1,7 @@
 import {
 	Divider,
 	HStack,
+	Spacer,
 	Stack,
 	Text,
 	useBreakpointValue,
@@ -12,6 +13,7 @@ import { useEffect } from 'react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import { useSwipeable } from 'react-swipeable'
 import StyledNextLink from '../base/StyledNextLink'
+import HoverPulse from '../framerMotion/HoverPulse'
 import FadeIn from '../HOC/FadeIn'
 import { usePrevNext } from '../hooks/usePrevNext'
 
@@ -102,17 +104,25 @@ export default function GalleryWrapper({ children, title, column1, column2, colu
 						</VStack>
 					</Stack>
 				)}
+				{!no && <Divider display={{ md: 'none' }} {...dividerProps} />}
+				{!no && (
+					<HStack
+						px={{ base: 4 }}
+						flex={1}
+						alignItems={'center'}
+						justifyContent={'center'}
+					>
+						<StyledNextLink href={prev}>
+							<FaArrowLeft />
+						</StyledNextLink>
+						<Spacer />
 
-				<Divider display={{ md: 'none' }} {...dividerProps} />
-				<HStack alignItems={'stretch'} justifyContent={'space-between'}>
-					<StyledNextLink href={prev}>
-						<FaArrowLeft />
-					</StyledNextLink>
-
-					<StyledNextLink href={next}>
-						<FaArrowRight />
-					</StyledNextLink>
-				</HStack>
+						<Spacer />
+						<StyledNextLink href={next}>
+							<FaArrowRight />
+						</StyledNextLink>
+					</HStack>
+				)}
 			</VStack>
 		</FadeIn>
 	)
