@@ -1,7 +1,7 @@
 import { Container, VStack } from '@chakra-ui/react'
-import React from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { EnterStage } from '~/components/framerMotion/EnterStage'
 import Appear from '../../framerMotion/Appear'
-import FadeIn from '../../HOC/FadeIn'
 
 export default function TextContainer({ children, ...props }) {
 	return (

@@ -1,7 +1,9 @@
 import { Box, Heading, Image, Text, useColorModeValue, VStack } from '@chakra-ui/react'
+import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import StyledNextLink from '~/components/base/StyledNextLink'
 import TextContainer from '~/components/base/templates/TextContainer'
 import ButtonFocus from '../framerMotion/ButtonFocus'
+import { EnterStage } from '../framerMotion/EnterStage'
 import Pulse from '../framerMotion/Pulse'
 import Tree from '../p5/hero/Tree'
 
@@ -14,7 +16,8 @@ export default function Intro() {
 					<Text>An artist, insect enthusiast and Dev from New Zealand.</Text>
 				</TextContainer>
 
-				<Tree num={1} />
+				<Tree num={1} right={'true'} />
+
 				<TextContainer>
 					<Text>
 						I am interested in storytelling and creating holistic, person-first designs
