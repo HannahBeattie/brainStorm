@@ -46,10 +46,10 @@ export default function Track({ children, index }) {
 				animate={{
 					opacity: 1,
 
-					scale: isOdd ? [0.5, 1] : [1.05, 1],
-					rotateX: [index * 0.5 + 1, 0],
-					rotateZ: isOdd ? [10, 0] : [-10, 0],
-					rotateY: isOdd ? [10, 0] : [-10, 0],
+					scale: isOdd ? [0.5, 1] : [0.9, 1],
+					rotateX: [index * 0.5, 0],
+					rotateZ: isOdd ? [5, 0] : [-5, 0],
+					rotateY: isOdd ? [5, 0] : [-5, 0],
 				}}
 				transition={{ duration: 0.6, delay: index * 0.15 + 4, ease: 'easeInOut' }}
 			>
