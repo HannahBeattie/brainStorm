@@ -8,7 +8,7 @@ export const goldenThread = {
 	intro: (
 		<VStack>
 			<Text>
-				Inspired by a flow field tutorial by{' '}
+				After initially following a tutorial by
 				<StyledNextLink
 					href='https://bit.ly/3Zihhrd'
 					fontStyle={'italic'}
@@ -16,22 +16,21 @@ export const goldenThread = {
 				>
 					Colorful coding
 				</StyledNextLink>
-				, I began exploring the ways in which random variables could be used to manipulated
-				the fields into resembling organic forms.
+				on flowfields, I began toying with random variables, and ways in which they could be
+				used to manipulated the fields into resembling organic forms.
 			</Text>
 			<Text>
-				As a watercolor painter, one of my favorite techniques is begining a painting with a
-				random spatter of water and color and seeing which shapes emerge, then adding
-				details and tweaks to allow others to see those shapes.
+				As a watercolor painter, one of my favorite techniques is beginning with a random
+				spatter of pigment and seeing what is suggested to me by the form of it and what I
+				can do to make that suggestion visable to others.
 			</Text>
 			<Text>
-				My incling was towards trees and feathers, which to me mimicked the feel of
+				My incling in these works were towards trees and feathers, which reminded me of
 				intricately woven persion rugs and early japanese woodblock prints.
 			</Text>
 			<Text>
-				To tease out these images, I layered flow fields over one-another, with the bottom
-				layers having a high level of transperancy, with subsequent layers having less
-				opacity.
+				To emphasise these forms , I layered flow fields over one-another, with the bottom
+				layers having a high level of transperancy and subsequent layers being more opaque.
 			</Text>
 			<Text>
 				I tweaked the width of the lines and and volume of the noise to create
@@ -55,19 +54,19 @@ export const flowFields = {
 				to play with the idea of making veins and muscles.
 			</Text>
 			<Text>
-				As a child, I used to draw muscles, veins and DNA sequences, to practice my
-				technical drawing. I have always enjoyed the intricate mix of chaos and order in the
-				micro view of the human body.
+				As a child, I used to draw muscles, veins and DNA sequences, as a type of line-work
+				practice. I have always enjoyed the intricate mix of chaos and control in the micro
+				anatomy of the human body.
 			</Text>
 			<Text>
-				One of the first things I noticed about my flow field code, is that the resulting
-				sequences resembled veins or hair.
+				One of the first things I noticed about my the flowfields I coded, was their
+				resemblance to veins or hair.
 			</Text>
 
 			<Text>
-				To lean into this, I played with gradient backgrounds and layering, with thin,
-				intricate semi-transparent white and light-pink lines causing the 'veins' to look
-				three demensional and somewhat slick.
+				I began to play with gradient backgrounds and layering; With thin, intricate
+				semi-transparent white and light-pink lines causing the 'veins' to look three
+				demensional and somewhat slick.
 			</Text>
 		</VStack>
 	),
@@ -98,8 +97,8 @@ export const objects = {
 	intro: (
 		<VStack>
 			<Text>
-				Here, I have been playing around with creating an Object Class with a range of
-				random color and line-width variables.
+				Here, I have been learning to create Object Class elements, which I have feed random
+				color and line-width variables.
 			</Text>
 			<Text>
 				The first two images are a response to a prompt by the{' '}
@@ -114,11 +113,12 @@ export const objects = {
 			</Text>
 			<Text>
 				In this drawing app, the color of the object changes on click, based on a function
-				that feeds the object a set of random color variables, within a small-ish range.
+				that feeds the object a set of random color-sets, within a small-ish range.
 			</Text>
 			<Text>
 				The third image is an experement in which I tweaked the number of points I gave each
-				object, because I wanted to try to create stars.
+				object, because I wanted to try to create stars. These stars are created wherever a
+				user clicks.
 			</Text>
 		</VStack>
 	),

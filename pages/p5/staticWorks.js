@@ -1,3 +1,4 @@
+import { ArrowRightIcon } from '@chakra-ui/icons'
 import { Container, Divider, Heading, HStack, Spacer, Text, VStack } from '@chakra-ui/react'
 import LinkWrapper from '~/components/base/LinkWrapper'
 import StyledNextLink from '~/components/base/StyledNextLink'
@@ -35,21 +36,9 @@ export default function StaticWorks() {
 			<GoldenThread pt={4} />
 			<ObjectClass />
 			<Flowfields />
-			<HStack
-				pt={{ base: 2, md: 0 }}
-				pb={{ base: 2, md: 4 }}
-				flex='1'
-				alignItems={'end'}
-				width={'100%'}
-				px={16}
-				justifyContent={'flex-end'}
-			>
-				<ButtonFocus>
-					<StyledNextLink href={'/p5Index'}>
-						Return to p5 Animation Gallery
-					</StyledNextLink>
-				</ButtonFocus>
-			</HStack>
+			<LinkWrapper href={'/p5Index'} fontSize={'lg'}>
+				<Text> Back to gallery</Text>
+			</LinkWrapper>
 		</PageWrapper>
 	)
 }
