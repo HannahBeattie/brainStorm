@@ -5,11 +5,12 @@ export default function IntroCard({ heading, children, props, pt }) {
 	const containerProps = {
 		fontSize: 'lg',
 		px: { base: 8 },
+		pb: { base: 4, md: 0 },
 		...props,
 	}
 	const bgProps = {
 		pt: pt ? pt : 0,
-		py: { md: 10, base: 0 },
+		py: { md: 10 },
 	}
 	return (
 		<VStack {...bgProps}>
