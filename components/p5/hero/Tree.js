@@ -119,6 +119,7 @@ export default function Tree({ num }) {
 	return (
 		<Appear>
 			<VStack
+				aria-label='An animation of generative rings, radiating from small to large'
 				overflow={'hidden'}
 				spacing={'0'}
 				ref={ref}

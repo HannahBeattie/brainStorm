@@ -191,6 +191,6 @@ function electric(p5) {
 	}
 }
 
-export default function Electric() {
-	return <SketchWrapper sketch={electric} />
+export default function Electric({ props }) {
+	return <SketchWrapper sketch={electric} {...props} />
 }

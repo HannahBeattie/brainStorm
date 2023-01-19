@@ -12,7 +12,7 @@ export default function GenElec() {
 			column2={electric.column2}
 			column3={electric.column3}
 		>
-			<Electric />
+			<Electric aria-label='An animation of a wave-like flowfield' />
 		</GalleryWrapper>
 	)
 }

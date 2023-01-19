@@ -10,7 +10,7 @@ export default function GenSpark() {
 			column2={spark.column2}
 			column3={spark.column3}
 		>
-			<Spark />
+			<Spark aria-label='An animation of a wave-like flowfield' />
 		</GalleryWrapper>
 	)
 }

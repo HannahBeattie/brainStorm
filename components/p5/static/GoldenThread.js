@@ -32,7 +32,7 @@ export default function GoldenThread() {
 							boxShadow={'dark'}
 							h='100%'
 							flex='1'
-							alt={`index ${idx}`}
+							alt={`An image of a genrative flow-field`}
 							src={url}
 							fit='cover'
 						/>

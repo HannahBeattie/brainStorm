@@ -116,6 +116,6 @@ function reef(p5) {
 	}
 }
 
-export default function Reef() {
-	return <SketchWrapper sketch={reef} />
+export default function Reef({ props }) {
+	return <SketchWrapper sketch={reef} {...props} />
 }

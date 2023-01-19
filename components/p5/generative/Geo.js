@@ -64,6 +64,6 @@ function geo(p5) {
 	}
 }
 
-export default function Geo() {
-	return <SketchWrapper sketch={geo} />
+export default function Geo({ props }) {
+	return <SketchWrapper sketch={geo} {...props} />
 }

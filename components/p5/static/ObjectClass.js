@@ -26,7 +26,7 @@ export default function ObjectClass() {
 							boxShadow={'dark'}
 							h='100%'
 							flex='1'
-							alt={`index ${idx}`}
+							alt={`An image of some star-like, mandala-like objects in a p5.js canvas`}
 							src={items.src}
 							fit='cover'
 						/>

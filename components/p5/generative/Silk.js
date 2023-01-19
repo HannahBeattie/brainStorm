@@ -193,6 +193,6 @@ function flowfield2(p5) {
 	}
 }
 
-export default function Silk() {
-	return <SketchWrapper sketch={flowfield2} />
+export default function Silk({ props }) {
+	return <SketchWrapper sketch={flowfield2} {...props} />
 }

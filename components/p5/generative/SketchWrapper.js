@@ -7,7 +7,7 @@ const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mo
 	ssr: false,
 })
 
-export default function SketchWrapper({ sketch }) {
+export default function SketchWrapper({ sketch, props }) {
 	const [ref, bounds] = useMeasure()
 	let stroke = useColorModeValue([1, 1, 1], [240, 240, 240])
 	return (
@@ -20,6 +20,7 @@ export default function SketchWrapper({ sketch }) {
 						stroke={stroke}
 						h={bounds.height || 300}
 						w={bounds.width || 500}
+						{...props}
 					/>
 				)}
 			</VStack>

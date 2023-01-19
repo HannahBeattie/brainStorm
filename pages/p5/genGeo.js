@@ -11,7 +11,7 @@ export default function GenGeo() {
 			column2={geo.column2}
 			column3={geo.column3}
 		>
-			<Geo />
+			<Geo aria-label='A geometrical animation, with many twirls' />
 		</GalleryWrapper>
 	)
 }

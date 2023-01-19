@@ -11,7 +11,7 @@ export default function GenReef() {
 			column2={reef.column2}
 			column3={reef.column3}
 		>
-			<Reef />
+			<Reef aria-label='An animation of a wave-like flowfield that follows the mouse' />
 		</GalleryWrapper>
 	)
 }

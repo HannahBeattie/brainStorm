@@ -25,7 +25,7 @@ export default function Flowfields() {
 							boxShadow={'dark'}
 							h='100%'
 							flex='1'
-							alt={`index ${idx}`}
+							alt={`An image of a genrative flowfield`}
 							src={items.src}
 							fit='cover'
 						/>

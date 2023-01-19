@@ -10,7 +10,7 @@ export default function GenSilk() {
 			column2={silk.column2}
 			column3={silk.column3}
 		>
-			<Silk />
+			<Silk aria-label='An animation of a wave-like flowfield' />
 		</GalleryWrapper>
 	)
 }
