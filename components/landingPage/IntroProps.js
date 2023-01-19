@@ -1,5 +1,6 @@
 import { Heading, Text } from '@chakra-ui/react'
 import TextContainer from '../base/templates/TextContainer'
+import Appear from '../framerMotion/Appear'
 const pt = 8
 
 export const paragraphs = [
@@ -7,7 +8,9 @@ export const paragraphs = [
 		paragraph: (
 			<>
 				<Heading fontFamily={'Alice'}>I am Hannah.</Heading>
-				<Text>An artist, insect enthusiast and Dev from New Zealand.</Text>
+				<Appear delay={1}>
+					<Text pt={pt}>An artist, insect enthusiast and Dev from New Zealand.</Text>
+				</Appear>
 			</>
 		),
 		trees: 1,
@@ -22,16 +25,7 @@ export const paragraphs = [
 		),
 		trees: 3,
 	},
-	{
-		paragraph: (
-			<>
-				<Text>
-					I am interested in storytelling and creating holistic, person-first designs ...
-				</Text>
-			</>
-		),
-		trees: 2,
-	},
+
 	{
 		paragraph: (
 			<>
@@ -53,20 +47,28 @@ export const paragraphs = [
 	{
 		paragraph: (
 			<>
-				<>
-					<Text>
-						My coding style is a mixture between curiosity-driven experementation and
-						clean, minimal functionality ---
-					</Text>
-					<Text pt={pt}>
-						<i>It doesn't matter how flashy something is if it can't be used.</i>
-					</Text>
-					<Text pt={pt}>
-						One of my favourite things about coding is the ability to create surprising,
-						personal moments of user interaction that cut through the droll buzz of data
-						fatigue most of us carry.
-					</Text>
-				</>
+				<Text>
+					My coding style is a mixture between curiosity-driven experementation and clean,
+					minimal functionality...
+				</Text>
+				<Text pt={pt}>
+					It doesn't matter how flashy something looks if it can't be accessed.
+				</Text>
+			</>
+		),
+		trees: 1,
+	},
+	{
+		paragraph: (
+			<>
+				<Text pt={pt}>
+					One of my favourite things about coding is the ability to create surprising,
+					personal moments of user interaction;
+				</Text>
+				<Text>
+					The type that make us feel connected, capable and heard; And cut through the
+					dull buzz of data fatigue.
+				</Text>
 			</>
 		),
 		trees: 1,
@@ -75,10 +77,10 @@ export const paragraphs = [
 		paragraph: (
 			<>
 				<Text>
-					My background as an interdisciplinary artist has always involved testing
-					andre-testing methods and tools to observe patterns and possibilities.
+					My practice as an interdisciplinary artist often involves testing and re-test
+					methods and tools to observe patterns and possibilities.
 				</Text>
-				<Text pt={pt}>Coding is much the same, only less messy.</Text>
+				<Text pt={pt}>Coding is much the same, only less paint gets on my clothes.</Text>
 			</>
 		),
 		trees: 2,
@@ -95,6 +97,5 @@ export const paragraphs = [
 				<Text pt={pt}>So...whatch this space.</Text>
 			</>
 		),
-		trees: 1,
 	},
 ]

@@ -6,7 +6,8 @@ import HelloWorld from '~/components/landingPage/HelloWorld'
 
 import VineWorld from '~/components/p5/hero/VineWorld'
 import { motion } from 'framer-motion'
-import RefactorMe from '~/components/landingPage/RefactorMe'
+import RefactorMe from '~/components/landingPage/LandingPage'
+import LandingPage from '~/components/landingPage/LandingPage'
 
 export default function Home() {
 	return (
@@ -25,9 +26,7 @@ export default function Home() {
 				<VineWorld />
 			</motion.div>
 
-			<VStack>
-				<RefactorMe />
-			</VStack>
+			<LandingPage />
 		</PageWrapper>
 	)
 }
