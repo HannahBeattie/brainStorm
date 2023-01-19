@@ -13,6 +13,7 @@ export default function Track({ children, index }) {
 		y.set(event.clientY - rect.top)
 	}
 
+	const isOdd = index % 2
 	return (
 		<motion.div
 			style={{
@@ -35,9 +36,21 @@ export default function Track({ children, index }) {
 			transition={{ duration: 0.3, ease: 'easeOut' }}
 		>
 			<motion.div
+				drag
+				dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+				dragElastic={0.01}
+				dragTransition={{ bounceStiffness: 300, bounceDamping: 40 }}
+				whileTap={{ rotate: [0, 1, -1, 0] }}
 				style={{ rotateX, rotateY }}
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
+				initial={{ opacity: 0, scale: 0 }}
+				animate={{
+					opacity: 1,
+
+					scale: isOdd ? [0.5, 1] : [1.05, 1],
+					rotateX: [index * 0.5 + 1, 0],
+					rotateZ: isOdd ? [10, 0] : [-10, 0],
+					rotateY: isOdd ? [10, 0] : [-10, 0],
+				}}
 				transition={{ duration: 0.6, delay: index * 0.15 + 4, ease: 'easeInOut' }}
 			>
 				{children}

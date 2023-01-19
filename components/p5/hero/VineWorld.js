@@ -1,7 +1,8 @@
 import { useColorModeValue, VStack } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 import useMeasure from 'react-use-measure'
-
+import { motion } from 'framer-motion'
+import FadeIn from '~/components/HOC/FadeIn'
 // don't load p5 on server
 const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mod.ReactP5Wrapper), {
 	ssr: false,
@@ -80,6 +81,7 @@ function flow(p5) {
 export default function VineWorld() {
 	let stroke = useColorModeValue([74, 69, 79], [240, 240, 240])
 	const [ref, bounds] = useMeasure()
+
 	return (
 		<VStack
 			aria-label='An animation of vine-like white lines in a circle'
