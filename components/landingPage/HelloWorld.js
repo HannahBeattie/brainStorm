@@ -1,24 +1,62 @@
-import { Heading } from '@chakra-ui/react'
-import React from 'react'
+import { HStack, VStack } from '@chakra-ui/react'
+import {
+	animate,
+	motion,
+	useDragControls,
+	useMotionValue,
+	useSpring,
+	useTransform,
+} from 'framer-motion'
 import Appear from '../framerMotion/Appear'
-import HoverPulse from '../framerMotion/HoverPulse'
+import Track from '../framerMotion/Track'
+import MapLetters from './MapLetters'
 
-function HelloWorld() {
+export default function HelloWorld() {
+	const dragControls = useDragControls()
+
+	function startDrag(event) {
+		dragControls.start(event, { snapToCursor: true })
+	}
+
 	return (
 		<Appear width={{ width: '100vw' }}>
-			<Heading
-				fontWeight={'900'}
-				fontFamily={'Alice'}
-				fontSize={{ base: 80, sm: 100, md: 90, lg: 110 }}
-				textAlign={{ base: 'center', sm: 'auto' }}
-				py={{ base: 4, sm: 12, md: 8, lg: 10 }}
-				pb={{ base: 10, sm: 12, md: 12 }}
-				lineHeight={{ base: '0.9', md: 1 }}
+			{/* <motion.div
+				drag
+				dragConstraints={{ left: 0, right: 0, top: 1, bottom: 1 }}
+				dragElastic={0.01}
+				dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
+				whileTap={{ rotate: [0, 1, -1, 0] }}
+				onTapStart={startDrag}
+				dragDirectionLock
 			>
-				Hello World
-			</Heading>
+				<VStack
+					onTapStart={startDrag}
+					py={{ base: 4, md: 8 }}
+					pb={{ base: 10 }}
+					display={{ base: 'flex', md: 'none' }}
+					spacing={{ base: 0, md: 8 }}
+					flex={'1'}
+					alignItems={'center'}
+					justifyContent={'center'}
+					direction={{ base: 'column', md: 'row' }}
+					className={'specialCaseNoSelect'}
+					area-label={'Animated Text reading : "Hello World"'}
+				>
+					<MapLetters />
+				</VStack>
+			</motion.div> */}
+			<HStack
+				py={{ base: 4, md: 8 }}
+				pb={{ base: 10 }}
+				display={{ base: 'none', md: 'center' }}
+				spacing={{ base: 0, md: 8 }}
+				flex={'1'}
+				alignItems={'center'}
+				justifyContent={'center'}
+				direction={{ base: 'column', md: 'row' }}
+			>
+				<MapLetters />
+			</HStack>
 		</Appear>
 	)
 }
-
-export default HelloWorld

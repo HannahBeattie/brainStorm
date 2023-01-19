@@ -53,7 +53,7 @@ export default function Nav() {
 				<MenuButton
 					right={'2'}
 					position={'absolute'}
-					display={{ base: 'block', md: 'none' }}
+					display={{ base: 'block', lg: 'none' }}
 					as={IconButton}
 					aria-label='Options'
 					icon={<HamburgerIcon />}

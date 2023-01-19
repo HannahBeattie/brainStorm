@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import StyledNextLink from '~/components/base/StyledNextLink'
 
 const wrapProps = {
-	display: { base: 'none', md: 'flex' },
+	display: { base: 'none', lg: 'flex' },
 	fontSize: { sm: 'sm', md: 'md' },
 	spacing: { sm: '4', md: '8' },
 }
