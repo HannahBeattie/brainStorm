@@ -1,6 +1,6 @@
 import { Grid, GridItem, Image } from '@chakra-ui/react'
 import getGridProps from '~/components/hooks/getGridProps'
-import Appear from './framerMotion/Appear'
+import Appear from '../framerMotion/Appear'
 export default function WaterColModel() {
 	const items = [
 		{

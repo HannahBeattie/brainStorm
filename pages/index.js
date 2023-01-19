@@ -3,9 +3,10 @@ import ScrollProgress from '~/components/framerMotion/ScrollProgress'
 import ScrollToTop from '~/components/framerMotion/ScrollToTop'
 import PageWrapper from '~/components/HOC/PageWrapper'
 import HelloWorld from '~/components/landingPage/HelloWorld'
-import Intro from '~/components/landingPage/Intro'
+
 import VineWorld from '~/components/p5/hero/VineWorld'
 import { motion } from 'framer-motion'
+import RefactorMe from '~/components/landingPage/RefactorMe'
 
 export default function Home() {
 	return (
@@ -25,7 +26,7 @@ export default function Home() {
 			</motion.div>
 
 			<VStack>
-				<Intro />
+				<RefactorMe />
 			</VStack>
 		</PageWrapper>
 	)

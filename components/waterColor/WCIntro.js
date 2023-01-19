@@ -1,6 +1,6 @@
 import { Text, Tooltip } from '@chakra-ui/react'
-import IntroCard from './base/templates/IntroCard'
-import Appear from './framerMotion/Appear'
+import IntroCard from '../base/templates/IntroCard'
+import Appear from '../framerMotion/Appear'
 
 export default function WCIntro() {
 	return (

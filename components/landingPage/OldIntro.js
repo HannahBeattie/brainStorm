@@ -7,7 +7,7 @@ import { EnterStage } from '../framerMotion/EnterStage'
 import Pulse from '../framerMotion/Pulse'
 import Tree from '../p5/hero/Tree'
 
-export default function Intro() {
+export default function OLDIntro() {
 	return (
 		<>
 			<VStack spacing={'16'} pt={{ md: 40, base: 32 }} flex={'1'} alignItems={'stretch'}>
