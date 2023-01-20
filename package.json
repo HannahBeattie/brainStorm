@@ -1,5 +1,5 @@
 {
-	"name": "VineWorld-storm",
+	"name": "brainstorm",
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
@@ -26,7 +26,10 @@
 	},
 	"devDependencies": {
 		"eslint": "8.28.0",
-		"eslint-config-next": "13.0.4",
+		"eslint-config-next": "^12.2.3",
+		"eslint-config-prettier": "^8.6.0",
+		"eslint-import-resolver-jsconfig": "^1.1.0",
+		"eslint-plugin-import": "^2.27.5",
 		"prettier": "^2.8.3"
 	}
 }

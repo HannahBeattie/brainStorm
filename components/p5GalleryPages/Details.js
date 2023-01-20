@@ -109,8 +109,8 @@ export const silk = {
 	),
 	column2: (
 		<Text {...paragrapProps}>
-			The 'thread' texture was created by layering vectors with diffirent opacity and widths
-			onto one-another and creating vectors that left small spaces between one-another.
+			The {`'thread'`} texture was created by layering vectors with diffirent opacity and
+			widths onto one-another and creating vectors that left small spaces between one-another.
 		</Text>
 	),
 	column3: (
