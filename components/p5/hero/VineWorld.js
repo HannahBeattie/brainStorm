@@ -1,4 +1,4 @@
-import { useColorModeValue, VStack } from '@chakra-ui/react'
+import { useBreakpointValue, useColorModeValue, VStack } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 import useMeasure from 'react-use-measure'
 import { motion } from 'framer-motion'
@@ -79,7 +79,8 @@ function flow(p5) {
 }
 
 export default function VineWorld() {
-	let stroke = useColorModeValue([74, 69, 79], [240, 240, 240])
+	const stroke = useColorModeValue([74, 69, 79], [240, 240, 240])
+	const extraClass = useBreakpointValue({ base: 'specialCaseNoSelect', md: undefined })
 	const [ref, bounds] = useMeasure()
 
 	return (
@@ -87,7 +88,7 @@ export default function VineWorld() {
 			aria-label='An animation of vine-like white lines in a circle'
 			height={{ base: '320px', sm: '450px', md: '500px', xl: '600px' }}
 			width={{ base: '320px', sm: '450px', md: '500px', xl: '600px' }}
-			className={{ base: 'specialCaseNoSelect', md: 'none' }}
+			className={extraClass}
 		>
 			<VStack
 				cursor='pointer'
