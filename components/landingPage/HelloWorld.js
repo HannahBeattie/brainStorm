@@ -20,7 +20,8 @@ export default function HelloWorld() {
 			</VStack>
 
 			<HStack
-				py={8}
+				pt={8}
+				pb={12}
 				display={{ base: 'none', md: 'center' }}
 				spacing={{ base: 0, md: 8 }}
 				flex={'1'}

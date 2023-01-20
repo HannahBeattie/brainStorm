@@ -1,13 +1,11 @@
-import { VStack } from '@chakra-ui/react'
 import ScrollProgress from '~/components/framerMotion/ScrollProgress'
 import ScrollToTop from '~/components/framerMotion/ScrollToTop'
 import PageWrapper from '~/components/HOC/PageWrapper'
 import HelloWorld from '~/components/landingPage/HelloWorld'
 
-import VineWorld from '~/components/p5/hero/VineWorld'
 import { motion } from 'framer-motion'
-import RefactorMe from '~/components/landingPage/LandingPage'
 import LandingPage from '~/components/landingPage/LandingPage'
+import VineWorld from '~/components/p5/hero/VineWorld'
 
 export default function Home() {
 	return (
@@ -15,7 +13,6 @@ export default function Home() {
 			<ScrollToTop />
 			<ScrollProgress />
 			<HelloWorld />
-
 			<motion.div
 				initial={{ scale: 0, opacity: 0 }}
 				whileInView={{
@@ -25,7 +22,6 @@ export default function Home() {
 			>
 				<VineWorld />
 			</motion.div>
-
 			<LandingPage />
 		</PageWrapper>
 	)
