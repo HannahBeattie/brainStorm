@@ -22,7 +22,6 @@ export default function Home() {
 					initial={{ opacity: 0 }}
 					dragElastic={0.2}
 					animate={{
-						rotate: [2, 0],
 						opacity: [0, 0.5, 0.9, 0.7, 1],
 					}}
 					transition={{ delay: 8, duration: 4, ease: 'easeIn' }}

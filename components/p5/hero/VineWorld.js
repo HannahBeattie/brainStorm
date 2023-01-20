@@ -79,7 +79,7 @@ function flow(p5) {
 }
 
 export default function VineWorld() {
-	const stroke = useColorModeValue([74, 69, 79], [240, 240, 240])
+	const stroke = useColorModeValue([74, 69, 79], [10, 210, 210, 90])
 	const extraClass = useBreakpointValue({ base: 'specialCaseNoSelect', md: undefined })
 	const [ref, bounds] = useMeasure()
 
