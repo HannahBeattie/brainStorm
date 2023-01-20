@@ -1,5 +1,6 @@
 import Geo from '~/components/p5/generative/Geo'
 import { geo } from '~/components/p5GalleryPages/details'
+
 import GalleryWrapper from '~/components/p5GalleryPages/GalleryWrapper'
 
 export default function GenGeo() {
@@ -14,3 +15,4 @@ export default function GenGeo() {
 		</GalleryWrapper>
 	)
 }
+x
