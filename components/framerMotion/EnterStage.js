@@ -3,9 +3,9 @@ import React from 'react'
 import { useMediaQuery } from '../hooks/useMediaQuery'
 
 export function EnterStage({ children, right }) {
+	const { scrollYProgress } = useScroll()
 	const item1 = useTransform(scrollYProgress, [0, 1], [300, 0])
 	const item2 = useTransform(scrollYProgress, [0, 1], [-300, 0])
-	const { scrollYProgress } = useScroll()
 
 	const x = right ? item1 : item2
 
@@ -13,10 +13,9 @@ export function EnterStage({ children, right }) {
 }
 
 export function EnterSmall({ children, right }) {
+	const { scrollYProgress } = useScroll()
 	let a = useTransform(scrollYProgress, [0, 1], [90, 0])
 	let b = useTransform(scrollYProgress, [0, 1], [-90, 0])
-
-	const { scrollYProgress } = useScroll()
 
 	const x = right ? a : b
 
