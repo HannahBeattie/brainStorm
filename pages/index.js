@@ -4,7 +4,7 @@ import PageWrapper from '~/components/HOC/PageWrapper'
 import HelloWorld from '~/components/landingPage/HelloWorld'
 
 import { Image, VStack } from '@chakra-ui/react'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import StyledNextLink from '~/components/base/StyledNextLink'
 import LandingPage from '~/components/landingPage/LandingPage'
 import VineWorld from '~/components/p5/hero/VineWorld'
@@ -15,15 +15,21 @@ export default function Home() {
 			<ScrollToTop />
 			<ScrollProgress />
 			<HelloWorld />
-			<motion.div
-				initial={{ scale: 0, opacity: 0 }}
-				whileInView={{
-					opacity: 1,
-				}}
-				transition={{ duration: 1.5, ease: 'easeIn' }}
-			>
-				<VineWorld />
-			</motion.div>
+			<AnimatePresence>
+				<motion.div
+					drag
+					dragConstraints={{ left: 1, right: 1, top: 1, bottom: 1 }}
+					initial={{ opacity: 0 }}
+					dragElastic={0.2}
+					animate={{
+						rotate: [2, 0],
+						opacity: [0, 0.5, 0.9, 0.7, 1],
+					}}
+					transition={{ delay: 8, duration: 4, ease: 'easeIn' }}
+				>
+					<VineWorld />
+				</motion.div>
+			</AnimatePresence>
 			<LandingPage />
 
 			<Image

@@ -7,11 +7,12 @@ export default function MapLetters() {
 		fontSize: { base: '7xl', sm: '8xl', md: '8xl', lg: '8xl', xl: '9xl' },
 		fontFamily: 'Alice',
 		fontWeight: '900',
+		textAlign: 'center',
 		py: 0,
 	}
 	return (
 		<AnimatePresence>
-			<Heading {...letterProps}>
+			<Heading {...letterProps} key='h-hello'>
 				<HStack spacing={0} mb={{ base: 0, md: 0 }}>
 					{[...'HELLO'].map((letter, idx) => (
 						<Track key={`l-${idx}`} index={idx}>
@@ -20,10 +21,10 @@ export default function MapLetters() {
 					))}
 				</HStack>
 			</Heading>
-			<Heading {...letterProps}>
+			<Heading {...letterProps} key='h-world'>
 				<HStack spacing={0} mt={{ base: -4, md: 0 }}>
 					{[...'WORLD'].map((letter, idx) => (
-						<Track key={`l-${idx}`} index={idx + 6}>
+						<Track key={`l2-${idx}`} index={idx + 6}>
 							{letter}
 						</Track>
 					))}

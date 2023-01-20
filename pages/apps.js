@@ -116,6 +116,7 @@ export default function Web() {
 						alt={'Still of not-a-real-website'}
 						title={'Not a real website'}
 						href={'https://not-a-real-website.vercel.app/'}
+						linkText={'Live Demo'}
 					>
 						<VStack spacing={4}>
 							<Text>
@@ -137,40 +138,13 @@ export default function Web() {
 								adapting components to different screen sizes, without replicating
 								data and making it less maintainable later on.{' '}
 							</Text>
-							<Text fontWeight={'bold'} fontStyle={'italic'}>
-								Check out demo and source code below.
-							</Text>
+							<LinkWrapper
+								href={'https://github.com/HannahBeattie/not-a-real-website'}
+							>
+								Source Code
+							</LinkWrapper>
 						</VStack>
 					</AppFeature>
-				</Appear>
-
-				<Appear>
-					<Grid
-						py={{ md: 2 }}
-						px={{ md: 2 }}
-						_hover={{ boxShaddow: 'dark-xl' }}
-						templateColumns={{
-							base: 'repeat(1, 1fr)',
-							md: 'repeat(3, 1fr)',
-						}}
-						templateRows={{
-							base: `repeat 200px 300px)`,
-							md: `repeat 280px)`,
-						}}
-					>
-						<Slide
-							idx={2}
-							buttonText={'Open demo'}
-							title={<i>Not-a-real-demo</i>}
-							sub={'With contentful and Next.js'}
-							src={'/apps/dynamic.png'}
-							alt={'todo'}
-							href={'https://not-a-real-website.vercel.app/'}
-							text={'Example website'}
-							href2={'https://github.com/HannahBeattie/not-a-real-website'}
-							link2Title={'See source code'}
-						/>
-					</Grid>
 				</Appear>
 			</PageWrapper>
 		</>
