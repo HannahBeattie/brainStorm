@@ -6,12 +6,12 @@ export const theme = extendTheme({
 		heading: 'Alice',
 	},
 	colors: {
-		extraLight: ' #f5f5f5',
+		extraLight: '#f5f5f5',
 		warmWhite: '#efeeee',
 		softLight: '#fafafa',
 		myGray: '#1F2022',
-		gitGray: 'F2F2F1',
-		extraDark: '#08090c ',
+		// gitGray: '#F2F2F1',
+		extraDark: '#08090c',
 		grayAlpha: {
 			100: '#8881',
 			200: '#8882',
@@ -49,10 +49,11 @@ export const theme = extendTheme({
 	styles: {
 		global: {
 			body: {
-				bg: ' #F3F3F3',
+				bg: '#F3F3F3',
 				_dark: {
-					bg: 'gitGray',
+					bg: { md: '#121212', base: '#18191A' },
 				},
+				// bg: '#0c8',
 				// Make mobile tap highlight light-gray instead of blue-ish
 				WebkitTapHighlightColor: 'rgba(128,128,128,0.2)', // '-webkit-tap-highlight-color'
 			},

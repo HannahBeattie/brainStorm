@@ -6,6 +6,8 @@ export default function PageWrapper({ children, props }) {
 	return (
 		<FadeIn>
 			<VStack
+				maxW={'100vw'}
+				overflow={'clip'}
 				flex={'1'}
 				alignSelf='stretch'
 				justify='center'

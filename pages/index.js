@@ -6,6 +6,7 @@ import HelloWorld from '~/components/landingPage/HelloWorld'
 import { motion } from 'framer-motion'
 import LandingPage from '~/components/landingPage/LandingPage'
 import VineWorld from '~/components/p5/hero/VineWorld'
+import { Image, VStack } from '@chakra-ui/react'
 
 export default function Home() {
 	return (
@@ -23,6 +24,15 @@ export default function Home() {
 				<VineWorld />
 			</motion.div>
 			<LandingPage />
+
+			<Image
+				alt={'A vector image of a grassy hill '}
+				src={'/hill.png'}
+				width={'100vw'}
+				position={'absolute'}
+				bottom={0}
+				zIndex={-5}
+			/>
 		</PageWrapper>
 	)
 }

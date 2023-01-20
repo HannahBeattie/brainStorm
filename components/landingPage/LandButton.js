@@ -5,10 +5,11 @@ import Track from '../framerMotion/Track'
 export default function LandButton() {
 	return (
 		<Button
-			bg={{ base: 'gray.900', md: 'blackAlpha.900' }}
-			maxW={{ base: 250, md: 300 }}
+			bg={{ base: 'gray.400', md: 'blackAlpha.900' }}
+			maxW={{ base: 300, md: 300 }}
 			alignSelf={'center'}
 			color={'white'}
+			_dark={{ color: { base: 'black', md: 'white' } }}
 			_hover={{
 				bg: useColorModeValue('teal', 'red'),
 				color: useColorModeValue('white', 'black'),
@@ -23,7 +24,7 @@ export default function LandButton() {
 		>
 			<StyledNextLink
 				borderRadius={'md'}
-				fontSize={{ base: '2xl', md: '3xl' }}
+				fontSize={{ base: '3xl', md: '3xl' }}
 				px={{ base: 4, md: 8 }}
 				href={'/apps'}
 				textAlign={'center'}

@@ -15,7 +15,6 @@ export default function LandingPage() {
 	return (
 		<>
 			<VStack
-				overflow={{ base: 'clip', md: 'initial' }}
 				pt={{ base: '10rem', md: '12rem' }}
 				pb={{ base: 4, md: 4 }}
 				flex={'1'}
@@ -103,8 +102,10 @@ export default function LandingPage() {
 						}
 						fontFamily={'SF Pro'}
 						fontSize={{ base: 'sm', md: 'sm' }}
+						color={'grayAlpha.900'}
+						bg={'blackAlpha.900'}
 					>
-						Generative circle work enspired by AHMAD MOUSSA's Perlin noise rings
+						Generative circles enspired by AHMAD MOUSSA's Perlin noise rings
 					</StyledNextLink>
 				</VStack>
 			</VStack>
