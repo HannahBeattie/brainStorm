@@ -1,5 +1,7 @@
 import { useColorModeValue, VStack } from '@chakra-ui/react'
+import { useInView } from 'framer-motion'
 import dynamic from 'next/dynamic'
+import { useRef } from 'react'
 import useMeasure from 'react-use-measure'
 import Appear from '~/components/framerMotion/Appear'
 import { EnterStage } from '~/components/framerMotion/EnterStage'
@@ -65,6 +67,7 @@ function sketch(p5) {
 	let num
 	let width = 800
 	let height = 500
+	let isInView = false
 
 	p5.updateWithProps = (props) => {
 		if (props.stroke) {
@@ -80,6 +83,10 @@ function sketch(p5) {
 		}
 		if (p5._setupDone) {
 			reset()
+		}
+		isInView = props.isInView
+		if (props.isInView) {
+			console.log(`Tree is in view (num=${num})`)
 		}
 	}
 
@@ -104,21 +111,27 @@ function sketch(p5) {
 	p5.setup = () => {
 		let canvas = p5.createCanvas(800, 500)
 		canvas.mousePressed(() => reset())
-		reset()
+		// reset()
 	}
 
 	p5.draw = () => {
-		reset()
-		p5.noLoop()
+		if (isInView) {
+			reset()
+			p5.noLoop()
+		}
 	}
 }
 export default function Tree({ num }) {
 	const [ref, bounds] = useMeasure()
+	const ref2 = useRef(null)
+	const isInView = useInView(ref2)
+	// console.log(`<Tree> num=${num} isInView=${isInView}`)
 
 	let stroke = useColorModeValue([0, 0, 0], [230, 220, 220])
 
 	return (
-		<Appear>
+		// <Appear>
+		<div ref={ref2}>
 			<VStack
 				aria-label='An animation of generative rings, radiating from small to large'
 				overflow={'hidden'}
@@ -135,8 +148,10 @@ export default function Tree({ num }) {
 					h={bounds.height || 300}
 					w={bounds.width || 500}
 					num={num}
+					isInView={isInView}
 				/>
 			</VStack>
-		</Appear>
+		</div>
+		// </Appear>
 	)
 }

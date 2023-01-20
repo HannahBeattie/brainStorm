@@ -14,10 +14,12 @@ export default function Track({ children, index }) {
 	}
 
 	const isOdd = index % 2
+	const delay = index * 0.2 + 0.2
+	// console.log(`<Track> ${children}: delay=${delay}`)
+
 	return (
 		<motion.div
 			style={{
-				cursor: 'pointer',
 				display: 'flex',
 				placeItems: 'center',
 				placeContent: 'center',
@@ -45,13 +47,12 @@ export default function Track({ children, index }) {
 				initial={{ opacity: 0, scale: 0 }}
 				animate={{
 					opacity: 1,
-
 					scale: isOdd ? [0.5, 1] : [0.9, 1],
 					rotateX: [index * 0.5, 0],
 					rotateZ: isOdd ? [5, 0] : [-5, 0],
 					rotateY: isOdd ? [5, 0] : [-5, 0],
 				}}
-				transition={{ duration: 0.6, delay: index * 0.15 + 4, ease: 'easeInOut' }}
+				transition={{ duration: 0.6, delay, ease: 'easeInOut' }}
 			>
 				{children}
 			</motion.div>

@@ -8,6 +8,8 @@ const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mo
 	ssr: false,
 })
 
+const duration = 100
+
 function flow(p5) {
 	let stroke = [0, 0, 0]
 	let numFrames = 0
@@ -16,6 +18,7 @@ function flow(p5) {
 	let height = 800
 	let noiseMult = 0
 	let noiseOffset = { x: 0, y: 0 }
+	let startFrame = 100
 	// window.p5 = p5
 
 	function reset() {
@@ -57,14 +60,21 @@ function flow(p5) {
 
 	p5.setup = () => {
 		let canvas = p5.createCanvas(width, height)
-		canvas.mousePressed(() => reset())
+		canvas.mousePressed(() => {
+			startFrame = 0
+			reset()
+		})
+		p5.frameRate(30)
 		reset()
 	}
 
 	p5.draw = () => {
 		p5.fill(stroke)
 		p5.noStroke()
-		if (numFrames++ > 100) {
+		if (numFrames++ < startFrame) {
+			return
+		}
+		if (numFrames++ > startFrame + duration) {
 			p5.noLoop()
 		}
 
@@ -79,7 +89,7 @@ function flow(p5) {
 }
 
 export default function VineWorld() {
-	const stroke = useColorModeValue([74, 69, 79], [10, 210, 210, 90])
+	const stroke = useColorModeValue([74, 69, 79], [210, 210, 210])
 	const extraClass = useBreakpointValue({ base: 'specialCaseNoSelect', md: undefined })
 	const [ref, bounds] = useMeasure()
 
@@ -89,9 +99,9 @@ export default function VineWorld() {
 			height={{ base: '320px', sm: '450px', md: '500px', xl: '600px' }}
 			width={{ base: '320px', sm: '450px', md: '500px', xl: '600px' }}
 			className={extraClass}
+			cursor='pointer'
 		>
 			<VStack
-				cursor='pointer'
 				ref={ref}
 				flex={'1'}
 				align={'stretch'}

@@ -4,7 +4,8 @@ import MapLetters from './MapLetters'
 
 export default function HelloWorld() {
 	return (
-		<Appear>
+		// <Appear>
+		<>
 			<VStack
 				pb={{ base: 8 }}
 				display={{ base: 'flex', md: 'none' }}
@@ -31,6 +32,7 @@ export default function HelloWorld() {
 			>
 				<MapLetters />
 			</HStack>
-		</Appear>
+		</>
+		// </Appear>
 	)
 }

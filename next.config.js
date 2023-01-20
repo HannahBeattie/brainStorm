@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-	reactStrictMode: false, // true
+	// reactStrictMode: false, // true
 	swcMinify: true,
 	images: {
 		loader: 'custom',
