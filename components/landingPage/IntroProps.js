@@ -1,7 +1,7 @@
 import { Heading, Text } from '@chakra-ui/react'
 import TextContainer from '../base/templates/TextContainer'
 import Appear from '../framerMotion/Appear'
-const pt = 8
+const pt = { md: 8, base: 0 }
 
 export const paragraphs = [
 	{
@@ -94,7 +94,9 @@ export const paragraphs = [
 					digital landscape that is kinder, more diverse, more deliberate and highly
 					responsive.
 				</Text>
-				<Text pt={pt}>So...whatch this space.</Text>
+				<Text pt={pt} pb={{ md: 0, base: 20 }}>
+					So...whatch this space.
+				</Text>
 			</>
 		),
 	},

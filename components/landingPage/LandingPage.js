@@ -19,7 +19,7 @@ export default function LandingPage() {
 				pt={{ base: '10rem', md: '12rem' }}
 				pb={{ base: 4, md: 4 }}
 				flex={'1'}
-				spacing={{ md: 16, base: 12 }}
+				spacing={{ md: 16, base: 16 }}
 				alignItems={'stretch'}
 			>
 				{items.map(({ paragraph, trees }, idx) => (
@@ -88,7 +88,7 @@ export default function LandingPage() {
 					</VStack>
 				</VStack>
 
-				<VStack pb={{ md: '40vh' }} spacing={{ md: 10 }} fontSize={'4xl'}>
+				<VStack pb={{ md: '30vh' }} spacing={{ md: 10 }} fontSize={'4xl'}>
 					<Pulse>
 						<LandButton />
 					</Pulse>

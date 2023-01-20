@@ -6,7 +6,7 @@ export default function LandButton() {
 	return (
 		<Button
 			bg={{ base: 'gray.900', md: 'blackAlpha.900' }}
-			maxW={300}
+			maxW={{ base: 250, md: 300 }}
 			alignSelf={'center'}
 			color={'white'}
 			_hover={{
@@ -23,7 +23,7 @@ export default function LandButton() {
 		>
 			<StyledNextLink
 				borderRadius={'md'}
-				fontSize={{ base: '3xl' }}
+				fontSize={{ base: '2xl', md: '3xl' }}
 				px={{ base: 4, md: 8 }}
 				href={'/apps'}
 				textAlign={'center'}
