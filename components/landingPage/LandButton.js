@@ -5,11 +5,10 @@ import Track from '../framerMotion/Track'
 export default function LandButton() {
 	return (
 		<Button
-			bg={{ base: 'gray.400', md: useColorModeValue('blackAlpha.900', 'whiteAlpha.100') }}
+			bg={{ base: useColorModeValue('blackAlpha.900', 'whiteAlpha.100') }}
 			maxW={{ base: 300, md: 300 }}
 			alignSelf={'center'}
 			color={'white'}
-			_dark={{ color: { base: 'black', md: 'white' } }}
 			_hover={{
 				bg: useColorModeValue('teal', 'red'),
 				color: useColorModeValue('white', 'black'),

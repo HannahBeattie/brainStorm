@@ -6,7 +6,8 @@ import HelloWorld from '~/components/landingPage/HelloWorld'
 import { motion } from 'framer-motion'
 import LandingPage from '~/components/landingPage/LandingPage'
 import VineWorld from '~/components/p5/hero/VineWorld'
-import { Image, VStack } from '@chakra-ui/react'
+import { Box, Image, VStack } from '@chakra-ui/react'
+import StyledNextLink from '~/components/base/StyledNextLink'
 
 export default function Home() {
 	return (
@@ -30,9 +31,26 @@ export default function Home() {
 				src={'/hill.png'}
 				width={'100vw'}
 				position={'absolute'}
-				bottom={0}
+				bottom={50}
 				zIndex={-5}
 			/>
+
+			<VStack bg={'black'} width={'100vw'} h={50}>
+				<StyledNextLink
+					zIndex={3}
+					maxW={{ base: '20em', md: '34em' }}
+					textAlign={'center'}
+					href={
+						'https://gorillasun.de/blog/radial-perlin-noise-and-generative-tree-rings'
+					}
+					fontFamily={'SF Pro'}
+					fontSize={{ base: 'sm', md: 'sm' }}
+					color={'grayAlpha.900'}
+					bg={'blackAlpha.900'}
+				>
+					Generative circles enspired by AHMAD MOUSSA's Perlin noise rings
+				</StyledNextLink>
+			</VStack>
 		</PageWrapper>
 	)
 }

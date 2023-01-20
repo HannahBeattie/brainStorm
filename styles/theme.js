@@ -51,7 +51,7 @@ export const theme = extendTheme({
 			body: {
 				bg: '#F3F3F3',
 				_dark: {
-					bg: { md: '#02080c', base: '#18191A' },
+					bg: { md: '#02080c', base: '#02080c' },
 				},
 				// bg: '#0c8',
 				// Make mobile tap highlight light-gray instead of blue-ish

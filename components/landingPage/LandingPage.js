@@ -73,7 +73,7 @@ export default function LandingPage() {
 								flex={1}
 								alignItems={'stretch'}
 								px={{ base: 8, md: 0 }}
-								pt={{ md: 8 }}
+								pt={{ md: 10 }}
 							>
 								<Tree num={100} />
 							</VStack>
@@ -87,26 +87,10 @@ export default function LandingPage() {
 					</VStack>
 				</VStack>
 
-				<VStack pb={{ md: '30vh' }} spacing={{ md: 10 }} fontSize={'4xl'}>
+				<VStack pb={{ md: '30vh', base: '20vh' }} spacing={{ md: 10 }} fontSize={'4xl'}>
 					<Pulse>
 						<LandButton />
 					</Pulse>
-				</VStack>
-
-				<VStack>
-					<StyledNextLink
-						maxW={{ base: '20em', md: '34em' }}
-						textAlign={'center'}
-						href={
-							'https://gorillasun.de/blog/radial-perlin-noise-and-generative-tree-rings'
-						}
-						fontFamily={'SF Pro'}
-						fontSize={{ base: 'sm', md: 'sm' }}
-						color={'grayAlpha.900'}
-						bg={'blackAlpha.900'}
-					>
-						Generative circles enspired by AHMAD MOUSSA's Perlin noise rings
-					</StyledNextLink>
 				</VStack>
 			</VStack>
 		</>
