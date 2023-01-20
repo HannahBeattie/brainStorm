@@ -1,5 +1,4 @@
-import { Text, useColorModeValue, VStack } from '@chakra-ui/react'
-import LinkWrapper from '../base/LinkWrapper'
+import { Text, VStack } from '@chakra-ui/react'
 import StyledNextLink from '../base/StyledNextLink'
 
 const textProps = { fontSize: 'sm', _light: { color: 'gitGray' }, _dark: { color: 'warmWhite' } }
