@@ -1,4 +1,4 @@
-import { VStack } from '@chakra-ui/react'
+import { useColorModeValue, VStack } from '@chakra-ui/react'
 import StyledNextLink from '../base/StyledNextLink'
 import TextContainer from '../base/templates/TextContainer'
 import Appear from '../framerMotion/Appear'
@@ -7,6 +7,7 @@ import Pulse from '../framerMotion/Pulse'
 import Tree from '../p5/hero/Tree'
 import { paragraphs } from './IntroProps'
 import LandButton from './LandButton'
+import { WiRaindrops, WiRaindrop } from 'react-icons/wi'
 
 export default function LandingPage() {
 	const items = paragraphs
@@ -14,11 +15,11 @@ export default function LandingPage() {
 	return (
 		<>
 			<VStack
+				overflow={{ base: 'clip', md: 'initial' }}
 				pt={{ base: '10rem', md: '12rem' }}
-				overflow={{ base: 'hidden', md: 'initial' }}
 				pb={{ base: 4, md: 4 }}
 				flex={'1'}
-				spacing={'16'}
+				spacing={{ md: 16, base: 12 }}
 				alignItems={'stretch'}
 			>
 				{items.map(({ paragraph, trees }, idx) => (
@@ -79,12 +80,20 @@ export default function LandingPage() {
 							</VStack>
 						</Unfold>
 					</Pulse>
+					<VStack fontSize={'4xl'} color={useColorModeValue('teal', 'red')}>
+						<WiRaindrop />
+						<WiRaindrop />
+						<WiRaindrop />
+						<WiRaindrops size={'100'} />
+					</VStack>
 				</VStack>
-				<VStack pt={{ md: '20vh', base: -40 }} pb={{ md: '40vh' }}>
+
+				<VStack pb={{ md: '40vh' }} spacing={{ md: 10 }} fontSize={'4xl'}>
 					<Pulse>
 						<LandButton />
 					</Pulse>
 				</VStack>
+
 				<VStack>
 					<StyledNextLink
 						maxW={{ base: '20em', md: '34em' }}
