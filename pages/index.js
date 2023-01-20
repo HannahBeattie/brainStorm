@@ -48,7 +48,7 @@ export default function Home() {
 					color={'grayAlpha.900'}
 					bg={'blackAlpha.900'}
 				>
-					Generative circles enspired by AHMAD MOUSSA's Perlin noise rings
+					Generative circles enspired by AHMAD MOUSSA &apos;s Perlin noise rings
 				</StyledNextLink>
 			</VStack>
 		</PageWrapper>

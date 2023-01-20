@@ -96,8 +96,8 @@ export default function Web() {
 								cancelled via email.
 							</Text>
 							<Text>
-								I also created a website and short video with the help of
-								Pexles.com's free use stock footage, which can be viewed at the link
+								I also created a website and short video with the help of Pexles.com
+								&apos;s free use stock footage, which can be viewed at the link
 								below.
 							</Text>
 							<Text>

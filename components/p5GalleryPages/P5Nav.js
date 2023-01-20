@@ -23,10 +23,11 @@ const tabProps = {
 
 export default function P5Nav() {
 	const items = P5NavItems
-
 	const router = useRouter()
 	const currentRoute = router.pathname
 	const col = useColorModeValue('teal', 'red')
+	const col2 = useColorModeValue('teal', 'red')
+	const col3 = useColorModeValue('gray.900', 'gray.200')
 
 	return (
 		<HStack {...wrapProps} alignContent={'center'}>
@@ -34,11 +35,7 @@ export default function P5Nav() {
 				<Box key={idx} {...tabProps} tabIndex={0}>
 					<StyledNextLink
 						href={href}
-						color={
-							href === currentRoute
-								? useColorModeValue('teal', 'red')
-								: useColorModeValue('gray.900', 'gray.200')
-						}
+						color={href === currentRoute ? col2 : col3}
 						fontWeight={href === currentRoute ? 500 : 400}
 					>
 						{title}

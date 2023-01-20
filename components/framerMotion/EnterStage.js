@@ -3,21 +3,22 @@ import React from 'react'
 import { useMediaQuery } from '../hooks/useMediaQuery'
 
 export function EnterStage({ children, right }) {
+	const item1 = useTransform(scrollYProgress, [0, 1], [300, 0])
+	const item2 = useTransform(scrollYProgress, [0, 1], [-300, 0])
 	const { scrollYProgress } = useScroll()
 
-	const x = right
-		? useTransform(scrollYProgress, [0, 1], [300, 0])
-		: useTransform(scrollYProgress, [0, 1], [-300, 0])
+	const x = right ? item1 : item2
 
 	return <motion.div style={{ x }}>{children}</motion.div>
 }
 
 export function EnterSmall({ children, right }) {
+	let a = useTransform(scrollYProgress, [0, 1], [90, 0])
+	let b = useTransform(scrollYProgress, [0, 1], [-90, 0])
+
 	const { scrollYProgress } = useScroll()
 
-	const x = right
-		? useTransform(scrollYProgress, [0, 1], [90, 0])
-		: useTransform(scrollYProgress, [0, 1], [-90, 0])
+	const x = right ? a : b
 
 	return <motion.div style={{ x }}>{children}</motion.div>
 }

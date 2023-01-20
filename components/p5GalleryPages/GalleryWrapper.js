@@ -13,7 +13,6 @@ import { useEffect } from 'react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import { useSwipeable } from 'react-swipeable'
 import StyledNextLink from '../base/StyledNextLink'
-import HoverPulse from '../framerMotion/HoverPulse'
 import FadeIn from '../HOC/FadeIn'
 import { usePrevNext } from '../hooks/usePrevNext'
 
@@ -30,6 +29,12 @@ export default function GalleryWrapper({ children, title, column1, column2, colu
 		onSwipedRight: () => router.push(prev),
 		onSwipedLeft: () => router.push(next),
 	})
+	useEffect(() => {
+		const keyPressed = ({ key }) =>
+			key === 'ArrowRight' ? router.push(next) : key === 'ArrowLeft' && router.push(prev)
+		window.addEventListener('keydown', keyPressed)
+		return () => window.removeEventListener('keydown', keyPressed)
+	}, [next, prev, router])
 
 	const headingProps = {
 		color: useColorModeValue('blackAlpha.800', 'grayAlpha.900'),
@@ -64,14 +69,6 @@ export default function GalleryWrapper({ children, title, column1, column2, colu
 		letterSpacing: '0.8em',
 	}
 
-	useEffect(() => {
-		const keyPressed = ({ key }) =>
-			key === 'ArrowRight' ? router.push(next) : key === 'ArrowLeft' && router.push(prev)
-		window.addEventListener('keydown', keyPressed)
-		// console.log('keyPressed, keyPressed', { key })
-		return () => window.removeEventListener('keydown', keyPressed)
-	}, [])
-	// console.log('keyPressed, keyPressed', { key })
 	return (
 		<FadeIn>
 			<VStack

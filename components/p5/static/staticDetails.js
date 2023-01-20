@@ -34,7 +34,7 @@ export const goldenThread = {
 			</Text>
 			<Text>
 				I tweaked the width of the lines and and volume of the noise to create
-				pointalist-style 'stitches'.
+				pointalist-style &apos;stitches&apos;.
 			</Text>
 
 			<Text>
@@ -65,8 +65,8 @@ export const flowFields = {
 
 			<Text>
 				I began to play with gradient backgrounds and layering; With thin, intricate
-				semi-transparent white and light-pink lines causing the 'veins' to look three
-				demensional and somewhat slick.
+				semi-transparent white and light-pink lines causing the &apos;veins&apos; to look
+				three demensional and somewhat slick.
 			</Text>
 		</VStack>
 	),
@@ -107,7 +107,7 @@ export const objects = {
 					fontStyle={'italic'}
 					fontWeight={'bold'}
 				>
-					Coding Train's
+					Coding Train&apos;s
 				</LinkWrapper>
 				Daniel Shiffman to create a basic drawing app.
 			</Text>

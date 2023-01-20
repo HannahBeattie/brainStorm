@@ -17,9 +17,12 @@ const tabProps = {
 }
 
 export default function DesktopNav({ items }) {
+	const col = useColorModeValue('teal', 'red')
+	const col1 = useColorModeValue('teal', 'red')
+	const col2 = useColorModeValue('gray.600', 'gray.200')
+	const col3 = useColorModeValue('black', 'white')
 	const router = useRouter()
 	const currentRoute = router.pathname
-	const col = useColorModeValue('teal', 'red')
 
 	return (
 		<HStack {...wrapProps}>
@@ -29,12 +32,8 @@ export default function DesktopNav({ items }) {
 						<StyledNextLink
 							fontFamily={'SF Pro'}
 							href={href}
-							color={
-								href === currentRoute
-									? useColorModeValue('teal', 'red')
-									: useColorModeValue('gray.600', 'gray.200')
-							}
-							_hover={{ color: useColorModeValue('black', 'white') }}
+							color={href === currentRoute ? col1 : col2}
+							_hover={{ color: col3 }}
 							fontWeight={href === currentRoute ? 500 : 400}
 						>
 							{title}

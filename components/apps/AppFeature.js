@@ -13,6 +13,9 @@ import ButtonFocus from '../framerMotion/ButtonFocus'
 import CardHovered from '../framerMotion/CardHovered'
 
 export default function AppFeature({ linkText, src, alt, title, children, href, subtitle }) {
+	const bg = useColorModeValue('grayAlpha.200', 'whiteAlpha.100')
+	const bg2 = useColorModeValue('grayAlpha.300', 'whiteAlpha.200')
+	const col = useColorModeValue('gray.800', 'ActiveCaption')
 	return (
 		<>
 			<VStack flex={'1'} w={'100%'}>
@@ -80,17 +83,11 @@ export default function AppFeature({ linkText, src, alt, title, children, href, 
 								>
 									<ButtonFocus>
 										<Button
-											bg={useColorModeValue(
-												'grayAlpha.200',
-												'whiteAlpha.100'
-											)}
+											bg={bg}
 											_hover={{
-												bg: useColorModeValue(
-													'grayAlpha.300',
-													'whiteAlpha.200'
-												),
+												bg2,
 											}}
-											color={useColorModeValue('gray.800', 'ActiveCaption')}
+											color={col}
 										>
 											{linkText}
 										</Button>

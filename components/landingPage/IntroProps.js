@@ -52,7 +52,7 @@ export const paragraphs = [
 					minimal functionality...
 				</Text>
 				<Text pt={pt}>
-					It doesn't matter how flashy something looks if it can't be accessed.
+					It doesn&apos;t matter how flashy something looks if it can&apos;t be accessed.
 				</Text>
 			</>
 		),
