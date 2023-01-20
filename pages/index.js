@@ -3,11 +3,11 @@ import ScrollToTop from '~/components/framerMotion/ScrollToTop'
 import PageWrapper from '~/components/HOC/PageWrapper'
 import HelloWorld from '~/components/landingPage/HelloWorld'
 
+import { Image, VStack } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
+import StyledNextLink from '~/components/base/StyledNextLink'
 import LandingPage from '~/components/landingPage/LandingPage'
 import VineWorld from '~/components/p5/hero/VineWorld'
-import { Box, Image, VStack } from '@chakra-ui/react'
-import StyledNextLink from '~/components/base/StyledNextLink'
 
 export default function Home() {
 	return (

@@ -1,4 +1,3 @@
-import React from 'react'
 import Reef from '~/components/p5/generative/Reef'
 import { reef } from '~/components/p5GalleryPages/details'
 import GalleryWrapper from '~/components/p5GalleryPages/GalleryWrapper'

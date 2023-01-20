@@ -6,8 +6,8 @@ export function EnterStage({ children, right }) {
 	const { scrollYProgress } = useScroll()
 
 	const x = right
-		? useTransform(scrollYProgress, [0, 1], [500, 0])
-		: useTransform(scrollYProgress, [0, 1], [-500, 0])
+		? useTransform(scrollYProgress, [0, 1], [300, 0])
+		: useTransform(scrollYProgress, [0, 1], [-300, 0])
 
 	return <motion.div style={{ x }}>{children}</motion.div>
 }

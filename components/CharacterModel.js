@@ -1,7 +1,8 @@
 import { Grid, GridItem, Image } from '@chakra-ui/react'
 import Appear from '~/components/framerMotion/Appear'
 import getGridProps from '~/components/hooks/getGridProps'
-import { ImageModal, useImageModal } from '~/components/hooks/UseImageModal'
+import { useImageModal } from './hooks/useImageModal'
+
 export default function CharacterModel() {
 	const monstPath = '/monsters'
 	const monstCount = 15
