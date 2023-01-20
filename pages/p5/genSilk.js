@@ -1,5 +1,5 @@
 import Silk from '~/components/p5/generative/Silk'
-import { silk } from '~/components/p5GalleryPages/details'
+import { silk } from '~/components/p5GalleryPages/Details'
 import GalleryWrapper from '~/components/p5GalleryPages/GalleryWrapper'
 
 export default function GenSilk() {

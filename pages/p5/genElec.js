@@ -1,5 +1,5 @@
 import Electric from '~/components/p5/generative/Electric'
-import { electric } from '~/components/p5GalleryPages/details'
+import { electric } from '~/components/p5GalleryPages/Details'
 
 import GalleryWrapper from '~/components/p5GalleryPages/GalleryWrapper'
 

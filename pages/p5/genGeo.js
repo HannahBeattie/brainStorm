@@ -1,5 +1,5 @@
 import Geo from '~/components/p5/generative/Geo'
-import { geo } from '~/components/p5GalleryPages/details'
+import { geo } from '~/components/p5GalleryPages/Details'
 
 import GalleryWrapper from '~/components/p5GalleryPages/GalleryWrapper'
 
