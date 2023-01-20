@@ -51,7 +51,7 @@ export default function AppFeature({ linkText, src, alt, title, children, href, 
 							px={{ md: 8, base: 4 }}
 							flex={1}
 							justifyContent={'center'}
-							py={{ md: 10 }}
+							py={{ md: 10, base: 4 }}
 							fontSize={'md'}
 							fontWeight={'m'}
 							spacing='8'
