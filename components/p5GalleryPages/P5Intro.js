@@ -1,10 +1,12 @@
 import { Spacer, Text, VStack } from '@chakra-ui/react'
 import LinkWrapper from '../base/LinkWrapper'
-import StyledNextLink from '../base/StyledNextLink'
 import IntroCard from '../base/templates/IntroCard'
-import HoverPulse from '../framerMotion/HoverPulse'
 
 export default function P5Intro() {
+	const tipProps = {
+		fontSize: 'sm',
+		fontWeight: 'bold',
+	}
 	return (
 		<IntroCard heading={'Generative art'}>
 			<Text>
@@ -17,6 +19,15 @@ export default function P5Intro() {
 				my process and stills of other works by clicking the{' '}
 				<LinkWrapper href={'p5/staticWorks'}>here</LinkWrapper>.
 			</Text>
+			<VStack flex={1} alignItems={'stretch'}>
+				<Text pt={2} {...tipProps}>
+					Hint: If you are using a Desktop computer you can navagate these animations
+					quickly using your LEFT and RIGHT keys.{' '}
+				</Text>{' '}
+				<Text {...tipProps}>
+					If you are on your phone, you can SWIPE right and left with your fingers.
+				</Text>
+			</VStack>
 			<Spacer />
 		</IntroCard>
 	)

@@ -19,7 +19,7 @@ export default function P5Index() {
 					flex={1}
 					alignItems={'center'}
 					justifyContent={'center'}
-					py={{ base: '10', md: 8 }}
+					py={{ base: 10, md: 4 }}
 				>
 					<P5Intro />
 					<StyledNextLink href={next}>
