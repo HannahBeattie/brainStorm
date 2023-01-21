@@ -19,13 +19,17 @@ export default function AppFeature({ linkText, src, alt, title, children, href, 
 	return (
 		<>
 			<VStack flex={'1'} w={'100%'}>
-				<Stack p={8} flexDir={{ base: 'column', md: 'row' }}>
-					<VStack
-						pr={{ md: 10 }}
-						flex={1}
-						alignItems={'stretch'}
-						justifyContent={'center'}
-					>
+				<Stack p={2} flexDir={{ base: 'column', lg: 'row' }}>
+					<VStack justify={'center'} p={{ md: 2 }} pr={{ lg: '5vw' }}>
+						<Heading
+							py={8}
+							display={{ base: 'auto', lg: 'none' }}
+							textAlign={'center'}
+							fontFamily={'body'}
+							fontWeight={'md'}
+						>
+							{title}
+						</Heading>
 						<CardHovered>
 							<StyledNextLink href={href} target={'blank'}>
 								<Image
@@ -51,15 +55,20 @@ export default function AppFeature({ linkText, src, alt, title, children, href, 
 
 					<Container>
 						<VStack
-							px={{ md: 8, base: 4 }}
+							px={{ lg: 8, base: 4 }}
 							flex={1}
 							justifyContent={'center'}
-							py={{ md: 10, base: 4 }}
+							py={{ lg: 10, base: 4 }}
 							fontSize={'md'}
 							fontWeight={'m'}
 							spacing='8'
 						>
-							<Heading textAlign={'center'} fontFamily={'body'} fontWeight={'md'}>
+							<Heading
+								display={{ base: 'none', lg: 'flex' }}
+								textAlign={'center'}
+								fontFamily={'body'}
+								fontWeight={'md'}
+							>
 								{title}
 							</Heading>
 							{subtitle && (
