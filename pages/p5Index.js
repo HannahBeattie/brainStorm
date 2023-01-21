@@ -15,12 +15,7 @@ export default function P5Index() {
 	return (
 		<PageWrapper>
 			<GalleryWrapper no={true}>
-				<VStack
-					flex={1}
-					alignItems={'center'}
-					justifyContent={'center'}
-					py={{ base: 10, md: 4 }}
-				>
+				<VStack flex={1} alignItems={'center'} justifyContent={'center'} py='4'>
 					<P5Intro />
 					<StyledNextLink href={next}>
 						<HStack pb={4}>

@@ -49,6 +49,7 @@ export default function GalleryWrapper({ children, title, column1, column2, colu
 		spacing: 0,
 		px: { md: 8, base: 12 },
 		py: { md: 4, base: 2 },
+		pb: { base: 4 },
 		spacing: 4,
 		borderRadius: 'md',
 	}
