@@ -8,11 +8,11 @@ export default function TextContainer({ children, ...props }) {
 		<Appear>
 			<Container size={'8xl'}>
 				<VStack
-					px={{ base: 6, md: 4 }}
-					alignSelf='stretch'
-					alignItems='stretch'
-					fontSize={{ base: 'lg', md: 'xl' }}
+					px={{ base: '4rem', md: 4 }}
+					fontSize={{ base: '23', md: 'xl' }}
 					spacing={3}
+					alignItems={'stretch'}
+					textAlign={'start'}
 					{...props}
 				>
 					{children}

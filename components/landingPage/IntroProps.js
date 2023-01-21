@@ -1,5 +1,4 @@
 import { Heading, Text } from '@chakra-ui/react'
-import TextContainer from '../base/templates/TextContainer'
 import Appear from '../framerMotion/Appear'
 const pt = { md: 8, base: 0 }
 

@@ -8,8 +8,8 @@ export default function Appear({ children, width, dur, delay, ...rest }) {
 				whileInView={{ opacity: 1 }}
 				transition={{
 					delay: delay,
-					duration: dur ? dur : 2,
-					ease: 'easeInOut',
+					duration: dur ? dur : 1,
+					ease: 'easeOut',
 				}}
 				style={width}
 				exit={{ opacity: 0 }}
