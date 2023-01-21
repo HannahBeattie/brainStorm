@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import React from 'react'
-import { useMediaQuery } from '../hooks/useMediaQuery'
 
 export function EnterStage({ children, right }) {
 	const { scrollYProgress } = useScroll()
@@ -22,10 +21,16 @@ export function EnterSmall({ children, right }) {
 	return <motion.div style={{ x }}>{children}</motion.div>
 }
 
-export function Unfold({ children }) {
+export function Unfold({ children, num }) {
 	const { scrollYProgress } = useScroll()
 
-	const y = useTransform(scrollYProgress, [0.5, 1], [-500, 0])
+	const y = useTransform(scrollYProgress, [0.5, 1], [num, 0])
 
+	return <motion.div style={{ y }}>{children}</motion.div>
+}
+
+export function UnfoldSm({ children }) {
+	const { scrollYProgress } = useScroll()
+	const y = useTransform(scrollYProgress, [0.5, 1], [-900, 30])
 	return <motion.div style={{ y }}>{children}</motion.div>
 }

@@ -1,5 +1,5 @@
 import { useColorModeValue, VStack } from '@chakra-ui/react'
-import StyledNextLink from '../base/StyledNextLink'
+import { WiRaindrop, WiRaindrops } from 'react-icons/wi'
 import TextContainer from '../base/templates/TextContainer'
 import Appear from '../framerMotion/Appear'
 import { EnterSmall, EnterStage, Unfold } from '../framerMotion/EnterStage'
@@ -7,9 +7,9 @@ import Pulse from '../framerMotion/Pulse'
 import Tree from '../p5/hero/Tree'
 import { paragraphs } from './IntroProps'
 import LandButton from './LandButton'
-import { WiRaindrops, WiRaindrop } from 'react-icons/wi'
 
 export default function LandingPage() {
+	//To be refactored with media qerries
 	const items = paragraphs
 
 	return (
@@ -68,12 +68,12 @@ export default function LandingPage() {
 
 				<VStack flex={1} alignItems='stretch'>
 					<Pulse>
-						<Unfold>
+						<Unfold num={-800}>
 							<VStack
 								flex={1}
 								alignItems={'stretch'}
 								px={{ base: 8, md: 0 }}
-								pt={{ md: 10 }}
+								pt={{ md: 200, base: 200 }}
 							>
 								<Tree num={100} />
 							</VStack>
@@ -87,7 +87,7 @@ export default function LandingPage() {
 					</VStack>
 				</VStack>
 
-				<VStack pb={{ md: '30vh', base: '20vh' }} spacing={{ md: 10 }} fontSize={'4xl'}>
+				<VStack pb={{ md: 16, base: 10 }} spacing={{ md: 10 }} fontSize={'4xl'}>
 					<Pulse>
 						<LandButton />
 					</Pulse>

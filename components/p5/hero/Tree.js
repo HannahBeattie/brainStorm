@@ -68,10 +68,14 @@ function sketch(p5) {
 	let width = 800
 	let height = 500
 	let isInView = false
-	let didResetAfterSetup = false
+	let didDraw = false
 
 	p5.updateWithProps = (props) => {
+		let shouldReset = false
 		if (props.stroke) {
+			if (stroke[0] !== props.stroke[0] && didDraw) {
+				shouldReset = true
+			}
 			stroke = props.stroke
 		}
 		if (props.w && props.h) {
@@ -81,11 +85,10 @@ function sketch(p5) {
 		if (props.num) {
 			num = props.num
 		}
-		// if (!didResetAfterSetup && p5._setupDone) {
-		// 	didResetAfterSetup = true
-		// 	reset()
-		// }
 		isInView = props.isInView
+		if (shouldReset) {
+			reset()
+		}
 	}
 
 	function reset() {
@@ -96,7 +99,7 @@ function sketch(p5) {
 		p5.noFill()
 		p5.stroke(stroke)
 		const numTree = num ?? p5.random(1, 2)
-		// console.log(`(reset) num=${num} numTree is`, numTree)
+
 		trees = []
 		for (let ii = 0; ii < numTree; ii++) {
 			trees.push(new MyTree({ p5 }))
@@ -105,12 +108,12 @@ function sketch(p5) {
 		for (const tree of trees) {
 			tree.draw()
 		}
+		didDraw = true
 	}
 
 	p5.setup = () => {
 		let canvas = p5.createCanvas(800, 500)
 		canvas.mousePressed(() => reset())
-		// reset()
 	}
 
 	p5.draw = () => {

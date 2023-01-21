@@ -39,6 +39,7 @@ rotate90 {
 	height: 4px;
 	transform-origin: 0 0;
 	background-color: red;
+	z-index: 2;
 }
 
 .slide-in {
