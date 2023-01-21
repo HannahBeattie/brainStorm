@@ -3,7 +3,7 @@ import StyledNextLink from '../base/StyledNextLink'
 
 const textProps = { fontSize: 'sm', _light: { color: 'gitGray' }, _dark: { color: 'warmWhite' } }
 const paragrapProps = { ...textProps, fontSize: 'sm' }
-const indent = 4
+const indent = { base: 0, md: 4 }
 
 export const reef = {
 	title: 'Reef',
@@ -97,7 +97,7 @@ export const silk = {
 				threads warped detail into existence.
 			</Text>
 			<Text>
-				ater, I discovered intricate Japanese woodblock prints, that used tiny dots and the
+				Later, I discovered intricate Japanese woodblock prints, that used tiny dots and the
 				absence of marks to render marks on a page with ink.
 			</Text>
 			<Text>
