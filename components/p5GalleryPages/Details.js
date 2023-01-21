@@ -2,8 +2,13 @@ import { Text, VStack } from '@chakra-ui/react'
 import StyledNextLink from '../base/StyledNextLink'
 
 const textProps = { fontSize: 'sm', _light: { color: 'gitGray' }, _dark: { color: 'warmWhite' } }
-const paragrapProps = { ...textProps, fontSize: 'sm' }
-const indent = { base: 0, md: 4 }
+const paragrapProps = {
+	...textProps,
+	fontSize: 'sm',
+	spacing: { base: 4, md: 2 },
+	alignItems: 'stretch',
+}
+const indent = { base: 0, md: 0 }
 
 export const reef = {
 	title: 'Reef',
@@ -71,7 +76,7 @@ export const geo = {
 	),
 	column2: (
 		<VStack {...paragrapProps}>
-			<Text>Click on canvas to reset</Text>
+			<Text>Click on canvas to reset animation</Text>
 			<Text pt={indent}>Try toggling dark and light mode </Text>
 			<Text>on this page</Text>
 		</VStack>
