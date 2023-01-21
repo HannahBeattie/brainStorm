@@ -79,7 +79,7 @@ export default function LandingPage() {
 							</VStack>
 						</Unfold>
 					</Pulse>
-					<VStack fontSize={'4xl'} color={useColorModeValue('teal', 'red')}>
+					<VStack fontSize={'4xl'} color={useColorModeValue('teal', 'white')}>
 						<WiRaindrop />
 						<WiRaindrop />
 						<WiRaindrop />

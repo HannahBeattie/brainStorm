@@ -68,29 +68,28 @@ function sketch(p5) {
 	let width = 800
 	let height = 500
 	let isInView = false
+	let didResetAfterSetup = false
 
 	p5.updateWithProps = (props) => {
 		if (props.stroke) {
 			stroke = props.stroke
 		}
 		if (props.w && props.h) {
-			p5.resizeCanvas(props.w, props.h)
 			width = props.w
 			height = props.h
 		}
 		if (props.num) {
 			num = props.num
 		}
-		if (p5._setupDone) {
-			reset()
-		}
+		// if (!didResetAfterSetup && p5._setupDone) {
+		// 	didResetAfterSetup = true
+		// 	reset()
+		// }
 		isInView = props.isInView
-		if (props.isInView) {
-			console.log(`Tree is in view (num=${num})`)
-		}
 	}
 
 	function reset() {
+		p5.resizeCanvas(width, height)
 		p5.clear()
 		let ranStoke = p5.random(0.1, 2)
 		p5.strokeWeight(ranStoke)
@@ -125,12 +124,10 @@ export default function Tree({ num }) {
 	const [ref, bounds] = useMeasure()
 	const ref2 = useRef(null)
 	const isInView = useInView(ref2)
-	// console.log(`<Tree> num=${num} isInView=${isInView}`)
 
 	let stroke = useColorModeValue([0, 0, 0], [230, 220, 220])
 
 	return (
-		// <Appear>
 		<div ref={ref2}>
 			<VStack
 				aria-label='An animation of generative rings, radiating from small to large'
@@ -152,6 +149,5 @@ export default function Tree({ num }) {
 				/>
 			</VStack>
 		</div>
-		// </Appear>
 	)
 }

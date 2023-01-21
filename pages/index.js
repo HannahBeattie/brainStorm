@@ -15,20 +15,9 @@ export default function Home() {
 			<ScrollToTop />
 			<ScrollProgress />
 			<HelloWorld />
-			{/* <AnimatePresence> */}
-			{/* <motion.div
-					drag
-					dragConstraints={{ left: 1, right: 1, top: 1, bottom: 1 }}
-					initial={{ opacity: 0 }}
-					dragElastic={0.2}
-					animate={{
-						opacity: [0, 0.5, 0.9, 0.7, 1],
-					}}
-					transition={{ delay: 8, duration: 4, ease: 'easeIn' }}
-				> */}
+
 			<VineWorld />
-			{/* </motion.div> */}
-			{/* </AnimatePresence> */}
+
 			<LandingPage />
 
 			<Image

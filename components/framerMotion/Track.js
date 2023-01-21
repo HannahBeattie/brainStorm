@@ -15,7 +15,6 @@ export default function Track({ children, index }) {
 
 	const isOdd = index % 2
 	const delay = index * 0.2 + 0.2
-	// console.log(`<Track> ${children}: delay=${delay}`)
 
 	return (
 		<motion.div
