@@ -8,8 +8,7 @@ import Tree from '../p5/hero/Tree'
 import { paragraphs } from './IntroProps'
 import LandButton from './LandButton'
 
-export default function LandingPage() {
-	//To be refactored with media qerries
+export default function MainIntro() {
 	const items = paragraphs
 
 	return (

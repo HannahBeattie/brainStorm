@@ -8,7 +8,9 @@ export const paragraphs = [
 			<>
 				<Heading fontFamily={'Alice'}>I am Hannah.</Heading>
 				<Appear delay={1}>
-					<Text pt={pt}>An artist, insect enthusiast and Dev from New Zealand.</Text>
+					<Text pt={{ md: 2 }}>
+						An artist, insect enthusiast and Dev from New Zealand.
+					</Text>
 				</Appear>
 			</>
 		),
@@ -29,7 +31,7 @@ export const paragraphs = [
 		paragraph: (
 			<>
 				<Text>
-					...that take into account the diversity of experience and access styles...
+					...that take into account the diversity of access styles and experiance...
 				</Text>
 			</>
 		),
@@ -38,7 +40,7 @@ export const paragraphs = [
 	{
 		paragraph: (
 			<>
-				<Text>...while retaining a sense of experimentation, humour and play...</Text>
+				<Text>...while retaining a sense of experimentation, humour and fun.</Text>
 			</>
 		),
 		trees: 2,
@@ -47,11 +49,11 @@ export const paragraphs = [
 		paragraph: (
 			<>
 				<Text>
-					My coding style is a mixture between curiosity-driven experementation and clean,
-					minimal functionality...
+					My coding style is a mixture between curiosity-driven play and clean, minimal
+					functionality.
 				</Text>
 				<Text pt={pt}>
-					It doesn&apos;t matter how flashy something looks if it can&apos;t be accessed.
+					It doesn&apos;t matter how flashy something seems if it can&apos;t be accessed.
 				</Text>
 			</>
 		),
@@ -62,11 +64,11 @@ export const paragraphs = [
 			<>
 				<Text pt={pt}>
 					One of my favourite things about coding is the ability to create surprising,
-					personal moments of user interaction;
+					personal moments of user interaction.
 				</Text>
 				<Text>
-					The type that make us feel connected, capable and heard; And cut through the
-					dull buzz of data fatigue.
+					The type that cut through the dull buzz of data fatigue we are all accustomed
+					to.
 				</Text>
 			</>
 		),
@@ -76,10 +78,10 @@ export const paragraphs = [
 		paragraph: (
 			<>
 				<Text>
-					My practice as an interdisciplinary artist often involves testing and re-test
-					methods and tools to observe patterns and possibilities.
+					As an interdisciplinary artist, I am used to testing and re-test methods and
+					tools to observe patterns and possibilities.
 				</Text>
-				<Text pt={pt}>Coding is much the same, only less paint gets on my clothes.</Text>
+				<Text pt={pt}>Coding is much the same.</Text>
 			</>
 		),
 		trees: 2,
@@ -89,13 +91,14 @@ export const paragraphs = [
 			<>
 				<Text>
 					I am excited to continue to learn new tools, languages and frameworks with which
-					to refine my practice and enrich my abilities; Allowing me to contribute to a
-					digital landscape that is kinder, more diverse, more deliberate and highly
-					responsive.
+					to refine my practice.
 				</Text>
-				<Text pt={pt} pb={{ md: 0, base: 20 }}>
-					So...whatch this space.
+				<Text pt={pt}>
+					Allowing me to contribute to a digital landscape that is kinder, more diverse,
+					more deliberate and highly responsive.
 				</Text>
+				<Text pt={pt}>So...</Text>
+				<Text pb={{ md: 0, base: 20 }}>whatch this space.</Text>
 			</>
 		),
 	},

@@ -6,7 +6,7 @@ import HelloWorld from '~/components/landingPage/HelloWorld'
 import { Image, VStack } from '@chakra-ui/react'
 import StyledNextLink from '~/components/base/StyledNextLink'
 import { Unfold, UnfoldSm } from '~/components/framerMotion/EnterStage'
-import LandingPage from '~/components/landingPage/LandingPage'
+import MainIntro from '~/components/landingPage/MainIntro'
 import VineWorld from '~/components/p5/hero/VineWorld'
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
 
 			<VineWorld />
 
-			<LandingPage />
+			<MainIntro />
 			<StyledNextLink
 				zIndex={0}
 				position={'absolute'}
