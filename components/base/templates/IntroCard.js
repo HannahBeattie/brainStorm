@@ -1,5 +1,4 @@
-import { Container, VStack, Text, Heading, useColorModeValue } from '@chakra-ui/react'
-import React from 'react'
+import { Container, Heading, VStack } from '@chakra-ui/react'
 
 export default function IntroCard({ heading, children, props, pt }) {
 	const containerProps = {

@@ -27,7 +27,7 @@ export default function WCIntro() {
 					all affect the way your marks will behave and the type of treatment you give
 					them.
 				</Text>
-				<Text>
+				<Text as='div'>
 					{' '}
 					am rather proud to say that I have, in no way, mastered watercolour painting.
 					Only that it has taught me a great deal about noticing details and{' '}
