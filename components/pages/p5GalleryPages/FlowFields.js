@@ -1,7 +1,7 @@
 import { Grid, GridItem, Image } from '@chakra-ui/react'
 import IntroCard from '~/components/base/templates/IntroCard'
 import getGridProps from '~/components/hooks/getGridProps'
-import { flowFields } from './staticDetails'
+import { flowFields } from '../p5/static/staticDetails'
 
 export default function Flowfields() {
 	let items = flowFields.items

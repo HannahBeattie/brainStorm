@@ -1,7 +1,7 @@
-import Electric from '~/components/p5/generative/Electric'
-import { electric } from '~/components/p5GalleryPages/Details'
+import Electric from '~/components/pages/p5/generative/Electric'
+import { electric } from '~/components/pages/p5GalleryPages/Details'
 
-import GalleryWrapper from '~/components/p5GalleryPages/GalleryWrapper'
+import GalleryWrapper from '~/components/pages/p5GalleryPages/GalleryWrapper'
 
 export default function GenElec() {
 	return (

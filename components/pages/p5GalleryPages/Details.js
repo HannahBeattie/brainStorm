@@ -1,5 +1,5 @@
 import { Text, VStack } from '@chakra-ui/react'
-import StyledNextLink from '../base/StyledNextLink'
+import StyledNextLink from '../../base/StyledNextLink'
 
 const textProps = { fontSize: 'sm', _light: { color: 'gitGray' }, _dark: { color: 'warmWhite' } }
 const paragrapProps = {

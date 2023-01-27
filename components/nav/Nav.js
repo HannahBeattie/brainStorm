@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import { VscSymbolInterface } from 'react-icons/vsc'
-import Rotate from '../framerMotion/RotateClicked'
+import Rotate from '../pages/framerMotion/RotateClicked'
 import StyledNextLink from '../base/StyledNextLink'
 import DesktopNav from './DesktopNav'
 import { Pages } from './Pages'

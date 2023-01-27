@@ -1,7 +1,7 @@
-import ScrollToTop from '~/components/framerMotion/ScrollToTop'
+import ScrollToTop from '~/components/pages/framerMotion/ScrollToTop'
 import PageWrapper from '~/components/HOC/PageWrapper'
-import WaterColModel from '~/components/waterColor/WaterColModel'
-import WCIntro from '~/components/waterColor/WCIntro'
+import WaterColModel from '~/components/pages/waterColor/WaterColModel'
+import WCIntro from '~/components/pages/waterColor/WCIntro'
 
 export default function Water() {
 	return (

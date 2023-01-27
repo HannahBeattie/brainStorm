@@ -1,23 +1,65 @@
-import { Divider, Grid, Text, VStack } from '@chakra-ui/react'
-import AppFeature from '~/components/apps/AppFeature'
+import { Divider, Grid, Text, Tooltip, VStack } from '@chakra-ui/react'
+import AppFeature from '~/components/pages/apps/AppFeature'
 import LinkWrapper from '~/components/base/LinkWrapper'
 import IntroCard from '~/components/base/templates/IntroCard'
 import Slide from '~/components/base/templates/Slide'
-import Appear from '~/components/framerMotion/Appear'
-import ScrollToTop from '~/components/framerMotion/ScrollToTop'
+import Appear from '~/components/pages/framerMotion/Appear'
+import ScrollToTop from '~/components/pages/framerMotion/ScrollToTop'
 import PageWrapper from '~/components/HOC/PageWrapper'
+import StyledNextLink from '~/components/base/StyledNextLink'
 
 export default function Web() {
+	let pt = 4
+	let spacing = 4
+	let lineH = 8
+	let textProps = {
+		lineHeight: lineH,
+		spacing: spacing,
+		fontWeight: 'medium',
+	}
 	return (
 		<>
 			<PageWrapper>
 				<ScrollToTop />
-				<IntroCard heading={'Apps'}>
-					<Text>
-						These represent a few of the projects I have completed since graduating from
-						Dev Academy Wellington in April of 2022.
-					</Text>
-				</IntroCard>
+				<VStack>
+					<IntroCard heading={'Apps'}>
+						<Text fontSize={'xl'} fontWeight={'lg'}>
+							These are some of the projects that I have completed since graduating
+							from Dev Academy in April, 2022.
+						</Text>
+						<Text pt={pt}>
+							I have also been playing around with authentication using{' '}
+							<b>firebase</b> and <b>React Firebase Hooks</b>.
+						</Text>
+						<Text>
+							{' '}
+							I have been making a simple mood-tracking app that allows users to
+							log-in and track their moods, as well as displaying their previosly
+							tracked moods.
+						</Text>
+						<Tooltip
+							label={
+								'Special thanks to Mikey Lemmon for helping me refactor & combine my db hooks.'
+							}
+						>
+							<Text>
+								You can find the unfinished project on
+								<StyledNextLink
+									href={'https://github.com/HannahBeattie/firebaseLogin'}
+									fontWeight={'bold'}
+								>
+									{' '}
+									my github.*
+								</StyledNextLink>
+							</Text>
+						</Tooltip>
+
+						<Text pb={8}>
+							I am also tentatively dipping my toes into the world of React Native,
+							with a looming sense of excitement and dread.
+						</Text>
+					</IntroCard>
+				</VStack>
 				<Divider />
 				<Appear style={{ width: '100%' }}>
 					<AppFeature
@@ -28,7 +70,7 @@ export default function Web() {
 						href={'https://www.studiomomo.io'}
 						subtitle={'Brand identity & website'}
 					>
-						<VStack spacing={4}>
+						<VStack {...textProps}>
 							<Text>
 								I had the pleasure of creating a logo and colour storey for
 								legendary VFS software company Studio Monkey, as well as
@@ -80,7 +122,7 @@ export default function Web() {
 						subtitle={'Using my social anxiety to create a Google Plug-in'}
 						href={'https://x-it.vercel.app'}
 					>
-						<VStack spacing={4}>
+						<VStack {...textProps}>
 							<Text>
 								For my final project as a student at Dev Academy Wellington, I
 								wanted to push myself, so I opted to work alone and use a tool that
@@ -118,7 +160,7 @@ export default function Web() {
 						href={'https://not-a-real-website.vercel.app/'}
 						linkText={'Live Demo'}
 					>
-						<VStack spacing={4}>
+						<VStack {...textProps}>
 							<Text>
 								Not-a-real-project was an app that I created with the intention of
 								learning how to use a headless CMS and generate dynamic API routes.

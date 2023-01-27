@@ -1,9 +1,9 @@
 import { Heading, Box, Image, Text, useColorModeValue, VStack } from '@chakra-ui/react'
-import ButtonFocus from '~/components/framerMotion/ButtonFocus'
-import Snail from '~/components/framerMotion/Snail'
+import ButtonFocus from '~/components/pages/framerMotion/ButtonFocus'
+import Snail from '~/components/pages/framerMotion/Snail'
 import StyledNextLink from '~/components/base/StyledNextLink'
 import PageWrapper from '~/components/HOC/PageWrapper'
-import MovingSnail from '~/components/contact/MovingSnail'
+import MovingSnail from '~/components/pages/contact/MovingSnail'
 
 export default function Contact() {
 	return (

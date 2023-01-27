@@ -1,6 +1,6 @@
-import Spark from '~/components/p5/generative/Spark'
-import { spark } from '~/components/p5GalleryPages/Details'
-import GalleryWrapper from '~/components/p5GalleryPages/GalleryWrapper'
+import Spark from '~/components/pages/p5/generative/Spark'
+import { spark } from '~/components/pages/p5GalleryPages/Details'
+import GalleryWrapper from '~/components/pages/p5GalleryPages/GalleryWrapper'
 
 export default function GenSpark() {
 	return (

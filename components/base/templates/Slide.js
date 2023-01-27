@@ -1,6 +1,6 @@
 import { Button, GridItem, Heading, Image, Text, useColorModeValue, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
-import ButtonFocus from '~/components/framerMotion/ButtonFocus'
+import ButtonFocus from '~/components/pages/framerMotion/ButtonFocus'
 import StyledNextLink from '../StyledNextLink'
 
 export default function Slide({

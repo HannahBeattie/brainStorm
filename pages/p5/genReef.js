@@ -1,6 +1,6 @@
-import Reef from '~/components/p5/generative/Reef'
-import { reef } from '~/components/p5GalleryPages/Details'
-import GalleryWrapper from '~/components/p5GalleryPages/GalleryWrapper'
+import Reef from '~/components/pages/p5/generative/Reef'
+import { reef } from '~/components/pages/p5GalleryPages/Details'
+import GalleryWrapper from '~/components/pages/p5GalleryPages/GalleryWrapper'
 
 export default function GenReef() {
 	return (

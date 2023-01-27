@@ -1,7 +1,7 @@
 import { HStack, Spacer } from '@chakra-ui/react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
-import StyledNextLink from '../base/StyledNextLink'
-import { usePrevNext } from '../hooks/usePrevNext'
+import StyledNextLink from '../../base/StyledNextLink'
+import { usePrevNext } from '../../hooks/usePrevNext'
 import { P5NavItems } from './psNavItems'
 
 export default function PrevNext({ children, props }) {

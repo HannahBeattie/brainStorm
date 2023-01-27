@@ -1,9 +1,9 @@
 import { Divider, Grid, Text } from '@chakra-ui/react'
-import AppFeature from '~/components/apps/AppFeature'
+import AppFeature from '~/components/pages/apps/AppFeature'
 import IntroCard from '~/components/base/templates/IntroCard'
 import Slide from '~/components/base/templates/Slide'
-import Appear from '~/components/framerMotion/Appear'
-import ScrollToTop from '~/components/framerMotion/ScrollToTop'
+import Appear from '~/components/pages/framerMotion/Appear'
+import ScrollToTop from '~/components/pages/framerMotion/ScrollToTop'
 import PageWrapper from '~/components/HOC/PageWrapper'
 
 export default function Web() {

@@ -1,7 +1,7 @@
-import Geo from '~/components/p5/generative/Geo'
-import { geo } from '~/components/p5GalleryPages/Details'
+import Geo from '~/components/pages/p5/generative/Geo'
+import { geo } from '~/components/pages/p5GalleryPages/Details'
 
-import GalleryWrapper from '~/components/p5GalleryPages/GalleryWrapper'
+import GalleryWrapper from '~/components/pages/p5GalleryPages/GalleryWrapper'
 
 export default function GenGeo() {
 	return (

@@ -2,7 +2,7 @@ import { Divider, HStack, Icon, Spacer, useColorModeValue } from '@chakra-ui/rea
 import { VscGithub } from 'react-icons/vsc'
 
 import StyledNextLink from '../base/StyledNextLink'
-import ButtonFocus from '../framerMotion/ButtonFocus'
+import ButtonFocus from '../pages/framerMotion/ButtonFocus'
 
 export default function Footer() {
 	const col = useColorModeValue('grayAlpha.900', 'grayAlpha.900')

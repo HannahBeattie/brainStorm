@@ -3,8 +3,8 @@ import { useInView } from 'framer-motion'
 import dynamic from 'next/dynamic'
 import { useRef } from 'react'
 import useMeasure from 'react-use-measure'
-import Appear from '~/components/framerMotion/Appear'
-import { EnterStage } from '~/components/framerMotion/EnterStage'
+import Appear from '~/components/pages/framerMotion/Appear'
+import { EnterStage } from '~/components/pages/framerMotion/EnterStage'
 
 const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mod.ReactP5Wrapper), {
 	ssr: false,

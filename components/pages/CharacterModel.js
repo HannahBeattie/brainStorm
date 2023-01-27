@@ -1,7 +1,7 @@
 import { Grid, GridItem, Image } from '@chakra-ui/react'
-import Appear from '~/components/framerMotion/Appear'
+import Appear from '~/components/pages/framerMotion/Appear'
 import getGridProps from '~/components/hooks/getGridProps'
-import { ImageModal, useImageModal } from './hooks/useImageModal'
+import { ImageModal, useImageModal } from '../hooks/useImageModal'
 
 export default function CharacterModel() {
 	const monstPath = '/monsters'
@@ -33,7 +33,7 @@ export default function CharacterModel() {
 								boxShadow={'dark'}
 								h='100%'
 								flex='1'
-								alt={'3d character drawing'}
+								alt={'3d insect-like character drawing'}
 								src={url}
 								fit='cover'
 								onClick={() => openImageNum(idx)}

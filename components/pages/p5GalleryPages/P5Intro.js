@@ -1,6 +1,6 @@
 import { Spacer, Text, VStack } from '@chakra-ui/react'
-import LinkWrapper from '../base/LinkWrapper'
-import IntroCard from '../base/templates/IntroCard'
+import LinkWrapper from '../../base/LinkWrapper'
+import IntroCard from '../../base/templates/IntroCard'
 
 export default function P5Intro() {
 	const tipProps = {

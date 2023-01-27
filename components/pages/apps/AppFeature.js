@@ -8,7 +8,7 @@ import {
 	useColorModeValue,
 	VStack,
 } from '@chakra-ui/react'
-import StyledNextLink from '../base/StyledNextLink'
+import StyledNextLink from '../../base/StyledNextLink'
 import ButtonFocus from '../framerMotion/ButtonFocus'
 import CardHovered from '../framerMotion/CardHovered'
 

@@ -1,25 +1,23 @@
-import ScrollProgress from '~/components/framerMotion/ScrollProgress'
-import ScrollToTop from '~/components/framerMotion/ScrollToTop'
+import ScrollProgress from '~/components/pages/framerMotion/ScrollProgress'
+import ScrollToTop from '~/components/pages/framerMotion/ScrollToTop'
 import PageWrapper from '~/components/HOC/PageWrapper'
-import HelloWorld from '~/components/landingPage/HelloWorld'
+import HelloWorld from '~/components/pages/landingPage/HelloWorld'
 
 import { Image, useColorModeValue, VStack } from '@chakra-ui/react'
 import StyledNextLink from '~/components/base/StyledNextLink'
-import { Unfold, UnfoldSm } from '~/components/framerMotion/EnterStage'
-import MainIntro from '~/components/landingPage/MainIntro'
-import VineWorld from '~/components/p5/hero/VineWorld'
+import { Unfold, UnfoldSm } from '~/components/pages/framerMotion/EnterStage'
+import MainIntro from '~/components/pages/landingPage/MainIntro'
+import VineWorld from '~/components/pages/p5/hero/VineWorld'
 
 export default function Home() {
-	const invert = useColorModeValue('null', '60%')
+	const invert = useColorModeValue('null', '0%')
 	const src = { base: '/baseL.png', md: '/ground.png' }
 	return (
 		<PageWrapper>
 			<ScrollToTop />
 			<ScrollProgress />
 			<HelloWorld />
-
 			<VineWorld />
-
 			<MainIntro />
 			<StyledNextLink
 				zIndex={0}

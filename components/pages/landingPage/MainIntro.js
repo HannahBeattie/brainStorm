@@ -1,6 +1,6 @@
 import { useColorModeValue, VStack } from '@chakra-ui/react'
 import { WiRaindrop, WiRaindrops } from 'react-icons/wi'
-import TextContainer from '../base/templates/TextContainer'
+import TextContainer from '../../base/templates/TextContainer'
 import Appear from '../framerMotion/Appear'
 import { EnterSmall, EnterStage, Unfold } from '../framerMotion/EnterStage'
 import Pulse from '../framerMotion/Pulse'

@@ -1,5 +1,5 @@
 import { Button, HStack, useColorModeValue, VStack } from '@chakra-ui/react'
-import StyledNextLink from '../base/StyledNextLink'
+import StyledNextLink from '../../base/StyledNextLink'
 import Track from '../framerMotion/Track'
 
 export default function LandButton() {

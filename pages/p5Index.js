@@ -2,12 +2,12 @@ import { Divider, Heading, HStack, Text, useColorModeValue, VStack } from '@chak
 import { FaArrowRight } from 'react-icons/fa'
 import LinkWrapper from '~/components/base/LinkWrapper'
 import StyledNextLink from '~/components/base/StyledNextLink'
-import HoverPulse from '~/components/framerMotion/HoverPulse'
+import HoverPulse from '~/components/pages/framerMotion/HoverPulse'
 import PageWrapper from '~/components/HOC/PageWrapper'
 import { usePrevNext } from '~/components/hooks/usePrevNext'
-import GalleryWrapper from '~/components/p5GalleryPages/GalleryWrapper'
-import P5Intro from '~/components/p5GalleryPages/P5Intro'
-import { P5NavItems } from '~/components/p5GalleryPages/psNavItems'
+import GalleryWrapper from '~/components/pages/p5GalleryPages/GalleryWrapper'
+import P5Intro from '~/components/pages/p5GalleryPages/P5Intro'
+import { P5NavItems } from '~/components/pages/p5GalleryPages/psNavItems'
 
 export default function P5Index() {
 	const pages = P5NavItems
