@@ -1,8 +1,7 @@
-import { Divider, Heading, HStack, Text, useColorModeValue, VStack } from '@chakra-ui/react'
+import { HStack, Text, VStack } from '@chakra-ui/react'
+import Head from 'next/head'
 import { FaArrowRight } from 'react-icons/fa'
-import LinkWrapper from '~/components/base/LinkWrapper'
 import StyledNextLink from '~/components/base/StyledNextLink'
-import HoverPulse from '~/components/pages/framerMotion/HoverPulse'
 import PageWrapper from '~/components/HOC/PageWrapper'
 import { usePrevNext } from '~/components/hooks/usePrevNext'
 import GalleryWrapper from '~/components/pages/p5GalleryPages/GalleryWrapper'
@@ -13,17 +12,24 @@ export default function P5Index() {
 	const pages = P5NavItems
 	const { prev, next } = usePrevNext(pages.map((page) => page.href))
 	return (
-		<PageWrapper>
-			<GalleryWrapper no={true}>
-				<VStack flex={1} alignItems={'center'} justifyContent={'center'} py='4'>
-					<P5Intro />
-					<StyledNextLink href={next}>
-						<HStack pb={4}>
-							<Text fontWeight={'500'}>Take a look</Text> <FaArrowRight />
-						</HStack>
-					</StyledNextLink>
-				</VStack>
-			</GalleryWrapper>
-		</PageWrapper>
+		<>
+			<Head>
+				<title>Generative Gallery</title>
+				<meta name='description' content='Portfolio website' />
+				<link rel='icon' href='/favicon.ico' />
+			</Head>
+			<PageWrapper>
+				<GalleryWrapper no={true}>
+					<VStack flex={1} alignItems={'center'} justifyContent={'center'} py='4'>
+						<P5Intro />
+						<StyledNextLink href={next}>
+							<HStack pb={4}>
+								<Text fontWeight={'500'}>Take a look</Text> <FaArrowRight />
+							</HStack>
+						</StyledNextLink>
+					</VStack>
+				</GalleryWrapper>
+			</PageWrapper>
+		</>
 	)
 }
