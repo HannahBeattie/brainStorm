@@ -22,7 +22,11 @@ export default function MainIntro() {
 			>
 				{items.map(({ paragraph, trees }, idx) => (
 					<VStack key={`item${idx}$`}>
-						<VStack spacing={'16'} display={{ base: 'none', md: 'flex' }}>
+						<VStack
+							spacing={'16'}
+							display={{ base: 'none', md: 'flex' }}
+							alignItems={'stretch'}
+						>
 							<Appear>
 								<TextContainer>{paragraph}</TextContainer>
 							</Appear>
@@ -40,7 +44,7 @@ export default function MainIntro() {
 								)}
 							</Appear>
 						</VStack>
-						<VStack display={{ base: 'flex', md: 'none' }}>
+						<VStack display={{ base: 'flex', md: 'none' }} alignItems={'stretch'}>
 							<Appear>
 								<TextContainer>{paragraph}</TextContainer>
 							</Appear>
@@ -66,18 +70,12 @@ export default function MainIntro() {
 				))}
 
 				<VStack flex={1} alignItems='stretch'>
-					<Pulse>
-						<Unfold num={-800}>
-							<VStack
-								flex={1}
-								alignItems={'stretch'}
-								px={{ base: 4, md: 0 }}
-								pt={{ md: 200, base: 200 }}
-							>
-								<Tree num={100} />
-							</VStack>
-						</Unfold>
-					</Pulse>
+					<Unfold num={-800}>
+						<VStack flex={1} alignItems={'stretch'} pt={{ md: 200, base: 200 }}>
+							<Tree num={100} />
+						</VStack>
+					</Unfold>
+
 					<VStack fontSize={'4xl'} color={useColorModeValue('teal', 'white')}>
 						<WiRaindrop />
 						<WiRaindrop />
@@ -87,9 +85,9 @@ export default function MainIntro() {
 				</VStack>
 
 				<VStack pb={{ md: 16, base: 10 }} spacing={{ md: 10 }} fontSize={'4xl'}>
-					<Pulse>
-						<LandButton />
-					</Pulse>
+					{/* <Pulse> */}
+					<LandButton />
+					{/* </Pulse> */}
 				</VStack>
 			</VStack>
 		</>

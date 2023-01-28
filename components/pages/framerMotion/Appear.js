@@ -11,7 +11,7 @@ export default function Appear({ children, width, dur, delay, ...rest }) {
 					duration: dur ? dur : 1,
 					ease: 'easeOut',
 				}}
-				style={width}
+				style={{ alignItems: 'stretch', width }}
 				exit={{ opacity: 0 }}
 				{...rest}
 			>

@@ -4,7 +4,7 @@ import Appear from '../framerMotion/Appear'
 
 export default function WCIntro() {
 	return (
-		<Appear width={{ width: '100vw' }}>
+		<Appear width={{ flex: '1' }}>
 			<IntroCard heading={'WaterColors'}>
 				<Text>Watercolor painting began as an attempt to cure my perfectionism.</Text>
 				<Text>

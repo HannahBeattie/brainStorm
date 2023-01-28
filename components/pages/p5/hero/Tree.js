@@ -82,6 +82,7 @@ function sketch(p5) {
 			p5.resizeCanvas(props.w, props.h)
 			width = props.w
 			height = props.h
+			shouldReset = true
 		}
 		if (props.num) {
 			num = props.num
@@ -113,7 +114,7 @@ function sketch(p5) {
 	}
 
 	p5.setup = () => {
-		let canvas = p5.createCanvas(800, 500)
+		let canvas = p5.createCanvas(200, 200)
 		canvas.mousePressed(() => reset())
 	}
 
@@ -125,33 +126,39 @@ function sketch(p5) {
 	}
 }
 export default function Tree({ num }) {
-	const [ref, bounds] = useMeasure()
+	const [ref, bounds] = useMeasure({ debounce: 300 })
+	let width = bounds.width
+	if (typeof window !== 'undefined' && width > window.innerWidth) {
+		width = window.innerWidth
+	}
+	if (num === 100) {
+		console.log('<Tree> bounds:', width, bounds.width, bounds.height)
+	}
 	const ref2 = useRef(null)
 	const isInView = useInView(ref2)
 
 	let stroke = useColorModeValue([0, 0, 0], [230, 220, 220])
 
 	return (
-		<div ref={ref2}>
-			<VStack
-				aria-label='An animation of generative rings, radiating from small to large'
-				overflow={'hidden'}
-				spacing={'0'}
-				ref={ref}
-				h={{ md: '400px' }}
-				alignSelf='stretch'
-				cursor='pointer'
-				maxW={'100vw'}
-			>
+		<VStack
+			aria-label='An animation of generative rings, radiating from small to large'
+			overflow={'hidden'}
+			spacing={'0'}
+			ref={ref}
+			alignSelf='stretch'
+			cursor='pointer'
+			h='300'
+		>
+			<div ref={ref2}>
 				<ReactP5Wrapper
 					sketch={sketch}
 					stroke={stroke}
-					h={bounds.height || 300}
-					w={bounds.width || 500}
+					h={bounds.height}
+					w={width - 20}
 					num={num}
 					isInView={isInView}
 				/>
-			</VStack>
-		</div>
+			</div>
+		</VStack>
 	)
 }

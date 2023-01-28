@@ -18,7 +18,7 @@ export default function Footer() {
 				alignItems={'stretch'}
 				bottom={'0'}
 				justify={'stretch'}
-				width={'100vw'}
+				width={'100%'}
 				_dark={{ bg: 'blackAlpha.400' }}
 				py={'2'}
 			>

@@ -27,7 +27,7 @@ export default function Nav() {
 	const hProps = {
 		px: { sm: 4, base: 2 },
 		py: '2',
-		w: '100vw',
+		w: '100%',
 		color: 'gray.400',
 		_dark: { color: 'white' },
 		spacing: { sm: 4, md: 8, base: 2 },
