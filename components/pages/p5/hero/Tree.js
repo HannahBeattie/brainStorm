@@ -79,6 +79,7 @@ function sketch(p5) {
 			stroke = props.stroke
 		}
 		if (props.w && props.h) {
+			p5.resizeCanvas(props.w, props.h)
 			width = props.w
 			height = props.h
 		}
@@ -137,7 +138,7 @@ export default function Tree({ num }) {
 				overflow={'hidden'}
 				spacing={'0'}
 				ref={ref}
-				h='400px'
+				h={{ md: '400px' }}
 				alignSelf='stretch'
 				cursor='pointer'
 				maxW={'100vw'}

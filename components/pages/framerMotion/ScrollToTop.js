@@ -41,7 +41,6 @@ export default function ScrollToTop() {
 						ref={scrollRef}
 						bottom='8'
 						area-label={'scroll to top'}
-						style={{ overflow: 'scroll' }}
 						left={0}
 					>
 						<BsArrowUpCircle />
@@ -54,7 +53,6 @@ export default function ScrollToTop() {
 						ref={scrollRef}
 						bottom='10vh'
 						area-label={'scroll to top'}
-						style={{ overflow: 'scroll' }}
 						right={0}
 						color='grayAlpha.800'
 					>

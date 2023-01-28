@@ -71,7 +71,7 @@ export default function MainIntro() {
 							<VStack
 								flex={1}
 								alignItems={'stretch'}
-								px={{ base: 8, md: 0 }}
+								px={{ base: 4, md: 0 }}
 								pt={{ md: 200, base: 200 }}
 							>
 								<Tree num={100} />
