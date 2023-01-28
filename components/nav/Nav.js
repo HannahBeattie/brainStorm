@@ -8,6 +8,7 @@ import {
 	MenuItem,
 	MenuList,
 	Spacer,
+	Text,
 	useColorModeValue,
 } from '@chakra-ui/react'
 import { useRouter } from 'next/router'

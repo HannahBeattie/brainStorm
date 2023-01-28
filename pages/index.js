@@ -41,7 +41,8 @@ export default function Home() {
 						display={{ base: 'auto', md: 'none' }}
 						alt={'A vector image of a grassy hill '}
 						src={'/baseL.png'}
-						width={'100vw'}
+						width={'100%'}
+						alignSelf={'stretch'}
 						position={'auto'}
 					/>
 				</UnfoldSm>
@@ -52,7 +53,8 @@ export default function Home() {
 						display={{ base: 'none', md: 'flex' }}
 						alt={'A vector image of a grassy hill '}
 						src={'/ground.png'}
-						width={'100vw'}
+						width={'100%'}
+						alignSelf={'stretch'}
 						position={'auto'}
 					/>
 				</Unfold>

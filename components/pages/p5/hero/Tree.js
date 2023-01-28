@@ -131,9 +131,9 @@ export default function Tree({ num }) {
 	if (typeof window !== 'undefined' && width > window.innerWidth) {
 		width = window.innerWidth
 	}
-	if (num === 100) {
-		console.log('<Tree> bounds:', width, bounds.width, bounds.height)
-	}
+	// if (num === 100) {
+	// 	console.log('<Tree> bounds:', width, bounds.width, bounds.height)
+	// }
 	const ref2 = useRef(null)
 	const isInView = useInView(ref2)
 

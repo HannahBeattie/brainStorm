@@ -19,6 +19,7 @@ export default function Document() {
 				as='body'
 				minW='100vw'
 				maxW={'100vw'}
+				// minH={'100vh'}
 				spacing='0'
 				p={'0'}
 			>
