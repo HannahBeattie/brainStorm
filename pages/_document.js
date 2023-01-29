@@ -1,7 +1,5 @@
-import { Box, ColorModeScript, VStack } from '@chakra-ui/react'
-import { Html, Head, Main, NextScript } from 'next/document'
-import FadeIn from '~/components/HOC/FadeIn'
-import { AnimatePresence, motion } from 'framer-motion'
+import { ColorModeScript, VStack } from '@chakra-ui/react'
+import { Head, Html, Main, NextScript } from 'next/document'
 import { theme } from '~/styles/theme'
 
 // Override default Next document to enforce overflowX=hidden on body element
@@ -19,7 +17,6 @@ export default function Document() {
 				as='body'
 				minW='100vw'
 				maxW={'100vw'}
-				// minH={'100vh'}
 				spacing='0'
 				p={'0'}
 			>

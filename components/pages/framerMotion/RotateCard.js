@@ -5,7 +5,6 @@ export default function RotateCard({ children, transition, yIs, rotate, yIsNow }
 		<motion.div
 			animate={{ x: 0, rotate: rotate ? rotate : 0, y: yIs ? yIs : 0 }}
 			whileHover={{
-				// rotate: rotateBy ? rotateBy : 2,
 				y: yIsNow ? yIsNow : -20,
 				x: 0,
 				rotate: 0,
