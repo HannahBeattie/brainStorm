@@ -8,7 +8,9 @@ export const paragraphs = [
 			<>
 				<Heading fontFamily={'Alice'}>I am Hannah.</Heading>
 				<Appear delay={1}>
-					<Text pt={{ md: 2 }}>An artist, insect enthusiast and Dev from Aetearoa, </Text>
+					<Text pt={{ md: 2 }}>
+						An artist, insect enthusiastt, and web developer from Aetearoa,{' '}
+					</Text>
 					<Appear delay={2}>
 						<Text> New Zealand.</Text>
 					</Appear>
@@ -33,8 +35,8 @@ export const paragraphs = [
 		paragraph: (
 			<>
 				<Text>
-					That take into account the diversity of access styles, engagement and
-					experiance...
+					...that take into account the diversity of access styles, engagement and
+					experience...
 				</Text>
 			</>
 		),
@@ -43,7 +45,7 @@ export const paragraphs = [
 	{
 		paragraph: (
 			<>
-				<Text>While retaining a sense of experimentation, humour and fun.</Text>
+				<Text>...while retaining a sense of experimentation, humour and fun.</Text>
 			</>
 		),
 		trees: 2,
@@ -55,12 +57,6 @@ export const paragraphs = [
 					My coding style is a mixture between curiosity-driven play and clean, minimal
 					functionality.
 				</Text>
-				<Appear>
-					<Text pt={pt}>
-						It doesn&apos;t matter how flashy something seems if it can&apos;t be
-						accessed.
-					</Text>
-				</Appear>
 			</>
 		),
 		trees: 1,
@@ -69,7 +65,7 @@ export const paragraphs = [
 	{
 		paragraph: (
 			<>
-				<Text>My fascination with code comes from it&apos;s incredable maluability...</Text>
+				<Text>My fascination with code comes from its incredible malleability...</Text>
 			</>
 		),
 		trees: 2,
@@ -80,8 +76,8 @@ export const paragraphs = [
 			<>
 				<Text>
 					... and the unique ability we have, as coders, to present information in
-					diffirent ways and tailor our products to indervidual&apos;s needs, interestes
-					and preferences.
+					different ways and tailor our products to individuals&apos; needs, interests and
+					preferences.
 				</Text>
 			</>
 		),
@@ -92,13 +88,13 @@ export const paragraphs = [
 			<>
 				<Text>As an interdisciplinary artist, I learn through observation...</Text>
 				<Text pt={pt}>
-					Carefully testing and re-test methods and tools to observe patterns...
+					Carefully testing and re-testing methods and tools to observe patterns...
 				</Text>
 				<Text pt={pt}>
-					Knowing that the more I notice, the more tools I have, irragardless of their
+					Knowing that the more I notice, the more tools I have — irregardless of their
 					seeming use right now...
 				</Text>
-				<Text>Which is to say, I never intend to stop learning.</Text>
+				<Text>Which is to say, I intend to never stop learning</Text>
 			</>
 		),
 		trees: 2,
@@ -106,9 +102,12 @@ export const paragraphs = [
 	{
 		paragraph: (
 			<>
-				<Text>So...</Text>
-				<Text pb={{ md: 100, base: 20 }}>whatch this space.</Text>
+				<Text>
+					This site documents some of what I&apos;ve learned and built so far. I&apos;m
+					excited to see where my curiosity leads me next!
+				</Text>
 			</>
 		),
+		trees: null,
 	},
 ]
