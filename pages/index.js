@@ -2,7 +2,7 @@ import ScrollProgress from '~/components/pages/framerMotion/ScrollProgress'
 import ScrollToTop from '~/components/pages/framerMotion/ScrollToTop'
 import PageWrapper from '~/components/HOC/PageWrapper'
 import HelloWorld from '~/components/pages/landingPage/HelloWorld'
-import { Image, useColorModeValue, VStack } from '@chakra-ui/react'
+import { Image, useBreakpointValue, useColorModeValue, VStack } from '@chakra-ui/react'
 import StyledNextLink from '~/components/base/StyledNextLink'
 import { Unfold, UnfoldSm } from '~/components/pages/framerMotion/EnterStage'
 import MainIntro from '~/components/pages/landingPage/MainIntro'
@@ -10,8 +10,6 @@ import VineWorld from '~/components/pages/p5/hero/VineWorld'
 import Head from 'next/head'
 
 export default function Home() {
-	const invert = useColorModeValue('null', '50%')
-	const src = { base: '/baseL.png', md: '/ground.png' }
 	return (
 		<>
 			<Head>
@@ -44,26 +42,14 @@ export default function Home() {
 				</StyledNextLink>
 
 				<VStack position={'relative'} zIndex={-5}>
-					<UnfoldSm>
-						<Image
-							display={{ base: 'auto', md: 'none' }}
-							alt={'A vector image of a grassy hill '}
-							src={'/baseL.png'}
-							width={'100%'}
-							alignSelf={'stretch'}
-							position={'auto'}
-						/>
-					</UnfoldSm>
 					<Unfold num={-1000}>
 						<Image
 							filter={'auto'}
-							invert={invert}
-							display={{ base: 'none', md: 'flex' }}
+							invert={useColorModeValue('null', '50%')}
 							alt={'A vector image of a grassy hill '}
-							src={'/ground.png'}
+							src={useBreakpointValue({ base: '/baseL.png', md: '/ground.png' })}
 							width={'100%'}
 							alignSelf={'stretch'}
-							position={'auto'}
 						/>
 					</Unfold>
 				</VStack>

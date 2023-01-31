@@ -127,15 +127,12 @@ function sketch(p5) {
 }
 export default function Tree({ num }) {
 	const [ref, bounds] = useMeasure({ debounce: 300 })
+	const ref2 = useRef(null)
+	const isInView = useInView(ref2)
 	let width = bounds.width
 	if (typeof window !== 'undefined' && width > window.innerWidth) {
 		width = window.innerWidth
 	}
-	// if (num === 100) {
-	// 	console.log('<Tree> bounds:', width, bounds.width, bounds.height)
-	// }
-	const ref2 = useRef(null)
-	const isInView = useInView(ref2)
 
 	let stroke = useColorModeValue([0, 0, 0], [230, 220, 220])
 
@@ -148,13 +145,14 @@ export default function Tree({ num }) {
 			alignSelf='stretch'
 			cursor='pointer'
 			h='300'
+			maxW='480'
 		>
 			<div ref={ref2}>
 				<ReactP5Wrapper
 					sketch={sketch}
 					stroke={stroke}
-					h={bounds.height}
-					w={width - 20}
+					h={Math.floor(bounds.height)}
+					w={Math.floor(width - 20)}
 					num={num}
 					isInView={isInView}
 				/>

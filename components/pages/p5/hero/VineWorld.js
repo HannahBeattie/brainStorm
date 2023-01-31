@@ -1,14 +1,13 @@
 import { useBreakpointValue, useColorModeValue, VStack } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 import useMeasure from 'react-use-measure'
-import { motion } from 'framer-motion'
-import FadeIn from '~/components/HOC/FadeIn'
+
 // don't load p5 on server
 const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper').then((mod) => mod.ReactP5Wrapper), {
 	ssr: false,
 })
 
-const duration = 100
+const duration = 400
 
 function flow(p5) {
 	let stroke = [0, 0, 0]
@@ -18,7 +17,7 @@ function flow(p5) {
 	let height = 800
 	let noiseMult = 0
 	let noiseOffset = { x: 0, y: 0 }
-	let startFrame = 100
+	let startFrame = 70
 	// window.p5 = p5
 
 	function reset() {
@@ -33,13 +32,22 @@ function flow(p5) {
 		p5.clear()
 		p5.angleMode(p5.DEGREES)
 		// p5.noiseDetail(ranNoise)
-		let density = p5.random(30, 60)
-		let space = p5.width / density
+		const density = p5.random(30, 60)
+		const space = p5.width / density
+		const radius = Math.min(p5.width, p5.height) / 2 - 40
 
 		for (let x = 0; x < p5.width; x += space) {
 			for (let y = 0; y < p5.height; y += space) {
-				let p = p5.createVector(x + p5.random(9, 4 - 3), y + p5.random(-10, 3))
-				points.push(p)
+				const xx = x + p5.random(-space, space)
+				const yy = y + p5.random(-space, space)
+				// Only add points if they're inside a circle
+				const dx = xx - p5.width / 2
+				const dy = yy - p5.height / 2
+				const dist = Math.sqrt(dx * dx + dy * dy)
+				if (dist < radius) {
+					let p = p5.createVector(xx, yy)
+					points.push(p)
+				}
 			}
 		}
 	}
@@ -100,24 +108,14 @@ export default function VineWorld() {
 			width={{ base: '320px', sm: '450px', md: '500px', xl: '600px' }}
 			className={extraClass}
 			cursor='pointer'
+			ref={ref}
 		>
-			<VStack
-				ref={ref}
-				flex={'1'}
-				align={'stretch'}
-				w='100%'
-				h={'100%'}
-				overflow={'hidden'}
-				borderRadius={'200%'}
-				className={'circle'}
-			>
-				<ReactP5Wrapper
-					sketch={flow}
-					stroke={stroke}
-					h={bounds.height || 300}
-					w={bounds.width || 500}
-				/>
-			</VStack>
+			<ReactP5Wrapper
+				sketch={flow}
+				stroke={stroke}
+				h={bounds.height || 300}
+				w={bounds.width || 500}
+			/>
 		</VStack>
 	)
 }
