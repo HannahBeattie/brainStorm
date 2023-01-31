@@ -73,7 +73,7 @@ export default function AppFeature({
 						display={{ base: 'none', md: 'block' }}
 					/>
 
-					<Container>
+					<Container pb={4}>
 						<VStack
 							px={{ lg: 8, base: 4 }}
 							flex={1}
@@ -103,7 +103,7 @@ export default function AppFeature({
 								</Text>
 							)}
 
-							<HStack py={4}>
+							<HStack>
 								{linkText && (
 									<StyledNextLink
 										color={'gray.Alpha.700'}

@@ -24,7 +24,10 @@ export default function Footer() {
 			>
 				<Spacer />
 				<ButtonFocus>
-					<StyledNextLink href={'https://github.com/HannahBeattie'}>
+					<StyledNextLink
+						href={'https://github.com/HannahBeattie/brainStorm'}
+						target={'blank'}
+					>
 						<Icon
 							fontSize={'3xl'}
 							color={{ base: accent, md: col }}

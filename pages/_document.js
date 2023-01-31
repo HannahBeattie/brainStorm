@@ -19,6 +19,7 @@ export default function Document() {
 				maxW={'100vw'}
 				spacing='0'
 				p={'0'}
+				overflowX={'hidden'}
 			>
 				<ColorModeScript initialColorMode={theme.config.initialColorMode} />
 				<Main />

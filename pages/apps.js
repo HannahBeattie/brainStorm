@@ -193,6 +193,10 @@ export default function Web() {
 								style, and experiment with creating a site that adapts dynamically
 								to content served from a headless CMS.
 							</Text>
+							<Text>
+								Hint: Try toggling light and dark mode to switch from business mode
+								to casual.
+							</Text>
 						</VStack>
 					</AppFeature>
 				</Appear>
