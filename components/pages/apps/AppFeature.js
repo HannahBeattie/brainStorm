@@ -136,6 +136,7 @@ export default function AppFeature({
 									>
 										<ButtonFocus>
 											<Button
+												fontSize={{ base: 'xl' }}
 												bg={bg}
 												_hover={{
 													bg: bg2,
