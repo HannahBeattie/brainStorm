@@ -46,6 +46,7 @@ export default function AppFeature({
 							textAlign={'center'}
 							fontFamily={'body'}
 							fontWeight={'md'}
+							pt={4}
 						>
 							{title}
 						</Heading>
@@ -113,6 +114,7 @@ export default function AppFeature({
 									>
 										<ButtonFocus>
 											<Button
+												fontSize={{ base: 'xl' }}
 												bg={bg}
 												_hover={{
 													bg: bg2,
@@ -147,7 +149,7 @@ export default function AppFeature({
 								)}
 							</HStack>
 							{showCredit && (
-								<UnorderedList spacing={4} px={4} fontWeight={'bold'}>
+								<UnorderedList spacing={4} px={{ md: 4 }} fontWeight={'bold'}>
 									<ListItem>
 										My role — Lead Designer, Jr. Software Engineer (Frontend)
 									</ListItem>

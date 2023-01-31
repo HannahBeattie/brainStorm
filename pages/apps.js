@@ -2,7 +2,10 @@ import {
 	Box,
 	Divider,
 	Grid,
+	HStack,
+	Image,
 	ListItem,
+	Spacer,
 	Text,
 	Tooltip,
 	UnorderedList,
@@ -45,7 +48,7 @@ export default function Web() {
 				<ScrollToTop />
 				<VStack>
 					<IntroCard heading={'Apps'}>
-						<Text fontSize={'xl'} fontWeight={'lg'}>
+						<Text fontSize={'xl'} fontWeight={'lg'} pb={{ md: 0, base: 4 }}>
 							These are some of the projects that I have completed since graduating
 							from Dev Academy in April, 2022.
 						</Text>
@@ -201,25 +204,41 @@ export default function Web() {
 					</AppFeature>
 				</Appear>
 				<Divider />
+				<Spacer p={{ base: 4, md: 2 }} />
 				<IntroCard heading={'Current projects'}>
-					<Text pt={pt}>
-						For the last few weeks, I have been learning about data syncing and
-						authentication, using <b>firebase auth services</b> and{' '}
+					<Text>
+						For the last couple of weeks weeks, I have been learning about data syncing
+						and authentication, using <b>firebase auth services</b> and{' '}
 						<b>firebase realtime database</b>.
 					</Text>
-					<Text>
-						The project that I am using to trial these libraries is a simple
-						mood-tracking app.
-					</Text>
+					<Text>I am making a simple mood-tracking app with Next.js and Typescript.</Text>
+					<Box py={8}>
+						<Image
+							boxShadow={'lg'}
+							src={'/apps/two.png'}
+							alt={'mood app'}
+							borderRadius={'10'}
+						/>
+					</Box>
 					<Text>
 						Currently, users can log-in with google, track their current mood and leave
 						a small note.
 					</Text>
+					<Box py={8}>
+						<Image
+							boxShadow={'lg'}
+							src={'/apps/one.png'}
+							alt={'mood app'}
+							borderRadius={'10'}
+						/>
+					</Box>
+
 					<Text>
-						They have access to views that display their previous moods, previous moods
-						with dates and notes with dates. I am planning to refactor this app and
-						store the data as objects rather than arrays.
+						They can view their previous moods as a set of icons, or as a list of icons
+						with times attatched. I am planning to refactor this app and store the data
+						as objects rather than arrays.
 					</Text>
+
 					<Text>
 						I am then planning to add CRUD functionality and limit the number of moods
 						that can be stored by a particular user.
@@ -247,8 +266,7 @@ export default function Web() {
 					</Tooltip>
 
 					<Text pb={8}>
-						I am also tentatively dipping my toes into the world of React Native, with a
-						looming sense of excitement and dread.
+						I am also tentatively dipping my toes into the world of React Native...
 					</Text>
 				</IntroCard>
 			</PageWrapper>
