@@ -54,7 +54,7 @@ export default function AppFeature({
 						<CardHovered>
 							<StyledNextLink href={href} target={'blank'}>
 								<Image
-									maxH={'500'}
+									maxW={'300'}
 									borderRadius={'md'}
 									_hover={{ boxShadow: 'dark-lg' }}
 									boxShadow={'dark'}
