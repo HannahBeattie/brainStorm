@@ -22,7 +22,7 @@ export default function MainIntro() {
 			>
 				{items.map(({ paragraph, trees }, idx) => (
 					<VStack key={`item${idx}$`}>
-						<VStack spacing={{ md: '16' }} alignItems={'stretch'}>
+						<VStack spacing={{ md: '40' }} alignItems={'stretch'}>
 							<Appear>
 								<TextContainer>{paragraph}</TextContainer>
 							</Appear>
@@ -40,15 +40,15 @@ export default function MainIntro() {
 				<VStack
 					flex={1}
 					alignItems='stretch'
-					pt={useBreakpointValue({ base: 330, md: 430 })}
+					pt={useBreakpointValue({ base: 330, md: 200 })}
 				>
 					<Unfold num={-900} style={{ zIndex: 10 }}>
-						<VStack flex={1} alignItems={'stretch'}>
+						<VStack flex={1} alignItems={'center'}>
 							<Tree num={10} />
 						</VStack>
 					</Unfold>
 
-					<Unfold num={-1400}>
+					<Unfold num={-1900}>
 						<VStack fontSize={'4xl'} color={useColorModeValue('teal', 'white')} pt='50'>
 							<WiRaindrop />
 							<WiRaindrop />

@@ -1,6 +1,8 @@
-import { Heading, Text } from '@chakra-ui/react'
+import { Heading, HStack, Text, Tooltip, useColorModeValue } from '@chakra-ui/react'
+import { useState } from 'react'
 import Appear from '../framerMotion/Appear'
 const pt = { md: 8, base: 0 }
+const color = { _dark: 'red', _light: 'teal' }
 
 export const paragraphs = [
 	{
@@ -9,10 +11,10 @@ export const paragraphs = [
 				<Heading fontFamily={'Alice'}>I am Hannah.</Heading>
 				<Appear delay={1}>
 					<Text pt={{ md: 2 }}>
-						An artist, insect enthusiastt, and web developer from Aetearoa,{' '}
+						An artist, insect enthusiastt, and web developer from
 					</Text>
-					<Appear delay={2}>
-						<Text> New Zealand.</Text>
+					<Appear delay={1}>
+						<Text>Aetearoa, New Zealand.</Text>
 					</Appear>
 				</Appear>
 			</>
@@ -34,10 +36,7 @@ export const paragraphs = [
 	{
 		paragraph: (
 			<>
-				<Text>
-					...that take into account the diversity of access styles, engagement and
-					experience...
-				</Text>
+				<Text>...that take into account the diversity of access styles...</Text>
 			</>
 		),
 		trees: 1,
@@ -45,7 +44,7 @@ export const paragraphs = [
 	{
 		paragraph: (
 			<>
-				<Text>...while retaining a sense of experimentation, humour and fun.</Text>
+				<Text>...while retaining a sense of momentum, experimentation and fun.</Text>
 			</>
 		),
 		trees: 2,
@@ -53,7 +52,7 @@ export const paragraphs = [
 	{
 		paragraph: (
 			<>
-				<Text>
+				<Text pt={pt}>
 					My coding style is a mixture between curiosity-driven play and clean, minimal
 					functionality.
 				</Text>
@@ -65,19 +64,35 @@ export const paragraphs = [
 	{
 		paragraph: (
 			<>
-				<Text>My fascination with code comes from its incredible malleability...</Text>
+				<Text>My interests tend to teeter between the worlds of science and art...</Text>
 			</>
 		),
 		trees: 2,
+	},
+	{
+		paragraph: (
+			<>
+				<Text>I love code for it&apos;s malleability.</Text>
+			</>
+		),
+		trees: 1,
 	},
 
 	{
 		paragraph: (
 			<>
+				<HStack>
+					<Text>As</Text>
+					<Tooltip label={'...or teachers, or artists or storytellers....'}>
+						<Text cursor={'pointer'} className='err'>
+							coders,
+						</Text>
+					</Tooltip>
+				</HStack>
 				<Text>
-					... and the unique ability we have, as coders, to present information in
-					different ways and tailor our products to individuals&apos; needs, interests and
-					preferences.
+					{' '}
+					we can present information in new ways; Tailoring our projects to fit a diverse
+					set of needs, interests and preferences.
 				</Text>
 			</>
 		),
@@ -86,15 +101,7 @@ export const paragraphs = [
 	{
 		paragraph: (
 			<>
-				<Text>As an interdisciplinary artist, I learn through observation...</Text>
-				<Text pt={pt}>
-					Carefully testing and re-testing methods and tools to observe patterns...
-				</Text>
-				<Text pt={pt}>
-					Knowing that the more I notice, the more tools I have — irregardless of their
-					seeming use right now...
-				</Text>
-				<Text>Which is to say, I intend to never stop learning</Text>
+				<Text>We can create surprising, engaging moments of user interaction... </Text>
 			</>
 		),
 		trees: 2,
@@ -102,12 +109,41 @@ export const paragraphs = [
 	{
 		paragraph: (
 			<>
-				<Text>
-					This site documents some of what I&apos;ve learned and built so far. I&apos;m
-					excited to see where my curiosity leads me next!
-				</Text>
+				<Text>... and amplify previously unheard voices...</Text>
 			</>
 		),
-		// trees: 80,
+		trees: 1,
+	},
+	{
+		paragraph: (
+			<HStack>
+				<Text pt={pt}>There will always be more to learn, test and re-test...</Text>
+			</HStack>
+		),
+		trees: 1,
+	},
+	{
+		paragraph: (
+			<>
+				<Text>...more tools to grip with unfamiliar hands.</Text>
+			</>
+		),
+		trees: 1,
+	},
+
+	{
+		paragraph: (
+			<>
+				<Text>This site documents a little of what I have learnt and built so far.</Text>
+			</>
+		),
+		trees: 1,
+	},
+	{
+		paragraph: (
+			<>
+				<Text> It is a Start.</Text>
+			</>
+		),
 	},
 ]

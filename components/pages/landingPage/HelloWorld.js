@@ -20,14 +20,14 @@ export default function HelloWorld() {
 			</VStack>
 
 			<HStack
-				pt={8}
-				pb={12}
+				pt={{ sm: 0, md: 4, lg: 8 }}
+				pb={{ md: 8 }}
 				display={{ base: 'none', md: 'center' }}
-				spacing={{ base: 0, md: 8 }}
+				spacing={{ md: 8 }}
 				flex={'1'}
 				alignItems={'center'}
 				justifyContent={'center'}
-				direction={{ base: 'column', md: 'row' }}
+				direction={'row'}
 			>
 				<MapLetters />
 			</HStack>

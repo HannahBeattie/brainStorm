@@ -96,7 +96,7 @@ function sketch(p5) {
 	function reset() {
 		p5.resizeCanvas(width, height)
 		p5.clear()
-		let ranStoke = p5.random(0.1, 2)
+		let ranStoke = p5.random(0.5, 3)
 		p5.strokeWeight(ranStoke)
 		p5.noFill()
 		p5.stroke(stroke)
@@ -143,9 +143,9 @@ export default function Tree({ num }) {
 			spacing={'0'}
 			ref={ref}
 			alignSelf='stretch'
+			flex={1}
 			cursor='pointer'
-			h='300'
-			maxW='480'
+			minH='400'
 		>
 			<div ref={ref2}>
 				<ReactP5Wrapper

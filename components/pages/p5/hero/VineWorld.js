@@ -32,7 +32,7 @@ function flow(p5) {
 		p5.clear()
 		p5.angleMode(p5.DEGREES)
 		// p5.noiseDetail(ranNoise)
-		const density = p5.random(30, 60)
+		const density = p5.random(40, 90)
 		const space = p5.width / density
 		const radius = Math.min(p5.width, p5.height) / 2 - 40
 
@@ -104,8 +104,8 @@ export default function VineWorld() {
 	return (
 		<VStack
 			aria-label='An animation of vine-like white lines in a circle'
-			height={{ base: '320px', sm: '450px', md: '500px', xl: '600px' }}
-			width={{ base: '320px', sm: '450px', md: '500px', xl: '600px' }}
+			height={{ base: '320px', sm: '500px', md: '600px', xl: '600px' }}
+			width={{ base: '320px', sm: '500px', md: '600px', xl: '600px' }}
 			className={extraClass}
 			cursor='pointer'
 			ref={ref}
