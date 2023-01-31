@@ -40,7 +40,7 @@ export default function AppFeature({
 		<>
 			<VStack flex={'1'} w={'100%'}>
 				<Stack p={2} flexDir={{ base: 'column', lg: 'row' }}>
-					<VStack spacing={8} justify={'center'} p={{ md: 2 }} pr={{ lg: '5vw' }}>
+					<VStack spacing={8} p={{ md: 2 }} pr={{ lg: '5vw' }} py={{ md: 10 }}>
 						<Heading
 							display={{ base: 'auto', lg: 'none' }}
 							textAlign={'center'}

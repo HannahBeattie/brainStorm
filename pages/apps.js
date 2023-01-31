@@ -155,7 +155,7 @@ export default function Web() {
 					<AppFeature
 						subtitle={'A love letter to Next.js'}
 						src={'/apps/not.png'}
-						alt={'Still of not-a-real-website'}
+						alt={'Still of not-a-real-website homepage'}
 						title={'Not a real website'}
 						href={'https://not-a-real-website.vercel.app/'}
 						linkText={'Live Demo'}
@@ -189,14 +189,7 @@ export default function Web() {
 						<b>firebase realtime database</b>.
 					</Text>
 					<Text>I am making a simple mood-tracking app with Next.js and Typescript.</Text>
-					<Box py={{ md: 8, base: 4 }}>
-						<Image
-							boxShadow={'lg'}
-							src={'/apps/two.png'}
-							alt={'mood app'}
-							borderRadius={'10'}
-						/>
-					</Box>
+
 					<Text>
 						Currently, users can log-in with google, track their current mood and leave
 						a small note.
