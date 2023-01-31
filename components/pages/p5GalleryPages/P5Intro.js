@@ -15,8 +15,7 @@ export default function P5Intro() {
 			</Text>
 			<Text>This gallery contains my animated works.</Text>
 			<Text>
-				If you have already seen them and/or are hungry for more, you can find notes about
-				my process and stills of other works by clicking the{' '}
+				You can find notes about my process and stills of other works{' '}
 				<LinkWrapper href={'p5/staticWorks'}>here</LinkWrapper>.
 			</Text>
 			<VStack flex={1} alignItems={'stretch'}>

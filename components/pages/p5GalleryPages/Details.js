@@ -40,11 +40,11 @@ export const reef = {
 	column3: (
 		<VStack>
 			<Text {...textProps}>Title: Reef</Text>
-			<Text {...textProps}>Duration: Infinate</Text>
+			<Text {...textProps}>Duration: Infinite</Text>
 			<Text {...textProps}>Best Viewed On Desktop</Text>
 
 			<Text {...textProps} pt={indent}>
-				Initial flow field enspired by:
+				Initial flow field inspired by:
 			</Text>
 			<StyledNextLink
 				{...textProps}
@@ -65,12 +65,12 @@ export const geo = {
 				GEO TWIRL is emblematic of my current enjoyment of flow fields and Perlin noise.
 			</Text>
 			<Text>
-				a light background, you can see the way in which the line widths and opacity vary as
-				the vectors are drawn, creating a pencil-and-ink effect.
+				On a light background, you can see the way in which the line widths and opacity vary
+				as the vectors are drawn, creating a pencil-and-ink effect.
 			</Text>
 			<Text>
-				On a dark background, the shift between ghostly grey lines and stark white, makes
-				the ripples appear three-dimensional, with a glowing, firm ridge.
+				On a dark background, the shift between ghostly grey lines and stark white makes the
+				, makes the ripples appear three-dimensional, with a glowing, firm ridge.
 			</Text>
 		</VStack>
 	),
@@ -84,7 +84,7 @@ export const geo = {
 	column3: (
 		<VStack>
 			<Text {...textProps}>Title: Geo Twirl</Text>
-			<Text {...textProps}>Duration: Infinate</Text>
+			<Text {...textProps}>Duration: Infinite</Text>
 		</VStack>
 	),
 }
@@ -114,14 +114,14 @@ export const silk = {
 	),
 	column2: (
 		<Text {...paragrapProps}>
-			The {`'thread'`} texture was created by layering vectors with diffirent opacity and
+			The {`'thread'`} texture was created by layering vectors with different opacity and
 			widths onto one-another and creating vectors that left small spaces between one-another.
 		</Text>
 	),
 	column3: (
 		<VStack>
 			<Text {...textProps}>Title: Silk</Text>
-			<Text {...textProps}>Duration: Infinate </Text>
+			<Text {...textProps}>Duration: Infinite </Text>
 			<Text {...textProps}>Click to reset</Text>
 		</VStack>
 	),
@@ -146,8 +146,8 @@ export const spark = {
 	),
 	column3: (
 		<VStack>
-			<Text {...textProps}>Title: Electric Vine</Text>
-			<Text {...textProps}>Duration: Infinate </Text>
+			<Text {...textProps}>Title: Spark</Text>
+			<Text {...textProps}>Duration: Infinite </Text>
 			<Text {...textProps}>Click to reset</Text>
 		</VStack>
 	),
@@ -168,15 +168,14 @@ export const electric = {
 	column2: (
 		<VStack {...paragrapProps}>
 			<Text>
-				Click on the canvas ; Does the shift it colors change what the forms resemble to
-				you?
+				Click on the canvas; Does the shift in colors change what the forms resemble to you?
 			</Text>
 		</VStack>
 	),
 	column3: (
 		<VStack>
 			<Text {...textProps}>Title: Electric Vine</Text>
-			<Text {...textProps}>Duration: Infinate </Text>
+			<Text {...textProps}>Duration: Infinite </Text>
 			<Text {...textProps}>Click to reset</Text>
 		</VStack>
 	),

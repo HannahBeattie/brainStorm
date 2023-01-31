@@ -1,16 +1,11 @@
-import { ArrowRightIcon } from '@chakra-ui/icons'
-import { Container, Divider, Heading, HStack, Spacer, Text, VStack } from '@chakra-ui/react'
+import { Container, Divider, Text } from '@chakra-ui/react'
 import LinkWrapper from '~/components/base/LinkWrapper'
-import StyledNextLink from '~/components/base/StyledNextLink'
-import IntroCard from '~/components/base/templates/IntroCard'
-import IntroSlide from '~/components/base/templates/IntroSlide'
-import ButtonFocus from '~/components/pages/framerMotion/ButtonFocus'
+import PageWrapper from '~/components/HOC/PageWrapper'
 import ScrollProgress from '~/components/pages/framerMotion/ScrollProgress'
 import ScrollToTop from '~/components/pages/framerMotion/ScrollToTop'
-import PageWrapper from '~/components/HOC/PageWrapper'
-import Flowfields from '~/components/pages/p5GalleryPages/FlowFields'
 import GoldenThread from '~/components/pages/p5/static/GoldenThread'
 import ObjectClass from '~/components/pages/p5/static/ObjectClass'
+import Flowfields from '~/components/pages/p5GalleryPages/FlowFields'
 
 export default function StaticWorks() {
 	return (

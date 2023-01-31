@@ -8,10 +8,9 @@ export default function WCIntro() {
 			<IntroCard heading={'WaterColors'}>
 				<Text>Watercolor painting began as an attempt to cure my perfectionism.</Text>
 				<Text>
-					They are an extremely unpredictable medium that are effected by so many factors
-					such as medium, brand, type of pigment, fluid type , fluid amount , paper grain,
-					humidity, how dry or wet the bush is, the angle and firmness of the surface you
-					are working on...
+					They are an extremely unpredictable medium that are affected by countless
+					factors — medium, brand, type of pigment, fluid type, fluid amount, paper grain,
+					ect.
 				</Text>
 				<Text>Which is a long way of saying that you cannot control water.</Text>
 			</IntroCard>

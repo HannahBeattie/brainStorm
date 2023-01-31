@@ -59,22 +59,10 @@ export default function Web() {
 						alt={'Still of studiomonkey.io'}
 						title={'Studio Monkey'}
 						href={'https://www.studiomomo.io'}
+						showCredit={'true'}
+						subtitle={'Organise early. Organise often.'}
 					>
-						<UnorderedList spacing={4} px={4} py={4} fontWeight={'bold'}>
-							<ListItem>
-								My role — Lead Designer, Jr. Software Engineer (Frontend)
-							</ListItem>
-							<ListItem>
-								Collaborator:{' '}
-								<StyledNextLink
-									{...addToLinkProps}
-									href={'https://mikeylemmon.com/about'}
-								></StyledNextLink>{' '}
-								— Lead Software Engineer, Project Manager
-							</ListItem>
-						</UnorderedList>
-
-						<VStack {...textProps} pt={pt}>
+						<VStack {...textProps}>
 							<Text>
 								Created by VFX Supervisor{' '}
 								<StyledNextLink
@@ -185,7 +173,7 @@ export default function Web() {
 				<Divider />
 				<Appear style={{ width: '100%' }}>
 					<AppFeature
-						subtitle={'Leaning through doing'}
+						subtitle={'A love letter to Next.js'}
 						src={'/apps/not.png'}
 						alt={'Still of not-a-real-website'}
 						title={'Not a real website'}
@@ -196,23 +184,14 @@ export default function Web() {
 					>
 						<VStack {...textProps}>
 							<Text>
-								Not-a-real-project was an app that I created with the intention of
-								learning how to use a headless CMS and generate dynamic API routes.
+								Not a real website is a Next.js app that I created to practice using
+								GraphQL and a headless CMS. The site generates dynamic routes based
+								on data stored in Contentful.
 							</Text>
 							<Text>
 								I took the opportunity to create some custom components, play with
-								style and consider how I might go about creating a site that could
-								display and adapt to content later added by a client, through an
-								admin panel.{' '}
-							</Text>
-							<Text>
-								This was my first opportunity to consider how I might layout a
-								codebase with multiple media types, that would remain maintainable.
-							</Text>
-							<Text>
-								It also gave me an opportunity to consider how I might go about
-								adapting components to different screen sizes, without replicating
-								data and making it less maintainable later on.{' '}
+								style, and experiment with creating a site that adapts dynamically
+								to content served from a headless CMS.
 							</Text>
 						</VStack>
 					</AppFeature>

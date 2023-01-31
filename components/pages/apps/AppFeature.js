@@ -22,7 +22,7 @@ export default function AppFeature({
 	src,
 	alt,
 	title,
-
+	showCredit,
 	children,
 	href,
 	subtitle,
@@ -30,6 +30,12 @@ export default function AppFeature({
 	const bg = useColorModeValue('grayAlpha.200', 'whiteAlpha.100')
 	const bg2 = useColorModeValue('grayAlpha.300', 'grayAlpha.300')
 	const col = useColorModeValue('gray.800', 'ActiveCaption')
+	const addToLinkProps = {
+		fontWeight: 'xl',
+		textDecoration: 'underline',
+		_hover: { textDecoration: 'underline' },
+		target: 'blank',
+	}
 	return (
 		<>
 			<VStack flex={'1'} w={'100%'}>
@@ -86,7 +92,18 @@ export default function AppFeature({
 								{title}
 							</Heading>
 
-							<HStack>
+							{subtitle && (
+								<Text
+									fontWeight={'bold'}
+									fontSize={'lg'}
+									textTransform={'uppercase'}
+									textAlign={'center'}
+								>
+									{subtitle}
+								</Text>
+							)}
+
+							<HStack py={4}>
 								{linkText && (
 									<StyledNextLink
 										color={'gray.Alpha.700'}
@@ -129,16 +146,20 @@ export default function AppFeature({
 									</StyledNextLink>
 								)}
 							</HStack>
-
-							{subtitle && (
-								<Text
-									fontWeight={'bold'}
-									fontSize={'sm'}
-									textTransform={'uppercase'}
-									textAlign={'center'}
-								>
-									{subtitle}
-								</Text>
+							{showCredit && (
+								<UnorderedList spacing={4} px={4} fontWeight={'bold'}>
+									<ListItem>
+										My role — Lead Designer, Jr. Software Engineer (Frontend)
+									</ListItem>
+									<ListItem>
+										Collaborator:{' '}
+										<StyledNextLink
+											{...addToLinkProps}
+											href={'https://mikeylemmon.com/about'}
+										></StyledNextLink>{' '}
+										— Lead Software Engineer, Project Manager
+									</ListItem>
+								</UnorderedList>
 							)}
 
 							<div>{children}</div>

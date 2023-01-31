@@ -14,7 +14,8 @@ export const goldenThread = {
 					fontStyle={'italic'}
 					fontWeight={'bold'}
 				>
-					Colorful coding
+					{' '}
+					Colorful coding{' '}
 				</StyledNextLink>
 				on flowfields, I began toying with random variables, and ways in which they could be
 				used to manipulated the fields into resembling organic forms.
@@ -25,12 +26,12 @@ export const goldenThread = {
 				can do to make that suggestion visable to others.
 			</Text>
 			<Text>
-				My incling in these works were towards trees and feathers, which reminded me of
+				My inkling in these works were towards trees and feathers, which reminded me of
 				intricately woven persion rugs and early japanese woodblock prints.
 			</Text>
 			<Text>
-				To emphasise these forms , I layered flow fields over one-another, with the bottom
-				layers having a high level of transperancy and subsequent layers being more opaque.
+				To emphasise these forms, I layered flow fields over one-another, with the bottom
+				layers having a high level of transparency and subsequent layers being more opaque.
 			</Text>
 			<Text>
 				I tweaked the width of the lines and and volume of the noise to create
@@ -50,7 +51,7 @@ export const flowFields = {
 	intro: (
 		<VStack>
 			<Text>
-				These images represent further experements with flow fields. I specifically wanted
+				These images represent further experiments with flow fields. I specifically wanted
 				to play with the idea of making veins and muscles.
 			</Text>
 			<Text>
@@ -59,7 +60,7 @@ export const flowFields = {
 				anatomy of the human body.
 			</Text>
 			<Text>
-				One of the first things I noticed about my the flowfields I coded, was their
+				One of the first things I noticed about the flowfields I coded, was their
 				resemblance to veins or hair.
 			</Text>
 
@@ -93,13 +94,18 @@ export const flowFields = {
 }
 
 export const objects = {
-	title: 'Object Class Tests',
+	title: 'Objects as Object-Classes',
 	intro: (
 		<VStack>
 			<Text>
-				Here, I have been learning to create Object Class elements, which I have feed random
-				color and line-width variables.
+				I used these drawings to test a p5 method that involves creating an{' '}
+				<i>object class</i>. An object class is like a recipe for an object. Instead of
+				writing ten sets of instructions for ten objects, we can create a class and pass
+				that, as an ingredient to p5&apos;s draw function, with the number ten. We can also
+				tell the class to allow other ingredients to be added, when we call it, or make some
+				ingredient somewhat random. .
 			</Text>
+
 			<Text>
 				The first two images are a response to a prompt by the{' '}
 				<LinkWrapper
@@ -108,7 +114,7 @@ export const objects = {
 					fontWeight={'bold'}
 				>
 					Coding Train&apos;s
-				</LinkWrapper>
+				</LinkWrapper>{' '}
 				Daniel Shiffman to create a basic drawing app.
 			</Text>
 			<Text>
