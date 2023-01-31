@@ -125,16 +125,11 @@ export default function Web() {
 								Workspace Add-on) written in Google Apps Script.
 							</Text>
 							<Text>
-								Which pokes a little good-humoured fun at the advertising
-								conventions around social media tech start-ups; By using those same
-								conventions to present something that could easily be considered a
-								form of antisocial media.
-							</Text>
-							<Text>
-								Which pokes a little good-humoured fun at the advertising
-								conventions around social media tech start-ups; By using those same
-								conventions to present something that could easily be considered a
-								form of antisocial media.
+								I also created a launch website and ad (with liberal use of free
+								stock videos from pexels.com), which pokes a little good-humoured
+								fun at the advertising conventions around social media tech
+								start-ups; By using those same conventions to present something that
+								could easily be considered a form of antisocial media.
 							</Text>
 							<Text>
 								Under the hood, x-it uses{' '}
