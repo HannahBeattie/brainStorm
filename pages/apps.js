@@ -40,7 +40,7 @@ export default function Web() {
 	return (
 		<>
 			<Head>
-				<title>Apps / Portfolio</title>
+				<title>Apps / Projects</title>
 				<meta name='description' content='Portfolio website' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
@@ -212,7 +212,7 @@ export default function Web() {
 						<b>firebase realtime database</b>.
 					</Text>
 					<Text>I am making a simple mood-tracking app with Next.js and Typescript.</Text>
-					<Box py={8}>
+					<Box py={{ md: 8, base: 4 }}>
 						<Image
 							boxShadow={'lg'}
 							src={'/apps/two.png'}
@@ -224,7 +224,7 @@ export default function Web() {
 						Currently, users can log-in with google, track their current mood and leave
 						a small note.
 					</Text>
-					<Box py={8}>
+					<Box py={{ md: 8, base: 4 }}>
 						<Image
 							boxShadow={'lg'}
 							src={'/apps/one.png'}

@@ -1,6 +1,6 @@
 export const Pages = [
 	{
-		title: 'apps',
+		title: 'projects',
 		href: '/apps',
 	},
 
