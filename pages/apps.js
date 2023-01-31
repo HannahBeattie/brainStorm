@@ -214,22 +214,6 @@ export default function Web() {
 							borderRadius={'10'}
 						/>
 					</Box>
-
-					<Text>
-						They can view their previous moods as a set of icons, or as a list of icons
-						with times attatched. I am planning to refactor this app and store the data
-						as objects rather than arrays.
-					</Text>
-
-					<Text>
-						I am then planning to add CRUD functionality and limit the number of moods
-						that can be stored by a particular user.
-					</Text>
-					<Text pt={pt}>
-						I have also been dipping my toes (gingerly) into the world of react native,
-						using expo and <b>native base</b>.
-					</Text>
-
 					<Tooltip
 						label={
 							'Special thanks to Mikey Lemmon for helping me refactor & combine my db hooks.'
@@ -247,8 +231,9 @@ export default function Web() {
 						</Text>
 					</Tooltip>
 
-					<Text pb={8}>
-						I am also tentatively dipping my toes into the world of React Native...
+					<Text pt={pt}>
+						I have also been dipping my toes (gingerly) into the world of react native,
+						using expo and <b>native base</b>.
 					</Text>
 				</IntroCard>
 			</PageWrapper>
