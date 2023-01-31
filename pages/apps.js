@@ -1,25 +1,12 @@
-import {
-	Box,
-	Divider,
-	Grid,
-	HStack,
-	Image,
-	ListItem,
-	Spacer,
-	Text,
-	Tooltip,
-	UnorderedList,
-	VStack,
-} from '@chakra-ui/react'
-import AppFeature from '~/components/pages/apps/AppFeature'
+import { Box, Divider, Image, Spacer, Text, Tooltip, VStack } from '@chakra-ui/react'
+import Head from 'next/head'
 import LinkWrapper from '~/components/base/LinkWrapper'
+import StyledNextLink from '~/components/base/StyledNextLink'
 import IntroCard from '~/components/base/templates/IntroCard'
-import Slide from '~/components/base/templates/Slide'
+import PageWrapper from '~/components/HOC/PageWrapper'
+import AppFeature from '~/components/pages/apps/AppFeature'
 import Appear from '~/components/pages/framerMotion/Appear'
 import ScrollToTop from '~/components/pages/framerMotion/ScrollToTop'
-import PageWrapper from '~/components/HOC/PageWrapper'
-import StyledNextLink from '~/components/base/StyledNextLink'
-import Head from 'next/head'
 
 export default function Web() {
 	let pt = 4
@@ -129,11 +116,6 @@ export default function Web() {
 						href2={'https://github.com/HannahBeattie/x-it'}
 					>
 						<VStack {...textProps}>
-							<Text>
-								For my final project at dev academy wellington, I decided to turn my
-								social anxiety into an app.
-							</Text>
-
 							<Text>
 								For my final (solo) project at dev academy wellington I decided to
 								turn my social anxiety into an app.
