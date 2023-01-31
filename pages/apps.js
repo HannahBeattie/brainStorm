@@ -1,4 +1,13 @@
-import { Divider, Grid, Text, Tooltip, VStack } from '@chakra-ui/react'
+import {
+	Box,
+	Divider,
+	Grid,
+	ListItem,
+	Text,
+	Tooltip,
+	UnorderedList,
+	VStack,
+} from '@chakra-ui/react'
 import AppFeature from '~/components/pages/apps/AppFeature'
 import LinkWrapper from '~/components/base/LinkWrapper'
 import IntroCard from '~/components/base/templates/IntroCard'
@@ -17,6 +26,13 @@ export default function Web() {
 		lineHeight: lineH,
 		spacing: spacing,
 		fontWeight: 'medium',
+		alignItems: 'stretch',
+	}
+	const addToLinkProps = {
+		fontWeight: 'xl',
+		textDecoration: 'underline',
+		_hover: { textDecoration: 'underline' },
+		target: 'blank',
 	}
 	return (
 		<>
@@ -33,37 +49,6 @@ export default function Web() {
 							These are some of the projects that I have completed since graduating
 							from Dev Academy in April, 2022.
 						</Text>
-						<Text pt={pt}>
-							I have also been playing around with authentication using{' '}
-							<b>firebase</b> and <b>React Firebase Hooks</b>.
-						</Text>
-						<Text>
-							{' '}
-							I have been making a simple mood-tracking app that allows users to
-							log-in and track their moods, as well as displaying their previosly
-							tracked moods.
-						</Text>
-						<Tooltip
-							label={
-								'Special thanks to Mikey Lemmon for helping me refactor & combine my db hooks.'
-							}
-						>
-							<Text>
-								You can find the unfinished project on
-								<StyledNextLink
-									href={'https://github.com/HannahBeattie/firebaseLogin'}
-									fontWeight={'bold'}
-								>
-									{' '}
-									my github.*
-								</StyledNextLink>
-							</Text>
-						</Tooltip>
-
-						<Text pb={8}>
-							I am also tentatively dipping my toes into the world of React Native,
-							with a looming sense of excitement and dread.
-						</Text>
 					</IntroCard>
 				</VStack>
 				<Divider />
@@ -74,46 +59,68 @@ export default function Web() {
 						alt={'Still of studiomonkey.io'}
 						title={'Studio Monkey'}
 						href={'https://www.studiomomo.io'}
-						subtitle={'Brand identity & website'}
 					>
-						<VStack {...textProps}>
-							<Text>
-								I had the pleasure of creating a logo and colour storey for
-								legendary VFS software company Studio Monkey, as well as
-								collaborating with{' '}
-								<LinkWrapper href='https://mikeylemmon.com/about'>
-									Mikey Lemmon
-								</LinkWrapper>{' '}
-								to create a website in which users can request a demo---{' '}
-								<i>with admin and backend features developed further by Mikey.</i>
-							</Text>
+						<UnorderedList spacing={4} px={4} py={4} fontWeight={'bold'}>
+							<ListItem>
+								My role — Lead Designer, Jr. Software Engineer (Frontend)
+							</ListItem>
+							<ListItem>
+								Collaborator:{' '}
+								<StyledNextLink
+									{...addToLinkProps}
+									href={'https://mikeylemmon.com/about'}
+								></StyledNextLink>{' '}
+								— Lead Software Engineer, Project Manager
+							</ListItem>
+						</UnorderedList>
 
+						<VStack {...textProps} pt={pt}>
 							<Text>
-								Based in Santa Monica, California, Studio Monkey makes products that
-								are minimal, clean, highly intuitive and customer-focused.
+								Created by VFX Supervisor{' '}
+								<StyledNextLink
+									href={'https://www.imdb.com/name/nm1005090/'}
+									{...addToLinkProps}
+								>
+									Zach Tucker
+								</StyledNextLink>
+								, Studio Monkey is a suite of tools and integrations that enable
+								film and television studios to automate management of their
+								production data, and it is rapidly being adopted and relied on by
+								many of the biggest media companies in the world — I&apos;m not at
+								liberty to divulge which ones, but they&apos;re names you&apos;d
+								instantly recognise!
 							</Text>
 							<Text>
-								Because of extremely high volume of existing clientele, we were
-								instructed not to include product descriptions or advertising of any
-								kind on the site and instead create a platform that would funnel
-								client information and requests to a studio monkey server.
+								Faced with ever-accelerating demand, Studio Monkey needed a new
+								website to host documentation and handle intake of potential new
+								clients, as well as to better establish brand identity. After
+								helping Zach to identify the core asthetic philosophies, values, and
+								ideas that he had in mind, I provided him with a wide set of initial
+								concepts for logos, colour, and typography, and then worked with him
+								to reduce, focus, and refine his favourite concepts down to the
+								final form — a clean, playful design that captures the feelings of
+								lightness and reliable-professionality he was hoping to convey.
 							</Text>
-
 							<Text>
-								I worked in close dialogue with CEO Zach Tucker to create a logo and
-								colour story that will continue to fit the brand as it grows and be
-								instantly identifiable and highly adaptive, no matter the scale or
-								media; We talked about creating something that would look good as a
-								small-screen phone icon, as well as on a t-shirt or a hat. We
-								settled on something minimal and clean, with an element of
-								playfulness intrinsic to Studio Monkey.
+								With the design sorted, my collaborator Mikey and I set about
+								building the website using Next.js, with Vercel for hosting. We used
+								the gitflow approach for repository management, utilising GitHub PRs
+								to perform code review on all changes before merging into the
+								development branch.
 							</Text>
-
 							<Text>
-								For the website, we generated code that would be highly maintainable
-								and readable for others and made sure that the visual elements could
-								remain intact as the site continued to evolve (for instance, adding
-								a nav bar where we knew an admin panel would eventually go).
+								I was responsible for implementing the landing page and core layout
+								for the site, and used{' '}
+								<StyledNextLink href={'https://chakra-ui.com/'} {...addToLinkProps}>
+									Chakra UI
+								</StyledNextLink>{' '}
+								to create a library of accessible, mobile-friendly components to
+								enable the site to be expanded in the future in a way that is
+								maintainable and stylistically consistent.
+							</Text>
+							<Text>
+								This was my first job as a web developer, and I am pretty satisfied
+								with the results.
 							</Text>
 						</VStack>
 					</AppFeature>
@@ -121,37 +128,56 @@ export default function Web() {
 				<Divider />
 				<Appear style={{ width: '100%' }}>
 					<AppFeature
-						linkText={'X-it.vercel.app'}
+						linkText={'x-it.vercel.app'}
 						src={'/apps/xitApp.png'}
 						alt={'Still x-it homepage'}
-						title={'X-it'}
-						subtitle={'Using my social anxiety to create a Google Plug-in'}
+						title={'x-it'}
+						subtitle={'Your solution to unwanted meetings'}
 						href={'https://x-it.vercel.app'}
+						linkText2={'Source Code'}
+						href2={'https://github.com/HannahBeattie/x-it'}
 					>
 						<VStack {...textProps}>
 							<Text>
-								For my final project as a student at Dev Academy Wellington, I
-								wanted to push myself, so I opted to work alone and use a tool that
-								we had not touched on in class; X-it is a lightweight plug-in
-								written with &apos;Google&apos;Apps Script. When integrated into
-								your G suite calendar, it allows users to anonymously &apos;opt
-								out&apos; of upcoming events.
+								For my final project at dev academy wellington, I decided to turn my
+								social anxiety into an app.
 							</Text>
 
 							<Text>
-								If everyone &apos;opts out&apos;, it cancels the engagement and,
-								with the correct permissions, informs users that the event has been
-								cancelled via email.
+								For my final (solo) project at dev academy wellington I decided to
+								turn my social anxiety into an app.
 							</Text>
 							<Text>
-								I also created a website and short video with the help of Pexles.com
-								&apos;s free use stock footage, which can be viewed at the link
-								below.
+								x-it is a lightweight calendar plugin (specifically: a Google
+								Workspace Add-on) written in Google Apps Script.
 							</Text>
 							<Text>
-								While X-it is functional, it is in beta testing mode; I am
-								interested in developing it further by adding data encryption as
-								well as researching the possibilities of a similar IOS plug-in.
+								Which pokes a little good-humoured fun at the advertising
+								conventions around social media tech start-ups; By using those same
+								conventions to present something that could easily be considered a
+								form of antisocial media.
+							</Text>
+							<Text>
+								Which pokes a little good-humoured fun at the advertising
+								conventions around social media tech start-ups; By using those same
+								conventions to present something that could easily be considered a
+								form of antisocial media.
+							</Text>
+							<Text>
+								Under the hood, x-it uses{' '}
+								<LinkWrapper href={'https://fauna.com/'} {...addToLinkProps}>
+									fauna DB
+								</LinkWrapper>{' '}
+								and{' '}
+								<LinkWrapper href={'https://graphql.org/'} {...addToLinkProps}>
+									Graph QL
+								</LinkWrapper>
+								.
+							</Text>
+							<Text pt={pt}>
+								I haven&apos;t published the Workspace Add-On to the Google
+								marketplace yet, but you can get it up and running by following the
+								instructions in the Installation section of the repo&apos;s README.
 							</Text>
 						</VStack>
 					</AppFeature>
@@ -165,6 +191,8 @@ export default function Web() {
 						title={'Not a real website'}
 						href={'https://not-a-real-website.vercel.app/'}
 						linkText={'Live Demo'}
+						linkText2={'Source Code'}
+						href2={'https://github.com/HannahBeattie/not-a-real-website'}
 					>
 						<VStack {...textProps}>
 							<Text>
@@ -186,14 +214,60 @@ export default function Web() {
 								adapting components to different screen sizes, without replicating
 								data and making it less maintainable later on.{' '}
 							</Text>
-							<LinkWrapper
-								href={'https://github.com/HannahBeattie/not-a-real-website'}
-							>
-								Source Code
-							</LinkWrapper>
 						</VStack>
 					</AppFeature>
 				</Appear>
+				<Divider />
+				<IntroCard heading={'Current projects'}>
+					<Text pt={pt}>
+						For the last few weeks, I have been learning about data syncing and
+						authentication, using <b>firebase auth services</b> and{' '}
+						<b>firebase realtime database</b>.
+					</Text>
+					<Text>
+						The project that I am using to trial these libraries is a simple
+						mood-tracking app.
+					</Text>
+					<Text>
+						Currently, users can log-in with google, track their current mood and leave
+						a small note.
+					</Text>
+					<Text>
+						They have access to views that display their previous moods, previous moods
+						with dates and notes with dates. I am planning to refactor this app and
+						store the data as objects rather than arrays.
+					</Text>
+					<Text>
+						I am then planning to add CRUD functionality and limit the number of moods
+						that can be stored by a particular user.
+					</Text>
+					<Text pt={pt}>
+						I have also been dipping my toes (gingerly) into the world of react native,
+						using expo and <b>native base</b>.
+					</Text>
+
+					<Tooltip
+						label={
+							'Special thanks to Mikey Lemmon for helping me refactor & combine my db hooks.'
+						}
+					>
+						<Text>
+							You can find the unfinished project on
+							<StyledNextLink
+								href={'https://github.com/HannahBeattie/firebaseLogin'}
+								fontWeight={'bold'}
+							>
+								{' '}
+								my github.*
+							</StyledNextLink>
+						</Text>
+					</Tooltip>
+
+					<Text pb={8}>
+						I am also tentatively dipping my toes into the world of React Native, with a
+						looming sense of excitement and dread.
+					</Text>
+				</IntroCard>
 			</PageWrapper>
 		</>
 	)

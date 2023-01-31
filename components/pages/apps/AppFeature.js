@@ -2,9 +2,12 @@ import {
 	Button,
 	Container,
 	Heading,
+	HStack,
 	Image,
+	ListItem,
 	Stack,
 	Text,
+	UnorderedList,
 	useColorModeValue,
 	VStack,
 } from '@chakra-ui/react'
@@ -12,17 +15,27 @@ import StyledNextLink from '../../base/StyledNextLink'
 import ButtonFocus from '../framerMotion/ButtonFocus'
 import CardHovered from '../framerMotion/CardHovered'
 
-export default function AppFeature({ linkText, src, alt, title, children, href, subtitle }) {
+export default function AppFeature({
+	linkText,
+	linkText2,
+	href2,
+	src,
+	alt,
+	title,
+
+	children,
+	href,
+	subtitle,
+}) {
 	const bg = useColorModeValue('grayAlpha.200', 'whiteAlpha.100')
-	const bg2 = useColorModeValue('grayAlpha.300', 'whiteAlpha.200')
+	const bg2 = useColorModeValue('grayAlpha.300', 'grayAlpha.300')
 	const col = useColorModeValue('gray.800', 'ActiveCaption')
 	return (
 		<>
 			<VStack flex={'1'} w={'100%'}>
 				<Stack p={2} flexDir={{ base: 'column', lg: 'row' }}>
-					<VStack justify={'center'} p={{ md: 2 }} pr={{ lg: '5vw' }}>
+					<VStack spacing={8} justify={'center'} p={{ md: 2 }} pr={{ lg: '5vw' }}>
 						<Heading
-							py={8}
 							display={{ base: 'auto', lg: 'none' }}
 							textAlign={'center'}
 							fontFamily={'body'}
@@ -30,6 +43,7 @@ export default function AppFeature({ linkText, src, alt, title, children, href, 
 						>
 							{title}
 						</Heading>
+
 						<CardHovered>
 							<StyledNextLink href={href} target={'blank'}>
 								<Image
@@ -71,6 +85,51 @@ export default function AppFeature({ linkText, src, alt, title, children, href, 
 							>
 								{title}
 							</Heading>
+
+							<HStack>
+								{linkText && (
+									<StyledNextLink
+										color={'gray.Alpha.700'}
+										fontWeight={'bold'}
+										href={href}
+										target={'blank'}
+									>
+										<ButtonFocus>
+											<Button
+												bg={bg}
+												_hover={{
+													bg: bg2,
+												}}
+												color={col}
+											>
+												{linkText}
+											</Button>
+										</ButtonFocus>
+									</StyledNextLink>
+								)}
+
+								{linkText2 && (
+									<StyledNextLink
+										color={'gray.Alpha.700'}
+										fontWeight={'bold'}
+										href={href2}
+										target={'blank'}
+									>
+										<ButtonFocus>
+											<Button
+												bg={bg}
+												_hover={{
+													bg: bg2,
+												}}
+												color={col}
+											>
+												{linkText2}
+											</Button>
+										</ButtonFocus>
+									</StyledNextLink>
+								)}
+							</HStack>
+
 							{subtitle && (
 								<Text
 									fontWeight={'bold'}
@@ -83,26 +142,6 @@ export default function AppFeature({ linkText, src, alt, title, children, href, 
 							)}
 
 							<div>{children}</div>
-							{linkText && (
-								<StyledNextLink
-									color={'gray.Alpha.700'}
-									fontWeight={'bold'}
-									href={href}
-									target={'blank'}
-								>
-									<ButtonFocus>
-										<Button
-											bg={bg}
-											_hover={{
-												bg2,
-											}}
-											color={col}
-										>
-											{linkText}
-										</Button>
-									</ButtonFocus>
-								</StyledNextLink>
-							)}
 						</VStack>
 					</Container>
 				</Stack>

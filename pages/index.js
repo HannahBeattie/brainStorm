@@ -10,7 +10,7 @@ import VineWorld from '~/components/pages/p5/hero/VineWorld'
 import Head from 'next/head'
 
 export default function Home() {
-	const invert = useColorModeValue('null', '0%')
+	const invert = useColorModeValue('null', '50%')
 	const src = { base: '/baseL.png', md: '/ground.png' }
 	return (
 		<>

@@ -1,4 +1,4 @@
-import { Heading, HStack, Text } from '@chakra-ui/react'
+import { Heading, Text } from '@chakra-ui/react'
 import Appear from '../framerMotion/Appear'
 const pt = { md: 8, base: 0 }
 

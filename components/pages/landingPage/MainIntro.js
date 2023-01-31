@@ -85,9 +85,7 @@ export default function MainIntro() {
 				</VStack>
 
 				<VStack pb={{ md: 16, base: 10 }} spacing={{ md: 10 }} fontSize={'4xl'}>
-					{/* <Pulse> */}
 					<LandButton />
-					{/* </Pulse> */}
 				</VStack>
 			</VStack>
 		</>
