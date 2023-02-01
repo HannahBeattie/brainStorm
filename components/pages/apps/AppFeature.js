@@ -155,14 +155,14 @@ export default function AppFeature({
 										My role — Lead Designer, Jr. Software Engineer (Frontend)
 									</ListItem>
 									<ListItem>
-										Collaborator —
+										Collaborator:{' '}
 										<StyledNextLink
 											{...addToLinkProps}
 											href={'https://mikeylemmon.com/about'}
 										>
 											Mikey Lemmon
 										</StyledNextLink>{' '}
-										Lead Software Engineer, Project Manager
+										— Lead Software Engineer, Project Manager
 									</ListItem>
 								</UnorderedList>
 							)}

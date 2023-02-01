@@ -38,7 +38,7 @@ export default function Home() {
 					_dark={{ color: 'blackAlpha.900' }}
 					fontWeight={600}
 				>
-					Generative circles enspired by AHMAD MOUSSA &apos;s Perlin noise rings
+					Generative circles inspired by AHMAD MOUSSA &apos;s Perlin noise rings
 				</StyledNextLink>
 
 				<VStack position={'relative'} zIndex={-5}>

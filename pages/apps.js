@@ -27,7 +27,7 @@ export default function Web() {
 	return (
 		<>
 			<Head>
-				<title>Apps / Projects</title>
+				<title>Projects</title>
 				<meta name='description' content='Portfolio website' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
@@ -97,8 +97,8 @@ export default function Web() {
 								maintainable and stylistically consistent.
 							</Text>
 							<Text>
-								This was my first job as a web developer, and I am pretty satisfied
-								with the results.
+								This was my first job as a web developer, and I am very happy with
+								what I was able to achieve.
 							</Text>
 						</VStack>
 					</AppFeature>
@@ -117,19 +117,21 @@ export default function Web() {
 					>
 						<VStack {...textProps}>
 							<Text>
-								For my final (solo) project at dev academy wellington I decided to
+								For my final (solo) project at Dev Academy Wellington I decided to
 								turn my social anxiety into an app.
 							</Text>
 							<Text>
-								x-it is a lightweight calendar plugin (specifically: a Google
-								Workspace Add-on) written in Google Apps Script.
+								X-it is a lightweight calendar plugin (specifically: a Google
+								Workspace Add-on) written in Google Apps Script that allows users to
+								anonymously vote to cancel meetings — if the attendees unanimously
+								opt out, the meeting is automatically canceled!
 							</Text>
 							<Text>
 								I also created a launch website and ad (with liberal use of free
 								stock videos from pexels.com), which pokes a little good-humoured
-								fun at the advertising conventions around social media tech
-								start-ups; By using those same conventions to present something that
-								could easily be considered a form of antisocial media.
+								fun around tech start-ups — by using similar advertising conventions
+								to present something that could easily be considered a form of{' '}
+								<i>antisocial media</i>.
 							</Text>
 							<Text>
 								Under the hood, x-it uses{' '}

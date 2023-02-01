@@ -10,9 +10,7 @@ export const paragraphs = [
 			<>
 				<Heading fontFamily={'Alice'}>I am Hannah.</Heading>
 				<Appear delay={1}>
-					<Text pt={{ md: 2 }}>
-						An artist, insect enthusiastt, and web developer from
-					</Text>
+					<Text pt={{ md: 2 }}>An artist, insect enthusiast, and web developer from</Text>
 					<Appear delay={1}>
 						<Text>Aetearoa, New Zealand.</Text>
 					</Appear>
@@ -145,5 +143,6 @@ export const paragraphs = [
 				<Text> It is a Start.</Text>
 			</>
 		),
+		trees: 0,
 	},
 ]

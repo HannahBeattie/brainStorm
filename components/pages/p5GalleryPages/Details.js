@@ -70,7 +70,7 @@ export const geo = {
 			</Text>
 			<Text>
 				On a dark background, the shift between ghostly grey lines and stark white makes the
-				, makes the ripples appear three-dimensional, with a glowing, firm ridge.
+				ripples appear three-dimensional, with a glowing, firm ridge.
 			</Text>
 		</VStack>
 	),
