@@ -13,7 +13,7 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>Hello, hello.</title>
+				<title>Hello world</title>
 				<meta name='description' content='Portfolio website' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
