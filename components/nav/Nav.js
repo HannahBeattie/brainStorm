@@ -54,7 +54,7 @@ export default function Nav() {
 				<MenuButton
 					right={'2'}
 					position={'absolute'}
-					display={{ base: 'block', lg: 'none' }}
+					display={{ base: 'stretch', lg: 'none' }}
 					as={IconButton}
 					aria-label='Options'
 					icon={<HamburgerIcon />}
@@ -74,7 +74,7 @@ export default function Nav() {
 								fontSize={'lg'}
 								fontFamily={'SF Pro'}
 								textTransform={'uppercase'}
-								fontWeight={href === currentRoute ? '400' : '300'}
+								fontWeight={href === currentRoute ? '500' : '400'}
 								color={href === currentRoute ? 'gray.900' : 'gray.500'}
 								_dark={{ color: href === currentRoute ? 'teal.100' : 'teal.500' }}
 							>
