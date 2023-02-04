@@ -35,7 +35,7 @@ export const paragraphs = [
 		paragraph: (
 			<>
 				<Text>
-					...that takes into account the diversity of users&apos; interests, engagement
+					...that take into account the diversity of users&apos; interests, engagement
 					styles and access needs…
 				</Text>
 			</>
@@ -66,7 +66,7 @@ export const paragraphs = [
 		paragraph: (
 			<>
 				<Text>This site documents a little of what I have learnt and built so far.</Text>
-				<Text>I am excited see it evolve.</Text>
+				<Text>I am excited to see where my curiosity leads me.</Text>
 			</>
 		),
 		trees: 0,
