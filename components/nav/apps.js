@@ -20,7 +20,7 @@ export default function Web() {
 				<Divider />
 				<Appear style={{ width: '100%' }}>
 					<AppFeature
-						linkText={'studiomonkey.io'}
+						linkText={'studiomomo.io'}
 						src={'/apps/studioMonkey.png'}
 						alt={'Still of studiomonkey.io'}
 						title={'studioMonkey'}
