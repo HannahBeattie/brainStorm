@@ -65,18 +65,6 @@ export const paragraphs = [
 	{
 		paragraph: (
 			<>
-				<Text>
-					I am interested in creating highly malleable, robust products that involve
-					surprising, engaging moments of user interaction.{' '}
-				</Text>
-			</>
-		),
-		trees: 2,
-	},
-
-	{
-		paragraph: (
-			<>
 				<Text>This site documents a little of what I have learnt and built so far.</Text>
 				<Text pb={100}>I am excited see it evolve.</Text>
 			</>
