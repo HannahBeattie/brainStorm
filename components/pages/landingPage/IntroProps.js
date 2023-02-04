@@ -34,7 +34,10 @@ export const paragraphs = [
 	{
 		paragraph: (
 			<>
-				<Text>...that take into account the diversity of access styles...</Text>
+				<Text>
+					...that take into account the diversity of interests, access styles and
+					engagement types...
+				</Text>
 			</>
 		),
 		trees: 1,
@@ -62,85 +65,20 @@ export const paragraphs = [
 	{
 		paragraph: (
 			<>
-				<Text>My interests tend to teeter between the worlds of science and art...</Text>
-			</>
-		),
-		trees: 2,
-	},
-	{
-		paragraph: (
-			<>
-				<Text>I love code for it&apos;s malleability.</Text>
-			</>
-		),
-		trees: 1,
-	},
-
-	{
-		paragraph: (
-			<>
-				<HStack>
-					<Text>As</Text>
-					<Tooltip label={'...or teachers, or artists or storytellers....'}>
-						<Text cursor={'pointer'} className='err'>
-							coders,
-						</Text>
-					</Tooltip>
-				</HStack>
 				<Text>
-					{' '}
-					we can present information in new ways; Tailoring our projects to fit a diverse
-					set of needs, interests and preferences.
+					I am interested in creating highly malleable, robust products that involve
+					surprising, engaging moments of user interaction.{' '}
 				</Text>
 			</>
 		),
-		trees: 1,
-	},
-	{
-		paragraph: (
-			<>
-				<Text>We can create surprising, engaging moments of user interaction... </Text>
-			</>
-		),
 		trees: 2,
-	},
-	{
-		paragraph: (
-			<>
-				<Text>... and amplify previously unheard voices...</Text>
-			</>
-		),
-		trees: 1,
-	},
-	{
-		paragraph: (
-			<HStack>
-				<Text pt={pt}>There will always be more to learn, test and re-test...</Text>
-			</HStack>
-		),
-		trees: 1,
-	},
-	{
-		paragraph: (
-			<>
-				<Text>...more tools to grip with unfamiliar hands.</Text>
-			</>
-		),
-		trees: 1,
 	},
 
 	{
 		paragraph: (
 			<>
 				<Text>This site documents a little of what I have learnt and built so far.</Text>
-			</>
-		),
-		trees: 1,
-	},
-	{
-		paragraph: (
-			<>
-				<Text> It is a Start.</Text>
+				<Text pb={100}>I am excited see it evolve.</Text>
 			</>
 		),
 		trees: 0,
