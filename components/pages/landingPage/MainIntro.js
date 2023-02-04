@@ -42,16 +42,20 @@ export default function MainIntro() {
 				<VStack
 					flex={1}
 					alignItems='stretch'
-					pt={useBreakpointValue({ base: 330, md: 200 })}
+					pt={useBreakpointValue({ base: '35rem', sm: '40rem', lg: '30rem' })}
 				>
 					<Unfold num={-900} style={{ zIndex: 10 }}>
-						<VStack flex={1} alignItems={'stretch'}>
+						<VStack alignItems={'stretch'}>
 							<Tree num={10} />
 						</VStack>
 					</Unfold>
 
 					<Unfold num={-1900}>
-						<VStack fontSize={'4xl'} color={useColorModeValue('teal', 'white')} pt='50'>
+						<VStack
+							fontSize={'4xl'}
+							color={useColorModeValue('teal', 'white')}
+							pt={{ base: '15rem', sm: '30rem', lg: '20rem' }}
+						>
 							<WiRaindrop />
 							<WiRaindrop />
 							<WiRaindrop />

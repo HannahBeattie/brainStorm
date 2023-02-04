@@ -65,7 +65,7 @@ function sketch(p5) {
 	let stroke = [40, 30, 10, 200]
 	let trees = []
 	let num
-	let width = 800
+	let width = 480
 	let height = 500
 	let isInView = false
 	let didDraw = false
