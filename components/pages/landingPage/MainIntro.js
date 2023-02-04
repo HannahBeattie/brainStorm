@@ -45,7 +45,7 @@ export default function MainIntro() {
 					pt={useBreakpointValue({ base: 330, md: 200 })}
 				>
 					<Unfold num={-900} style={{ zIndex: 10 }}>
-						<VStack flex={1} alignItems={'center'}>
+						<VStack flex={1} alignItems={'stretch'}>
 							<Tree num={10} />
 						</VStack>
 					</Unfold>
