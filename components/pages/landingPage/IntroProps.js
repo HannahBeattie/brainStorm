@@ -66,7 +66,7 @@ export const paragraphs = [
 		paragraph: (
 			<>
 				<Text>This site documents a little of what I have learnt and built so far.</Text>
-				<Text>I am excited to see where my curiosity leads me.</Text>
+				<Text>I am excited to see where my curiosity leads me next.</Text>
 			</>
 		),
 		trees: 0,
