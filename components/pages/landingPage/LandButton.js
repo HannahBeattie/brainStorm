@@ -10,11 +10,11 @@ export default function LandButton() {
 			alignSelf={'center'}
 			color={'white'}
 			_hover={{
-				bg: useColorModeValue('teal', 'red'),
+				bg: useColorModeValue('teal', 'white'),
 				color: useColorModeValue('white', 'black'),
 			}}
 			_active={{
-				bg: useColorModeValue('teal', 'red'),
+				bg: useColorModeValue('teal', 'white'),
 				color: useColorModeValue('white', 'black'),
 			}}
 			boxShadow={'dark-xl'}
