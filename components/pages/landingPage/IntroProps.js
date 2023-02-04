@@ -35,8 +35,8 @@ export const paragraphs = [
 		paragraph: (
 			<>
 				<Text>
-					...that take into account the diversity of interests, access styles and
-					engagement types...
+					...that takes into account the diversity of users interests, engagement styles
+					and access needs…
 				</Text>
 			</>
 		),
