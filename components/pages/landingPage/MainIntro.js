@@ -29,7 +29,9 @@ export default function MainIntro() {
 							{trees && (
 								<Appear>
 									<EnterStage right={idx % 2 === 1} small={small}>
-										<Tree num={trees} />
+										<VStack flex={'1'} alignItems={'stretch'}>
+											<Tree num={trees} />
+										</VStack>
 									</EnterStage>
 								</Appear>
 							)}
