@@ -131,8 +131,8 @@ function electric(p5) {
 	p5.setup = () => {
 		let canvas = p5.createCanvas(800, 500)
 		reset()
-		canvas.mousePressed(() => p5.saveGif('01.gif', 1))
-		// canvas.mousePressed(() => reset())
+
+		canvas.mousePressed(() => reset())
 	}
 
 	p5.updateWithProps = (props) => {

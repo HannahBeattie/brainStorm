@@ -186,8 +186,8 @@ export default function Web() {
 				<Spacer p={{ base: 4, md: 2 }} />
 				<IntroCard heading={'Current projects'}>
 					<Text>
-						For the last couple of weeks weeks, I have been learning about data syncing
-						and authentication, using <b>firebase auth services</b> and{' '}
+						For the last couple of weeks, I have been learning about data syncing and
+						authentication, using <b>firebase auth services</b> and{' '}
 						<b>firebase realtime database</b>.
 					</Text>
 					<Text>I am making a simple mood-tracking app with Next.js and Typescript.</Text>

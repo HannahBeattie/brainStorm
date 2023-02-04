@@ -122,7 +122,7 @@ export const objects = {
 				that feeds the object a set of random color-sets, within a small-ish range.
 			</Text>
 			<Text>
-				The third image is an experement in which I tweaked the number of points I gave each
+				The third image is an experiment in which I tweaked the number of points I gave each
 				object, because I wanted to try to create stars. These stars are created wherever a
 				user clicks.
 			</Text>
