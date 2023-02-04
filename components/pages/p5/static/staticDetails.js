@@ -94,20 +94,11 @@ export const flowFields = {
 }
 
 export const objects = {
-	title: 'Objects as Object-Classes',
+	title: 'Drawing Shapes with Object-Oriented Programming',
 	intro: (
 		<VStack>
 			<Text>
-				I used these drawings to test a p5 method that involves creating an{' '}
-				<i>object class</i>. An object class is like a recipe for an object. Instead of
-				writing ten sets of instructions for ten objects, we can create a class and pass
-				that, as an ingredient to p5&apos;s draw function, with the number ten. We can also
-				tell the class to allow other ingredients to be added, when we call it, or make some
-				ingredient somewhat random. .
-			</Text>
-
-			<Text>
-				The first two images are a response to a prompt by the{' '}
+				These drawings are a response to a prompt by the{' '}
 				<LinkWrapper
 					href='https://www.youtube.com/watch?v=c3TeLi6Ns1E'
 					fontStyle={'italic'}
@@ -118,13 +109,12 @@ export const objects = {
 				Daniel Shiffman to create a basic drawing app.
 			</Text>
 			<Text>
-				In this drawing app, the color of the object changes on click, based on a function
-				that feeds the object a set of random color-sets, within a small-ish range.
+				I decided to experiment with OOP and created a class for a shape that is
+				instantiated and drawn each time a user clicks on the canvas.
 			</Text>
 			<Text>
-				The third image is an experiment in which I tweaked the number of points I gave each
-				object, because I wanted to try to create stars. These stars are created wherever a
-				user clicks.
+				The color of the lines and the number of points in the shape changes randomly on
+				click.
 			</Text>
 		</VStack>
 	),
