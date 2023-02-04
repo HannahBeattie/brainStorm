@@ -34,7 +34,7 @@ export default function Web() {
 			<PageWrapper>
 				<ScrollToTop />
 				<VStack>
-					<IntroCard heading={'Apps'}>
+					<IntroCard heading={'Projects’'}>
 						<Text fontSize={'xl'} fontWeight={'lg'} pb={{ md: 0, base: 4 }}>
 							These are some of the projects that I have completed since graduating
 							from Dev Academy in April, 2022.
