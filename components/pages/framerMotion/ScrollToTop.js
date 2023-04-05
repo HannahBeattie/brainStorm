@@ -36,7 +36,7 @@ export default function ScrollToTop() {
 				<>
 					<Button
 						{...buttonProps}
-						display={{ base: 'none', md: 'block' }}
+						display={{ base: 'none', md: 'flex' }}
 						onClick={goToTop}
 						ref={scrollRef}
 						bottom='8'
@@ -48,7 +48,7 @@ export default function ScrollToTop() {
 
 					<Button
 						{...buttonProps}
-						display={{ base: 'block', md: 'none' }}
+						display={{ base: 'block', md: 'flex' }}
 						onClick={goToTop}
 						ref={scrollRef}
 						bottom='10vh'
