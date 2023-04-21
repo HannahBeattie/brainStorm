@@ -23,6 +23,7 @@ export default function AppFeature({
 	alt,
 	title,
 	showCredit,
+	showCredit2,
 	children,
 	href,
 	subtitle,
@@ -149,6 +150,20 @@ export default function AppFeature({
 									</StyledNextLink>
 								)}
 							</HStack>
+							{showCredit2 && (
+								<VStack>
+									<Text>Designed & created by myself</Text>
+									<Text>
+										with Animation by
+										<StyledNextLink
+											{...addToLinkProps}
+											href={'https://mikeylemmon.com/about'}
+										>
+											Mikey Lemmon
+										</StyledNextLink>
+									</Text>
+								</VStack>
+							)}
 							{showCredit && (
 								<UnorderedList spacing={4} px={{ md: 4 }} fontWeight={'bold'}>
 									<ListItem>

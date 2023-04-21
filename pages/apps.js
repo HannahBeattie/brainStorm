@@ -43,6 +43,38 @@ export default function Web() {
 				</VStack>
 
 				<Divider />
+				<Appear style={{ width: '100%' }}>
+					<AppFeature
+						linkText={'My Worry Monster Site '}
+						src={'/apps/worryMonster.png'}
+						alt={'still of worry monster app'}
+						title={'My Pet Worry Monster'}
+						href={'https://my-pet-worry-monster-app.vercel.app/'}
+						subtitle={'The perfect pet for those who fret'}
+						showCredit2={'true'}
+					>
+						<VStack {...textProps}>
+							<Text>My Pet Worry Monster is coming soon to IOS!</Text>
+
+							<Text>
+								Based on Cognitive Behavioural Therapy techniques, the app allows
+								users to give their worries to the worry monster, before deciding if
+								the worry monster should hold on to them or gobble them up.
+							</Text>
+							<Text>
+								Based on Cognitive Behavioural Therapy techniques, the app allows
+								users to give their worries to the worry monster, before deciding if
+								the worry monster should hold on to them or gobble them up.
+							</Text>
+							<Text>
+								I built this app using React Native with Typescript. Under the hood
+								it uses Redux toolkit to manage state and reanimated and Moti to add
+								animations and transitions. All the data is stored on the
+								user&apos;s device, in local storage.
+							</Text>
+						</VStack>
+					</AppFeature>
+				</Appear>
 				<Divider />
 				<Appear style={{ width: '100%' }}>
 					<AppFeature
@@ -188,9 +220,8 @@ export default function Web() {
 				<Spacer p={{ base: 4, md: 2 }} />
 				<IntroCard heading={'Current projects'}>
 					<Text>
-						For the last couple of weeks, I have been learning about data syncing and
-						authentication, using <b>firebase auth services</b> and{' '}
-						<b>firebase realtime database</b>.
+						I have been playing a little with data syncing and authentication, using{' '}
+						<b>firebase auth services</b> and <b>firebase realtime database</b>.
 					</Text>
 					<Text>I am making a simple mood-tracking app with Next.js and Typescript.</Text>
 
@@ -222,11 +253,6 @@ export default function Web() {
 							</StyledNextLink>
 						</Text>
 					</Tooltip>
-
-					<Text pt={pt}>
-						I have also been dipping my toes (gingerly) into the world of react native,
-						using expo and <b>native base</b>.
-					</Text>
 				</IntroCard>
 			</PageWrapper>
 		</>
