@@ -41,22 +41,7 @@ export default function Web() {
 						</Text>
 					</IntroCard>
 				</VStack>
-				<Divider />
-				<Appear style={{ width: '100%' }}>
-					<AppFeature
-					// linkText={'studiomonkey.io'}
-					// src={'/apps/studioMonkey.png'}
-					// alt={'Still of studiomonkey.io'}
-					// title={'Studio Monkey'}
-					// href={'https://www.studiomomo.io'}
-					// showCredit={'true'}
-					// subtitle={'Organise early. Organise often.'}
-					>
-						<VStack {...textProps}>
-							<Text></Text>
-						</VStack>
-					</AppFeature>
-				</Appear>
+
 				<Divider />
 				<Divider />
 				<Appear style={{ width: '100%' }}>
