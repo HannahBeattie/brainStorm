@@ -42,11 +42,17 @@ export default function ScrollToTop() {
 							display={{ base: 'none', md: 'flex' }}
 							onClick={goToTop}
 							ref={scrollRef}
-							bottom='2'
+							bottom='4'
 							area-label={'scroll to top'}
-							right={0}
+							right={2}
 							_light={{ color: 'grayAlpha.600', _hover: { color: 'warmWhite' } }}
-							_dark={{ color: 'whiteAlpha.900', _hover: { color: 'warmWhite' } }}
+							_dark={{
+								bg: 'blackAlpha.700',
+								color: 'whiteAlpha.900',
+								_hover: { color: 'warmWhite' },
+							}}
+							p={1}
+							borderRadius={20}
 						>
 							<AiOutlineVerticalAlignTop size={30} />
 						</Button>

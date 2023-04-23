@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
 
-export default function Appear({ children, width, dur, delay, ...rest }) {
+export default function FadeInAppear({ children, width, dur, delay, ...rest }) {
 	return (
 		<AnimatePresence>
 			<motion.div

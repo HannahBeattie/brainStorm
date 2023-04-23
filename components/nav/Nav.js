@@ -18,7 +18,7 @@ import StyledNextLink from '../base/StyledNextLink'
 import DesktopNav from './DesktopNav'
 import { Pages } from './Pages'
 
-import { GiCaveEntrance } from 'react-icons/gi'
+import { TbVinyl } from 'react-icons/tb'
 import PulseClicked from '../pages/framerMotion/PulseClicked'
 const pages = Pages
 
@@ -57,7 +57,7 @@ export default function Nav() {
 				<VStack pl={4} pt={1}>
 					<PulseClicked>
 						<StyledNextLink href={'/'}>
-							<Icon fontSize={'3xl'} as={GiCaveEntrance} />
+							<Icon color={customCol} fontSize={'3xl'} as={TbVinyl} />
 						</StyledNextLink>
 					</PulseClicked>
 				</VStack>
