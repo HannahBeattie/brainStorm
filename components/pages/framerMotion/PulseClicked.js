@@ -2,22 +2,16 @@ import { Box } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 
-const variants = {
-	rotateMe: { rotate: [5, -5, 0] },
-	dontRotateMe: { rotate: [-5, 5, 0] },
-}
-
-export default function RotateClicked({ children, transition, props }) {
+export default function PulseClicked({ children, transition, props }) {
 	const [rotate, setRotate] = useState(false)
 
 	return (
 		<motion.div
 			whileHover={{
-				scale: 1.2,
-				transition: { duration: 1 },
+				scale: [1, 0.9, 1, 0.9, 1],
+				transition: { duration: 4 },
 			}}
-			animate={rotate ? 'rotateMe' : 'dontRotateMe'}
-			variants={variants}
+			whileTap={{ rotate: 25 }}
 			transition={{ duration: 0.5, ease: 'easeOut', ...transition }}
 			{...props}
 		>

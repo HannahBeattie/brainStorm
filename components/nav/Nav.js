@@ -9,14 +9,17 @@ import {
 	MenuList,
 	Spacer,
 	Text,
+	VStack,
 	useColorModeValue,
 } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
-import { VscSymbolInterface } from 'react-icons/vsc'
 import Rotate from '../pages/framerMotion/RotateClicked'
 import StyledNextLink from '../base/StyledNextLink'
 import DesktopNav from './DesktopNav'
 import { Pages } from './Pages'
+
+import { GiCaveEntrance } from 'react-icons/gi'
+import PulseClicked from '../pages/framerMotion/PulseClicked'
 const pages = Pages
 
 export default function Nav() {
@@ -26,8 +29,8 @@ export default function Nav() {
 		fontSize: '3xl',
 	}
 	const hProps = {
-		px: { sm: 4, base: 2 },
-		py: '2',
+		px: { base: 4, sm: 4 },
+		py: { base: 2, lg: 4 },
 		w: '100%',
 		color: 'gray.400',
 		_dark: { color: 'white' },
@@ -35,21 +38,35 @@ export default function Nav() {
 		textTransform: 'uppercase',
 		fontSize: { base: 'xs' },
 	}
+	const customCol = useColorModeValue('blackAlpha.370', 'whiteAlpha.800')
+	const flyHome = { color: customCol }
 
 	return (
 		<HStack {...hProps}>
-			<Rotate>
-				<StyledNextLink href={'/'}>
-					<Icon
-						_hover={{ color: useColorModeValue('teal', 'red') }}
-						color={useColorModeValue('black', 'white')}
-						as={VscSymbolInterface}
-						{...iconProps}
-					/>
-				</StyledNextLink>
-			</Rotate>
-			<Spacer />
+			<VStack position={'fixed'} top={4}>
+				{currentRoute != '/' && (
+					<Text fontFamily={'Poppins'} fontWeight={900} {...flyHome} className='fly-home'>
+						Go home
+					</Text>
+				)}
+				{currentRoute === '/' && (
+					<Text fontFamily={'Poppins'} fontWeight={900} {...flyHome} className='fly-home'>
+						home
+					</Text>
+				)}
+				<VStack pl={4} pt={1}>
+					<PulseClicked>
+						<StyledNextLink href={'/'}>
+							<Icon fontSize={'3xl'} as={GiCaveEntrance} />
+						</StyledNextLink>
+					</PulseClicked>
+				</VStack>
+			</VStack>
 
+			<Spacer />
+			<Text fontFamily={'Poppins'} fontWeight={900} className='sideT'>
+				Hannah B 2023
+			</Text>
 			<Menu>
 				<MenuButton
 					right={'2'}

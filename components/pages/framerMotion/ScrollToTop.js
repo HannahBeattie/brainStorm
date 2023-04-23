@@ -1,6 +1,8 @@
 import { Box, Button } from '@chakra-ui/react'
 import { useEffect, useRef, useState } from 'react'
-import { BsArrowUpCircle } from 'react-icons/bs'
+import { AiOutlineVerticalAlignTop } from 'react-icons/ai'
+import Appear from './Appear'
+import FadeIn from '~/components/HOC/FadeIn'
 
 export default function ScrollToTop() {
 	const scrollRef = useRef(null)
@@ -34,30 +36,21 @@ export default function ScrollToTop() {
 		<>
 			{showTopBtn && (
 				<>
-					<Button
-						{...buttonProps}
-						display={{ base: 'none', md: 'flex' }}
-						onClick={goToTop}
-						ref={scrollRef}
-						bottom='8'
-						area-label={'scroll to top'}
-						left={0}
-					>
-						<BsArrowUpCircle />
-					</Button>
-
-					<Button
-						{...buttonProps}
-						display={{ base: 'block', md: 'flex' }}
-						onClick={goToTop}
-						ref={scrollRef}
-						bottom='10vh'
-						area-label={'scroll to top'}
-						right={0}
-						color='grayAlpha.800'
-					>
-						<BsArrowUpCircle />
-					</Button>
+					<FadeIn>
+						<Button
+							{...buttonProps}
+							display={{ base: 'none', md: 'flex' }}
+							onClick={goToTop}
+							ref={scrollRef}
+							bottom='2'
+							area-label={'scroll to top'}
+							right={0}
+							_light={{ color: 'grayAlpha.600', _hover: { color: 'warmWhite' } }}
+							_dark={{ color: 'whiteAlpha.900', _hover: { color: 'warmWhite' } }}
+						>
+							<AiOutlineVerticalAlignTop size={30} />
+						</Button>
+					</FadeIn>
 				</>
 			)}
 		</>
