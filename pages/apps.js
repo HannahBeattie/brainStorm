@@ -45,27 +45,25 @@ export default function Web() {
 				<Divider />
 				<Appear style={{ width: '100%' }}>
 					<AppFeature
-						linkText={'My Worry Monster Site '}
+						linkText={'Worry Monster website'}
 						src={'/apps/worryMonster.png'}
 						alt={'still of worry monster app'}
 						title={'My Pet Worry Monster'}
 						href={'https://my-pet-worry-monster-app.vercel.app/'}
 						subtitle={'The perfect pet for those who fret'}
 						showCredit2={'true'}
+						linkText2={'App store link'}
+						href2={'https://apps.apple.com/nz/app/my-pet-worry-monster/id6447295037'}
 					>
 						<VStack {...textProps}>
-							<Text>My Pet Worry Monster is coming soon to IOS!</Text>
+							<Text>Available on IOS</Text>
 
 							<Text>
 								Based on Cognitive Behavioural Therapy techniques, the app allows
 								users to give their worries to the worry monster, before deciding if
 								the worry monster should hold on to them or gobble them up.
 							</Text>
-							<Text>
-								Based on Cognitive Behavioural Therapy techniques, the app allows
-								users to give their worries to the worry monster, before deciding if
-								the worry monster should hold on to them or gobble them up.
-							</Text>
+
 							<Text>
 								I built this app using React Native with Typescript. Under the hood
 								it uses Redux toolkit to manage state and reanimated and Moti to add
