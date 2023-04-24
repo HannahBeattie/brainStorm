@@ -67,7 +67,8 @@ export default function Nav() {
 
 			<Menu>
 				<MenuButton
-					right={'2'}
+					right={0}
+					top={2}
 					position={'absolute'}
 					display={{ base: 'stretch', lg: 'none' }}
 					as={IconButton}

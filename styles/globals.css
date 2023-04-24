@@ -47,8 +47,8 @@ rotate90 {
 }
 .sideT {
 	position: absolute;
-	top: 300px;
-	right: 20px;
+	bottom: 100px;
+	right: 0px;
 	z-index: 20;
 	writing-mode: vertical-lr;
 	letter-spacing: 0.2em;

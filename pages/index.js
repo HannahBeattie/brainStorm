@@ -17,17 +17,20 @@ export default function Home() {
 				<meta name='description' content='Portfolio website' />
 				<link rel='icon' href='/fav.png' />
 			</Head>
-			<PageWrapper>
+			<VStack flex={1}>
 				<ScrollToTop />
 				<ScrollProgress />
 				<HelloWorld />
 				<VineWorld />
 				<MainIntro />
-				<Text fontSize={'sm'} className='sideT'>
-					Hannah B 2023
-				</Text>
 
-				<VStack zIndex={-5} position={'absolute'} right={0} left={0} bottom={-100}>
+				<VStack
+					zIndex={-5}
+					position={'absolute'}
+					right={0}
+					left={0}
+					bottom={{ base: 0, lg: -100 }}
+				>
 					<Unfold num={-1000}>
 						<Image
 							filter={'auto'}
@@ -38,7 +41,7 @@ export default function Home() {
 						/>
 					</Unfold>
 				</VStack>
-			</PageWrapper>
+			</VStack>
 		</>
 	)
 }

@@ -13,7 +13,7 @@ export default function MainIntro() {
 	const small = useBreakpointValue({ base: true, md: false })
 
 	return (
-		<>
+		<VStack flex={1} overflow={'hidden'}>
 			<VStack
 				pt={{ base: '10rem', md: '12rem' }}
 				pb={{ base: 4, md: 4 }}
@@ -52,7 +52,7 @@ export default function MainIntro() {
 							fontSize={'4xl'}
 							color={useColorModeValue('teal', 'white')}
 							pt={{ base: '15rem', sm: '12rem', lg: '30rem' }}
-							pb={{ lg: 300 }}
+							pb={{ md: 200, lg: 300 }}
 						>
 							<Image maxH={100} src={'/clouds/drop.png'} alt={'drop'} />
 							<Image pl={100} maxH={90} src={'/clouds/drop.png'} alt={'drop'} />
@@ -66,6 +66,6 @@ export default function MainIntro() {
 					<LandButton />
 				</VStack>
 			</VStack>
-		</>
+		</VStack>
 	)
 }

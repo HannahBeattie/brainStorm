@@ -6,6 +6,7 @@ export default function HelloWorld() {
 	return (
 		<>
 			<VStack
+				pt={{ base: 14, sm: 0 }}
 				pb={{ base: 8 }}
 				display={{ base: 'flex', md: 'none' }}
 				spacing={{ base: 0, md: 8 }}
