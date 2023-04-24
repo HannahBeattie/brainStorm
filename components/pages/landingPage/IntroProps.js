@@ -1,4 +1,4 @@
-import { Heading, HStack, Text, Tooltip, useColorModeValue } from '@chakra-ui/react'
+import { Heading, HStack, Text, Tooltip, useColorModeValue, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
 import Appear from '../framerMotion/Appear'
 const pt = { md: 8, base: 0 }
@@ -7,26 +7,32 @@ const color = { _dark: 'red', _light: 'teal' }
 export const paragraphs = [
 	{
 		paragraph: (
-			<>
+			<VStack alignItems={'stretch'}>
 				<Heading fontFamily={'Alice'}>I am Hannah.</Heading>
 				<Appear delay={1}>
-					<Text pt={{ md: 2 }}>An artist, insect enthusiast, and web developer from</Text>
+					<Text>An independent artist, web and app developer,</Text>
 					<Appear delay={1}>
-						<Text>Aetearoa, New Zealand.</Text>
+						<Text>from Aotearoa New Zealand.</Text>
 					</Appear>
 				</Appear>
-			</>
+			</VStack>
 		),
 		trees: 1,
 	},
 	{
 		paragraph: (
-			<>
+			<VStack space={4} alignItems={'stretch'} spacing={8}>
+				<Text>Toni Morrison once said -</Text>
 				<Text>
-					I am interested in storytelling and creating holistic, <nobr>person-first</nobr>{' '}
-					designs...
+					<Appear delay={1}>
+						&quot;If there&apos;s a book that you want to read, but it hasn&apos;t been
+						written yet, you must write it.&quot;
+					</Appear>
 				</Text>
-			</>
+				<Appear delay={2}>
+					<Text>We may say the same about app or web development.</Text>
+				</Appear>
+			</VStack>
 		),
 		trees: 3,
 	},
@@ -34,10 +40,7 @@ export const paragraphs = [
 	{
 		paragraph: (
 			<>
-				<Text>
-					...that take into account the diversity of users&apos; interests, engagement
-					styles and access needs…
-				</Text>
+				<Text>I enjoy telling stories in creative, engaging and humorous ways...</Text>
 			</>
 		),
 		trees: 1,
@@ -45,29 +48,22 @@ export const paragraphs = [
 	{
 		paragraph: (
 			<>
-				<Text>...while retaining a sense of momentum, experimentation and fun.</Text>
+				<Text>
+					That takes into account the difference in user access styles, interests and
+					accessibility needs.
+				</Text>
 			</>
 		),
 		trees: 2,
 	},
 	{
 		paragraph: (
-			<>
-				<Text pt={pt}>
-					My coding style is a mixture between curiosity-driven play and clean, minimal
-					functionality.
-				</Text>
-			</>
-		),
-		trees: 1,
-	},
-
-	{
-		paragraph: (
-			<>
-				<Text>This site documents a little of what I have learnt and built so far.</Text>
-				<Text>I am excited to see where my curiosity leads me next!</Text>
-			</>
+			<VStack alignItems={'stretch'}>
+				<Text>I am a huge believer in curiosity-driven play.</Text>
+				<Appear delay={2}>
+					<Text>You never know until you try. .</Text>
+				</Appear>
+			</VStack>
 		),
 		trees: 0,
 	},

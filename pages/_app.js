@@ -14,7 +14,7 @@ export default function MyApp({ Component, pageProps }) {
 			<Head>
 				<title>Brain Storm</title>
 				<meta name='description' content='Portfolio website' />
-				<link rel='icon' href='/favicon.ico' />
+				<link rel='icon' href='/fav.png' />
 			</Head>
 			<VStack as='main' spacing='0' flex={'1'} alignItems='stretch' minH='100vh'>
 				<Nav />

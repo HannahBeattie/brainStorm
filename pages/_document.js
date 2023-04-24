@@ -8,7 +8,7 @@ export default function Document() {
 	return (
 		<Html>
 			<Head>
-				<link rel='shortcut icon' href='/static/halo.png' />
+				<link rel='icon' href='/fav.png' />
 			</Head>
 
 			<VStack

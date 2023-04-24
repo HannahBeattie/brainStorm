@@ -10,7 +10,7 @@ export default function Characters() {
 			<Head>
 				<title>Character Design</title>
 				<meta name='description' content='Portfolio website' />
-				<link rel='icon' href='/favicon.ico' />
+				<link rel='icon' href='/fav.png' />
 			</Head>
 			<PageWrapper>
 				<IntroCard heading={'3d Character Design'}>

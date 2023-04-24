@@ -12,7 +12,7 @@ export default function Contact() {
 			<Head>
 				<title>Contact Me</title>
 				<meta name='description' content='Portfolio website' />
-				<link rel='icon' href='/favicon.ico' />
+				<link rel='icon' href='/fav.png' />
 			</Head>
 			<VStack
 				justifySelf={'stretch'}

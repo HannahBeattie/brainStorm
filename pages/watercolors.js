@@ -10,7 +10,7 @@ export default function Water() {
 			<Head>
 				<title>Watercolors</title>
 				<meta name='description' content='Portfolio website' />
-				<link rel='icon' href='/favicon.ico' />
+				<link rel='icon' href='/fav.png' />
 			</Head>
 			<PageWrapper>
 				<ScrollToTop />
