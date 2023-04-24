@@ -13,7 +13,7 @@ export default function MainIntro() {
 	const small = useBreakpointValue({ base: true, md: false })
 
 	return (
-		<VStack flex={1} overflow={'hidden'}>
+		<VStack flex={1} overflow={{ base: 'hidden', lg: 'unset' }}>
 			<VStack
 				pt={{ base: '10rem', md: '12rem' }}
 				pb={{ base: 4, md: 4 }}
