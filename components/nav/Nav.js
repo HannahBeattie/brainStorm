@@ -9,14 +9,17 @@ import {
 	MenuList,
 	Spacer,
 	Text,
+	VStack,
 	useColorModeValue,
 } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
-import { VscSymbolInterface } from 'react-icons/vsc'
 import Rotate from '../pages/framerMotion/RotateClicked'
 import StyledNextLink from '../base/StyledNextLink'
 import DesktopNav from './DesktopNav'
 import { Pages } from './Pages'
+
+import { TbVinyl } from 'react-icons/tb'
+import PulseClicked from '../pages/framerMotion/PulseClicked'
 const pages = Pages
 
 export default function Nav() {
@@ -26,8 +29,8 @@ export default function Nav() {
 		fontSize: '3xl',
 	}
 	const hProps = {
-		px: { sm: 4, base: 2 },
-		py: '2',
+		px: { base: 4, sm: 8 },
+		py: { base: 2, lg: 6 },
 		w: '100%',
 		color: 'gray.400',
 		_dark: { color: 'white' },
@@ -35,24 +38,37 @@ export default function Nav() {
 		textTransform: 'uppercase',
 		fontSize: { base: 'xs' },
 	}
+	const customCol = useColorModeValue('blackAlpha.370', 'whiteAlpha.800')
+	const flyHome = { color: customCol }
 
 	return (
 		<HStack {...hProps}>
-			<Rotate>
-				<StyledNextLink href={'/'}>
-					<Icon
-						_hover={{ color: useColorModeValue('teal', 'red') }}
-						color={useColorModeValue('black', 'white')}
-						as={VscSymbolInterface}
-						{...iconProps}
-					/>
-				</StyledNextLink>
-			</Rotate>
+			<VStack position={'fixed'} top={4}>
+				{currentRoute != '/' && (
+					<Text fontFamily={'Poppins'} fontWeight={900} {...flyHome} className='fly-home'>
+						Go home
+					</Text>
+				)}
+				{currentRoute === '/' && (
+					<Text fontFamily={'Poppins'} fontWeight={900} {...flyHome} className='fly-home'>
+						home
+					</Text>
+				)}
+				<VStack pl={4} pt={1}>
+					<PulseClicked>
+						<StyledNextLink href={'/'}>
+							<Icon color={customCol} fontSize={'3xl'} as={TbVinyl} />
+						</StyledNextLink>
+					</PulseClicked>
+				</VStack>
+			</VStack>
+
 			<Spacer />
 
 			<Menu>
 				<MenuButton
-					right={'2'}
+					right={0}
+					top={2}
 					position={'absolute'}
 					display={{ base: 'stretch', lg: 'none' }}
 					as={IconButton}

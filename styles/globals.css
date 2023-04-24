@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Alice&family=Sofia+Sans:ital,wght@0,400;0,600;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Buenard:wght@400;700&family=Mulish:wght@200&display=swap');
+
 rotate90 {
 	transform: rotate(-90deg);
 }
@@ -30,6 +32,32 @@ rotate90 {
 	-ms-transform: scale(-1, -1);
 	transform: scale(-1, -1);
 }
+.fly-home {
+	position: fixed;
+	top: 20px;
+	left: 10px;
+	z-index: 20;
+	writing-mode: vertical-lr;
+	letter-spacing: 0.2em;
+	-moz-transform: scale(-1, -1);
+	-webkit-transform: scale(-1, -1);
+	-o-transform: scale(-1, -1);
+	-ms-transform: scale(-1, -1);
+	transform: scale(-1, -1);
+}
+.sideT {
+	position: absolute;
+	bottom: 100px;
+	right: 0px;
+	z-index: 20;
+	writing-mode: vertical-lr;
+	letter-spacing: 0.2em;
+	-moz-transform: scale(-1, -1);
+	-webkit-transform: scale(-1, -1);
+	-o-transform: scale(-1, -1);
+	-ms-transform: scale(-1, -1);
+	transform: scale(-1, -1);
+}
 
 .progress {
 	position: fixed;
@@ -38,7 +66,7 @@ rotate90 {
 	width: 100%;
 	height: 4px;
 	transform-origin: 0 0;
-	background-color: red;
+	background-color: rgb(81, 93, 116);
 	z-index: 2;
 }
 

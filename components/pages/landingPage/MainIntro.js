@@ -1,18 +1,19 @@
-import { useBreakpointValue, useColorModeValue, VStack } from '@chakra-ui/react'
+import { HStack, Image, useBreakpointValue, useColorModeValue, VStack } from '@chakra-ui/react'
 import { WiRaindrop, WiRaindrops } from 'react-icons/wi'
 import TextContainer from '../../base/templates/TextContainer'
 import Appear from '../framerMotion/Appear'
 import { EnterStage, Unfold } from '../framerMotion/EnterStage'
 import Tree from '../p5/hero/Tree'
-import { paragraphs } from './IntroProps'
+
 import LandButton from './LandButton'
+import { paragraphs } from './IntroProps'
 
 export default function MainIntro() {
 	const items = paragraphs
 	const small = useBreakpointValue({ base: true, md: false })
 
 	return (
-		<>
+		<VStack flex={1} overflow={{ base: 'hidden', lg: 'unset' }}>
 			<VStack
 				pt={{ base: '10rem', md: '12rem' }}
 				pb={{ base: 4, md: 4 }}
@@ -22,31 +23,27 @@ export default function MainIntro() {
 			>
 				{items.map(({ paragraph, trees }, idx) => (
 					<VStack key={`item${idx}$`}>
-						<VStack spacing={{ md: '40' }} alignItems={'stretch'}>
-							<Appear>
-								<TextContainer>{paragraph}</TextContainer>
-							</Appear>
-							{trees && (
+						<VStack spacing={10} alignItems={'stretch'}>
+							<EnterStage right={idx % 2 === 1} small={small}>
 								<Appear>
-									<EnterStage right={idx % 2 === 1} small={small}>
-										<VStack flex={'1'} alignItems={'stretch'}>
-											<Tree num={trees} />
-										</VStack>
-									</EnterStage>
+									<Image
+										py={100}
+										maxW={400}
+										src={'/clouds/1.png'}
+										alt={'cloud'}
+									/>
 								</Appear>
-							)}
+							</EnterStage>
+
+							<TextContainer>{paragraph}</TextContainer>
 						</VStack>
 					</VStack>
 				))}
 
-				<VStack
-					flex={1}
-					alignItems='stretch'
-					pt={useBreakpointValue({ base: '35rem', sm: '40rem', lg: '30rem' })}
-				>
+				<VStack flex={1} alignItems='stretch' pt={'80vh'}>
 					<Unfold num={-800} style={{ zIndex: 10 }}>
 						<VStack alignItems={'stretch'}>
-							<Tree num={10} />
+							<Image maxH={600} src={'/clouds/2.png'} alt={'cloud'} />
 						</VStack>
 					</Unfold>
 
@@ -54,12 +51,13 @@ export default function MainIntro() {
 						<VStack
 							fontSize={'4xl'}
 							color={useColorModeValue('teal', 'white')}
-							pt={{ base: '15rem', sm: '12rem', lg: '20rem' }}
+							pt={{ base: '15rem', sm: '12rem', lg: '30rem' }}
+							pb={{ md: 200, lg: 300 }}
 						>
-							<WiRaindrop />
-							<WiRaindrop />
-							<WiRaindrop />
-							<WiRaindrops size={'100'} />
+							<Image maxH={100} src={'/clouds/drop.png'} alt={'drop'} />
+							<Image pl={100} maxH={90} src={'/clouds/drop.png'} alt={'drop'} />
+							<Image pr={100} maxH={84} src={'/clouds/drop.png'} alt={'drop'} />
+							<Image maxH={90} src={'/clouds/drop.png'} alt={'drop'} />
 						</VStack>
 					</Unfold>
 				</VStack>
@@ -68,6 +66,6 @@ export default function MainIntro() {
 					<LandButton />
 				</VStack>
 			</VStack>
-		</>
+		</VStack>
 	)
 }

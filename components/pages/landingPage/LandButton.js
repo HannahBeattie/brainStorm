@@ -18,8 +18,8 @@ export default function LandButton() {
 				color: useColorModeValue('white', 'black'),
 			}}
 			boxShadow={'dark-xl'}
-			px={8}
-			py={6}
+			px={{ md: 8 }}
+			py={{ base: 5, md: 6 }}
 		>
 			<StyledNextLink
 				borderRadius={'md'}

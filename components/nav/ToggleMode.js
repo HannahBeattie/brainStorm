@@ -1,27 +1,31 @@
 import { Box, Text, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 
-import { BsFillLightbulbOffFill, BsLightbulbFill } from 'react-icons/bs'
+import { MdLightMode, MdDarkMode } from 'react-icons/md'
 import ButtonFocus from '../pages/framerMotion/ButtonFocus'
 
 export default function ToggleMode() {
 	const { toggleColorMode } = useColorMode()
-	const mode = useColorModeValue(<BsFillLightbulbOffFill />, <BsLightbulbFill />)
+	const mode = useColorModeValue(<MdDarkMode />, <MdLightMode />)
 	return (
 		<Box
 			position={'fixed'}
-			bottom={{ base: 4, md: 4 }}
-			left={{ base: 2, md: 4 }}
+			left={{ base: 2, md: 'unset' }}
+			bottom={{ base: 5, md: 'unset' }}
+			top={{ lg: 5 }}
+			right={{ md: 2 }}
 			cursor={'pointer'}
 			zIndex={2}
+			p={2}
+			borderRadius={20}
+			_dark={{ bg: 'blackAlpha.700' }}
 		>
 			<ButtonFocus>
 				<Text
 					fontSize={{ base: 'xl', md: 'lg' }}
 					onClick={toggleColorMode}
-					_light={{ color: 'grayAlpha.600', _hover: { color: 'warmWhite' } }}
-					_dark={{ color: 'grayAlpha.900', _hover: { color: 'warmWhite' } }}
-					pb={{ base: 0.5, md: 0 }}
+					_light={{ color: 'grayAlpha.900', _hover: { color: 'warmWhite' } }}
+					_dark={{ color: 'whiteAlpha.900', _hover: { color: 'warmWhite' } }}
 				>
 					{mode}
 				</Text>

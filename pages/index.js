@@ -2,7 +2,7 @@ import ScrollProgress from '~/components/pages/framerMotion/ScrollProgress'
 import ScrollToTop from '~/components/pages/framerMotion/ScrollToTop'
 import PageWrapper from '~/components/HOC/PageWrapper'
 import HelloWorld from '~/components/pages/landingPage/HelloWorld'
-import { Image, useBreakpointValue, useColorModeValue, VStack } from '@chakra-ui/react'
+import { Image, Text, useBreakpointValue, useColorModeValue, VStack } from '@chakra-ui/react'
 import StyledNextLink from '~/components/base/StyledNextLink'
 import { Unfold, UnfoldSm } from '~/components/pages/framerMotion/EnterStage'
 import MainIntro from '~/components/pages/landingPage/MainIntro'
@@ -15,45 +15,33 @@ export default function Home() {
 			<Head>
 				<title>Hello world</title>
 				<meta name='description' content='Portfolio website' />
-				<link rel='icon' href='/favicon.ico' />
+				<link rel='icon' href='/fav.png' />
 			</Head>
-			<PageWrapper>
+			<VStack flex={1}>
 				<ScrollToTop />
 				<ScrollProgress />
 				<HelloWorld />
 				<VineWorld />
 				<MainIntro />
-				<StyledNextLink
-					zIndex={0}
-					position={'absolute'}
-					bottom={{ base: 8, md: 4 }}
-					maxW={{ base: '20em', md: '34em' }}
-					textAlign={'center'}
-					href={
-						'https://gorillasun.de/blog/radial-perlin-noise-and-generative-tree-rings'
-					}
-					fontFamily={'SF Pro'}
-					fontSize={{ base: 'sm', md: 'md' }}
-					color={'white'}
-					_dark={{ color: 'blackAlpha.900' }}
-					fontWeight={600}
-				>
-					Generative circles inspired by AHMAD MOUSSA &apos;s Perlin noise rings
-				</StyledNextLink>
 
-				<VStack position={'relative'} zIndex={-5}>
+				<VStack
+					zIndex={-5}
+					position={'absolute'}
+					right={0}
+					left={0}
+					bottom={{ base: 0, lg: -100 }}
+				>
 					<Unfold num={-1000}>
 						<Image
 							filter={'auto'}
-							invert={useColorModeValue('null', '50%')}
 							alt={'A vector image of a grassy hill '}
-							src={useBreakpointValue({ base: '/baseL.png', md: '/ground.png' })}
-							width={'100%'}
+							src={useBreakpointValue({ base: '/grass.png', md: '/grass.png' })}
+							width={'100vw'}
 							alignSelf={'stretch'}
 						/>
 					</Unfold>
 				</VStack>
-			</PageWrapper>
+			</VStack>
 		</>
 	)
 }

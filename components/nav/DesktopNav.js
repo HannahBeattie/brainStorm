@@ -1,4 +1,4 @@
-import { Box, HStack, useColorModeValue } from '@chakra-ui/react'
+import { Box, HStack, Spacer, useColorModeValue } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import StyledNextLink from '~/components/base/StyledNextLink'
@@ -12,13 +12,12 @@ const wrapProps = {
 const tabProps = {
 	position: 'relative',
 	cursor: 'pointer',
-	fontFamily: 'SF Pro',
 	letterSpacing: { md: '0.1em' },
 }
 
 export default function DesktopNav({ items }) {
-	const col = useColorModeValue('teal', 'red')
-	const col1 = useColorModeValue('teal', 'red')
+	const col = useColorModeValue('teal', 'teal.400')
+	const col1 = useColorModeValue('teal', 'teal.400')
 	const col2 = useColorModeValue('gray.600', 'gray.200')
 	const col3 = useColorModeValue('black', 'white')
 	const router = useRouter()
@@ -30,11 +29,11 @@ export default function DesktopNav({ items }) {
 				<Box key={idx} {...tabProps} tabIndex={0}>
 					<motion.div whileHover={{ scale: 1.05 }} transition={{ ease: 'easeInOut' }}>
 						<StyledNextLink
-							fontFamily={'SF Pro'}
 							href={href}
 							color={href === currentRoute ? col1 : col2}
 							_hover={{ color: col3 }}
-							fontWeight={href === currentRoute ? 500 : 400}
+							fontWeight={href === currentRoute ? 500 : 600}
+							fontSize={'sm'}
 						>
 							{title}
 						</StyledNextLink>
@@ -55,6 +54,7 @@ export default function DesktopNav({ items }) {
 					) : null}
 				</Box>
 			))}
+			<Spacer />
 		</HStack>
 	)
 }
