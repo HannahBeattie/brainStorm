@@ -154,7 +154,7 @@ export default function AppFeature({
 								<VStack>
 									<Text>Designed & created by myself</Text>
 									<Text>
-										with Animation by
+										with Animation by{' '}
 										<StyledNextLink
 											{...addToLinkProps}
 											href={'https://mikeylemmon.com/about'}
