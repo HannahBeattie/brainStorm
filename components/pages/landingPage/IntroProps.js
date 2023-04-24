@@ -10,7 +10,7 @@ export const paragraphs = [
 			<VStack alignItems={'stretch'}>
 				<Heading fontFamily={'Alice'}>I am Hannah.</Heading>
 				<Appear delay={1}>
-					<Text>An independent artist, web and app developer,</Text>
+					<Text>An independent artist, app & web developer,</Text>
 				</Appear>
 				<Appear delay={2}>
 					<Text>from Aotearoa New Zealand.</Text>
@@ -32,7 +32,7 @@ export const paragraphs = [
 				</Appear>
 
 				<Appear delay={2}>
-					<Text>We may say the same about app or web development.</Text>
+					<Text>I apply the same principal to web development.</Text>
 				</Appear>
 			</VStack>
 		),
@@ -42,6 +42,7 @@ export const paragraphs = [
 	{
 		paragraph: (
 			<>
+				<Text>About me -</Text>
 				<Text>I enjoy telling stories in creative, engaging and humorous ways...</Text>
 			</>
 		),
@@ -51,8 +52,8 @@ export const paragraphs = [
 		paragraph: (
 			<>
 				<Text>
-					That takes into account the difference in user access styles, interests and
-					accessibility needs.
+					that takes into account the difference in a user&apos;s interests, access styles
+					and accessibility needs...
 				</Text>
 			</>
 		),
@@ -61,9 +62,9 @@ export const paragraphs = [
 	{
 		paragraph: (
 			<VStack alignItems={'stretch'}>
-				<Text>I am a huge believer in curiosity-driven play.</Text>
+				<Text>while retaining a sense of curiosity and play.</Text>
 				<Appear delay={2}>
-					<Text>You never know until you try. .</Text>
+					<Text>You never know until you try!</Text>
 				</Appear>
 			</VStack>
 		),
