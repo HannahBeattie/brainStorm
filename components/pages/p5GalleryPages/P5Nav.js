@@ -25,8 +25,8 @@ export default function P5Nav() {
 	const items = P5NavItems
 	const router = useRouter()
 	const currentRoute = router.pathname
-	const col = useColorModeValue('teal', 'red')
-	const col2 = useColorModeValue('teal', 'red')
+	const col = useColorModeValue('teal', 'teal')
+	const col2 = useColorModeValue('teal', 'teal')
 	const col3 = useColorModeValue('gray.900', 'gray.200')
 
 	return (
