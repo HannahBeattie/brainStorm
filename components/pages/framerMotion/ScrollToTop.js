@@ -42,9 +42,9 @@ export default function ScrollToTop() {
 							display={{ base: 'none', md: 'flex' }}
 							onClick={goToTop}
 							ref={scrollRef}
-							bottom='4'
+							bottom='16'
 							area-label={'scroll to top'}
-							right={2}
+							right={4}
 							_light={{ color: 'grayAlpha.600', _hover: { color: 'warmWhite' } }}
 							_dark={{
 								bg: 'blackAlpha.700',

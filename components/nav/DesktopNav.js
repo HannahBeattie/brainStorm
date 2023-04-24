@@ -1,4 +1,4 @@
-import { Box, HStack, useColorModeValue } from '@chakra-ui/react'
+import { Box, HStack, Spacer, useColorModeValue } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import StyledNextLink from '~/components/base/StyledNextLink'
@@ -54,6 +54,7 @@ export default function DesktopNav({ items }) {
 					) : null}
 				</Box>
 			))}
+			<Spacer />
 		</HStack>
 	)
 }
