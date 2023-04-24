@@ -11,9 +11,9 @@ export const paragraphs = [
 				<Heading fontFamily={'Alice'}>I am Hannah.</Heading>
 				<Appear delay={1}>
 					<Text>An independent artist, web and app developer,</Text>
-					<Appear delay={1}>
-						<Text>from Aotearoa New Zealand.</Text>
-					</Appear>
+				</Appear>
+				<Appear delay={2}>
+					<Text>from Aotearoa New Zealand.</Text>
 				</Appear>
 			</VStack>
 		),
@@ -23,12 +23,14 @@ export const paragraphs = [
 		paragraph: (
 			<VStack space={4} alignItems={'stretch'} spacing={8}>
 				<Text>Toni Morrison once said -</Text>
-				<Text>
-					<Appear delay={1}>
+
+				<Appear delay={1}>
+					<Text>
 						&quot;If there&apos;s a book that you want to read, but it hasn&apos;t been
 						written yet, you must write it.&quot;
-					</Appear>
-				</Text>
+					</Text>
+				</Appear>
+
 				<Appear delay={2}>
 					<Text>We may say the same about app or web development.</Text>
 				</Appear>

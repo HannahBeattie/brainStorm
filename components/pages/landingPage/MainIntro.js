@@ -4,8 +4,9 @@ import TextContainer from '../../base/templates/TextContainer'
 import Appear from '../framerMotion/Appear'
 import { EnterStage, Unfold } from '../framerMotion/EnterStage'
 import Tree from '../p5/hero/Tree'
-import { paragraphs } from './IntroProps'
+
 import LandButton from './LandButton'
+import { paragraphs } from './IntroProps'
 
 export default function MainIntro() {
 	const items = paragraphs
