@@ -49,7 +49,7 @@ export const theme = extendTheme({
 	styles: {
 		global: {
 			body: {
-				bg: '#F3F3F3',
+				bg: 'gray.200',
 				_dark: {
 					bg: { md: '#02080c', base: '#02080c' },
 				},

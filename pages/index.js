@@ -23,28 +23,11 @@ export default function Home() {
 				<HelloWorld />
 				<VineWorld />
 				<MainIntro />
-				<StyledNextLink
-					zIndex={0}
-					position={'absolute'}
-					bottom={{ base: 8, md: 4 }}
-					maxW={{ base: '20em', md: '34em' }}
-					textAlign={'center'}
-					href={
-						'https://gorillasun.de/blog/radial-perlin-noise-and-generative-tree-rings'
-					}
-					fontFamily={'SF Pro'}
-					fontSize={{ base: 'sm', md: 'md' }}
-					color={'white'}
-					_dark={{ color: 'blackAlpha.900' }}
-					fontWeight={600}
-				>
-					Generative circles inspired by AHMAD MOUSSA &apos;s Perlin noise rings
-				</StyledNextLink>
 				<Text fontSize={'sm'} className='sideT'>
 					Hannah B 2023
 				</Text>
 
-				<VStack position={'relative'} zIndex={-5}>
+				<VStack zIndex={-5} position={'absolute'} right={0} left={0} bottom={-100}>
 					<Unfold num={-1000}>
 						<Image
 							filter={'auto'}
