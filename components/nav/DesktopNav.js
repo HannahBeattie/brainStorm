@@ -7,7 +7,6 @@ const wrapProps = {
 	display: { base: 'none', lg: 'flex' },
 	fontSize: { sm: 'sm', md: 'md' },
 	spacing: { sm: '4', md: '8' },
-	px: 4,
 }
 
 const tabProps = {
@@ -34,8 +33,7 @@ export default function DesktopNav({ items }) {
 							color={href === currentRoute ? col1 : col2}
 							_hover={{ color: col3 }}
 							fontWeight={href === currentRoute ? 500 : 600}
-							fontFamily={'Buenard'}
-							fontSize={'lg'}
+							fontSize={'sm'}
 						>
 							{title}
 						</StyledNextLink>

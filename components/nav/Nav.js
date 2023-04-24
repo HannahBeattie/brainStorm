@@ -29,8 +29,8 @@ export default function Nav() {
 		fontSize: '3xl',
 	}
 	const hProps = {
-		px: { base: 4, sm: 4 },
-		py: { base: 2, lg: 4 },
+		px: { base: 4, sm: 8 },
+		py: { base: 2, lg: 6 },
 		w: '100%',
 		color: 'gray.400',
 		_dark: { color: 'white' },
@@ -64,9 +64,7 @@ export default function Nav() {
 			</VStack>
 
 			<Spacer />
-			<Text fontFamily={'Poppins'} fontWeight={900} className='sideT'>
-				Hannah B 2023
-			</Text>
+
 			<Menu>
 				<MenuButton
 					right={'2'}

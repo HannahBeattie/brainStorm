@@ -2,7 +2,7 @@ import ScrollProgress from '~/components/pages/framerMotion/ScrollProgress'
 import ScrollToTop from '~/components/pages/framerMotion/ScrollToTop'
 import PageWrapper from '~/components/HOC/PageWrapper'
 import HelloWorld from '~/components/pages/landingPage/HelloWorld'
-import { Image, useBreakpointValue, useColorModeValue, VStack } from '@chakra-ui/react'
+import { Image, Text, useBreakpointValue, useColorModeValue, VStack } from '@chakra-ui/react'
 import StyledNextLink from '~/components/base/StyledNextLink'
 import { Unfold, UnfoldSm } from '~/components/pages/framerMotion/EnterStage'
 import MainIntro from '~/components/pages/landingPage/MainIntro'
@@ -40,6 +40,9 @@ export default function Home() {
 				>
 					Generative circles inspired by AHMAD MOUSSA &apos;s Perlin noise rings
 				</StyledNextLink>
+				<Text fontSize={'sm'} className='sideT'>
+					Hannah B 2023
+				</Text>
 
 				<VStack position={'relative'} zIndex={-5}>
 					<Unfold num={-1000}>
