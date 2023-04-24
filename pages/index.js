@@ -48,10 +48,9 @@ export default function Home() {
 					<Unfold num={-1000}>
 						<Image
 							filter={'auto'}
-							invert={useColorModeValue('null', '100%')}
 							alt={'A vector image of a grassy hill '}
-							src={useBreakpointValue({ base: '/baseL.png', md: '/ground.png' })}
-							width={'100%'}
+							src={useBreakpointValue({ base: '/grass.png', md: '/grass.png' })}
+							width={'100vw'}
 							alignSelf={'stretch'}
 						/>
 					</Unfold>
