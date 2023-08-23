@@ -29,7 +29,7 @@ export default function Nav() {
 		fontSize: '3xl',
 	}
 	const hProps = {
-		px: { base: 4, sm: 8 },
+		px: { base: 0, sm: 8 },
 		py: { base: 2, lg: 6 },
 		w: '100%',
 		color: 'gray.400',
@@ -44,16 +44,6 @@ export default function Nav() {
 	return (
 		<HStack {...hProps}>
 			<VStack position={'fixed'} top={4}>
-				{currentRoute != '/' && (
-					<Text fontFamily={'Poppins'} fontWeight={900} {...flyHome} className='fly-home'>
-						Go home
-					</Text>
-				)}
-				{currentRoute === '/' && (
-					<Text fontFamily={'Poppins'} fontWeight={900} {...flyHome} className='fly-home'>
-						home
-					</Text>
-				)}
 				<VStack pl={4} pt={1}>
 					<PulseClicked>
 						<StyledNextLink href={'/'}>

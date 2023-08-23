@@ -43,16 +43,17 @@ export default function Web() {
 				</VStack>
 
 				<Divider />
+
 				<Appear style={{ width: '100%' }}>
 					<AppFeature
-						linkText={'Worry Monster website'}
+						linkText={'Home Page'}
 						src={'/apps/worryMonster.png'}
 						alt={'still of worry monster app'}
 						title={'My Pet Worry Monster'}
 						href={'https://my-pet-worry-monster-app.vercel.app/'}
 						subtitle={'The perfect pet for those who fret'}
 						showCredit2={'true'}
-						linkText2={'App store link'}
+						linkText2={'Download App'}
 						href2={'https://apps.apple.com/nz/app/my-pet-worry-monster/id6447295037'}
 					>
 						<VStack {...textProps}>

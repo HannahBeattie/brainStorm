@@ -11,7 +11,7 @@ export default function ToggleMode() {
 		<Box
 			position={'fixed'}
 			left={{ base: 2, md: 'unset' }}
-			bottom={{ base: 5, md: 'unset' }}
+			bottom={{ base: 2, md: 'unset' }}
 			top={{ lg: 5 }}
 			right={{ md: 2 }}
 			cursor={'pointer'}
