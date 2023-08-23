@@ -29,7 +29,7 @@ export default function Nav() {
 		fontSize: '3xl',
 	}
 	const hProps = {
-		px: { base: 0, sm: 8 },
+		px: { base: 4, sm: 4 },
 		py: { base: 2, lg: 6 },
 		w: '100%',
 		color: 'gray.400',
@@ -44,7 +44,7 @@ export default function Nav() {
 	return (
 		<HStack {...hProps}>
 			<VStack position={'fixed'} top={4}>
-				<VStack pl={4} pt={1}>
+				<VStack pt={1}>
 					<PulseClicked>
 						<StyledNextLink href={'/'}>
 							<Icon color={customCol} fontSize={'3xl'} as={TbVinyl} />

@@ -12,8 +12,8 @@ export default function ToggleMode() {
 			position={'fixed'}
 			left={{ base: 2, md: 'unset' }}
 			bottom={{ base: 2, md: 'unset' }}
-			top={{ lg: 5 }}
-			right={{ md: 2 }}
+			top={{ sm: 2, lg: 5 }}
+			right={{ md: 6, lg: 2 }}
 			cursor={'pointer'}
 			zIndex={2}
 			p={2}
