@@ -9,7 +9,7 @@ export default function TextContainer({ children, ...props }) {
 			<Container size={'8xl'}>
 				<VStack
 					px={{ base: '4rem', md: 4 }}
-					fontSize={{ base: '23', md: 'xl' }}
+					fontSize={{ base: '23', md: '2xl' }}
 					spacing={3}
 					alignItems={'stretch'}
 					textAlign={'start'}

@@ -1,4 +1,13 @@
-import { Heading, HStack, Text, Tooltip, useColorModeValue, VStack } from '@chakra-ui/react'
+import {
+	Heading,
+	HStack,
+	Spacer,
+	Stack,
+	Text,
+	Tooltip,
+	useColorModeValue,
+	VStack,
+} from '@chakra-ui/react'
 import { useState } from 'react'
 import Appear from '../framerMotion/Appear'
 const pt = { md: 8, base: 0 }
@@ -10,10 +19,10 @@ export const paragraphs = [
 			<VStack alignItems={'stretch'}>
 				<Heading fontFamily={'Alice'}>I am Hannah.</Heading>
 				<Appear delay={1}>
-					<Text>An independent artist, app & web developer,</Text>
+					<Text>A multidisciplinary artist, writer and coder</Text>
 				</Appear>
 				<Appear delay={2}>
-					<Text>from Aotearoa New Zealand.</Text>
+					<Text>from Aotearoa, New Zealand.</Text>
 				</Appear>
 			</VStack>
 		),
@@ -22,50 +31,26 @@ export const paragraphs = [
 	{
 		paragraph: (
 			<VStack space={4} alignItems={'stretch'} spacing={8}>
-				<Text>Toni Morrison once said -</Text>
-
 				<Appear delay={1}>
-					<Text>
-						&quot;If there&apos;s a book that you want to read, but it hasn&apos;t been
-						written yet, you must write it.&quot;
-					</Text>
+					<Text>I enjoy enthusiastic, deliberate play,</Text>
 				</Appear>
-
-				<Appear delay={2}>
-					<Text>I apply the same principal to web development.</Text>
-				</Appear>
+				<Stack flex={1} direction={{ base: 'row', med: 'column' }}>
+					<Appear delay={2}>
+						<Text>storytelling </Text>
+					</Appear>
+					<Appear delay={3}>
+						<Text mx={2}> and curiosity.</Text>
+					</Appear>
+				</Stack>
 			</VStack>
 		),
-		trees: 3,
+		trees: 0,
 	},
 
-	{
-		paragraph: (
-			<>
-				<Text>About me -</Text>
-				<Text>I enjoy telling stories in creative, engaging and humorous ways...</Text>
-			</>
-		),
-		trees: 1,
-	},
-	{
-		paragraph: (
-			<>
-				<Text>
-					that takes into account the difference in a user&apos;s interests, access styles
-					and accessibility needs...
-				</Text>
-			</>
-		),
-		trees: 2,
-	},
 	{
 		paragraph: (
 			<VStack alignItems={'stretch'}>
-				<Text>while retaining a sense of curiosity and play.</Text>
-				<Appear delay={2}>
-					<Text>You never know until you try!</Text>
-				</Appear>
+				<Spacer />
 			</VStack>
 		),
 		trees: 0,
