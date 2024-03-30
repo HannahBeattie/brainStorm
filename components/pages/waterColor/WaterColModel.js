@@ -5,6 +5,10 @@ import Appear from '../framerMotion/Appear'
 export default function WaterColModel() {
 	const items = [
 		{
+			src: '/waterCol/11.jpg',
+			alt: 'A watercolor of a couple sleeping',
+		},
+		{
 			src: '/waterCol/1.JPG',
 			alt: 'A watercolor of a couple sleeping',
 		},
